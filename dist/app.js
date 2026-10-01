@@ -242,7 +242,7 @@
     document.getElementById('cognitiveCount').textContent = `${open.length} çalışma`;
   }
   const planInfo = {
-    free: { title: 'Ücretsiz plan', detail: 'Temel beceri çalışmaları açık. Premium ile tüm çalışmalar ve oyun arkadaşı içerikleri genişler.' },
+    free: { title: 'Premium üyelik', detail: 'Aylık 300 ₺ · Ödeme ekranından üyeliği başlatabilirsin.' },
     premium: { title: 'Premium üyelik', detail: 'Aylık 300 ₺ · Tüm çalışmalar ve gelecek içerikler açık.' }
   };
   function renderPlanUI() {
@@ -256,7 +256,7 @@
     const detail = document.getElementById('planStatusDetail');
     if (detail) detail.textContent = info.detail;
     const settingsLabel = document.getElementById('settingsPlanLabel');
-    if (settingsLabel) settingsLabel.textContent = `${info.title}${premium ? '' : ' · Satın alınmadı'}`;
+    if (settingsLabel) settingsLabel.textContent = info.title;
     const settingsButton = document.getElementById('settingsPlanButton');
     if (settingsButton) settingsButton.textContent = premium ? 'Planı görüntüle' : 'Planı yönet';
     const chip = document.getElementById('welcomePlanButton');
