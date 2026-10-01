@@ -65,17 +65,7 @@
           <p class="section-intro">Premium üyelik ile tüm beceri çalışmaları ve yeni içerikler açılır.</p>
           <div class="plan-status is-free" id="planStatus">Ücretsiz plan</div>
           <p class="plan-status-detail" id="planStatusDetail"></p>
-          <div class="plan-options">
-            <article class="plan-option" id="planFree">
-              <span class="plan-badge">Mevcut plan</span>
-              <h3>Ücretsiz</h3>
-              <p class="plan-price">0 ₺</p>
-              <ul>
-                <li>Renk eşleme çalışmaları</li>
-                <li>Oyun arkadaşı seçimi</li>
-                <li>Çalışma özeti ve evde genelleme</li>
-              </ul>
-            </article>
+          <div class="plan-options plan-options-single" id="planOptions">
             <article class="plan-option" id="planPremium">
               <span class="plan-badge">Önerilen</span>
               <h3>Premium</h3>
@@ -88,10 +78,16 @@
             </article>
           </div>
           <div class="plan-actions">
-            <button class="primary-button" id="planActivate" type="button">Satın al</button>
-            <button class="secondary-button" id="planDeactivate" type="button" hidden>Ücretsiz plana dön (demo)</button>
+            <button class="primary-button" id="planActivate" type="button">Ödeme ekranına geç</button>
           </div>
-          <p class="plan-note">🔒 Gerçek ödeme altyapısı henüz bağlı değildir. Kart veya banka bilgisi istenmez; bu düğmeler yalnızca plan görünümünü denemek içindir.</p>
+          <p class="plan-note" id="planNote">🔒 Güvenli ödeme sağlayıcısına yönlendirme için hazırlanan demo akışıdır. Bu sürüm kart bilgisi istemez ve gerçek ücret tahsil etmez.</p>
+          <div class="payment-panel" id="paymentPanel" hidden>
+            <span class="step-label">Ödeme</span>
+            <h3>Premium üyelik</h3>
+            <p>Aylık 300 ₺ · Ödeme sağlayıcısı bağlantısı hazır olduğunda bu düğme güvenli ödeme sayfasını açacak.</p>
+            <button class="primary-button" id="paymentContinue" type="button">Güvenli ödeme sayfasını aç</button>
+            <button class="text-button" id="paymentBack" type="button">Plana dön</button>
+          </div>
           <button class="text-button" id="planBack" type="button">Önceki ekrana dön</button>
         </div>
       </section>

@@ -261,15 +261,12 @@
     if (settingsButton) settingsButton.textContent = premium ? 'Planı görüntüle' : 'Planı yönet';
     const chip = document.getElementById('welcomePlanButton');
     if (chip) chip.textContent = premium ? '⭐ Premium üye' : '🛒 Satın al';
-    const freeCard = document.getElementById('planFree'); const premiumCard = document.getElementById('planPremium');
-    if (freeCard && premiumCard) {
-      freeCard.classList.toggle('is-active', !premium);
+    const premiumCard = document.getElementById('planPremium');
+    if (premiumCard) {
       premiumCard.classList.toggle('is-active', premium);
     }
     const activate = document.getElementById('planActivate');
-    if (activate) activate.hidden = premium;
-    const deactivate = document.getElementById('planDeactivate');
-    if (deactivate) deactivate.hidden = !premium;
+    if (activate) activate.textContent = premium ? 'Premium aktif' : 'Ödeme ekranına geç';
   }
   function renderCategory(category = state.category) {
     state.category = category;
@@ -471,6 +468,33 @@
     speak(state.avatar, buddyPhrases[buddyPhraseIndex]);
     if (state.avatar === 'pofidik') window.Pofidik3D?.react(floatingBuddy);
   });
+  let buddyDrag = null;
+  let suppressBuddyClick = false;
+  floatingBuddy.addEventListener('click', event => {
+    if (suppressBuddyClick) { suppressBuddyClick = false; event.preventDefault(); event.stopImmediatePropagation(); }
+  }, true);
+  floatingBuddy.addEventListener('pointerdown', event => {
+    floatingBuddy.setPointerCapture(event.pointerId);
+    const rect = floatingBuddy.getBoundingClientRect();
+    buddyDrag = { pointerId: event.pointerId, dx: event.clientX - rect.left, dy: event.clientY - rect.top, moved: false };
+    floatingBuddy.classList.add('is-dragging');
+  });
+  floatingBuddy.addEventListener('pointermove', event => {
+    if (!buddyDrag || buddyDrag.pointerId !== event.pointerId) return;
+    if (Math.hypot(event.movementX, event.movementY) > 1) buddyDrag.moved = true;
+    const maxX = Math.max(0, window.innerWidth - floatingBuddy.offsetWidth);
+    const maxY = Math.max(0, window.innerHeight - floatingBuddy.offsetHeight);
+    const left = Math.min(maxX, Math.max(0, event.clientX - buddyDrag.dx));
+    const top = Math.min(maxY, Math.max(0, event.clientY - buddyDrag.dy));
+    floatingBuddy.style.left = `${left}px`; floatingBuddy.style.top = `${top}px`;
+    floatingBuddy.style.right = 'auto'; floatingBuddy.style.bottom = 'auto';
+  });
+  floatingBuddy.addEventListener('pointerup', event => {
+    if (!buddyDrag || buddyDrag.pointerId !== event.pointerId) return;
+    floatingBuddy.releasePointerCapture(event.pointerId); floatingBuddy.classList.remove('is-dragging');
+    const moved = buddyDrag.moved; buddyDrag = null;
+    if (moved) { suppressBuddyClick = true; event.stopImmediatePropagation(); }
+  });
   document.getElementById('welcomePlanButton').addEventListener('click', () => { renderPlanUI(); showScreen('plan'); });
   document.getElementById('settingsPlanButton').addEventListener('click', () => { renderPlanUI(); showScreen('plan'); });
   document.getElementById('planBack').addEventListener('click', () => {
@@ -478,10 +502,12 @@
     showScreen(previous, false);
   });
   document.getElementById('planActivate').addEventListener('click', () => {
-    state.plan = 'premium'; saveState(); renderPlanUI();
+    document.getElementById('paymentPanel').hidden = false;
+    document.getElementById('planOptions')?.setAttribute('hidden', '');
   });
-  document.getElementById('planDeactivate').addEventListener('click', () => {
-    state.plan = 'free'; saveState(); renderPlanUI();
+  document.getElementById('paymentBack').addEventListener('click', () => { document.getElementById('paymentPanel').hidden = true; });
+  document.getElementById('paymentContinue').addEventListener('click', () => {
+    document.getElementById('planNote').textContent = 'Ödeme sağlayıcısı henüz bağlanmadı. Gerçek ödeme alınmadı; entegrasyon için sağlayıcı hesabı ve sunucu uç noktası gerekir.';
   });
 
   loadState(); loadAudioSettings(); loadVoices(); if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = loadVoices;
