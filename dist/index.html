@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0759e6">
+  <meta name="description" content="Eşleme ve renk becerileri için Dijital Özel Eğitim uygulaması.">
+  <title>Dijital Özel Eğitim</title>
+  <link rel="icon" type="image/png" href="./assets/dijital-ozel-egitim-logo-tablet.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar" id="topbar" hidden>
+      <button class="icon-button" id="backButton" type="button" aria-label="Önceki ekrana dön">←</button>
+      <div class="brand-mini"><img src="./assets/dijital-ozel-egitim-logo-tablet.png" alt="" width="44" height="44"><span>Dijital Özel Eğitim</span></div>
+      <div class="top-actions">
+        <button class="quick-audio-button" id="quickMuteTop" type="button" aria-label="Müziği kapat" aria-pressed="false">🔊</button>
+        <button class="text-button" id="settingsButton" type="button">⚙️ Ayarlar</button>
+        <button class="text-button" id="homeButton" type="button">Ana menü</button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="screen welcome-screen is-active" data-screen="welcome" aria-labelledby="welcomeTitle">
+        <button class="welcome-plan-chip" id="welcomePlanButton" type="button">🛒 Satın al</button>
+        <div class="welcome-controls" aria-label="Hızlı ayarlar">
+          <button class="welcome-control-button" id="quickMuteWelcome" type="button" aria-label="Müziği kapat" aria-pressed="false">🔊 <span>Müzik</span></button>
+          <button class="welcome-control-button" id="welcomeSettingsButton" type="button">⚙️ <span>Ayarlar</span></button>
+        </div>
+        <div class="welcome-visual"><img src="./assets/dijital-ozel-egitim-logo-tablet.png" alt="Tablet ekranından çıkan renkli öğrenme kartları" class="hero-logo"></div>
+        <div class="welcome-copy">
+          <h1 id="welcomeTitle">Dijital Özel Eğitim</h1>
+          <p class="lead">Oyun arkadaşını seç, birlikte öğrenmeye başla.</p>
+          <button class="primary-button jumbo" type="button" data-next="profile">Başlayalım</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="settings" aria-labelledby="settingsTitle">
+        <div class="content-card narrow settings-card">
+          <span class="step-label">Ayarlar</span>
+          <h2 id="settingsTitle">Ses ve müzik</h2>
+          <div class="settings-stack">
+            <div class="setting-row">
+              <div><strong>Arka plan müziği</strong></div>
+              <button class="music-toggle" id="musicToggle" type="button" aria-pressed="true">Açık</button>
+            </div>
+            <label class="volume-control" for="musicVolume">
+              <span><strong>Müzik seviyesi</strong><output id="musicVolumeValue" for="musicVolume">35%</output></span>
+              <input id="musicVolume" type="range" min="0" max="100" step="5" value="35">
+            </label>
+            <div class="setting-row">
+              <div><strong>Kullanıcı profili</strong><small id="settingsPlanLabel">Ücretsiz plan · Satın alınmadı</small></div>
+              <button class="secondary-button compact" id="settingsPlanButton" type="button">Planı yönet</button>
+            </div>
+          </div>
+          <button class="primary-button" id="settingsBack" type="button">Önceki ekrana dön</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="plan" aria-labelledby="planTitle">
+        <div class="content-card wide">
+          <span class="step-label">Üyelik</span>
+          <h2 id="planTitle">Aylık üyelik planı</h2>
+          <p class="section-intro">Premium üyelik ile tüm beceri çalışmaları ve yeni içerikler açılır.</p>
+          <div class="plan-status is-free" id="planStatus">Ücretsiz plan</div>
+          <p class="plan-status-detail" id="planStatusDetail"></p>
+          <div class="plan-options">
+            <article class="plan-option" id="planFree">
+              <span class="plan-badge">Mevcut plan</span>
+              <h3>Ücretsiz</h3>
+              <p class="plan-price">0 ₺</p>
+              <ul>
+                <li>Renk eşleme çalışmaları</li>
+                <li>Oyun arkadaşı seçimi</li>
+                <li>Çalışma özeti ve evde genelleme</li>
+              </ul>
+            </article>
+            <article class="plan-option" id="planPremium">
+              <span class="plan-badge">Önerilen</span>
+              <h3>Premium</h3>
+              <p class="plan-price">Aylık 300 ₺</p>
+              <ul>
+                <li>Tüm beceri çalışmaları</li>
+                <li>Yeni renk ve oyun içerikleri</li>
+                <li>Genişletilmiş oyun arkadaşı etkileşimi</li>
+              </ul>
+            </article>
+          </div>
+          <div class="plan-actions">
+            <button class="primary-button" id="planActivate" type="button">Satın al</button>
+            <button class="secondary-button" id="planDeactivate" type="button" hidden>Ücretsiz plana dön (demo)</button>
+          </div>
+          <p class="plan-note">🔒 Gerçek ödeme altyapısı henüz bağlı değildir. Kart veya banka bilgisi istenmez; bu düğmeler yalnızca plan görünümünü denemek içindir.</p>
+          <button class="text-button" id="planBack" type="button">Önceki ekrana dön</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="profile" aria-labelledby="profileTitle">
+        <div class="content-card narrow">
+          <span class="step-label">Çocuk profili</span>
+          <h2 id="profileTitle">Seni biraz tanıyalım</h2>
+          <form id="profileForm" class="form-stack">
+            <label><span>Çocuğun adı</span><input id="childName" autocomplete="off" maxlength="32" required placeholder="Adı veya tercih ettiği isim"></label>
+            <label><span>Yaşı</span><input id="childAge" type="number" inputmode="numeric" min="2" max="18" required placeholder="Örneğin: 6"></label>
+            <label><span>Tanısı <em>isteğe bağlı</em></span><input id="diagnosis" autocomplete="off" maxlength="80" placeholder="Varsa yazabilirsiniz"></label>
+            <button class="primary-button" type="submit">Oyun arkadaşını seç</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="avatar" aria-labelledby="avatarTitle">
+        <div class="content-card wide">
+          <span class="step-label">Oyun arkadaşı</span>
+          <h2 id="avatarTitle">Kiminle oyun oynamak istersin?</h2>
+          <p class="section-intro">Seslerini dinle, sonra oyun arkadaşını seç.</p>
+          <div class="avatar-grid">
+            <article class="avatar-card" data-avatar="pofidik" tabindex="0" role="button" aria-label="Pofidik Ayı'yı seç">
+              <div class="mascot-crop is-pofidik" data-sprite="bear"><img src="./assets/oyun-arkadaslari-v2.png" alt="Pofidik Ayı"><div class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></div></div>
+              <h3>Pofidik Ayı</h3><button class="voice-button" type="button" data-speak="pofidik">🔊 Sesimi dinle</button>
+            </article>
+            <article class="avatar-card" data-avatar="dila" tabindex="0" role="button" aria-label="Dila Panda'yı seç">
+              <div class="mascot-crop" data-sprite="panda"><img src="./assets/oyun-arkadaslari-v2.png" alt="Dila Panda"></div>
+              <h3>Dila Panda</h3><button class="voice-button" type="button" data-speak="dila">🔊 Sesimi dinle</button>
+            </article>
+            <article class="avatar-card" data-avatar="kipir" tabindex="0" role="button" aria-label="Kıpır Kunduz'u seç">
+              <div class="mascot-crop" data-sprite="beaver"><img src="./assets/oyun-arkadaslari-v2.png" alt="Kıpır Kunduz"></div>
+              <h3>Kıpır Kunduz</h3><button class="voice-button" type="button" data-speak="kipir">🔊 Sesimi dinle</button>
+            </article>
+            <article class="avatar-card" data-avatar="mina" tabindex="0" role="button" aria-label="Mina Tilki'yi seç">
+              <div class="mascot-crop" data-sprite="fox"><img src="./assets/oyun-arkadaslari-v2.png" alt="Mina Tilki"></div>
+              <h3>Mina Tilki</h3><button class="voice-button" type="button" data-speak="mina">🔊 Sesimi dinle</button>
+            </article>
+          </div>
+          <button class="primary-button" id="avatarContinue" type="button" disabled>Bu arkadaşı seç</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="intro" aria-labelledby="introTitle">
+        <div class="intro-card">
+          <div class="mascot-crop intro-mascot" data-mascot-display data-sprite="bear"><img src="./assets/oyun-arkadaslari-v2.png" alt="Seçilen oyun arkadaşı"><div class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></div></div>
+          <div class="speech-card"><span class="step-label">Yeni oyun arkadaşın</span><h2 id="introTitle">Merhaba!</h2><p id="introText"></p><button class="primary-button jumbo" id="readyButton" type="button">Hazırım</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="assessment" aria-labelledby="assessmentTitle">
+        <div class="content-card wide">
+          <span class="step-label">Kaba değerlendirme</span>
+          <h2 id="assessmentTitle">Çocuk şu anda neleri yapabiliyor?</h2>
+          <p class="section-intro">Her beceri için gözleminize en uygun seçeneği işaretleyin. Çalışılacak beceriler ana menüde buna göre açılır.</p>
+          <div class="assessment-list" id="assessmentList">
+            <article class="assessment-row" data-skill="object-match"><div><strong>Aynı nesneleri eşler</strong><small>Bir nesnenin aynısını seçenekler arasından bulur.</small></div><div class="status-choice" role="radiogroup" aria-label="Aynı nesneleri eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
+            <article class="assessment-row" data-skill="same-red"><div><strong>Aynı tipte ve aynı renkte olanları eşler</strong><small>İki aynı kırmızı kartı eşler.</small></div><div class="status-choice" role="radiogroup" aria-label="Aynı tip aynı renk eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
+            <article class="assessment-row featured" data-skill="two-color"><div><strong>İki renk arasından aynı rengi eşler</strong><small>Kırmızı ve mavi seçenekleri arasından kırmızıyı eşler.</small></div><div class="status-choice" role="radiogroup" aria-label="İki renk arasından eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
+            <article class="assessment-row" data-skill="spoken-color"><div><strong>Söylenen rengi gösterir</strong><small>“Kırmızıyı göster” yönergesine uygun rengi seçer.</small></div><div class="status-choice" role="radiogroup" aria-label="Söylenen rengi gösterme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
+          </div>
+          <p id="assessmentNotice" class="form-notice" role="status">Öğrencinin yapamadığı becerilerle ilgili etkinlikler açılır; yapabildikleri sistemde açılmaz.</p>
+          <button class="primary-button" id="assessmentContinue" type="button">Yöntem seçimine geç</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="method" aria-labelledby="methodTitle">
+        <div class="content-card wide">
+          <span class="step-label">Yöntem tercihi</span>
+          <h2 id="methodTitle">Nasıl çalışalım?</h2>
+          <p class="method-note">Bu seçimi çocuk veya uygulamacı yapabilir.</p>
+          <div id="childMethods" class="method-grid">
+            <button class="method-card" type="button" data-method="immediate"><span class="method-art">✨</span><strong>Hemen yardım et</strong><small>Doğru seçeneği hemen birlikte bulalım.</small><span>Eşzamanlı öğretim prototipi</span></button>
+            <button class="method-card" type="button" data-method="wait"><span class="method-art">🌟</span><strong>Önce ben deneyeyim</strong><small>Yanıt aralığından sonra yardım alabilirim.</small><span>4 saniye sabit bekleme süreli öğretim prototipi</span></button>
+          </div>
+          <div class="method-confirm" id="methodConfirm" hidden></div>
+          <button class="primary-button" id="methodContinue" type="button" disabled>Ana menüye geç</button>
+        </div>
+      </section>
+
+      <section class="screen platform-screen" data-screen="platform" aria-labelledby="platformTitle">
+        <div class="platform-shell">
+          <div class="platform-heading"><div><span class="step-label">Öğrenme alanı</span><h2 id="platformTitle">Çalışmalar</h2><p>Bir beceri alanına dokunarak içine girin.</p></div><div class="platform-actions"><button class="secondary-button" id="editMethod" type="button">Yöntem seçimini düzenle</button><button class="secondary-button" id="editAssessment" type="button">Kaba değerlendirmeyi düzenle</button></div></div>
+          <div class="category-grid" aria-label="Beceri kategorileri">
+            <button type="button" class="category-card" data-category="cognitive"><span>🧠</span><strong>Bilişsel Beceriler</strong><small id="cognitiveCount">0 çalışma</small><b>İçine gir →</b></button>
+            <button type="button" class="category-card" data-category="language"><span>💬</span><strong>Dil ve İletişim</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
+            <button type="button" class="category-card" data-category="social"><span>🤝</span><strong>Sosyal Beceriler</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
+            <button type="button" class="category-card" data-category="daily"><span>🏠</span><strong>Günlük Yaşam</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen category-screen" data-screen="category" aria-labelledby="categoryTitle">
+        <div class="platform-shell">
+          <button class="category-back" id="categoryBack" type="button">← Ana menüye dön</button>
+          <section class="skill-panel" aria-live="polite"><div class="skill-panel-head"><div><span id="categoryKicker">Bilişsel Beceriler</span><h2 id="categoryTitle">Çalışılacak beceriler</h2></div></div><div id="skillList" class="skill-list"></div></section>
+        </div>
+      </section>
+
+      <section class="screen game-screen" data-screen="activity" aria-labelledby="gameTitle">
+        <div class="game-toolbar"><div><span class="step-label">Bilişsel beceriler · Renk eşleme</span><h2 id="gameTitle">Aynı renkte olanı seç</h2></div><div class="trial-progress"><span id="trialLabel">1 / 5</span><div class="progress-track"><span id="progressFill"></span></div></div></div>
+        <div class="game-stage"><div class="target-area"><span>Örnek</span><div class="shape-card target" id="targetCard"></div></div><div class="answer-area" id="answerArea" aria-label="Cevap seçenekleri"></div><div class="pair-area" id="pairArea" hidden aria-label="Eşleme masası"></div><div class="feedback" id="feedback" role="status" aria-live="polite"></div><button class="help-button" id="helpButton" type="button">💡 Yardım göster</button></div>
+        <div class="always-actions"><button id="pauseButton" type="button">⏸ Mola</button><button id="finishButton" type="button">■ Bitir ve ana menüye dön</button></div>
+      </section>
+
+      <section class="screen" data-screen="endgame" aria-labelledby="endgameTitle">
+        <div class="content-card narrow center-text"><span class="step-label">Bölüm sonu oyunu</span><h2 id="endgameTitle">Renk baloncuklarını patlat!</h2><p>Üç baloncuğa dokun.</p><div class="bubble-zone" id="bubbleZone"><button aria-label="Sarı balon">●</button><button aria-label="Mor balon">●</button><button aria-label="Turkuaz balon">●</button></div><p id="bubbleStatus" class="bubble-status" aria-live="polite">3 baloncuk kaldı</p><button class="primary-button" id="endgameContinue" type="button" disabled>Sonucu gör</button></div>
+      </section>
+
+      <section class="screen" data-screen="summary" aria-labelledby="summaryTitle">
+        <div class="content-card wide"><span class="step-label">Çalışma özeti</span><h2 id="summaryTitle">Beş deneme tamamlandı</h2><div class="summary-grid"><article><strong id="independentCount">0</strong><span>Bağımsız doğru</span></article><article><strong id="promptedCount">0</strong><span>Yardımla doğru</span></article><article><strong id="incorrectCount">0</strong><span>Yanlış deneme</span></article></div><div class="generalization"><span>🏠</span><div><h3>Evde genelleme</h3><p>Kırmızı ve mavi iki gerçek nesne arasından kırmızı olanı eşlemesini isteyin.</p></div></div><button class="primary-button" id="summaryHome" type="button">Ana menüye dön</button></div>
+      </section>
+
+      <section class="modal" id="pauseModal" hidden aria-modal="true" role="dialog" aria-labelledby="pauseTitle"><div class="modal-card"><div class="pause-illustration">🌤️</div><h2 id="pauseTitle">Biraz dinlenelim</h2><p>Hazır olduğunda devam edebilirsin.</p><button class="primary-button" id="resumeButton" type="button">Devam et</button><button class="text-button danger" id="pauseFinish" type="button">Bitir ve ana menüye dön</button></div></section>
+    </main>
+
+    <button class="floating-buddy" id="floatingBuddy" type="button" hidden aria-label="Oyun arkadaşını konuştur ve hareket ettir"><span class="mascot-crop" data-mascot-display data-sprite="bear"><img src="./assets/oyun-arkadaslari-v2.png" alt=""><span class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></span></span></button>
+  </div>
+  <audio id="backgroundMusic" src="./assets/dijital-ozel-egitim-menu-muzigi.mp3" preload="auto" loop></audio>
+  <script src="./pofidik-viewer.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

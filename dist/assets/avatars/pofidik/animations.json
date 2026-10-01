@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "character": "pofidik",
+  "model": "model.glb",
+  "sourceVersion": "v6",
+  "excludedAnimations": [
+    "wave_left",
+    "wave_right"
+  ],
+  "clips": [
+    {
+      "name": "breathe",
+      "label": "Hafif nefes alma",
+      "duration": 4
+    },
+    {
+      "name": "nod_yes",
+      "label": "Kafa sallama — evet",
+      "duration": 3
+    },
+    {
+      "name": "shake_no",
+      "label": "Kafa sallama — hayır",
+      "duration": 3
+    },
+    {
+      "name": "look_left",
+      "label": "Sola bakma",
+      "duration": 3
+    },
+    {
+      "name": "look_right",
+      "label": "Sağa bakma",
+      "duration": 3
+    },
+    {
+      "name": "look_up",
+      "label": "Yukarı bakma",
+      "duration": 3
+    },
+    {
+      "name": "curious",
+      "label": "Merakla baş eğme",
+      "duration": 3
+    },
+    {
+      "name": "ears",
+      "label": "Yumuşak kulak tepkisi",
+      "duration": 3
+    },
+    {
+      "name": "listen",
+      "label": "Dinleme tepkisi",
+      "duration": 3
+    },
+    {
+      "name": "bow",
+      "label": "Teşekkür selamı",
+      "duration": 3
+    },
+    {
+      "name": "sway",
+      "label": "Neşeli sağa sola salınma",
+      "duration": 4
+    },
+    {
+      "name": "stretch",
+      "label": "Yumuşak gerinme",
+      "duration": 5
+    },
+    {
+      "name": "blink",
+      "label": "Göz kırpma",
+      "duration": 3
+    },
+    {
+      "name": "talk",
+      "label": "Konuşma — ağız hareketi",
+      "duration": 4
+    }
+  ],
+  "bytes": 104784272,
+  "sha256": "e18e0bd4f0fab2e89c843fed8513bcc18042aae2fa12683c8c697158b1620e47",
+  "limitations": [
+    "The two hand-wave greetings are intentionally excluded.",
+    "Retained clips are the existing V6 animations, not newly improved face animations.",
+    "High-detail model; first load is approximately 100 MB and is not optimized for low-power devices."
+  ]
+}

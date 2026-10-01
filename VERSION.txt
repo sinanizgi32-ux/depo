@@ -1,0 +1,5 @@
+Dijital Özel Eğitim
+Temel sürüm: 0.4.0
+Güncel sürüm: 0.8.0
+Tarih: 1 Ekim 2026
+Durum: 0.8.0 — 0.7.1'in özellikleri korundu. Mimo yerine Pofidik 3B eklendi. Sağ/sol el selamı hariç 14 animasyon, şeffaf sağ-alt oyun arkadaşı ve taşınabilir yerel sunucu eklendi. Onaylı temel model saklandı.
