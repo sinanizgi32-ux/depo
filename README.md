@@ -6,6 +6,8 @@ Windows'ta tüm klasörü indirin/çıkartın ve **Baslat.cmd** dosyasını aç�
 
 Pofidik artık seçilebilir, şeffaf 3B oyun arkadaşıdır. Sağ ve sol el selamı çıkarılmıştır; kalan 14 animasyon GLB içinde saklanır. Konuşma hareketi tarayıcı sesinin başladığı/bittiği anlara bağlanır; fonem düzeyinde dudak eşlemesi değildir. Diğer üç karakterin mevcut görselleri korunmuştur.
 
+Pofidik’i sağ-alt köşeden sol fare tuşu veya parmak basılı sürüklemeyle ekran içinde taşıyabilirsin. Satın al ekranında yalnızca aylık 300 ₺ Premium planı bulunur; ödeme ekranı bağlantısı hazırlanmıştır, gerçek ödeme sağlayıcısı henüz bağlanmamıştır.
+
 - Başka bilgisayara taşıma ve GitHub adımları: [README-OTHER-COMPUTER.md](README-OTHER-COMPUTER.md)
 - Güncel kararlar: [PROJECT_DECISIONS.md](PROJECT_DECISIONS.md)
 - Kontrol: `node scripts/check-project.mjs`
