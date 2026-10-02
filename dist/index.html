@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0759e6">
-  <meta name="description" content="Eşleme ve renk becerileri için Dijital Özel Eğitim uygulaması.">
+  <meta name="description" content="Eşleme, renk ve örüntü becerileri için Dijital Özel Eğitim uygulaması.">
   <title>Dijital Özel Eğitim</title>
   <link rel="icon" type="image/png" href="./assets/dijital-ozel-egitim-logo-tablet.png">
   <link rel="stylesheet" href="./styles.css">
@@ -149,6 +149,7 @@
             <article class="assessment-row" data-skill="same-red"><div><strong>Aynı tipte ve aynı renkte olanları eşler</strong><small>İki aynı kırmızı kartı eşler.</small></div><div class="status-choice" role="radiogroup" aria-label="Aynı tip aynı renk eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
             <article class="assessment-row featured" data-skill="two-color"><div><strong>İki renk arasından aynı rengi eşler</strong><small>Kırmızı ve mavi seçenekleri arasından kırmızıyı eşler.</small></div><div class="status-choice" role="radiogroup" aria-label="İki renk arasından eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
             <article class="assessment-row" data-skill="spoken-color"><div><strong>Söylenen rengi gösterir</strong><small>“Kırmızıyı göster” yönergesine uygun rengi seçer.</small></div><div class="status-choice" role="radiogroup" aria-label="Söylenen rengi gösterme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
+            <article class="assessment-row" data-skill="pattern"><div><strong>Örüntüyü sürdürür</strong><small>Sıradaki nesnenin örüntüye göre hangisi olduğunu seçenekler arasından bulur.</small></div><div class="status-choice" role="radiogroup" aria-label="Örüntü sürdürme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
           </div>
           <p id="assessmentNotice" class="form-notice" role="status">Öğrencinin yapamadığı becerilerle ilgili etkinlikler açılır; yapabildikleri sistemde açılmaz.</p>
           <button class="primary-button" id="assessmentContinue" type="button">Yöntem seçimine geç</button>
@@ -188,9 +189,16 @@
         </div>
       </section>
 
+      <section class="screen category-screen" data-screen="pattern-levels" aria-labelledby="patternLevelsTitle">
+        <div class="platform-shell">
+          <button class="category-back" id="patternLevelsBack" type="button">← Becerilere dön</button>
+          <section class="skill-panel"><div class="skill-panel-head"><div><span>Bilişsel beceriler · Örüntü</span><h2 id="patternLevelsTitle">Seviyeler</h2></div></div><p class="section-intro">Her seviyede 5 farklı deneme vardır. Seviyeler en kolaydan en zora doğru sıralanmıştır.</p><div id="levelList" class="level-list"></div></section>
+        </div>
+      </section>
+
       <section class="screen game-screen" data-screen="activity" aria-labelledby="gameTitle">
         <div class="game-toolbar"><div><span class="step-label">Bilişsel beceriler · Renk eşleme</span><h2 id="gameTitle">Aynı renkte olanı seç</h2></div><div class="trial-progress"><span id="trialLabel">1 / 5</span><div class="progress-track"><span id="progressFill"></span></div></div></div>
-        <div class="game-stage"><div class="target-area"><span>Örnek</span><div class="shape-card target" id="targetCard"></div></div><div class="answer-area" id="answerArea" aria-label="Cevap seçenekleri"></div><div class="pair-area" id="pairArea" hidden aria-label="Eşleme masası"></div><div class="feedback" id="feedback" role="status" aria-live="polite"></div><button class="help-button" id="helpButton" type="button">💡 Yardım göster</button></div>
+        <div class="game-stage"><div class="target-area"><span>Örnek</span><div class="shape-card target" id="targetCard"></div></div><div class="answer-area" id="answerArea" aria-label="Cevap seçenekleri"></div><div class="pair-area" id="pairArea" hidden aria-label="Eşleme masası"></div><div class="pattern-area" id="patternArea" hidden aria-label="Örüntü sırası"></div><div class="feedback" id="feedback" role="status" aria-live="polite"></div><button class="help-button" id="helpButton" type="button">💡 Yardım göster</button></div>
         <div class="always-actions"><button id="pauseButton" type="button">⏸ Mola</button><button id="finishButton" type="button">■ Bitir ve ana menüye dön</button></div>
       </section>
 
@@ -199,7 +207,7 @@
       </section>
 
       <section class="screen" data-screen="summary" aria-labelledby="summaryTitle">
-        <div class="content-card wide"><span class="step-label">Çalışma özeti</span><h2 id="summaryTitle">Beş deneme tamamlandı</h2><div class="summary-grid"><article><strong id="independentCount">0</strong><span>Bağımsız doğru</span></article><article><strong id="promptedCount">0</strong><span>Yardımla doğru</span></article><article><strong id="incorrectCount">0</strong><span>Yanlış deneme</span></article></div><div class="generalization"><span>🏠</span><div><h3>Evde genelleme</h3><p>Kırmızı ve mavi iki gerçek nesne arasından kırmızı olanı eşlemesini isteyin.</p></div></div><button class="primary-button" id="summaryHome" type="button">Ana menüye dön</button></div>
+        <div class="content-card wide"><span class="step-label">Çalışma özeti</span><h2 id="summaryTitle">Beş deneme tamamlandı</h2><div class="summary-grid"><article><strong id="independentCount">0</strong><span>Bağımsız doğru</span></article><article><strong id="promptedCount">0</strong><span>Yardımla doğru</span></article><article><strong id="incorrectCount">0</strong><span>Yanlış deneme</span></article></div><div class="generalization"><span>🏠</span><div><h3>Evde genelleme</h3><p id="generalizationText">Kırmızı ve mavi iki gerçek nesne arasından kırmızı olanı eşlemesini isteyin.</p></div></div><button class="primary-button" id="summaryHome" type="button">Ana menüye dön</button></div>
       </section>
 
       <section class="modal" id="pauseModal" hidden aria-modal="true" role="dialog" aria-labelledby="pauseTitle"><div class="modal-card"><div class="pause-illustration">🌤️</div><h2 id="pauseTitle">Biraz dinlenelim</h2><p>Hazır olduğunda devam edebilirsin.</p><button class="primary-button" id="resumeButton" type="button">Devam et</button><button class="text-button danger" id="pauseFinish" type="button">Bitir ve ana menüye dön</button></div></section>

@@ -1,6 +1,6 @@
 # Dijital Özel Eğitim — Kalıcı Proje Kararları
 
-Son güncelleme: 29 Eylül 2026 — Sürüm 0.7.1
+Son güncelleme: 2 Ekim 2026 — Sürüm 0.9.1
 
 Bu dosya her yeni düzenlemede güncellenir. Yeni sürümler mevcut kararların üzerine yazılır; eski akış yanlışlıkla yeniden kurulmaz.
 
@@ -134,3 +134,31 @@ Kullanıcının son verdiği 0.7.1 yedeği güncel tabandır; 0.4.0 tarihsel ilk
 - `Baslat.cmd` ve Node yerel sunucusu eklendi. Hazır dosyalarla internetten bağımsız çalışma mümkündür; ses motoru cihazdaki Türkçe sese bağlıdır. Model yüksek ayrıntılıdır (yaklaşık 105 MB); mobil optimizasyon yapılmamıştır.
 - GitHub hedefi `sinanizgi32-ux/depo`. Kullanıcı deposunun herkese açık olduğunu öğrendikten sonra yalnızca kaynak/karakter dosyalarının açık depoya yüklenmesini onayladı. Öğrenci/profil verileri tarayıcıda kalır; depo dosya eşitlemesi sağlar, öğrenci verisi eşitlemesi sağlamaz.
 - GitHub'a yükleme bir web yayını değildir. Başka bilgisayarda proje indirilip yerel klasör olarak bağlanmalı; `AGENTS.md` yeni çalışmalara kısa bağlam verir.
+
+## 0.9.0 — Örüntü çalışması (2 Ekim 2026)
+
+- Bilişsel Beceriler kategorisine üçüncü oynanabilir çalışma olarak “Örüntü: boş kutuya hangisi gelir?” eklendi.
+- Çalışma 15 seviyeden oluşur ve en basitten giderek zorlaşır: seviye 1 `A-B-A-B → ?`, ilerleyen seviyelerde `A-B-A-B-A-B`, `A-A-B-B`, `A-B-B`, `A-B-C`, `A-B-B-A-B-B`, `A-A-B-B-C-C`, uzun `A-B-C`, yalnızca renk örüntüsü, `A-B-A-C`, büyük-küçük boyut örüntüsü, `A-B-C-B`, döner yön (ok) örüntüsü, miktar örüntüsü (1-2-3 şeker) ve son seviyede iki özellikli (renk+şekil: kırmızı yuvarlak / mavi kare) örüntü bulunur.
+- Her seviyede nesne dizisinin sonunda soru işaretli kesik çerçeveli boş kutu gösterilir. Kutunun üstünde ve altında birer seçenek kartı bulunur; seçeneklerin üst/alt konumu her denemede rastgele karışır.
+- Ekranın başında yönlendirici sunum yapılır: “Sıraya bakalım. Boş kutuya hangisi gelmeli? Doğru olanı seç.” denilir.
+- Yöntem prototipleri geçerlidir: eşzamanlı öğretimde (“Hemen yardım et”) ipucu deneme başında, 4 saniye sabit beklemede (“Önce ben deneyeyim”) yanıt aralığı sonrasında verilir. İpucunda doğru seçenek sarı çerçeve ve nabız animasyonuyla belirgin biçimde yanar; oyun arkadaşı “Boş kutuya … gelmeli. Yanan seçenek doğru cevap.” der. Yanlış seçimden sonra da ipucu verilir. İpucuyla tamamlanan denemeler bağımsız doğru sayılmaz.
+- Mola ekranından dönünce 4 saniye sabit bekleme yöntemindeki sayaç kaldığı yerden yeniden kurulur; “💡 Yardım göster” düğmesi örüntüde de aynı ipucunu verir.
+- Kaba değerlendirme listesine “Örüntüyü sürdürür” maddesi eklendi: “Yapıyor / Henüz yapamıyor / Gözlenmedi” seçenekleriyle bilgi alma amaçlı işaretlenir. “Yapıyor” işaretlenirse örüntü çalışması listede kapanır; diğer işaretlerde açık kalır.
+- Çalışma özeti örüntüye uyarlandı: başlıkta deneme sayısı (15) gösterilir, “Evde genelleme” önerisi örüntü kurma etkinliği verir. Bölüm sonu baloncuk oyunu ve pekiştireç havuzu diğer çalışmalardaki gibidir.
+- Dosya değişiklikleri: `dist/index.html` (değerlendirme satırı, örüntü alanı, genelleme metni), `dist/app.js` (patternTrials verisi ve örüntü akışı), `dist/styles.css` (örüntü kartları ve ipucu stili).
+
+## 0.9.1 — Örüntü seviye listesi ve 4 saniye sistematiği (2 Ekim 2026)
+
+- Örüntü çalışması artık tek seferde 15 deneme olarak akmaz. “Çalışılacak beceriler” listesinde örüntü satırındaki düğme “Seviyeleri aç”tır ve ayrı bir seviye ekranı açılır (Seviye 1 → Seviye 15). Her seviyede 5 farklı deneme vardır; nesneler denemeden denemeye değişir, zorluk seviye numarasına göre artar. Etkinlik araç çubuğunda “Örüntü · Seviye N” etiketi görünür; özet ekranında “Seviye N · 5 deneme tamamlandı” yazılır.
+- Seviye verisi `patternLevels` yapısında tutulur: her seviyede `title`, `tag` ve 5 `examples` (`shown`, `answer`, `decoy`) bulunur. 15 seviye toplam 75 farklı deneme içerir. Yeni emoji/nesne öğeleri ve sarı, yeşil, mor şekil renk sınıfları eklendi.
+- 4 saniye sabit bekleme prototipi örüntüde sistematik öğretime bağlandı: yönlendirici sunumdan sonra 4 saniye beklenir. Bu süre içinde doğru seçim bağımsız doğru sayılır ve etkili pekiştirme alınır (ipucu verilmez). Süre içinde yanlış seçimde “Hayır, o değil. Boş kutuya … gelmeli.” düzeltmesi söylenir, doğru seçenek belirgin biçimde yanar ve deneme ilerlemez; çocuğun doğruyu seçmesi beklenir, bu durumda deneme yardımla doğru sayılır. Süre içinde hiç yanıt verilmezse doğru seçenek aynı biçimde gösterilir.
+- Eşzamanlı öğretim prototipi örüntüde aynı kalır: ipucu deneme başında verilir, yanlış seçimde “Birlikte bir daha bakalım.” denir ve ipucu korunur. İki renk ve aynı tip aynı renk eşleme etkinliklerinin ipucu davranışı bu sürümde değişmedi.
+- “💡 Yardım göster” düğmesi ve moladan dönüşteki sayaç kurulumu örüntü için yeni `revealPatternHint` çekirdeği üzerinden çalışır; davranış değişmez.
+- Dosya değişiklikleri: `dist/index.html` (seviye ekranı bölümü), `dist/app.js` (patternLevels verisi, seviye akışı, 4 saniye sistematiği), `dist/styles.css` (seviye kartı ızgarası, yeni şekil renk sınıfları).
+
+## 0.9.2 — Yerel Qoder çalışmasını taşıma (2 Ekim 2026)
+
+- Downloads/depo-main içindeki 0.9.1 çalışması GitHub 0.8.1 tabanına aktarıldı. 15 seviye ve 75 deneme korundu.
+- Seviye 7 son denemede kullanılan fakat tanımlanmayan yesilKare eklendi; ilgili denemenin açılmasını engelleyen hata giderildi.
+- Sürüm bilgileri eşitlendi. scripts/check-pattern.mjs ile tüm denemelerin öğeleri, bağımsız doğru, yanlış sonrası düzeltme, 4 saniye ipucu, eşzamanlı ipucu ve son deneme geçişi kontrol edilir. npm test iki kontrolü de çalıştırır.
+- Öğrenci verileri ve tarayıcı profilleri taşınmadı; yalnızca proje dosyaları aktarıldı.

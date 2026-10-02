@@ -1,6 +1,6 @@
 # Dijital Özel Eğitim
 
-Güncel sürüm **0.8.0**, kullanıcının verdiği 0.7.1 proje yedeğinin üzerine hazırlanmıştır.
+Güncel sürüm **0.9.2**. Qoder'da bilgisayarda geliştirilen 0.9.1 çalışması korunmuştur: örüntü etkinliği 15 seviye ve her seviyede 5 deneme içerir. Eşzamanlı ipucu ve 4 saniye sabit bekleme akışları bağlıdır. Eksik yeşil kare tanımı düzeltilmiştir.
 
 Windows'ta tüm klasörü indirin/çıkartın ve **Baslat.cmd** dosyasını açın. Ücretsiz Node.js 22 veya üstü gerekir. Uygulamayı çalıştırmak için `npm install` gerekmez. macOS/Linux'ta proje klasöründe `node scripts/serve.mjs` çalıştırın; `http://127.0.0.1:4180/` adresini açın.
 

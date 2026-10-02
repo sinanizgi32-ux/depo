@@ -11,7 +11,8 @@
     'object-match': { title: 'Aynı nesneleri eşle', description: 'Aynı nesneyi seçenekler arasından bulma çalışması.', icon: '🧩' },
     'same-red': { title: 'Aynı tip ve aynı renk kartları eşle', description: 'Aynı tip iki kırmızı kartı dağınık kartlar arasından bulup eşleme. 5 deneme ve bölüm sonu oyunu.', icon: '🟥', playable: true },
     'two-color': { title: 'İki renk arasından doğru olanı eşle', description: 'Kırmızı ve mavi arasından kırmızı olanı eşle. 5 deneme ve bölüm sonu oyunu.', icon: '🎨', playable: true },
-    'spoken-color': { title: 'Söylenen rengi göster', description: 'Sözel yönergeye göre doğru rengi seçme çalışması.', icon: '👆' }
+    'spoken-color': { title: 'Söylenen rengi göster', description: 'Sözel yönergeye göre doğru rengi seçme çalışması.', icon: '👆' },
+    'pattern': { title: 'Örüntü: boş kutuya hangisi gelir?', description: 'Örüntüdeki sırada bir sonraki nesneyi bulma. 15 seviye, giderek zorlaşan örüntüler.', icon: '🔁', playable: true }
   };
   const mascots = {
     pofidik: { name: 'Pofidik', fullName: 'Pofidik Ayı', sprite: 'bear', voiceKind: 'male', pitch: 1, rate: 1, voiceIndex: 0, model: 'pofidik' },
@@ -53,10 +54,204 @@
     { correct: 'flower', decoys: ['diamond', 'circle', 'star', 'square'] },
     { correct: 'square', decoys: ['heart', 'flower', 'circle', 'diamond'] }
   ];
+  const patternCard = (emoji, name, extraClass = '') => ({ name, html: `<i class="pattern-item${extraClass ? ` ${extraClass}` : ''}">${emoji}</i>` });
+  const patternItems = {
+    elma: patternCard('🍎', 'elma'), muz: patternCard('🍌', 'muz'), uzum: patternCard('🍇', 'üzüm'),
+    kopek: patternCard('🐶', 'köpek'), kedi: patternCard('🐱', 'kedi'), tavsan: patternCard('🐰', 'tavşan'),
+    yildiz: patternCard('⭐', 'yıldız'), ay: patternCard('🌙', 'ay'),
+    araba: patternCard('🚗', 'araba'), otobus: patternCard('🚌', 'otobüs'),
+    cilek: patternCard('🍓', 'çilek'),
+    maviKare: patternCard('🟦', 'mavi kare'), sariKare: patternCard('🟨', 'sarı kare'), kirmiziKare: patternCard('🟥', 'kırmızı kare'), yesilKare: patternCard('🟩', 'yeşil kare'),
+    futbol: patternCard('⚽', 'futbol topu'), basket: patternCard('🏀', 'basketbol topu'), tenis: patternCard('🎾', 'tenis topu'),
+    cicek: patternCard('🌸', 'pembe çiçek'), aycicegi: patternCard('🌻', 'ayçiçeği'), lale: patternCard('🌷', 'lale'),
+    kirmiziDaire: patternCard('🔴', 'kırmızı yuvarlak'), maviDaire: patternCard('🔵', 'mavi yuvarlak'), yesilDaire: patternCard('🟢', 'yeşil yuvarlak'),
+    fil: patternCard('🐘', 'fil'), aslan: patternCard('🦁', 'aslan'), kaplan: patternCard('🐯', 'kaplan'),
+    kucukTop: patternCard('⚽', 'küçük top', 'is-small'), buyukTop: patternCard('⚽', 'büyük top', 'is-big'),
+    roket: patternCard('🚀', 'roket'), uzay: patternCard('🛸', 'uzay gemisi'), tren: patternCard('🚂', 'tren'),
+    yukari: patternCard('⬆️', 'yukarı ok'), sag: patternCard('➡️', 'sağ ok'), asagi: patternCard('⬇️', 'aşağı ok'), sol: patternCard('⬅️', 'sol ok'),
+    birSeker: patternCard('🍬', 'bir şeker'), ikiSeker: patternCard('🍬🍬', 'iki şeker'), ucSeker: patternCard('🍬🍬🍬', 'üç şeker'),
+    kirmiziYuvarlakSekil: { name: 'kırmızı yuvarlak', html: shapeMarkup('circle', 'red') },
+    maviKareSekil: { name: 'mavi kare', html: shapeMarkup('square', 'blue-shape') },
+    kirmiziKareSekil: { name: 'kırmızı kare', html: shapeMarkup('square', 'red') },
+    portakal: patternCard('🍊', 'portakal'), kiraz: patternCard('🍒', 'kiraz'),
+    kus: patternCard('🐦', 'kuş'), balik: patternCard('🐟', 'balık'),
+    ucak: patternCard('✈️', 'uçak'), gemi: patternCard('🚢', 'gemi'),
+    gunes: patternCard('☀️', 'güneş'), bulut: patternCard('☁️', 'bulut'),
+    papatya: patternCard('🌼', 'papatya'), gul: patternCard('🌹', 'gül'), menekse: patternCard('🪻', 'mor çiçek'),
+    voleybol: patternCard('🏐', 'voleybol'),
+    sariDaire: patternCard('🟡', 'sarı yuvarlak'), morDaire: patternCard('🟣', 'mor yuvarlak'), turuncuDaire: patternCard('🟠', 'turuncu yuvarlak'),
+    kucukBalon: patternCard('🎈', 'küçük balon', 'is-small'), buyukBalon: patternCard('🎈', 'büyük balon', 'is-big'),
+    kucukYildiz: patternCard('⭐', 'küçük yıldız', 'is-small'), buyukYildiz: patternCard('⭐', 'büyük yıldız', 'is-big'),
+    kucukKalp: patternCard('❤️', 'küçük kalp', 'is-small'), buyukKalp: patternCard('❤️', 'büyük kalp', 'is-big'),
+    kucukCicek: patternCard('🌸', 'küçük çiçek', 'is-small'), buyukCicek: patternCard('🌸', 'büyük çiçek', 'is-big'),
+    birElma: patternCard('🍎', 'bir elma'), ikiElma: patternCard('🍎🍎', 'iki elma'), ucElma: patternCard('🍎🍎🍎', 'üç elma'),
+    birTop: patternCard('⚽', 'bir top'), ikiTop: patternCard('⚽⚽', 'iki top'), ucTop: patternCard('⚽⚽⚽', 'üç top'),
+    birYildiz: patternCard('⭐', 'bir yıldız'), ikiYildiz: patternCard('⭐⭐', 'iki yıldız'), ucYildiz: patternCard('⭐⭐⭐', 'üç yıldız'),
+    birKalp: patternCard('❤️', 'bir kalp'), ikiKalp: patternCard('❤️❤️', 'iki kalp'), ucKalp: patternCard('❤️❤️❤️', 'üç kalp'),
+    sariYuvarlakSekil: { name: 'sarı yuvarlak', html: shapeMarkup('circle', 'yellow') },
+    morKareSekil: { name: 'mor kare', html: shapeMarkup('square', 'purple') },
+    yesilUcgenSekil: { name: 'yeşil üçgen', html: shapeMarkup('triangle', 'green') },
+    maviUcgenSekil: { name: 'mavi üçgen', html: shapeMarkup('triangle', 'blue-shape') },
+    sariKareSekil: { name: 'sarı kare', html: shapeMarkup('square', 'yellow') },
+    yesilYuvarlakSekil: { name: 'yeşil yuvarlak', html: shapeMarkup('circle', 'green') }
+  };
+  const patternLevels = [
+    {
+      title: 'İki nesne sırası', tag: 'A-B-A-B',
+      examples: [
+        { shown: ['elma', 'muz', 'elma', 'muz'], answer: 'elma', decoy: 'uzum' },
+        { shown: ['kopek', 'kedi', 'kopek', 'kedi'], answer: 'kopek', decoy: 'tavsan' },
+        { shown: ['araba', 'otobus', 'araba', 'otobus'], answer: 'araba', decoy: 'tren' },
+        { shown: ['yildiz', 'ay', 'yildiz', 'ay'], answer: 'yildiz', decoy: 'gunes' },
+        { shown: ['futbol', 'basket', 'futbol', 'basket'], answer: 'futbol', decoy: 'tenis' }
+      ]
+    },
+    {
+      title: 'Uzun iki nesne sırası', tag: 'A-B-A-B-A',
+      examples: [
+        { shown: ['cilek', 'portakal', 'cilek', 'portakal', 'cilek'], answer: 'portakal', decoy: 'kiraz' },
+        { shown: ['kus', 'balik', 'kus', 'balik', 'kus'], answer: 'balik', decoy: 'kedi' },
+        { shown: ['tren', 'ucak', 'tren', 'ucak', 'tren'], answer: 'ucak', decoy: 'gemi' },
+        { shown: ['gul', 'papatya', 'gul', 'papatya', 'gul'], answer: 'papatya', decoy: 'menekse' },
+        { shown: ['maviDaire', 'kirmiziDaire', 'maviDaire', 'kirmiziDaire', 'maviDaire'], answer: 'kirmiziDaire', decoy: 'yesilDaire' }
+      ]
+    },
+    {
+      title: 'İkili gruplar', tag: 'A-A-B-B',
+      examples: [
+        { shown: ['kopek', 'kopek', 'kedi', 'kedi'], answer: 'kopek', decoy: 'tavsan' },
+        { shown: ['elma', 'elma', 'muz', 'muz'], answer: 'elma', decoy: 'cilek' },
+        { shown: ['araba', 'araba', 'otobus', 'otobus'], answer: 'araba', decoy: 'tren' },
+        { shown: ['cicek', 'cicek', 'aycicegi', 'aycicegi'], answer: 'cicek', decoy: 'lale' },
+        { shown: ['sariKare', 'sariKare', 'kirmiziKare', 'kirmiziKare'], answer: 'sariKare', decoy: 'maviKare' }
+      ]
+    },
+    {
+      title: 'Tek-çift sırası', tag: 'A-B-B-A-B',
+      examples: [
+        { shown: ['elma', 'muz', 'muz', 'elma', 'muz'], answer: 'muz', decoy: 'uzum' },
+        { shown: ['kopek', 'kedi', 'kedi', 'kopek', 'kedi'], answer: 'kedi', decoy: 'tavsan' },
+        { shown: ['araba', 'otobus', 'otobus', 'araba', 'otobus'], answer: 'otobus', decoy: 'tren' },
+        { shown: ['yildiz', 'ay', 'ay', 'yildiz', 'ay'], answer: 'ay', decoy: 'gunes' },
+        { shown: ['futbol', 'basket', 'basket', 'futbol', 'basket'], answer: 'basket', decoy: 'tenis' }
+      ]
+    },
+    {
+      title: 'Üçlü sıra', tag: 'A-B-C-A-B',
+      examples: [
+        { shown: ['cilek', 'elma', 'portakal', 'cilek', 'elma'], answer: 'portakal', decoy: 'kiraz' },
+        { shown: ['kopek', 'kedi', 'tavsan', 'kopek', 'kedi'], answer: 'tavsan', decoy: 'kus' },
+        { shown: ['araba', 'otobus', 'tren', 'araba', 'otobus'], answer: 'tren', decoy: 'ucak' },
+        { shown: ['cicek', 'aycicegi', 'lale', 'cicek', 'aycicegi'], answer: 'lale', decoy: 'papatya' },
+        { shown: ['kirmiziDaire', 'maviDaire', 'sariDaire', 'kirmiziDaire', 'maviDaire'], answer: 'sariDaire', decoy: 'yesilDaire' }
+      ]
+    },
+    {
+      title: 'Blok sırası', tag: 'A-B-B-A-B-B',
+      examples: [
+        { shown: ['maviKare', 'sariKare', 'sariKare', 'maviKare', 'sariKare', 'sariKare'], answer: 'maviKare', decoy: 'kirmiziKare' },
+        { shown: ['elma', 'muz', 'muz', 'elma', 'muz', 'muz'], answer: 'elma', decoy: 'cilek' },
+        { shown: ['kopek', 'kedi', 'kedi', 'kopek', 'kedi', 'kedi'], answer: 'kopek', decoy: 'tavsan' },
+        { shown: ['araba', 'otobus', 'otobus', 'araba', 'otobus', 'otobus'], answer: 'araba', decoy: 'tren' },
+        { shown: ['cicek', 'lale', 'lale', 'cicek', 'lale', 'lale'], answer: 'cicek', decoy: 'papatya' }
+      ]
+    },
+    {
+      title: 'Üçlü gruplar', tag: 'A-A-B-B-C-C',
+      examples: [
+        { shown: ['futbol', 'futbol', 'basket', 'basket', 'tenis', 'tenis'], answer: 'futbol', decoy: 'voleybol' },
+        { shown: ['kopek', 'kopek', 'kedi', 'kedi', 'tavsan', 'tavsan'], answer: 'kopek', decoy: 'kus' },
+        { shown: ['elma', 'elma', 'muz', 'muz', 'cilek', 'cilek'], answer: 'elma', decoy: 'portakal' },
+        { shown: ['araba', 'araba', 'otobus', 'otobus', 'tren', 'tren'], answer: 'araba', decoy: 'gemi' },
+        { shown: ['maviKare', 'maviKare', 'sariKare', 'sariKare', 'kirmiziKare', 'kirmiziKare'], answer: 'maviKare', decoy: 'yesilKare' }
+      ]
+    },
+    {
+      title: 'Uzun üçlü sıra', tag: 'A-B-C-A-B-C-A',
+      examples: [
+        { shown: ['cicek', 'aycicegi', 'lale', 'cicek', 'aycicegi', 'lale', 'cicek'], answer: 'aycicegi', decoy: 'papatya' },
+        { shown: ['kopek', 'kedi', 'tavsan', 'kopek', 'kedi', 'tavsan', 'kopek'], answer: 'kedi', decoy: 'balik' },
+        { shown: ['elma', 'muz', 'cilek', 'elma', 'muz', 'cilek', 'elma'], answer: 'muz', decoy: 'uzum' },
+        { shown: ['araba', 'tren', 'ucak', 'araba', 'tren', 'ucak', 'araba'], answer: 'tren', decoy: 'gemi' },
+        { shown: ['yildiz', 'ay', 'gunes', 'yildiz', 'ay', 'gunes', 'yildiz'], answer: 'ay', decoy: 'bulut' }
+      ]
+    },
+    {
+      title: 'Renk sırası', tag: '🔴 🔵 🔴 🔵',
+      examples: [
+        { shown: ['kirmiziDaire', 'maviDaire', 'kirmiziDaire', 'maviDaire', 'kirmiziDaire'], answer: 'maviDaire', decoy: 'yesilDaire' },
+        { shown: ['yesilDaire', 'sariDaire', 'yesilDaire', 'sariDaire', 'yesilDaire'], answer: 'sariDaire', decoy: 'morDaire' },
+        { shown: ['turuncuDaire', 'morDaire', 'turuncuDaire', 'morDaire', 'turuncuDaire'], answer: 'morDaire', decoy: 'kirmiziDaire' },
+        { shown: ['kirmiziDaire', 'yesilDaire', 'kirmiziDaire', 'yesilDaire', 'kirmiziDaire'], answer: 'yesilDaire', decoy: 'maviDaire' },
+        { shown: ['maviDaire', 'sariDaire', 'maviDaire', 'sariDaire', 'maviDaire'], answer: 'sariDaire', decoy: 'turuncuDaire' }
+      ]
+    },
+    {
+      title: 'Karışık sıra', tag: 'A-B-A-C-A-B',
+      examples: [
+        { shown: ['fil', 'aslan', 'fil', 'kaplan', 'fil', 'aslan'], answer: 'fil', decoy: 'kaplan' },
+        { shown: ['kopek', 'kedi', 'kopek', 'tavsan', 'kopek', 'kedi'], answer: 'kopek', decoy: 'kus' },
+        { shown: ['elma', 'muz', 'elma', 'cilek', 'elma', 'muz'], answer: 'elma', decoy: 'portakal' },
+        { shown: ['araba', 'otobus', 'araba', 'tren', 'araba', 'otobus'], answer: 'araba', decoy: 'gemi' },
+        { shown: ['yildiz', 'ay', 'yildiz', 'gunes', 'yildiz', 'ay'], answer: 'yildiz', decoy: 'bulut' }
+      ]
+    },
+    {
+      title: 'Büyük-küçük sırası', tag: 'Küçük-büyük',
+      examples: [
+        { shown: ['kucukTop', 'buyukTop', 'kucukTop', 'buyukTop', 'kucukTop'], answer: 'kucukTop', decoy: 'buyukTop' },
+        { shown: ['buyukBalon', 'kucukBalon', 'buyukBalon', 'kucukBalon', 'buyukBalon'], answer: 'kucukBalon', decoy: 'buyukBalon' },
+        { shown: ['kucukYildiz', 'buyukYildiz', 'kucukYildiz', 'buyukYildiz', 'kucukYildiz'], answer: 'kucukYildiz', decoy: 'buyukYildiz' },
+        { shown: ['buyukKalp', 'kucukKalp', 'buyukKalp', 'kucukKalp', 'buyukKalp'], answer: 'kucukKalp', decoy: 'buyukKalp' },
+        { shown: ['kucukCicek', 'buyukCicek', 'kucukCicek', 'buyukCicek', 'kucukCicek'], answer: 'kucukCicek', decoy: 'buyukCicek' }
+      ]
+    },
+    {
+      title: 'Ortalı sıra', tag: 'A-B-C-B-A-B',
+      examples: [
+        { shown: ['roket', 'uzay', 'tren', 'uzay', 'roket', 'uzay', 'tren'], answer: 'uzay', decoy: 'gemi' },
+        { shown: ['elma', 'muz', 'cilek', 'muz', 'elma', 'muz', 'cilek'], answer: 'muz', decoy: 'portakal' },
+        { shown: ['kopek', 'kedi', 'tavsan', 'kedi', 'kopek', 'kedi', 'tavsan'], answer: 'kedi', decoy: 'kus' },
+        { shown: ['araba', 'otobus', 'tren', 'otobus', 'araba', 'otobus', 'tren'], answer: 'otobus', decoy: 'ucak' },
+        { shown: ['yildiz', 'ay', 'gunes', 'ay', 'yildiz', 'ay', 'gunes'], answer: 'ay', decoy: 'bulut' }
+      ]
+    },
+    {
+      title: 'Yön sırası', tag: '⬆️ ➡️ ⬇️ dönüşü',
+      examples: [
+        { shown: ['yukari', 'sag', 'asagi', 'yukari', 'sag'], answer: 'asagi', decoy: 'sol' },
+        { shown: ['sag', 'asagi', 'sol', 'sag', 'asagi'], answer: 'sol', decoy: 'yukari' },
+        { shown: ['asagi', 'sol', 'yukari', 'asagi', 'sol'], answer: 'yukari', decoy: 'sag' },
+        { shown: ['sol', 'yukari', 'sag', 'sol', 'yukari'], answer: 'sag', decoy: 'asagi' },
+        { shown: ['yukari', 'sol', 'asagi', 'yukari', 'sol'], answer: 'asagi', decoy: 'sag' }
+      ]
+    },
+    {
+      title: 'Sayı sırası', tag: '🍬 🍬🍬 🍬🍬🍬',
+      examples: [
+        { shown: ['birSeker', 'ikiSeker', 'ucSeker', 'birSeker', 'ikiSeker'], answer: 'ucSeker', decoy: 'birSeker' },
+        { shown: ['birElma', 'ikiElma', 'ucElma', 'birElma', 'ikiElma'], answer: 'ucElma', decoy: 'birElma' },
+        { shown: ['birTop', 'ikiTop', 'ucTop', 'birTop', 'ikiTop'], answer: 'ucTop', decoy: 'birTop' },
+        { shown: ['birYildiz', 'ikiYildiz', 'ucYildiz', 'birYildiz', 'ikiYildiz'], answer: 'ucYildiz', decoy: 'birYildiz' },
+        { shown: ['birKalp', 'ikiKalp', 'ucKalp', 'birKalp', 'ikiKalp'], answer: 'ucKalp', decoy: 'birKalp' }
+      ]
+    },
+    {
+      title: 'İki özellikli şekiller', tag: 'Renk + şekil',
+      examples: [
+        { shown: ['kirmiziYuvarlakSekil', 'maviKareSekil', 'kirmiziYuvarlakSekil', 'maviKareSekil', 'kirmiziYuvarlakSekil'], answer: 'maviKareSekil', decoy: 'kirmiziKareSekil' },
+        { shown: ['sariYuvarlakSekil', 'morKareSekil', 'sariYuvarlakSekil', 'morKareSekil', 'sariYuvarlakSekil'], answer: 'morKareSekil', decoy: 'sariKareSekil' },
+        { shown: ['yesilUcgenSekil', 'kirmiziYuvarlakSekil', 'yesilUcgenSekil', 'kirmiziYuvarlakSekil', 'yesilUcgenSekil'], answer: 'kirmiziYuvarlakSekil', decoy: 'sariYuvarlakSekil' },
+        { shown: ['maviUcgenSekil', 'sariKareSekil', 'maviUcgenSekil', 'sariKareSekil', 'maviUcgenSekil'], answer: 'sariKareSekil', decoy: 'morKareSekil' },
+        { shown: ['kirmiziKareSekil', 'yesilYuvarlakSekil', 'kirmiziKareSekil', 'yesilYuvarlakSekil', 'kirmiziKareSekil'], answer: 'yesilYuvarlakSekil', decoy: 'sariYuvarlakSekil' }
+      ]
+    }
+  ];
+  const patternExample = () => patternLevels[state.patternLevel - 1].examples[state.trial];
   const state = {
     screen: 'welcome', history: [], profile: { name: '', age: '', diagnosis: '' }, avatar: null,
     buddyActivated: false, assessment: {}, chooser: 'child', method: null, category: 'cognitive', editingAssessment: false,
-    plan: 'free', skill: 'two-color', trial: 0, hadPrompt: false, attempts: 0, pairWrongTries: 0, selectedPair: [], stats: { independent: 0, prompted: 0, incorrect: 0 }
+    plan: 'free', skill: 'two-color', trial: 0, patternLevel: 1, hadPrompt: false, attempts: 0, pairWrongTries: 0, selectedPair: [], stats: { independent: 0, prompted: 0, incorrect: 0 }
   };
   let voices = [];
   let promptTimer = null;
@@ -289,26 +484,41 @@
       const skill = skillNames[key]; const playable = skill.playable;
       const status = state.assessment[key];
       const label = status === 'needs' ? 'Kaba değerlendirme: Henüz yapamıyor' : status === 'unknown' ? 'Kaba değerlendirme: Gözlenmedi' : 'Kaba değerlendirme: İşaretlenmedi';
-      const action = playable ? `<button class="primary-button" type="button" data-start-skill="${key}">5 denemeyi başlat</button>` : '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>';
+      const action = !playable ? '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>' : key === 'pattern'
+        ? `<button class="primary-button" type="button" data-open-levels="${key}">Seviyeleri aç</button>`
+        : `<button class="primary-button" type="button" data-start-skill="${key}">5 denemeyi başlat</button>`;
       return `<article class="skill-item"><span class="skill-icon">${skill.icon}</span><div><strong>${skill.title}</strong><small>${skill.description}</small><span class="skill-status">${label}</span></div>${action}</article>`;
     });
     list.innerHTML = rows.join('');
+  }
+  function renderPatternLevels() {
+    const list = document.getElementById('levelList');
+    list.innerHTML = patternLevels.map((level, index) => `
+      <button class="level-card" type="button" data-level="${index + 1}">
+        <span class="level-number">Seviye ${index + 1}</span>
+        <strong>${level.title}</strong>
+        <small>${level.tag}</small>
+        <em>5 deneme</em>
+      </button>`).join('');
   }
 
   function shapeMarkup(shape, color) { return `<i class="shape ${shape} ${color}" aria-hidden="true"></i>`; }
   function pairCardMarkup(type) { return `<i class="pair-symbol" aria-hidden="true">${pairSymbols[type]}</i>`; }
   function setGameMode(skill) {
     const pairMode = skill === 'same-red';
-    document.querySelector('.target-area').hidden = pairMode;
-    document.getElementById('answerArea').hidden = pairMode;
+    const patternMode = skill === 'pattern';
+    document.querySelector('.target-area').hidden = pairMode || patternMode;
+    document.getElementById('answerArea').hidden = pairMode || patternMode;
     document.getElementById('pairArea').hidden = !pairMode;
-    document.getElementById('gameTitle').textContent = pairMode ? 'Aynı kırmızı kartları eşle' : 'Aynı renkte olanı seç';
-    document.querySelector('.game-toolbar .step-label').textContent = pairMode ? 'Bilişsel beceriler · Aynı tip aynı renk eşleme' : 'Bilişsel beceriler · Renk eşleme';
+    document.getElementById('patternArea').hidden = !patternMode;
+    document.getElementById('gameTitle').textContent = patternMode ? 'Boş kutuya hangisi gelmeli?' : pairMode ? 'Aynı kırmızı kartları eşle' : 'Aynı renkte olanı seç';
+    document.querySelector('.game-toolbar .step-label').textContent = patternMode ? `Bilişsel beceriler · Örüntü · Seviye ${state.patternLevel}` : pairMode ? 'Bilişsel beceriler · Aynı tip aynı renk eşleme' : 'Bilişsel beceriler · Renk eşleme';
   }
-  function resetActivity(skill = 'two-color') {
+  function resetActivity(skill = 'two-color', level = 1) {
     state.skill = skill; state.trial = 0; state.stats = { independent: 0, prompted: 0, incorrect: 0 };
+    if (skill === 'pattern') state.patternLevel = level;
     setGameMode(skill);
-    if (skill === 'same-red') renderPairTrial(); else renderTrial();
+    if (skill === 'same-red') renderPairTrial(); else if (skill === 'pattern') renderPatternTrial(); else renderTrial();
   }
   function renderTrial() {
     clearTimeout(promptTimer); state.hadPrompt = false; state.attempts = 0;
@@ -395,12 +605,86 @@
       feedback.textContent = 'Birlikte bir daha bakalım.'; feedback.className = 'feedback try'; showHint();
     }
   }
+  function renderPatternTrial() {
+    clearTimeout(promptTimer); state.hadPrompt = false; state.attempts = 0;
+    const level = patternLevels[state.patternLevel - 1];
+    const trial = patternExample();
+    document.getElementById('trialLabel').textContent = `${state.trial + 1} / ${level.examples.length}`;
+    document.getElementById('progressFill').style.width = `${((state.trial + 1) / level.examples.length) * 100}%`;
+    const area = document.getElementById('patternArea');
+    area.classList.toggle('is-long', trial.shown.length >= 6);
+    area.innerHTML = '';
+    trial.shown.forEach(key => {
+      const cell = document.createElement('div'); cell.className = 'pattern-cell'; cell.innerHTML = patternItems[key].html; area.appendChild(cell);
+    });
+    const stack = document.createElement('div'); stack.className = 'pattern-slot-stack';
+    const slot = document.createElement('div'); slot.className = 'pattern-slot'; slot.textContent = '?'; slot.setAttribute('aria-label', 'Boş kutu');
+    const topFirst = Math.random() < .5;
+    const makeChoice = key => {
+      const item = patternItems[key];
+      const button = document.createElement('button'); button.type = 'button'; button.className = 'pattern-choice';
+      button.dataset.correct = key === trial.answer ? 'true' : 'false';
+      button.setAttribute('aria-label', `Seçenek: ${item.name}`);
+      button.innerHTML = item.html; button.addEventListener('click', () => patternAnswer(button));
+      return button;
+    };
+    stack.appendChild(makeChoice(topFirst ? trial.answer : trial.decoy));
+    stack.appendChild(slot);
+    stack.appendChild(makeChoice(topFirst ? trial.decoy : trial.answer));
+    area.appendChild(stack);
+    const feedback = document.getElementById('feedback'); feedback.textContent = ''; feedback.className = 'feedback';
+    speak(state.avatar, 'Sıraya bakalım. Boş kutuya hangisi gelmeli? Doğru olanı seç.');
+    if (state.method === 'immediate') showHintPattern(); else promptTimer = setTimeout(showHintPattern, 4000);
+  }
+  function revealPatternHint(message) {
+    state.hadPrompt = true;
+    clearTimeout(promptTimer);
+    document.querySelectorAll('.pattern-choice').forEach(b => b.classList.toggle('is-hint', b.dataset.correct === 'true'));
+    document.getElementById('feedback').textContent = message.text;
+    speak(state.avatar, message.speech);
+  }
+  function showHintPattern() {
+    if (state.screen !== 'activity' || state.skill !== 'pattern' || state.hadPrompt) return;
+    const correctName = patternItems[patternExample().answer].name;
+    revealPatternHint({ text: `Boş kutuya ${correctName} gelmeli.`, speech: `Boş kutuya ${correctName} gelmeli. Yanan seçenek doğru cevap.` });
+  }
+  function patternAnswer(button) {
+    clearTimeout(promptTimer);
+    const feedback = document.getElementById('feedback');
+    const level = patternLevels[state.patternLevel - 1];
+    if (button.dataset.correct === 'true') {
+      document.querySelectorAll('.pattern-choice').forEach(b => { b.disabled = true; b.classList.remove('is-hint'); });
+      button.classList.add('is-correct');
+      if (state.hadPrompt || state.attempts) state.stats.prompted += 1; else state.stats.independent += 1;
+      feedback.textContent = praise(); feedback.className = 'feedback good';
+      speak(state.avatar, feedback.textContent);
+      setTimeout(() => { state.trial += 1; if (state.trial < level.examples.length) renderPatternTrial(); else finishBlock(); }, 1100);
+    } else {
+      state.attempts += 1; state.stats.incorrect += 1; button.disabled = true;
+      if (state.method === 'wait') {
+        const correctName = patternItems[patternExample().answer].name;
+        revealPatternHint({ text: `Hayır, o değil. Boş kutuya ${correctName} gelmeli.`, speech: `Hayır, o değil. Boş kutuya ${correctName} gelmeli. Hadi birlikte seçelim.` });
+      } else {
+        feedback.textContent = 'Birlikte bir daha bakalım.'; feedback.className = 'feedback try'; showHintPattern();
+      }
+    }
+  }
   function resetEndgame() {
     bubbles = 3; document.querySelectorAll('#bubbleZone button').forEach(b => b.classList.remove('is-popped'));
     document.getElementById('bubbleStatus').textContent = '3 baloncuk kaldı'; document.getElementById('endgameContinue').disabled = true;
   }
   function finishBlock() { saveState(); resetEndgame(); showScreen('endgame'); }
   function updateSummary() {
+    const trialCounts = { 'two-color': trials.length, 'same-red': pairTrials.length, 'pattern': 5 };
+    document.getElementById('summaryTitle').textContent = state.skill === 'pattern'
+      ? `Seviye ${state.patternLevel} · 5 deneme tamamlandı`
+      : `${trialCounts[state.skill] || 5} deneme tamamlandı`;
+    const generalizations = {
+      'two-color': 'Kırmızı ve mavi iki gerçek nesne arasından kırmızı olanı eşlemesini isteyin.',
+      'same-red': 'Evde iki kırmızı eşya bulup aynı olanları birlikte eşlemesini isteyin.',
+      'pattern': 'Oyuncaklarla “biri, başkası” şeklinde sıra kurun; sıradaki nesnenin hangisi olduğunu sorun.'
+    };
+    document.getElementById('generalizationText').textContent = generalizations[state.skill] || generalizations['two-color'];
     document.getElementById('independentCount').textContent = state.stats.independent;
     document.getElementById('promptedCount').textContent = state.stats.prompted;
     document.getElementById('incorrectCount').textContent = state.stats.incorrect;
@@ -448,14 +732,21 @@
   document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { renderCategory(button.dataset.category); showScreen('category'); }));
   document.getElementById('categoryBack').addEventListener('click', () => { if (state.history[state.history.length - 1] === 'platform') state.history.pop(); goPlatform(false); });
   document.getElementById('skillList').addEventListener('click', event => {
+    const opener = event.target.closest('[data-open-levels]');
+    if (opener) { renderPatternLevels(); showScreen('pattern-levels'); return; }
     const starter = event.target.closest('[data-start-skill]');
-    if (starter) { resetActivity(starter.dataset.startSkill); showScreen('activity'); }
+    if (starter) { showScreen('activity'); resetActivity(starter.dataset.startSkill); }
   });
+  document.getElementById('levelList').addEventListener('click', event => {
+    const card = event.target.closest('[data-level]');
+    if (card) { showScreen('activity'); resetActivity('pattern', Number(card.dataset.level)); }
+  });
+  document.getElementById('patternLevelsBack').addEventListener('click', () => { if (state.history[state.history.length - 1] === 'category') state.history.pop(); renderCategory(); showScreen('category', false); });
   document.getElementById('editAssessment').addEventListener('click', () => { state.editingAssessment = true; restoreAssessmentUI(); updateAssessmentMode(); showScreen('assessment'); });
   document.getElementById('editMethod').addEventListener('click', () => { if (state.method) setMethod(state.method); showScreen('method'); });
-  document.getElementById('helpButton').addEventListener('click', () => { if (state.skill === 'same-red') showHintPair(); else showHint(); });
+  document.getElementById('helpButton').addEventListener('click', () => { if (state.skill === 'same-red') showHintPair(); else if (state.skill === 'pattern') showHintPattern(); else showHint(); });
   document.getElementById('pauseButton').addEventListener('click', () => { clearTimeout(promptTimer); document.getElementById('pauseModal').hidden = false; });
-  document.getElementById('resumeButton').addEventListener('click', () => { document.getElementById('pauseModal').hidden = true; if (state.method === 'wait' && !state.hadPrompt) { if (state.skill === 'same-red') promptTimer = setTimeout(showHintPair, 4000); else promptTimer = setTimeout(showHint, 4000); } });
+  document.getElementById('resumeButton').addEventListener('click', () => { document.getElementById('pauseModal').hidden = true; if (state.method === 'wait' && !state.hadPrompt) { if (state.skill === 'same-red') promptTimer = setTimeout(showHintPair, 4000); else if (state.skill === 'pattern') promptTimer = setTimeout(showHintPattern, 4000); else promptTimer = setTimeout(showHint, 4000); } });
   document.getElementById('finishButton').addEventListener('click', finishEarly); document.getElementById('pauseFinish').addEventListener('click', finishEarly);
   document.querySelectorAll('#bubbleZone button').forEach(button => button.addEventListener('click', () => {
     if (button.classList.contains('is-popped')) return; button.classList.add('is-popped'); bubbles -= 1;
@@ -522,7 +813,7 @@
       name: 'start_two_color_matching', title: 'İki renk arasından eşleme çalışmasını başlat',
       description: 'Seçili öğretim yöntemiyle beş denemelik kırmızı-mavi renk eşleme çalışmasını görünür olarak başlatır.',
       inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false },
-      execute() { resetActivity(); showScreen('activity'); return { status: 'started', activity: 'two_color_matching', trials: 5, method: state.method }; }
+      execute() { showScreen('activity'); resetActivity(); return { status: 'started', activity: 'two_color_matching', trials: 5, method: state.method }; }
     })).catch(() => {});
   }
 })();

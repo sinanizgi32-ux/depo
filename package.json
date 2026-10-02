@@ -1,6 +1,6 @@
 {
   "name": "dijital-ozel-egitim",
-  "version": "0.8.0",
+  "version": "0.9.2",
   "private": true,
   "description": "Dijital Özel Eğitim — taşınabilir yerel uygulama",
   "type": "module",
@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node scripts/serve.mjs",
     "start:open": "node scripts/serve.mjs --open",
-    "test": "node scripts/check-project.mjs",
+    "test": "node scripts/check-project.mjs && node scripts/check-pattern.mjs",
     "build:viewer": "node scripts/build-viewer.mjs"
   },
   "devDependencies": {
