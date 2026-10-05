@@ -1,0 +1,769 @@
+{
+  "tool": "image_gen.imagegen",
+  "atlases": [
+    {
+      "id": "home-0",
+      "items": [
+        {
+          "id": "table",
+          "name": "Masa",
+          "accusative": "Masayı",
+          "visual": "table"
+        },
+        {
+          "id": "chair",
+          "name": "Sandalye",
+          "accusative": "Sandalyeyi",
+          "visual": "chair"
+        },
+        {
+          "id": "sofa",
+          "name": "Koltuk",
+          "accusative": "Koltuğu",
+          "visual": "sofa"
+        },
+        {
+          "id": "bed",
+          "name": "Yatak",
+          "accusative": "Yatağı",
+          "visual": "bed"
+        },
+        {
+          "id": "wardrobe",
+          "name": "Dolap",
+          "accusative": "Dolabı",
+          "visual": "wardrobe"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: table. Three clearly different examples, one per column. Row 2: chair. Three clearly different examples, one per column. Row 3: sofa. Three clearly different examples, one per column. Row 4: bed. Three clearly different examples, one per column. Row 5: wardrobe. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-7a5c182a-1219-4beb-b509-532b76a08da9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-7a5c182a-1219-4beb-b509-532b76a08da9.png"
+    },
+    {
+      "id": "home-5",
+      "items": [
+        {
+          "id": "pillow",
+          "name": "Yastık",
+          "accusative": "Yastığı",
+          "visual": "pillow"
+        },
+        {
+          "id": "blanket",
+          "name": "Battaniye",
+          "accusative": "Battaniyeyi",
+          "visual": "folded blanket"
+        },
+        {
+          "id": "curtain",
+          "name": "Perde",
+          "accusative": "Perdeyi",
+          "visual": "hanging curtain"
+        },
+        {
+          "id": "rug",
+          "name": "Halı",
+          "accusative": "Halıyı",
+          "visual": "rug"
+        },
+        {
+          "id": "light",
+          "name": "Lamba",
+          "accusative": "Lambayı",
+          "visual": "table lamp"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: pillow. Three clearly different examples, one per column. Row 2: folded blanket. Three clearly different examples, one per column. Row 3: hanging curtain. Three clearly different examples, one per column. Row 4: rug. Three clearly different examples, one per column. Row 5: table lamp. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-7d78ddb3-1eb3-4117-9bf5-c0a4def92c9d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-7d78ddb3-1eb3-4117-9bf5-c0a4def92c9d.png"
+    },
+    {
+      "id": "kitchen-0",
+      "items": [
+        {
+          "id": "glass",
+          "name": "Bardak",
+          "accusative": "Bardağı",
+          "visual": "drinking glass"
+        },
+        {
+          "id": "plate",
+          "name": "Tabak",
+          "accusative": "Tabağı",
+          "visual": "plate"
+        },
+        {
+          "id": "bowl",
+          "name": "Kâse",
+          "accusative": "Kâseyi",
+          "visual": "bowl"
+        },
+        {
+          "id": "spoon",
+          "name": "Kaşık",
+          "accusative": "Kaşığı",
+          "visual": "spoon"
+        },
+        {
+          "id": "fork",
+          "name": "Çatal",
+          "accusative": "Çatalı",
+          "visual": "fork"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: drinking glass. Three clearly different examples, one per column. Row 2: plate. Three clearly different examples, one per column. Row 3: bowl. Three clearly different examples, one per column. Row 4: spoon. Three clearly different examples, one per column. Row 5: fork. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-5e35e438-150e-42d6-b17d-ff74c1c6a806.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-5e35e438-150e-42d6-b17d-ff74c1c6a806.png"
+    },
+    {
+      "id": "kitchen-5",
+      "items": [
+        {
+          "id": "pot",
+          "name": "Tencere",
+          "accusative": "Tencereyi",
+          "visual": "cooking pot"
+        },
+        {
+          "id": "pan",
+          "name": "Tava",
+          "accusative": "Tavayı",
+          "visual": "frying pan"
+        },
+        {
+          "id": "jug",
+          "name": "Sürahi",
+          "accusative": "Sürahiyi",
+          "visual": "water jug"
+        },
+        {
+          "id": "tray",
+          "name": "Tepsi",
+          "accusative": "Tepsiyi",
+          "visual": "tray"
+        },
+        {
+          "id": "teapot",
+          "name": "Çaydanlık",
+          "accusative": "Çaydanlığı",
+          "visual": "Turkish stacked double teapot"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: cooking pot. Three clearly different examples, one per column. Row 2: frying pan. Three clearly different examples, one per column. Row 3: water jug. Three clearly different examples, one per column. Row 4: tray. Three clearly different examples, one per column. Row 5: Turkish stacked double teapot. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-a8e168bd-ad57-4ee4-86f6-c9d3773d729c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-a8e168bd-ad57-4ee4-86f6-c9d3773d729c.png"
+    },
+    {
+      "id": "clothes-0",
+      "items": [
+        {
+          "id": "tshirt",
+          "name": "Tişört",
+          "accusative": "Tişörtü",
+          "visual": "t-shirt"
+        },
+        {
+          "id": "trousers",
+          "name": "Pantolon",
+          "accusative": "Pantolonu",
+          "visual": "trousers"
+        },
+        {
+          "id": "dress",
+          "name": "Elbise",
+          "accusative": "Elbiseyi",
+          "visual": "dress"
+        },
+        {
+          "id": "skirt",
+          "name": "Etek",
+          "accusative": "Eteği",
+          "visual": "skirt"
+        },
+        {
+          "id": "sweater",
+          "name": "Kazak",
+          "accusative": "Kazağı",
+          "visual": "sweater"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: t-shirt. Three clearly different examples, one per column. Row 2: trousers. Three clearly different examples, one per column. Row 3: dress. Three clearly different examples, one per column. Row 4: skirt. Three clearly different examples, one per column. Row 5: sweater. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-e2edc09a-2cd3-447e-90b6-a37634380ba1.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-e2edc09a-2cd3-447e-90b6-a37634380ba1.png"
+    },
+    {
+      "id": "clothes-5",
+      "items": [
+        {
+          "id": "coat",
+          "name": "Mont",
+          "accusative": "Montu",
+          "visual": "winter coat"
+        },
+        {
+          "id": "socks",
+          "name": "Çorap",
+          "accusative": "Çorabı",
+          "visual": "pair of socks"
+        },
+        {
+          "id": "shoes",
+          "name": "Ayakkabı",
+          "accusative": "Ayakkabıyı",
+          "visual": "pair of shoes"
+        },
+        {
+          "id": "hat",
+          "name": "Şapka",
+          "accusative": "Şapkayı",
+          "visual": "hat"
+        },
+        {
+          "id": "pyjamas",
+          "name": "Pijama",
+          "accusative": "Pijamayı",
+          "visual": "children pyjamas"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: winter coat. Three clearly different examples, one per column. Row 2: pair of socks. Three clearly different examples, one per column. Row 3: pair of shoes. Three clearly different examples, one per column. Row 4: hat. Three clearly different examples, one per column. Row 5: children pyjamas. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-a21a8cac-e366-434d-bff5-79e6fe586691.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-a21a8cac-e366-434d-bff5-79e6fe586691.png"
+    },
+    {
+      "id": "care-0",
+      "items": [
+        {
+          "id": "soap",
+          "name": "Sabun",
+          "accusative": "Sabunu",
+          "visual": "bar of soap"
+        },
+        {
+          "id": "towel",
+          "name": "Havlu",
+          "accusative": "Havluyu",
+          "visual": "towel"
+        },
+        {
+          "id": "toothbrush",
+          "name": "Diş fırçası",
+          "accusative": "Diş fırçasını",
+          "visual": "toothbrush"
+        },
+        {
+          "id": "toothpaste",
+          "name": "Diş macunu",
+          "accusative": "Diş macununu",
+          "visual": "toothpaste tube with no readable label"
+        },
+        {
+          "id": "comb",
+          "name": "Tarak",
+          "accusative": "Tarağı",
+          "visual": "comb"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: bar of soap. Three clearly different examples, one per column. Row 2: towel. Three clearly different examples, one per column. Row 3: toothbrush. Three clearly different examples, one per column. Row 4: toothpaste tube with no readable label. Three clearly different examples, one per column. Row 5: comb. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-363f4c73-554e-4c81-a57a-8871375339db.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-363f4c73-554e-4c81-a57a-8871375339db.png"
+    },
+    {
+      "id": "care-5",
+      "items": [
+        {
+          "id": "shampoo",
+          "name": "Şampuan",
+          "accusative": "Şampuanı",
+          "visual": "shampoo bottle no readable label"
+        },
+        {
+          "id": "toiletpaper",
+          "name": "Tuvalet kâğıdı",
+          "accusative": "Tuvalet kâğıdını",
+          "visual": "toilet paper roll"
+        },
+        {
+          "id": "napkin",
+          "name": "Peçete",
+          "accusative": "Peçeteyi",
+          "visual": "paper napkin"
+        },
+        {
+          "id": "sponge",
+          "name": "Sünger",
+          "accusative": "Süngeri",
+          "visual": "cleaning sponge"
+        },
+        {
+          "id": "broom",
+          "name": "Süpürge",
+          "accusative": "Süpürgeyi",
+          "visual": "broom"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: shampoo bottle no readable label. Three clearly different examples, one per column. Row 2: toilet paper roll. Three clearly different examples, one per column. Row 3: paper napkin. Three clearly different examples, one per column. Row 4: cleaning sponge. Three clearly different examples, one per column. Row 5: broom. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-4f1ab746-46e5-4e20-b864-e097672b9b8f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-4f1ab746-46e5-4e20-b864-e097672b9b8f.png"
+    },
+    {
+      "id": "toys-0",
+      "items": [
+        {
+          "id": "ball",
+          "name": "Top",
+          "accusative": "Topu",
+          "visual": "play ball"
+        },
+        {
+          "id": "doll",
+          "name": "Oyuncak bebek",
+          "accusative": "Oyuncak bebeği",
+          "visual": "toy doll"
+        },
+        {
+          "id": "teddybear",
+          "name": "Oyuncak ayı",
+          "accusative": "Oyuncak ayıyı",
+          "visual": "teddy bear"
+        },
+        {
+          "id": "toycar",
+          "name": "Oyuncak araba",
+          "accusative": "Oyuncak arabayı",
+          "visual": "small toy car visibly toy with plastic wheels"
+        },
+        {
+          "id": "block",
+          "name": "Yapı bloğu",
+          "accusative": "Yapı bloğunu",
+          "visual": "toy building block"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: play ball. Three clearly different examples, one per column. Row 2: toy doll. Three clearly different examples, one per column. Row 3: teddy bear. Three clearly different examples, one per column. Row 4: small toy car visibly toy with plastic wheels. Three clearly different examples, one per column. Row 5: toy building block. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-3317b302-89b2-437d-b603-95fcc008d626.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-3317b302-89b2-437d-b603-95fcc008d626.png"
+    },
+    {
+      "id": "toys-5",
+      "items": [
+        {
+          "id": "puzzle",
+          "name": "Yapboz",
+          "accusative": "Yapbozu",
+          "visual": "children jigsaw puzzle on board"
+        },
+        {
+          "id": "balloon",
+          "name": "Balon",
+          "accusative": "Balonu",
+          "visual": "inflated balloon with string"
+        },
+        {
+          "id": "kite",
+          "name": "Uçurtma",
+          "accusative": "Uçurtmayı",
+          "visual": "kite"
+        },
+        {
+          "id": "drum",
+          "name": "Oyuncak davul",
+          "accusative": "Oyuncak davulu",
+          "visual": "toy drum"
+        },
+        {
+          "id": "toytrain",
+          "name": "Oyuncak tren",
+          "accusative": "Oyuncak treni",
+          "visual": "small wooden toy train"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: children jigsaw puzzle on board. Three clearly different examples, one per column. Row 2: inflated balloon with string. Three clearly different examples, one per column. Row 3: kite. Three clearly different examples, one per column. Row 4: toy drum. Three clearly different examples, one per column. Row 5: small wooden toy train. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-fd3eae65-1295-4231-83d2-9f9a53349c46.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-fd3eae65-1295-4231-83d2-9f9a53349c46.png"
+    },
+    {
+      "id": "school-0",
+      "items": [
+        {
+          "id": "book",
+          "name": "Kitap",
+          "accusative": "Kitabı",
+          "visual": "closed book"
+        },
+        {
+          "id": "notebook",
+          "name": "Defter",
+          "accusative": "Defteri",
+          "visual": "spiral notebook"
+        },
+        {
+          "id": "pencil",
+          "name": "Kurşun kalem",
+          "accusative": "Kurşun kalemi",
+          "visual": "graphite pencil"
+        },
+        {
+          "id": "crayon",
+          "name": "Boya kalemi",
+          "accusative": "Boya kalemini",
+          "visual": "wax coloring crayon"
+        },
+        {
+          "id": "eraser",
+          "name": "Silgi",
+          "accusative": "Silgiyi",
+          "visual": "eraser"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: closed book. Three clearly different examples, one per column. Row 2: spiral notebook. Three clearly different examples, one per column. Row 3: graphite pencil. Three clearly different examples, one per column. Row 4: wax coloring crayon. Three clearly different examples, one per column. Row 5: eraser. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-0b2a3f41-9930-4eb5-80db-b6ef9d7a80bd.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-0b2a3f41-9930-4eb5-80db-b6ef9d7a80bd.png"
+    },
+    {
+      "id": "school-5",
+      "items": [
+        {
+          "id": "sharpener",
+          "name": "Kalemtıraş",
+          "accusative": "Kalemtıraşı",
+          "visual": "pencil sharpener"
+        },
+        {
+          "id": "schoolbag",
+          "name": "Okul çantası",
+          "accusative": "Okul çantasını",
+          "visual": "school backpack"
+        },
+        {
+          "id": "glue",
+          "name": "Yapıştırıcı",
+          "accusative": "Yapıştırıcıyı",
+          "visual": "glue stick without label"
+        },
+        {
+          "id": "scissors",
+          "name": "Çocuk makası",
+          "accusative": "Çocuk makasını",
+          "visual": "round blunt safety scissors"
+        },
+        {
+          "id": "playdough",
+          "name": "Oyun hamuru",
+          "accusative": "Oyun hamurunu",
+          "visual": "colorful play dough lumps with tub"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: pencil sharpener. Three clearly different examples, one per column. Row 2: school backpack. Three clearly different examples, one per column. Row 3: glue stick without label. Three clearly different examples, one per column. Row 4: round blunt safety scissors. Three clearly different examples, one per column. Row 5: colorful play dough lumps with tub. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-f7808500-471c-4cee-834a-5c8dc80ed87a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-f7808500-471c-4cee-834a-5c8dc80ed87a.png"
+    },
+    {
+      "id": "animals-0",
+      "items": [
+        {
+          "id": "cat",
+          "name": "Kedi",
+          "accusative": "Kediyi",
+          "visual": "domestic cat: first tabby cat, second black and white cat, third orange cat"
+        },
+        {
+          "id": "dog",
+          "name": "Köpek",
+          "accusative": "Köpeği",
+          "visual": "friendly domestic dog"
+        },
+        {
+          "id": "bird",
+          "name": "Kuş",
+          "accusative": "Kuşu",
+          "visual": "small bird"
+        },
+        {
+          "id": "fish",
+          "name": "Balık",
+          "accusative": "Balığı",
+          "visual": "fish"
+        },
+        {
+          "id": "rabbit",
+          "name": "Tavşan",
+          "accusative": "Tavşanı",
+          "visual": "rabbit"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: domestic cat: first tabby cat, second black and white cat, third orange cat. Three clearly different examples, one per column. Row 2: friendly domestic dog. Three clearly different examples, one per column. Row 3: small bird. Three clearly different examples, one per column. Row 4: fish. Three clearly different examples, one per column. Row 5: rabbit. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-c573cc55-522a-4204-9ede-9aa0c87f2d69.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-c573cc55-522a-4204-9ede-9aa0c87f2d69.png"
+    },
+    {
+      "id": "animals-5",
+      "items": [
+        {
+          "id": "cow",
+          "name": "İnek",
+          "accusative": "İneği",
+          "visual": "cow"
+        },
+        {
+          "id": "sheep",
+          "name": "Koyun",
+          "accusative": "Koyunu",
+          "visual": "sheep"
+        },
+        {
+          "id": "horse",
+          "name": "At",
+          "accusative": "Atı",
+          "visual": "horse"
+        },
+        {
+          "id": "chicken",
+          "name": "Tavuk",
+          "accusative": "Tavuğu",
+          "visual": "hen"
+        },
+        {
+          "id": "duck",
+          "name": "Ördek",
+          "accusative": "Ördeği",
+          "visual": "duck"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: cow. Three clearly different examples, one per column. Row 2: sheep. Three clearly different examples, one per column. Row 3: horse. Three clearly different examples, one per column. Row 4: hen. Three clearly different examples, one per column. Row 5: duck. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-558027de-5f67-46e3-9569-b25176b86cd3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-558027de-5f67-46e3-9569-b25176b86cd3.png"
+    },
+    {
+      "id": "vehicles-0",
+      "items": [
+        {
+          "id": "car",
+          "name": "Araba",
+          "accusative": "Arabayı",
+          "visual": "real passenger car"
+        },
+        {
+          "id": "bus",
+          "name": "Otobüs",
+          "accusative": "Otobüsü",
+          "visual": "full size passenger bus"
+        },
+        {
+          "id": "minibus",
+          "name": "Minibüs",
+          "accusative": "Minibüsü",
+          "visual": "passenger minibus"
+        },
+        {
+          "id": "truck",
+          "name": "Kamyon",
+          "accusative": "Kamyonu",
+          "visual": "cargo truck"
+        },
+        {
+          "id": "bicycle",
+          "name": "Bisiklet",
+          "accusative": "Bisikleti",
+          "visual": "bicycle"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: real passenger car. Three clearly different examples, one per column. Row 2: full size passenger bus. Three clearly different examples, one per column. Row 3: passenger minibus. Three clearly different examples, one per column. Row 4: cargo truck. Three clearly different examples, one per column. Row 5: bicycle. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-2e1e6e87-2b81-47db-b7cc-1eef8635c13a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-2e1e6e87-2b81-47db-b7cc-1eef8635c13a.png"
+    },
+    {
+      "id": "vehicles-5",
+      "items": [
+        {
+          "id": "motorcycle",
+          "name": "Motosiklet",
+          "accusative": "Motosikleti",
+          "visual": "motorcycle"
+        },
+        {
+          "id": "train",
+          "name": "Tren",
+          "accusative": "Treni",
+          "visual": "real passenger train"
+        },
+        {
+          "id": "plane",
+          "name": "Uçak",
+          "accusative": "Uçağı",
+          "visual": "airplane"
+        },
+        {
+          "id": "ship",
+          "name": "Gemi",
+          "accusative": "Gemiyi",
+          "visual": "ship"
+        },
+        {
+          "id": "ambulance",
+          "name": "Ambulans",
+          "accusative": "Ambulansı",
+          "visual": "ambulance with medical emblem no text"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: motorcycle. Three clearly different examples, one per column. Row 2: real passenger train. Three clearly different examples, one per column. Row 3: airplane. Three clearly different examples, one per column. Row 4: ship. Three clearly different examples, one per column. Row 5: ambulance with medical emblem no text. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-2e9aed3b-d34c-403e-b461-6d694592e4bd.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-2e9aed3b-d34c-403e-b461-6d694592e4bd.png"
+    },
+    {
+      "id": "food-0",
+      "items": [
+        {
+          "id": "apple",
+          "name": "Elma",
+          "accusative": "Elmayı",
+          "visual": "whole apple"
+        },
+        {
+          "id": "banana",
+          "name": "Muz",
+          "accusative": "Muzu",
+          "visual": "unpeeled banana"
+        },
+        {
+          "id": "orange",
+          "name": "Portakal",
+          "accusative": "Portakalı",
+          "visual": "whole orange fruit"
+        },
+        {
+          "id": "strawberry",
+          "name": "Çilek",
+          "accusative": "Çileği",
+          "visual": "strawberry"
+        },
+        {
+          "id": "grapes",
+          "name": "Üzüm",
+          "accusative": "Üzümü",
+          "visual": "bunch of grapes"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: whole apple. Three clearly different examples, one per column. Row 2: unpeeled banana. Three clearly different examples, one per column. Row 3: whole orange fruit. Three clearly different examples, one per column. Row 4: strawberry. Three clearly different examples, one per column. Row 5: bunch of grapes. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-eb869a73-3197-4553-90a9-17ce3be657f9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-eb869a73-3197-4553-90a9-17ce3be657f9.png"
+    },
+    {
+      "id": "food-5",
+      "items": [
+        {
+          "id": "tomato",
+          "name": "Domates",
+          "accusative": "Domatesi",
+          "visual": "whole tomato"
+        },
+        {
+          "id": "cucumber",
+          "name": "Salatalık",
+          "accusative": "Salatalığı",
+          "visual": "whole cucumber"
+        },
+        {
+          "id": "carrot",
+          "name": "Havuç",
+          "accusative": "Havucu",
+          "visual": "whole carrot"
+        },
+        {
+          "id": "potato",
+          "name": "Patates",
+          "accusative": "Patatesi",
+          "visual": "whole potato"
+        },
+        {
+          "id": "pepper",
+          "name": "Biber",
+          "accusative": "Biberi",
+          "visual": "whole pepper"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: whole tomato. Three clearly different examples, one per column. Row 2: whole cucumber. Three clearly different examples, one per column. Row 3: whole carrot. Three clearly different examples, one per column. Row 4: whole potato. Three clearly different examples, one per column. Row 5: whole pepper. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-762daf6a-f888-4113-a9fd-986d73f4fe20.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-762daf6a-f888-4113-a9fd-986d73f4fe20.png"
+    },
+    {
+      "id": "plants-0",
+      "items": [
+        {
+          "id": "daisy",
+          "name": "Papatya",
+          "accusative": "Papatyayı",
+          "visual": "white daisy flower with yellow center and stem"
+        },
+        {
+          "id": "rose",
+          "name": "Gül",
+          "accusative": "Gülü",
+          "visual": "rose flower with stem"
+        },
+        {
+          "id": "tulip",
+          "name": "Lale",
+          "accusative": "Laleyi",
+          "visual": "tulip flower with stem"
+        },
+        {
+          "id": "sunflower",
+          "name": "Ayçiçeği",
+          "accusative": "Ayçiçeğini",
+          "visual": "sunflower with stem"
+        },
+        {
+          "id": "pine",
+          "name": "Çam ağacı",
+          "accusative": "Çam ağacını",
+          "visual": "pine tree"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: white daisy flower with yellow center and stem. Three clearly different examples, one per column. Row 2: rose flower with stem. Three clearly different examples, one per column. Row 3: tulip flower with stem. Three clearly different examples, one per column. Row 4: sunflower with stem. Three clearly different examples, one per column. Row 5: pine tree. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-d9e63537-2c2d-45cb-a820-a65a37b8583f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-d9e63537-2c2d-45cb-a820-a65a37b8583f.png"
+    },
+    {
+      "id": "plants-5",
+      "items": [
+        {
+          "id": "appletree",
+          "name": "Elma ağacı",
+          "accusative": "Elma ağacını",
+          "visual": "apple tree bearing clearly visible red apples"
+        },
+        {
+          "id": "grass",
+          "name": "Çimen",
+          "accusative": "Çimeni",
+          "visual": "small patch of green grass"
+        },
+        {
+          "id": "mint",
+          "name": "Nane",
+          "accusative": "Naneyi",
+          "visual": "mint sprig with recognizable serrated green leaves"
+        },
+        {
+          "id": "basil",
+          "name": "Fesleğen",
+          "accusative": "Fesleğeni",
+          "visual": "basil plant broad smooth rounded leaves"
+        },
+        {
+          "id": "cactus",
+          "name": "Kaktüs",
+          "accusative": "Kaktüsü",
+          "visual": "cactus in pot"
+        }
+      ],
+      "prompt": "Use case: scientific-educational. Create ONE object matching educational sprite atlas. Portrait canvas. EXACTLY 3 columns by 5 rows, FIFTEEN equally sized rectangular cells, no gaps, no borders, white background. Every row depicts ONE object category with THREE distinct realistic examples of that SAME named object in its three cells. All objects fully visible, isolated, realistic natural TWO DIMENSIONAL photographic cutout illustrations, easy recognition for young children, no faces on inanimate objects, no text/numbers/labels, no cartoon emoji, no 3D rendered toys except actual toys requested. Within each cell ample 10% white safe margin. Similar scale and neutral angle, but three columns have visibly different natural color/model/shape/pose examples. Never switch object identity within a row. Do not add unrelated objects. For animals show entire animal. For plants preserve botanical identity. Required rows top to bottom: Row 1: apple tree bearing clearly visible red apples. Three clearly different examples, one per column. Row 2: small patch of green grass. Three clearly different examples, one per column. Row 3: mint sprig with recognizable serrated green leaves. Three clearly different examples, one per column. Row 4: basil plant broad smooth rounded leaves. Three clearly different examples, one per column. Row 5: cactus in pot. Three clearly different examples, one per column.",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-9eb30120-f4b2-436f-bda0-b093ab748f3a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-9eb30120-f4b2-436f-bda0-b093ab748f3a.png"
+    }
+  ],
+  "correction": {
+    "prompt": "Use case scientific-educational precise-object-edit. Replace the yellow toy dump truck entirely with a yellow TOY PASSENGER CAR, a small realistic plastic sedan with four wheels, roof, windows, front hood, no cargo bed, no truck features. Keep identical clean white background, square image, centered whole toy clearly visible with safe margin. Realistic two-dimensional photographic toy object illustration suitable for young child object matching. No text or faces on object.",
+    "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-68e9a7cc-bd80-41ce-a172-80c55f4d2983.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  }
+}

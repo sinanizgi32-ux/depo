@@ -172,3 +172,11 @@ Kullanıcının son verdiği 0.7.1 yedeği güncel tabandır; 0.4.0 tarihsel ilk
 - Seviye 7 son denemede kullanılan fakat tanımlanmayan yesilKare eklendi; ilgili denemenin açılmasını engelleyen hata giderildi.
 - Sürüm bilgileri eşitlendi. scripts/check-pattern.mjs ile tüm denemelerin öğeleri, bağımsız doğru, yanlış sonrası düzeltme, 4 saniye ipucu, eşzamanlı ipucu ve son deneme geçişi kontrol edilir. npm test iki kontrolü de çalıştırır.
 - Öğrenci verileri ve tarayıcı profilleri taşınmadı; yalnızca proje dosyaları aktarıldı.
+
+## Nesne eşleme kazanımı
+
+Kullanıcının onayladığı 10 kategori ve 100 nesne için bilişsel becerilere ayrı bir Nesne eşleme bölümü eklendi. Materyal havuzu `dist/matching-data.js` içindedir. Nesne adı ve eşle yönergesiyle çalışılır; her nesnenin dört seviyesinde beşer deneme vardır. İlk seviyede birebir aynı resim, ikinci seviyede aynı nesnenin farklı görünümüyle tek eş, üçüncüde iki hedef, dördüncüde üç hedef kullanılır. Nesnenin farklı görünümü farklı nesne türü olarak etiketlenmez. Kategori örnekleri başka nesnelerin yerine geçmez.
+
+Kaynak kart altta, hedefler üsttedir. Fare/parmakla sürükleme ve karta ardından hedefine dokunma desteklenir. Dört saniye süreli öğretimde yönerge sesi tamamlandıktan sonra yanıt fırsatı başlar; eşzamanlı yöntemde aynı noktada açıklamalı ipucu açılır. İpucu otomatik olarak eşleme yapmaz; doğru hedef ve kaynak vurgulanır, çocuğun yerleştirmesi beklenir. Yanlış yerleştirme tek hata sayılır ve açıklanır. Ödül konuşması bitmeden deneme değişmez. Duraklatma ve ekran değiştirme eski ses/timer yanıtlarını geçersiz kılar.
+
+Kaba değerlendirmede `object-match` anahtarı korunarak başlık Nesneleri eşler olarak güncellendi. Seviye sonu üç seçenek korunur; 4. seviyede sonraki seviye gizlenir. 2.000 denemenin tamamı ve öğretim/etkileşim akışları `scripts/check-object-matching.mjs` ile kontrol edilir. Görseller beyaz arka planda gerçeğe yakın iki boyutlu nesne resimleridir; üretim yönergeleri görsel klasöründe saklanır.

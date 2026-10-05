@@ -22,3 +22,5 @@ Pofidik’i sağ-alt köşeden sol fare tuşu veya parmak basılı sürüklemeyl
 Onaylı animasyonsuz model `source-assets/pofidik-approved.glb` içinde değişmeden korunur. Yeni üretim ve ücretli Tripo çağrısı yapılmamıştır. Model yüksek ayrıntılıdır; ilk yükleme yaklaşık 105 MB ve WebGL gerektirir. Düşük donanımda performans değişebilir. Mevcut kulak, gerinme, göz kırpma ve ağız hareketlerinin önceki denemedeki sınırlamaları yeniden modellenmemiştir.
 
 Çocuk profilleri tarayıcının yerel depolamasındadır. Bu depo öğrenci kaydı içermez, cihazlar arasında profil eşitlemez ve gerçek ödeme altyapısı sağlamaz. Kaynak depo, çalıştırılmış bir internet sitesiyle aynı şey değildir.
+
+Nesne eşleme: Bilişsel becerilerden Nesne eşleme > Kategorileri aç. Onaylı 10 kategoride 100 nesne; her nesne dört seviyede beşer deneme. Aynı resimden farklı görünümlere, bir hedeften üç hedefe ilerler. Nesne adı + eşle yönergesi, sürükleme/dokunma ve seçilen öğretim yöntemi uygulanır. Kontrol: `node scripts/check-object-matching.mjs --assets`.
