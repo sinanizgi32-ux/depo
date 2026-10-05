@@ -1,6 +1,6 @@
 # Dijital Özel Eğitim — Kalıcı Proje Kararları
 
-Son güncelleme: 2 Ekim 2026 — Sürüm 0.9.1
+Son güncelleme: 5 Ekim 2026 — Sürüm 0.9.2 üzerinde yerel düzenlemeler
 
 Bu dosya her yeni düzenlemede güncellenir. Yeni sürümler mevcut kararların üzerine yazılır; eski akış yanlışlıkla yeniden kurulmaz.
 
@@ -15,8 +15,18 @@ Bu dosya her yeni düzenlemede güncellenir. Yeni sürümler mevcut kararların 
 7. Beceri kategorilerinin bulunduğu ana platform
 8. Kaba değerlendirmede çalışılması gereken beceriler
 9. Beş denemelik öğretim etkinliği
-10. Bölüm sonu oyunu
-11. Çalışma özeti ve ana menüye dönüş
+10. Çalışma özeti: Oyuna geç, sonraki seviye (örüntüde son seviye hariç), ana menüye dön
+11. Oyuna geç seçilirse henüz planlanmamış oyun için hazırlık ekranı; otomatik baloncuk oyunu açılmaz
+
+## 5 Ekim 2026 güncel örüntü ve öğretim kararları
+
+Olayları sıralama kazanımı Bilişsel Beceriler'e ve kaba değerlendirmeye eklendi. 25 öğretici günlük olay, her olay için beş ayrı görsel adım ve 10 seviyede toplam 50 deneme bulunur. Seviye 1–2 iki kart, 3–5 üç kart, 6–8 dört kart, 9–10 beş kart kullanır. Üstteki kartlar başlangıçta karışıktır; altta kart sayısı kadar numaralı yer vardır. Dokunmayla sıradaki yere veya sürüklemeyle seçilen doğru yere yerleştirilir. Her yeni kart seçiminde seçili öğretim yöntemi uygulanır. Her doğru kart pekiştirilir; deneme bağımsız doğru sayılması için bütün yerleşimler yardımsız doğru tamamlanmalıdır. Son seviyede sonraki seviye düğmesi gizlenir. Ses tanıma sonraki kapsam fikridir, bu etkinlikte mikrofon kullanılmaz.
+
+Bu bölüm aşağıdaki eski sürüm açıklamalarındaki farklı akışların yerine geçer. Seçilen yöntem tüm öğretim etkinliklerinde korunur. Dört saniyelik yanıt süresi yönerge sesi tamamlandıktan sonra başlar. Bağımsız doğru hemen pekiştirilir; pekiştirme konuşması bitmeden sonraki denemeye geçilmez. Yanıtsızlıkta mantığı anlatan doğru cevap ipucu, ilk yanlışta hemen açıklamalı hata düzeltmesi gösterilir. Eşzamanlı yöntemde yönerge biter bitmez açıklamalı doğru cevap gösterilir.
+
+Örüntü 15 seviye ve her seviyede beş denemeden oluşur. Seçenekler yalnızca o denemede gösterilen nesnelerden seçilir. 14. seviyenin sayılan yıldızları dik ve üst üste gösterilir. 15. seviyede üç farklı şekilli, dört/beş öğelik karmaşık tekrar blokları kullanılır. Sonraki seviye düğmesi sırayla ilerletir ve 15. seviyede gizlenir.
+
+Somut nesneler gerçeğe yakın, iki boyutlu ve çocukların kolay tanıyacağı resimlerle gösterilir. Her nesnenin ortak resmi sayı ve boyut varyantlarında da kullanılır. İleri seviyelerde soyut şekiller uygundur. Yerel, şeffaf arka planlı WebP resimleri `dist/assets/objects/` içinde saklanır.
 
 Kısa oyun içi gözlem / “Hazır mısın?” ekranı kaldırılmıştır. Profilde çalışma süresi seçeneği yoktur. İlk giriş ekranında gizlilik rozetleri veya tanı istenmediği ifadesi gösterilmez.
 

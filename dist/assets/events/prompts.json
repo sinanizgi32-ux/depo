@@ -1,0 +1,301 @@
+{
+  "tool": "Built-in image_gen",
+  "date": "2026-10-05",
+  "assets": [
+    {
+      "id": "apple",
+      "prompt": "Use case: scientific-educational. One educational story sprite sheet, LANDSCAPE 3:2 canvas with exactly SIX equally sized square cells in a precise 3-column by 2-row grid. The first FIVE cells are five sequential scenes, reading top row left to right then bottom row left to right; bottom-right sixth cell completely blank white. No gaps, no gutters, no borders, no text, no numbering, no letters. Each scene comfortably contained within its cell with 10% safe margins. Realistic TWO DIMENSIONAL natural children's textbook illustrations, lifelike child and objects, warm natural colors, simple plain white setting, not emoji, not cartoon caricatures, not 3D render. Same child, same red apple, same clothes and consistent setting in every scene. Story: preparing and eating an apple. Cell 1 top-left: child takes one red apple from a fruit bowl. Cell 2 top-middle: child washes the apple under running water at a sink. Cell 3 top-right: child dries the washed apple with a clean cloth. Cell 4 bottom-left: child places the clean apple on a plate. Cell 5 bottom-middle: child eats the apple, holding an apple with one clear bite. Cell 6 bottom-right entirely empty white. Clear actions and visibly distinct before/after states. One action per panel.",
+      "files": [
+        "apple/1.webp",
+        "apple/2.webp",
+        "apple/3.webp",
+        "apple/4.webp",
+        "apple/5.webp"
+      ]
+    },
+    {
+      "id": "hands",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Ellerini yıkama. Exact scenes described in Turkish: Cell 1 top-left: Çocuğun elleri kirli. Cell 2 top-middle: Ellerini suyla ıslatıyor. Cell 3 top-right: Ellerini sabunla köpürtüyor. Cell 4 bottom-left: Ellerini suyla duruluyor. Cell 5 bottom-middle: Temiz ellerini havluyla kuruluyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "hands/1.webp",
+        "hands/2.webp",
+        "hands/3.webp",
+        "hands/4.webp",
+        "hands/5.webp"
+      ]
+    },
+    {
+      "id": "drawing",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Resim yapma. Exact scenes described in Turkish: Cell 1 top-left: Çocuk boş kâğıdı masaya koyuyor. Cell 2 top-middle: Boya kalemlerini alıyor. Cell 3 top-right: Kâğıda bir çiçek çiziyor. Cell 4 bottom-left: Çiçeği boyuyor. Cell 5 bottom-middle: Bitirdiği renkli resmi gösteriyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "drawing/1.webp",
+        "drawing/2.webp",
+        "drawing/3.webp",
+        "drawing/4.webp",
+        "drawing/5.webp"
+      ]
+    },
+    {
+      "id": "balloon",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Balon hazırlama. Exact scenes described in Turkish: Cell 1 top-left: Masanın üzerinde sönük balon var. Cell 2 top-middle: Yetişkin balonu el pompasına takıyor. Cell 3 top-right: Yetişkin pompayla balonu şişiriyor. Cell 4 bottom-left: Yetişkin şişen balonun ağzını bağlıyor. Cell 5 bottom-middle: Çocuk hazır balonu tutuyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "balloon/1.webp",
+        "balloon/2.webp",
+        "balloon/3.webp",
+        "balloon/4.webp",
+        "balloon/5.webp"
+      ]
+    },
+    {
+      "id": "book",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kitap okuma. Exact scenes described in Turkish: Cell 1 top-left: Çocuk raftan kitabı alıyor. Cell 2 top-middle: Kitabı masaya koyuyor. Cell 3 top-right: Kitabın kapağını açıyor. Cell 4 bottom-left: Açık kitaptaki resimlere bakıyor. Cell 5 bottom-middle: Okuduğu kitabı kapatıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "book/1.webp",
+        "book/2.webp",
+        "book/3.webp",
+        "book/4.webp",
+        "book/5.webp"
+      ]
+    },
+    {
+      "id": "tower",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kule yapma ve yıkılma. Exact scenes described in Turkish: Cell 1 top-left: Yapı blokları masada ayrı duruyor. Cell 2 top-middle: Çocuk blokları üst üste koyuyor. Cell 3 top-right: Çocuk yüksek kuleyi tamamlıyor. Cell 4 bottom-left: Oyuncak araba kuleye çarpıyor. Cell 5 bottom-middle: Kule yıkılıyor, bloklar dağılıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "tower/1.webp",
+        "tower/2.webp",
+        "tower/3.webp",
+        "tower/4.webp",
+        "tower/5.webp"
+      ]
+    },
+    {
+      "id": "plant",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Susamış bitkiyi sulama. Exact scenes described in Turkish: Cell 1 top-left: Saksıdaki bitki susuz, yaprakları sarkmış. Cell 2 top-middle: Çocuk sulama kabını alıyor. Cell 3 top-right: Sulama kabına su dolduruyor. Cell 4 bottom-left: Saksıdaki toprağı suluyor. Cell 5 bottom-middle: Daha sonra bitkinin yaprakları dik ve canlı görünüyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "plant/1.webp",
+        "plant/2.webp",
+        "plant/3.webp",
+        "plant/4.webp",
+        "plant/5.webp"
+      ]
+    },
+    {
+      "id": "ice",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Buzun erimesi. Exact scenes described in Turkish: Cell 1 top-left: Yetişkin buzluktan buz kalıbını çıkarıyor. Cell 2 top-middle: Bir buz parçasını boş tabağa koyuyor. Cell 3 top-right: Buz masadaki tabakta duruyor. Cell 4 bottom-left: Buz küçülüyor, çevresinde su oluşuyor. Cell 5 bottom-middle: Buz eriyor, tabakta su kalıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "ice/1.webp",
+        "ice/2.webp",
+        "ice/3.webp",
+        "ice/4.webp",
+        "ice/5.webp"
+      ]
+    },
+    {
+      "id": "shirt",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Islak tişörtün kuruması. Exact scenes described in Turkish: Cell 1 top-left: Yıkanmış tişört ıslak. Cell 2 top-middle: Yetişkin ıslak tişörtü çamaşır sepetinden alıyor. Cell 3 top-right: Tişörtü ipe asıyor. Cell 4 bottom-left: Tişört güneşte kuruyor. Cell 5 bottom-middle: Yetişkin kuru tişörtü katlıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "shirt/1.webp",
+        "shirt/2.webp",
+        "shirt/3.webp",
+        "shirt/4.webp",
+        "shirt/5.webp"
+      ]
+    },
+    {
+      "id": "lamp",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Lambayı açma ve kapatma. Exact scenes described in Turkish: Cell 1 top-left: Oda karanlık, masa lambası kapalı. Cell 2 top-middle: Çocuk lambanın düğmesine uzanıyor. Cell 3 top-right: Çocuk düğmeye basıyor ve lamba yanıyor. Cell 4 bottom-left: Çocuk ışıkta resim çiziyor. Cell 5 bottom-middle: Resmi bitince lambayı kapatıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "lamp/1.webp",
+        "lamp/2.webp",
+        "lamp/3.webp",
+        "lamp/4.webp",
+        "lamp/5.webp"
+      ]
+    },
+    {
+      "id": "teeth",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Dişlerini fırçalama. Exact scenes described in Turkish: Cell 1 top-left: Çocuk diş fırçasını alıyor. Cell 2 top-middle: Fırçaya diş macunu sıkıyor. Cell 3 top-right: Dişlerini fırçalıyor. Cell 4 bottom-left: Ağzını suyla çalkalıyor. Cell 5 bottom-middle: Fırçayı yıkayıp yerine koyuyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "teeth/1.webp",
+        "teeth/2.webp",
+        "teeth/3.webp",
+        "teeth/4.webp",
+        "teeth/5.webp"
+      ]
+    },
+    {
+      "id": "shoes",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Ayakkabı giyme. Exact scenes described in Turkish: Cell 1 top-left: Çocuk çoraplı, ayakkabıları yerde. Cell 2 top-middle: Çocuk ilk ayakkabısını giyiyor. Cell 3 top-right: İkinci ayakkabısını da giyiyor. Cell 4 bottom-left: Ayakkabıların cırtlarını kapatıyor. Cell 5 bottom-middle: Ayakkabılarını giyip yürümeye başlıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "shoes/1.webp",
+        "shoes/2.webp",
+        "shoes/3.webp",
+        "shoes/4.webp",
+        "shoes/5.webp"
+      ]
+    },
+    {
+      "id": "breakfast",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kahvaltı hazırlama. Exact scenes described in Turkish: Cell 1 top-left: Masada boş kâse ve kahvaltılık gevrek var. Cell 2 top-middle: Çocuk kâseye gevrek koyuyor. Cell 3 top-right: Kâseye süt ekliyor. Cell 4 bottom-left: Kahvaltısını kaşıkla yiyor. Cell 5 bottom-middle: Boş kâseyi mutfak tezgâhına götürüyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "breakfast/1.webp",
+        "breakfast/2.webp",
+        "breakfast/3.webp",
+        "breakfast/4.webp",
+        "breakfast/5.webp"
+      ]
+    },
+    {
+      "id": "bag",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Okul çantasını hazırlama. Exact scenes described in Turkish: Cell 1 top-left: Boş okul çantası masada duruyor. Cell 2 top-middle: Çocuk defterini çantaya koyuyor. Cell 3 top-right: Kalem kutusunu çantaya koyuyor. Cell 4 bottom-left: Çantanın fermuarını kapatıyor. Cell 5 bottom-middle: Hazır çantasını sırtına takıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "bag/1.webp",
+        "bag/2.webp",
+        "bag/3.webp",
+        "bag/4.webp",
+        "bag/5.webp"
+      ]
+    },
+    {
+      "id": "tidy",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Oyuncakları toplama. Exact scenes described in Turkish: Cell 1 top-left: Oyuncaklar yerde dağınık. Cell 2 top-middle: Çocuk oyuncak kutusunu getiriyor. Cell 3 top-right: Oyuncak arabaları kutuya koyuyor. Cell 4 bottom-left: Yapı bloklarını da kutuya koyuyor. Cell 5 bottom-middle: Oyuncaklar kutuda, yer temiz ve düzenli. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "tidy/1.webp",
+        "tidy/2.webp",
+        "tidy/3.webp",
+        "tidy/4.webp",
+        "tidy/5.webp"
+      ]
+    },
+    {
+      "id": "seed",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Tohumdan bitki yetiştirme. Exact scenes described in Turkish: Cell 1 top-left: Çocuk boş saksıya toprak koyuyor. Cell 2 top-middle: Toprağa bir tohum yerleştiriyor. Cell 3 top-right: Tohumun üstünü toprakla kapatıyor. Cell 4 bottom-left: Saksıyı suluyor. Cell 5 bottom-middle: Bir süre sonra topraktan yeşil filiz çıkıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "seed/1.webp",
+        "seed/2.webp",
+        "seed/3.webp",
+        "seed/4.webp",
+        "seed/5.webp"
+      ]
+    },
+    {
+      "id": "kite",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Uçurtma uçurma. Exact scenes described in Turkish: Cell 1 top-left: Çocuk ve yetişkin uçurtmayı parka getiriyor. Cell 2 top-middle: Yetişkin uçurtmanın ipini hazırlıyor. Cell 3 top-right: Yetişkin uçurtmayı havaya kaldırıyor. Cell 4 bottom-left: Çocuk ipi tutup koşuyor, uçurtma yükseliyor. Cell 5 bottom-middle: Çocuk ipi tutarken uçurtma gökyüzünde uçuyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "kite/1.webp",
+        "kite/2.webp",
+        "kite/3.webp",
+        "kite/4.webp",
+        "kite/5.webp"
+      ]
+    },
+    {
+      "id": "puzzle",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Yapbozu tamamlama. Exact scenes described in Turkish: Cell 1 top-left: Yapboz parçaları masada ayrı duruyor. Cell 2 top-middle: Çocuk iki parçayı birleştiriyor. Cell 3 top-right: Başka parçaları da ekliyor. Cell 4 bottom-left: Son parçayı boş yere yerleştiriyor. Cell 5 bottom-middle: Yapboz tamamlanıyor, bütün resim görünüyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "puzzle/1.webp",
+        "puzzle/2.webp",
+        "puzzle/3.webp",
+        "puzzle/4.webp",
+        "puzzle/5.webp"
+      ]
+    },
+    {
+      "id": "sand",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kumdan kale yapma. Exact scenes described in Turkish: Cell 1 top-left: Çocuk boş kovayı kumun yanına koyuyor. Cell 2 top-middle: Kovayı kumla dolduruyor. Cell 3 top-right: Kovayı ters çevirip yere koyuyor. Cell 4 bottom-left: Kovayı yukarı kaldırıyor, kumdan kale ortaya çıkıyor. Cell 5 bottom-middle: Kalenin üstüne küçük bayrak takıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "sand/1.webp",
+        "sand/2.webp",
+        "sand/3.webp",
+        "sand/4.webp",
+        "sand/5.webp"
+      ]
+    },
+    {
+      "id": "butterfly",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kelebeğin oluşumu. Exact scenes described in Turkish: Cell 1 top-left: Yeşil yaprağın üzerinde küçük yumurta var. Cell 2 top-middle: Yumurtadan çıkan tırtıl yaprağı yiyor. Cell 3 top-right: Tırtıl dalda koza oluşturuyor. Cell 4 bottom-left: Kelebek kozadan çıkıyor. Cell 5 bottom-middle: Kelebek açık kanatlarıyla uçuyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "butterfly/1.webp",
+        "butterfly/2.webp",
+        "butterfly/3.webp",
+        "butterfly/4.webp",
+        "butterfly/5.webp"
+      ]
+    },
+    {
+      "id": "sandwich",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Sandviç hazırlama. Exact scenes described in Turkish: Cell 1 top-left: Çocuk tabağa bir dilim ekmek koyuyor. Cell 2 top-middle: Ekmeğin üzerine peynir koyuyor. Cell 3 top-right: Peynirin üzerine domates dilimleri koyuyor. Cell 4 bottom-left: Üzerini ikinci ekmek dilimiyle kapatıyor. Cell 5 bottom-middle: Hazır sandviçi yiyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "sandwich/1.webp",
+        "sandwich/2.webp",
+        "sandwich/3.webp",
+        "sandwich/4.webp",
+        "sandwich/5.webp"
+      ]
+    },
+    {
+      "id": "letter",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kartpostal gönderme. Exact scenes described in Turkish: Cell 1 top-left: Çocuk boş kartpostalı masaya koyuyor. Cell 2 top-middle: Kartpostala renkli resim çiziyor. Cell 3 top-right: Kartpostalı zarfa koyuyor. Cell 4 bottom-left: Yetişkin zarfı kapatıp pul yapıştırıyor. Cell 5 bottom-middle: Çocuk yetişkinle zarfı posta kutusuna atıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "letter/1.webp",
+        "letter/2.webp",
+        "letter/3.webp",
+        "letter/4.webp",
+        "letter/5.webp"
+      ]
+    },
+    {
+      "id": "cookies",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kurabiye hazırlama. Exact scenes described in Turkish: Cell 1 top-left: Yetişkin kurabiye malzemelerini masaya koyuyor. Cell 2 top-middle: Yetişkin kâsede hamuru karıştırıyor. Cell 3 top-right: Çocuk ve yetişkin hamura şekil veriyor. Cell 4 bottom-left: Yetişkin tepsiyi fırına koyuyor, çocuk uzakta bekliyor. Cell 5 bottom-middle: Pişmiş ve soğumuş kurabiyeler tabakta, çocuk birini yiyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "cookies/1.webp",
+        "cookies/2.webp",
+        "cookies/3.webp",
+        "cookies/4.webp",
+        "cookies/5.webp"
+      ]
+    },
+    {
+      "id": "recycle",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Kâğıdı geri dönüştürme. Exact scenes described in Turkish: Cell 1 top-left: Kullanılmış kâğıtlar masada duruyor. Cell 2 top-middle: Çocuk kâğıtları diğer çöplerden ayırıyor. Cell 3 top-right: Kâğıtları üst üste topluyor. Cell 4 bottom-left: Topladığı kâğıtları geri dönüşüm kutusuna taşıyor. Cell 5 bottom-middle: Kâğıtları kutuya atıyor, masa temiz kalıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "recycle/1.webp",
+        "recycle/2.webp",
+        "recycle/3.webp",
+        "recycle/4.webp",
+        "recycle/5.webp"
+      ]
+    },
+    {
+      "id": "rain",
+      "prompt": "Use case: scientific-educational. Produce ONE educational story sprite sheet, LANDSCAPE 3:2 canvas. Exactly six equally sized square cells in a precise 3-column by 2-row grid. First FIVE cells are five consecutive scenes reading top row left to right then bottom row left to right. Sixth bottom-right cell entirely blank white. No text, no letters, no labels, no numbers, no arrows, no visible borders. Simple uncluttered setting, main action fully visible with 8% safe margins inside every cell. Realistic lifelike TWO DIMENSIONAL photographic-style educational pictures, natural proportions, warm inviting natural colors, not emoji, not cartoon caricatures, not 3D toys. Consistent person, clothes, objects, setting and camera angle throughout the five scenes of this one story. Each panel depicts only its specified stage; do not blend two stages or show the completed object too soon. Adults handle heat and appliances; children do not handle dangerous tools. Story title (Turkish): Yağmurda şemsiye kullanma. Exact scenes described in Turkish: Cell 1 top-left: Çocuk pencereden yağmuru görüyor. Cell 2 top-middle: Çocuk kapının yanından kapalı şemsiyeyi alıyor. Cell 3 top-right: Yetişkinle dışarı çıkınca şemsiyeyi açıyor. Cell 4 bottom-left: Açık şemsiyeyle yağmurda yürüyor. Cell 5 bottom-middle: Kapalı alana girince şemsiyeyi kapatıyor. Cell 6 bottom-right blank white. Clearly distinguish the before and after states.",
+      "files": [
+        "rain/1.webp",
+        "rain/2.webp",
+        "rain/3.webp",
+        "rain/4.webp",
+        "rain/5.webp"
+      ]
+    }
+  ],
+  "revisions": [
+    {
+      "id": "banana",
+      "prompt": "Use case scientific-educational. ONE landscape 3:2 sprite sheet, exact 3 columns x2 rows equally sized square panels, five scenes reading left to right top row then bottom row, sixth bottom right blank white. No text, numbers, arrows or borders. Realistic natural 2D photographic educational images, same child/clothes/table/object in all scenes, simple uncluttered background, action clear with safe margins. Story peeling and eating a banana. Panel1 child holds whole clearly UNPEELED yellow banana on table. Panel2 child pulls first strip of peel down. Panel3 banana fully peeled halfway with exposed white edible fruit and all yellow peel folded down. Panel4 child takes a bite of exposed banana. Panel5 child shows clearly empty yellow banana peel with NO fruit remaining on table, smiling. No second banana.",
+      "tool": "Built-in image_gen",
+      "date": "2026-10-05"
+    },
+    {
+      "id": "paper",
+      "prompt": "Use case scientific-educational. ONE landscape 3:2 sprite sheet, exact 3 columns x2 rows equally sized square panels, five scenes reading left to right top row then bottom row, sixth bottom right blank white. No text, numbers, arrows or borders. Realistic natural 2D photographic educational images, same child/clothes/table/object in all scenes, simple uncluttered background, action clear with safe margins. Story making a paper boat. Panel1 child has flat plain rectangular blue paper on table, no boat. Panel2 child folds paper in half. Panel3 child folds corners into triangle. Panel4 child opens folded paper into a finished unmistakable blue paper boat. Panel5 finished blue paper boat floats on shallow clear water in a transparent bowl, child watches. Preserve identical blue paper color.",
+      "tool": "Built-in image_gen",
+      "date": "2026-10-05"
+    },
+    {
+      "id": "letter-edit",
+      "prompt": "Edit target: preserve this girl's identity, purple floral clothing, realistic photographic style and table. Replace the plain postcard on table with a clearly OPEN white envelope and a separate colorful postcard lying SIDE BY SIDE fully visible on the table, outside the envelope. Postcard shows a blue sky, yellow sun and green trees, identical in concept to the card inserted later. Child preparing to put card into envelope, neither item inserted yet. Both envelope and postcard dominate lower half, no writing or readable text. Square composition.",
+      "tool": "Built-in image_gen",
+      "date": "2026-10-05"
+    }
+  ]
+}

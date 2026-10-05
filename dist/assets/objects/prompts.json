@@ -1,0 +1,138 @@
+{
+  "tool": "Built-in image_gen",
+  "date": "2026-10-05",
+  "assets": [
+    {
+      "key": "elma",
+      "prompt": "Use case: scientific-educational. Create one isolated red apple with a short stem and a small green leaf, for a Turkish special education pattern-matching game for young children. Realistic recognizable 2D painted natural-history illustration, lifelike proportions and textures, bright inviting natural color, clean silhouette, NOT emoji, NOT cartoon with eyes, NOT 3D render. Single object centered filling 80% of a square canvas, fully visible, transparent background, no cast shadow, no lettering, no border. Save as a project asset."
+    },
+    {
+      "key": "muz",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one ripe yellow banana. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "uzum",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one bunch of purple grapes. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "kopek",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one friendly realistic golden brown dog, full body side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "kedi",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one friendly realistic orange tabby cat full body. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "tavsan",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one realistic white rabbit full body. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "araba",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one red passenger car side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "otobus",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one yellow passenger bus side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "cilek",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one ripe strawberry with green crown. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "futbol",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one black and white soccer ball. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "basket",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one orange basketball. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "tenis",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one yellow green tennis ball. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "cicek",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one pink five-petal flower with short green stem. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "aycicegi",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one sunflower with short green stem. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "lale",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one red tulip with short green stem. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "fil",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one friendly realistic grey elephant full body side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "aslan",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one realistic male lion full body side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "kaplan",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one realistic tiger full body side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "roket",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one space rocket upright. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "uzay",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one silver flying saucer spaceship with a blue dome. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "tren",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one red train locomotive side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "seker",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one red candy in a wrapper. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "portakal",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one ripe orange fruit with small green leaf. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "kiraz",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one pair of red cherries joined by stems. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "kus",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one realistic small blue bird full body side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "balik",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one realistic orange goldfish side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "ucak",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one white passenger airplane side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "gemi",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one white passenger ship side view. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "papatya",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one white daisy flower with yellow center and short green stem. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "gul",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one red rose with short green stem. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "menekse",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one purple violet flower with short green stem. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "voleybol",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one white blue yellow volleyball. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    },
+    {
+      "key": "balon",
+      "prompt": "Use case: scientific-educational. Asset: one isolated object card for a young child's Turkish special education pattern matching game. Subject: one red inflated balloon with a short string. Style: realistic recognizable TWO DIMENSIONAL painted natural-history textbook illustration, accurate lifelike proportions and textures, bright appealing natural colors, clean silhouette, not emoji, no cartoon eyes or faces added, not 3D rendering. Center single subject, fully visible, occupy 80 percent of square canvas. Transparent background, no shadow, no border, no text, no logo. Keep details clear at small display size."
+    }
+  ]
+}

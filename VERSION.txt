@@ -1,7 +1,9 @@
 Dijital Özel Eğitim
 Temel sürüm: 0.4.0
-Güncel sürüm: 0.9.2
-Tarih: 2 Ekim 2026
+Güncel sürüm: 0.10.0
+Tarih: 5 Ekim 2026
 Durum: 0.9.1 — Örüntü çalışması 15 seviyeli listeye dönüştürüldü; seviye ekranından her seviyede 5 farklı deneme oynanır. 4 saniye sabit bekleme prototipi örüntüde sistematik öğretime bağlandı: 4 saniye içinde doğru yanıt bağımsız pekiştirme alır, yanlış yanıtta “Hayır, o değil…” düzeltmesiyle doğru seçenek belirtilir ve çocuğun doğruyu seçmesi beklenir, yanıtsızlıkta doğru seçenek gösterilir.
 
 0.9.2: Qoder yerel çalışması taşındı; seviye 7 son denemedeki eksik yeşil kare tanımı tamamlandı. 75 deneme ve ipucu/yanıt akışları otomatik kontrol edildi.
+
+0.10.0: Olay kartlarını sıralama kazanımı: 10 seviye, 50 deneme ve gerçeğe yakın olay resimleri. Eşzamanlı ve dört saniye beklemeli öğretim, dokunma/sürükleme, seviye sonu üç seçenek ve rastgele kart konumları. Örüntü seçenekleri, 14–15. seviyeler ve ortak nesne resimleri güncellendi. Belirsiz olay kartları düzeltildi.

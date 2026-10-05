@@ -5,7 +5,7 @@ import { spawnSync } from 'node:child_process';
 
 const root = new URL('../', import.meta.url);
 const expected = ['breathe', 'nod_yes', 'shake_no', 'look_left', 'look_right', 'look_up', 'curious', 'ears', 'listen', 'bow', 'sway', 'stretch', 'blink', 'talk'];
-for (const name of ['dist/app.js', 'dist/pofidik-viewer.js', 'scripts/serve.mjs', 'scripts/pofidik-viewer-source.js']) {
+for (const name of ['dist/app.js', 'dist/events-data.js', 'dist/pofidik-viewer.js', 'scripts/serve.mjs', 'scripts/pofidik-viewer-source.js']) {
   const result = spawnSync(process.execPath, ['--check', fileURLToPath(new URL(name, root))], { encoding: 'utf8' });
   assert.equal(result.status, 0, `${name}: ${result.stderr}`);
 }

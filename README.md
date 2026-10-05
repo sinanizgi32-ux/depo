@@ -1,5 +1,9 @@
 # Dijital Özel Eğitim
 
+Yeni bilişsel etkinlik: **Olay kartlarını oluş sırasına göre sıralama**. 10 seviye, her seviyede 5 deneme; iki karttan beş karta ilerler. 25 günlük olayın toplam 125 ayrı resmi kullanılır. Kartlar üstte karışık, numaralı yerler alttadır; dokunma ve sürüklemeyle sıralanır. Başlangıçta seçilen eşzamanlı / 4 saniye bekleme yöntemi korunur. Kontrol: `node scripts/check-events.mjs --assets`.
+
+Örüntü etkinliğindeki somut nesneler artık 33 ortak, gerçeğe yakın iki boyutlu resimle gösterilir. Şeffaf arka planlı yerel görseller `dist/assets/objects/` içindedir; sayma ve küçük/büyük denemelerinde aynı nesne resmi kullanılır. 15. seviye daha karmaşık dört/beş öğelik tekrar gruplarından oluşur. Beş deneme sonunda oyun, sonraki seviye ve ana menü seçenekleri sunulur; son seviyede sonraki seviye düğmesi gizlenir. Bölüm sonu oyunu henüz hazırlanmadığından oyun seçeneği hazırlık ekranını açar.
+
 Güncel sürüm **0.9.2**. Qoder'da bilgisayarda geliştirilen 0.9.1 çalışması korunmuştur: örüntü etkinliği 15 seviye ve her seviyede 5 deneme içerir. Eşzamanlı ipucu ve 4 saniye sabit bekleme akışları bağlıdır. Eksik yeşil kare tanımı düzeltilmiştir.
 
 Windows'ta tüm klasörü indirin/çıkartın ve **Baslat.cmd** dosyasını açın. Ücretsiz Node.js 22 veya üstü gerekir. Uygulamayı çalıştırmak için `npm install` gerekmez. macOS/Linux'ta proje klasöründe `node scripts/serve.mjs` çalıştırın; `http://127.0.0.1:4180/` adresini açın.
