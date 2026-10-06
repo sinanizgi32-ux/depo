@@ -1,0 +1,328 @@
+{
+  "batches": [
+    {
+      "id": "home-1",
+      "items": [
+        "table",
+        "chair",
+        "sofa",
+        "bed",
+        "wardrobe"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in an appropriate everyday home setting: table in dining area, chair beside plain wall, sofa in living room, bed in bedroom, wardrobe standing against bedroom wall, pillow or blanket on a bed, curtain hanging naturally at window, rug lying flat on floor, lamp on bedside surface\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Masa (table).\n2. All FIVE cells in this row show only the named target: Sandalye (chair).\n3. All FIVE cells in this row show only the named target: Koltuk (sofa).\n4. All FIVE cells in this row show only the named target: Yatak (bed).\n5. All FIVE cells in this row show only the named target: Dolap (wardrobe)."
+    },
+    {
+      "id": "home-2",
+      "items": [
+        "pillow",
+        "blanket",
+        "curtain",
+        "rug",
+        "light"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in an appropriate everyday home setting: table in dining area, chair beside plain wall, sofa in living room, bed in bedroom, wardrobe standing against bedroom wall, pillow or blanket on a bed, curtain hanging naturally at window, rug lying flat on floor, lamp on bedside surface\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Yastık (pillow).\n2. All FIVE cells in this row show only the named target: Battaniye (folded blanket).\n3. All FIVE cells in this row show only the named target: Perde (hanging curtain).\n4. All FIVE cells in this row show only the named target: Halı (rug).\n5. All FIVE cells in this row show only the named target: Lamba (table lamp)."
+    },
+    {
+      "id": "kitchen-1",
+      "items": [
+        "glass",
+        "plate",
+        "bowl",
+        "spoon",
+        "fork"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: resting naturally on a kitchen counter or dining surface; realistic scale, contact shadows, simple empty surroundings\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Bardak (drinking glass).\n2. All FIVE cells in this row show only the named target: Tabak (plate).\n3. All FIVE cells in this row show only the named target: Kâse (bowl).\n4. All FIVE cells in this row show only the named target: Kaşık (spoon).\n5. All FIVE cells in this row show only the named target: Çatal (fork)."
+    },
+    {
+      "id": "kitchen-2",
+      "items": [
+        "pot",
+        "pan",
+        "jug",
+        "tray",
+        "teapot"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: resting naturally on a kitchen counter or dining surface; realistic scale, contact shadows, simple empty surroundings\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Tencere (cooking pot).\n2. All FIVE cells in this row show only the named target: Tava (frying pan).\n3. All FIVE cells in this row show only the named target: Sürahi (water jug).\n4. All FIVE cells in this row show only the named target: Tepsi (tray).\n5. All FIVE cells in this row show only the named target: Çaydanlık (Turkish stacked double teapot)."
+    },
+    {
+      "id": "clothes-1",
+      "items": [
+        "tshirt",
+        "trousers",
+        "dress",
+        "skirt",
+        "sweater"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: hanging naturally on a plain clothes peg or neatly placed on a clean bedroom surface; shoes and socks by bedroom floor, no people wearing clothes, full garment visible\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Tişört (t-shirt).\n2. All FIVE cells in this row show only the named target: Pantolon (trousers).\n3. All FIVE cells in this row show only the named target: Elbise (dress).\n4. All FIVE cells in this row show only the named target: Etek (skirt).\n5. All FIVE cells in this row show only the named target: Kazak (sweater)."
+    },
+    {
+      "id": "clothes-2",
+      "items": [
+        "coat",
+        "socks",
+        "shoes",
+        "hat",
+        "pyjamas"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: hanging naturally on a plain clothes peg or neatly placed on a clean bedroom surface; shoes and socks by bedroom floor, no people wearing clothes, full garment visible\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Mont (winter coat).\n2. All FIVE cells in this row show only the named target: Çorap (pair of socks).\n3. All FIVE cells in this row show only the named target: Ayakkabı (pair of shoes).\n4. All FIVE cells in this row show only the named target: Şapka (hat).\n5. All FIVE cells in this row show only the named target: Pijama (children pyjamas)."
+    },
+    {
+      "id": "care-1",
+      "items": [
+        "soap",
+        "towel",
+        "toothbrush",
+        "toothpaste",
+        "comb"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: hygienic suitable setting: soap by bathroom sink, towel on bathroom rail, toothbrush or toothpaste or comb at bathroom sink, shampoo on SHOWER shelf, toiletpaper on holder beside bathroom wall, napkin on dining surface, sponge at kitchen sink, broom leaning against utility room wall\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Sabun (bar of soap).\n2. All FIVE cells in this row show only the named target: Havlu (towel).\n3. All FIVE cells in this row show only the named target: Diş fırçası (toothbrush).\n4. All FIVE cells in this row show only the named target: Diş macunu (toothpaste tube with no readable label).\n5. All FIVE cells in this row show only the named target: Tarak (comb)."
+    },
+    {
+      "id": "care-2",
+      "items": [
+        "shampoo",
+        "toiletpaper",
+        "napkin",
+        "sponge",
+        "broom"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: hygienic suitable setting: soap by bathroom sink, towel on bathroom rail, toothbrush or toothpaste or comb at bathroom sink, shampoo on SHOWER shelf, toiletpaper on holder beside bathroom wall, napkin on dining surface, sponge at kitchen sink, broom leaning against utility room wall\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Şampuan (shampoo bottle no readable label).\n2. All FIVE cells in this row show only the named target: Tuvalet kâğıdı (toilet paper roll).\n3. All FIVE cells in this row show only the named target: Peçete (paper napkin).\n4. All FIVE cells in this row show only the named target: Sünger (cleaning sponge).\n5. All FIVE cells in this row show only the named target: Süpürge (broom)."
+    },
+    {
+      "id": "toys-1",
+      "items": [
+        "ball",
+        "doll",
+        "teddybear",
+        "toycar",
+        "block"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in a child play area, naturally resting on a playroom floor or low play surface; kite flying low outdoors with line, balloon tethered; no other toy or child\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Top (play ball).\n2. All FIVE cells in this row show only the named target: Oyuncak bebek (toy doll).\n3. All FIVE cells in this row show only the named target: Oyuncak ayı (teddy bear).\n4. All FIVE cells in this row show only the named target: Oyuncak araba (small toy car visibly toy with plastic wheels).\n5. All FIVE cells in this row show only the named target: Yapı bloğu (toy building block)."
+    },
+    {
+      "id": "toys-2",
+      "items": [
+        "puzzle",
+        "balloon",
+        "kite",
+        "drum",
+        "toytrain"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in a child play area, naturally resting on a playroom floor or low play surface; kite flying low outdoors with line, balloon tethered; no other toy or child\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Yapboz (children jigsaw puzzle on board).\n2. All FIVE cells in this row show only the named target: Balon (inflated balloon with string).\n3. All FIVE cells in this row show only the named target: Uçurtma (kite).\n4. All FIVE cells in this row show only the named target: Oyuncak davul (toy drum).\n5. All FIVE cells in this row show only the named target: Oyuncak tren (small wooden toy train)."
+    },
+    {
+      "id": "school-1",
+      "items": [
+        "book",
+        "notebook",
+        "pencil",
+        "crayon",
+        "eraser"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: on a simple classroom desk or school shelf, schoolbag against classroom wall; no other school objects visible\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Kitap (closed book).\n2. All FIVE cells in this row show only the named target: Defter (spiral notebook).\n3. All FIVE cells in this row show only the named target: Kurşun kalem (graphite pencil).\n4. All FIVE cells in this row show only the named target: Boya kalemi (wax coloring crayon).\n5. All FIVE cells in this row show only the named target: Silgi (eraser)."
+    },
+    {
+      "id": "school-2",
+      "items": [
+        "sharpener",
+        "schoolbag",
+        "glue",
+        "scissors",
+        "playdough"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: on a simple classroom desk or school shelf, schoolbag against classroom wall; no other school objects visible\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Kalemtıraş (pencil sharpener).\n2. All FIVE cells in this row show only the named target: Okul çantası (school backpack).\n3. All FIVE cells in this row show only the named target: Yapıştırıcı (glue stick without label).\n4. All FIVE cells in this row show only the named target: Çocuk makası (round blunt safety scissors).\n5. All FIVE cells in this row show only the named target: Oyun hamuru (colorful play dough lumps with tub)."
+    },
+    {
+      "id": "animals-1",
+      "items": [
+        "cat",
+        "dog",
+        "bird",
+        "fish",
+        "rabbit"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in species appropriate real environment: cat indoors or garden, dog garden, small bird perched outdoors, fish underwater aquarium closeup (no bowls or dry surfaces), rabbit grassy yard, cow/sheep/horse pasture, chicken farmyard, duck pond water\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Kedi (domestic cat: first tabby cat, second black and white cat, third orange cat).\n2. All FIVE cells in this row show only the named target: Köpek (friendly domestic dog).\n3. All FIVE cells in this row show only the named target: Kuş (small bird).\n4. All FIVE cells in this row show only the named target: Balık (fish).\n5. All FIVE cells in this row show only the named target: Tavşan (rabbit)."
+    },
+    {
+      "id": "animals-2",
+      "items": [
+        "cow",
+        "sheep",
+        "horse",
+        "chicken",
+        "duck"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in species appropriate real environment: cat indoors or garden, dog garden, small bird perched outdoors, fish underwater aquarium closeup (no bowls or dry surfaces), rabbit grassy yard, cow/sheep/horse pasture, chicken farmyard, duck pond water\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: İnek (cow).\n2. All FIVE cells in this row show only the named target: Koyun (sheep).\n3. All FIVE cells in this row show only the named target: At (horse).\n4. All FIVE cells in this row show only the named target: Tavuk (hen).\n5. All FIVE cells in this row show only the named target: Ördek (duck)."
+    },
+    {
+      "id": "vehicles-1",
+      "items": [
+        "car",
+        "bus",
+        "minibus",
+        "truck",
+        "bicycle"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in exact appropriate real world environment: car/bus/minibus/truck/ambulance road or parking space, bicycle paved path, motorcycle road, train ON railway tracks, airplane airport runway or airborne, ship FLOATING IN WATER. No vehicles indoors or on random grass. Clearly real full sized vehicle\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Araba (real passenger car).\n2. All FIVE cells in this row show only the named target: Otobüs (full size passenger bus).\n3. All FIVE cells in this row show only the named target: Minibüs (passenger minibus).\n4. All FIVE cells in this row show only the named target: Kamyon (cargo truck).\n5. All FIVE cells in this row show only the named target: Bisiklet (bicycle)."
+    },
+    {
+      "id": "vehicles-2",
+      "items": [
+        "motorcycle",
+        "train",
+        "plane",
+        "ship",
+        "ambulance"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: in exact appropriate real world environment: car/bus/minibus/truck/ambulance road or parking space, bicycle paved path, motorcycle road, train ON railway tracks, airplane airport runway or airborne, ship FLOATING IN WATER. No vehicles indoors or on random grass. Clearly real full sized vehicle\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Motosiklet (motorcycle).\n2. All FIVE cells in this row show only the named target: Tren (real passenger train).\n3. All FIVE cells in this row show only the named target: Uçak (airplane).\n4. All FIVE cells in this row show only the named target: Gemi (ship).\n5. All FIVE cells in this row show only the named target: Ambulans (ambulance with medical emblem no text)."
+    },
+    {
+      "id": "food-1",
+      "items": [
+        "apple",
+        "banana",
+        "orange",
+        "strawberry",
+        "grapes"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: on a real kitchen surface or simple produce basket or at natural growing location, keep ONE named food type dominant; whole uncut recognisable produce\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Elma (whole apple).\n2. All FIVE cells in this row show only the named target: Muz (unpeeled banana).\n3. All FIVE cells in this row show only the named target: Portakal (whole orange fruit).\n4. All FIVE cells in this row show only the named target: Çilek (strawberry).\n5. All FIVE cells in this row show only the named target: Üzüm (bunch of grapes)."
+    },
+    {
+      "id": "food-2",
+      "items": [
+        "tomato",
+        "cucumber",
+        "carrot",
+        "potato",
+        "pepper"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: on a real kitchen surface or simple produce basket or at natural growing location, keep ONE named food type dominant; whole uncut recognisable produce\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Domates (whole tomato).\n2. All FIVE cells in this row show only the named target: Salatalık (whole cucumber).\n3. All FIVE cells in this row show only the named target: Havuç (whole carrot).\n4. All FIVE cells in this row show only the named target: Patates (whole potato).\n5. All FIVE cells in this row show only the named target: Biber (whole pepper)."
+    },
+    {
+      "id": "plants-1",
+      "items": [
+        "daisy",
+        "rose",
+        "tulip",
+        "sunflower",
+        "pine"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: growing rooted in suitable garden soil or flowerbed; cactus potted by window, mint and basil herb pots, pine/apple tree outdoors with visible ground and full canopy, grass rooted patch with no other plant in focus\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Papatya (white daisy flower with yellow center and stem).\n2. All FIVE cells in this row show only the named target: Gül (rose flower with stem).\n3. All FIVE cells in this row show only the named target: Lale (tulip flower with stem).\n4. All FIVE cells in this row show only the named target: Ayçiçeği (sunflower with stem).\n5. All FIVE cells in this row show only the named target: Çam ağacı (pine tree)."
+    },
+    {
+      "id": "plants-2",
+      "items": [
+        "appletree",
+        "grass",
+        "mint",
+        "basil",
+        "cactus"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: educational photo contact sheet to be cut into 25 separate coherent photographs. Create a square high-resolution 2500x2500 raster contact sheet with EXACTLY 5 columns and 5 rows, equal cells, perfectly aligned edge-to-edge, NO gutters, NO borders, NO labels/text. Each cell must be ONE genuine-looking, fully integrated photograph with its own natural setting, not a pasted cutout or cartoon. FIVE ROWS correspond to five named subjects below. FIVE COLUMNS are five DIFFERENT real examples of that SAME row's named object: vary actual object appearance, size, color, viewpoint and suitable surroundings, still immediately recognizable as same noun.\nLighting: realistic soft daylight, matched contact shadows, physical grounding, camera perspective and material textures. Target fills 55-75% of each cell, whole target inside central 80%, keep target unobscured, clear and child-friendly. Minimal soft-focus context, no competing recognizable objects, no people, no words, no logos, no watermark. Never white rectangular object cards or glowing artificial silhouettes. Real photo textures, never clay/3D toy rendering (except actual toy subjects). Background and object form ONE photograph.\nAppropriate context rules: growing rooted in suitable garden soil or flowerbed; cactus potted by window, mint and basil herb pots, pine/apple tree outdoors with visible ground and full canopy, grass rooted patch with no other plant in focus\nROW ORDER FROM TOP TO BOTTOM:\n1. All FIVE cells in this row show only the named target: Elma ağacı (apple tree bearing clearly visible red apples).\n2. All FIVE cells in this row show only the named target: Çimen (small patch of green grass).\n3. All FIVE cells in this row show only the named target: Nane (mint sprig with recognizable serrated green leaves).\n4. All FIVE cells in this row show only the named target: Fesleğen (basil plant broad smooth rounded leaves).\n5. All FIVE cells in this row show only the named target: Kaktüs (cactus in pot)."
+    }
+  ],
+  "outputs": [
+    {
+      "id": "home-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-0ea240dc-17d8-4826-b464-1a8b4db3d255.png"
+    },
+    {
+      "id": "home-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-c8481a6d-c293-4663-807e-e5571b62ca94.png"
+    },
+    {
+      "id": "kitchen-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-64506813-c5e2-43bb-8aa3-92428b70a77d.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-64506813-c5e2-43bb-8aa3-92428b70a77d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "care-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-dda1e8ab-aa1a-468b-9c5d-fe17b5bcacbd.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-dda1e8ab-aa1a-468b-9c5d-fe17b5bcacbd.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "kitchen-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-31ce5d76-f537-484d-b01b-d15eedd9245d.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-31ce5d76-f537-484d-b01b-d15eedd9245d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "care-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-d826af83-f21a-4906-b072-2761b77c3c98.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-d826af83-f21a-4906-b072-2761b77c3c98.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "toys-1",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-93e8120a-2ca4-4edf-b544-8e888c300cc2.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-fbcad9e8-bf2a-4f59-b454-6da0e92fc134.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "originalPath": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-fbcad9e8-bf2a-4f59-b454-6da0e92fc134.png",
+      "correction": "Toy car instead of truck / whole apple trees instead of fruit closeups"
+    },
+    {
+      "id": "clothes-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-44310abe-d590-478e-adf1-d9aa9c7749f4.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-44310abe-d590-478e-adf1-d9aa9c7749f4.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "toys-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-0071f223-233b-4b24-9fe1-7e62b7ba825d.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-0071f223-233b-4b24-9fe1-7e62b7ba825d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "clothes-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-c479b27a-ff8f-439e-92bf-a5173d100c5d.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-c479b27a-ff8f-439e-92bf-a5173d100c5d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "school-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-95e43360-334d-43cd-b28b-cafadc308cd7.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-95e43360-334d-43cd-b28b-cafadc308cd7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "animals-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-0cd63ed0-4223-4902-89a6-32a301939afe.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-0cd63ed0-4223-4902-89a6-32a301939afe.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "school-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-c3631bdf-983c-4c2c-b5b3-bf0c72872cc3.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-c3631bdf-983c-4c2c-b5b3-bf0c72872cc3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "vehicles-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-e20d1aca-48c5-4aa0-932d-4bd8efabade3.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-e20d1aca-48c5-4aa0-932d-4bd8efabade3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "vehicles-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-336ae0ca-3eb1-4919-a721-7e090cd8f895.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-336ae0ca-3eb1-4919-a721-7e090cd8f895.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "animals-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-ceec0ee3-21c9-4508-87b0-69e783b69b52.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-ceec0ee3-21c9-4508-87b0-69e783b69b52.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "food-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-f07b3bfc-0669-4862-a430-df0f46149f6f.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-f07b3bfc-0669-4862-a430-df0f46149f6f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "food-2",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-dd5026d6-0a9b-4137-9e4b-e6b99a6e9065.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-dd5026d6-0a9b-4137-9e4b-e6b99a6e9065.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "plants-1",
+      "path": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-af66e38d-b6e1-483a-9887-59b6f72fafb8.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-af66e38d-b6e1-483a-9887-59b6f72fafb8.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "plants-2",
+      "path": "C:/Users/sinan/.codex/generated_images/01a10cf0-0a37-7a02-93d3-8367278741a6/exec-f0563cef-8a8e-405d-a654-6d2c4f5bc825.png",
+      "hint": "Generated images are saved to C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6 as C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-655df8b3-4183-4945-8ece-bb8f188a3542.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "originalPath": "C:\\Users\\sinan\\.codex\\generated_images\\01a10cf0-0a37-7a02-93d3-8367278741a6\\exec-655df8b3-4183-4945-8ece-bb8f188a3542.png",
+      "correction": "Toy car instead of truck / whole apple trees instead of fruit closeups"
+    }
+  ]
+}

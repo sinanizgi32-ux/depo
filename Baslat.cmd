@@ -9,5 +9,5 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-node scripts\serve.mjs --open
+node scripts\start-with-speech.mjs --open
 if errorlevel 1 pause

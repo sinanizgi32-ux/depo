@@ -1,4 +1,4 @@
-# Dijital Özel Eğitim — Proje Yedeği
+# Dijital Erken Eğitim — Proje Yedeği
 
 Bu klasör sürüm 0.4.0'ın eksiksiz kaynak yedeği ve üzerine yapılan güncellemeleri içerir.
 

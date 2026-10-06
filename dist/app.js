@@ -5,9 +5,10 @@
   const storageKey = 'dijitalOzelEgitimStateV2';
   const audioStorageKey = 'dijitalOzelEgitimAudioV1';
   const backgroundMusic = document.getElementById('backgroundMusic');
-  const musicBlockedScreens = new Set(['activity', 'endgame', 'summary']);
+  const musicBlockedScreens = new Set(['activity', 'naming', 'endgame', 'summary']);
   const audioSettings = { enabled: true, volume: .35, lastVolume: .35 };
   const skillNames = {
+ 'object-name':{title:'Nesne ismi söyleme',description:'10 kategori, 100 nesne. Üç nesne aşaması ve dört karma aşama; her seviyede beş sesli deneme.',icon:'🎙️',playable:true},
     'object-show': {title:'Nesne gösterme',description:'10 kategori, 100 nesne. Beş nesne seviyesi ve ardından dört seçenekli üç karma seviye.',icon:'👆',playable:true},
     'object-match': { title: 'Nesne eşleme', description: '10 kategori, 100 nesne. Her nesne için dört seviye ve ardından üç karma seviye; her seviyede beş deneme.', icon: '🧩', playable: true },
     'same-red': { title: 'Aynı tip ve aynı renk kartları eşle', description: 'Aynı tip iki kırmızı kartı dağınık kartlar arasından bulup eşleme. 5 deneme ve bölüm sonu oyunu.', icon: '🟥', playable: true },
@@ -292,7 +293,7 @@
   function saveAudioSettings() {
     localStorage.setItem(audioStorageKey, JSON.stringify(audioSettings));
   }
-  function musicCanPlay() { return audioSettings.enabled && !musicBlockedScreens.has(state.screen); }
+  function musicCanPlay() { return !Array.from(document.querySelectorAll('#musicChoices audio')).some(a=>!a.paused) && audioSettings.enabled && !musicBlockedScreens.has(state.screen); }
   function tryStartMusic() {
     if (!musicCanPlay()) { backgroundMusic.pause(); return; }
     backgroundMusic.volume = audioSettings.volume;
@@ -367,6 +368,9 @@
   }
 
   function showScreen(name, push = true) {
+    if(window.ParentGate && !window.ParentGate.allow(name)){window.ParentGate.open(name);return;}
+    window.ParentGate?.stopPreviews();
+    if(state.screen==='naming'&&name!=='naming')document.getElementById('namingFrame').src='about:blank';
     if (name !== 'activity') objectMatching.stop();
     clearTimeout(promptTimer);
     if (push && state.screen !== name) state.history.push(state.screen);
@@ -374,7 +378,7 @@
     screens.forEach(s => s.classList.toggle('is-active', s.dataset.screen === name));
     topbar.hidden = name === 'welcome';
     document.getElementById('backButton').style.visibility = state.history.length ? 'visible' : 'hidden';
-    const buddyHiddenScreens = ['welcome', 'profile', 'avatar', 'intro'];
+    const buddyHiddenScreens = ['welcome', 'pin', 'guardian', 'profile', 'avatar', 'intro','naming'];
     floatingBuddy.hidden = !state.avatar || !state.buddyActivated || buddyHiddenScreens.includes(name);
     if (musicBlockedScreens.has(name)) backgroundMusic.pause(); else tryStartMusic();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -451,7 +455,8 @@
 
   function renderPlatform() {
     const open = Object.keys(skillNames).filter(key => state.assessment[key] !== 'can');
-    document.getElementById('cognitiveCount').textContent = `${open.length} çalışma`;
+    document.getElementById('cognitiveCount').textContent = `${open.filter(key=>key!=='object-name').length} çalışma`;
+    document.getElementById('languageCount').textContent=`${open.includes('object-name')?1:0} çalışma`;
   }
   const planInfo = {
     free: { title: 'Premium üyelik', detail: 'Aylık 300 ₺ · Ödeme ekranından üyeliği başlatabilirsin.' },
@@ -483,16 +488,16 @@
   function renderCategory(category = state.category) {
     state.category = category;
     const list = document.getElementById('skillList');
-    if (category !== 'cognitive') {
+    if (!['cognitive','language'].includes(category)) {
       const titles = { language: 'Dil ve İletişim', social: 'Sosyal Beceriler', daily: 'Günlük Yaşam' };
       document.getElementById('categoryKicker').textContent = titles[category];
       document.getElementById('categoryTitle').textContent = 'Bu kategori sonraki kapsamda';
       list.innerHTML = '<div class="empty-state"><span>🧭</span><strong>Henüz etkinlik eklenmedi</strong><p>İlk sürümde yalnızca eşleme ve renk becerileri çalışılıyor.</p></div>';
       return;
     }
-    document.getElementById('categoryKicker').textContent = 'Bilişsel Beceriler';
+    document.getElementById('categoryKicker').textContent = category==='language'?'Dil ve İletişim':'Bilişsel Beceriler';
     document.getElementById('categoryTitle').textContent = 'Çalışılacak beceriler';
-    const open = Object.keys(skillNames).filter(key => state.assessment[key] !== 'can');
+    const open = Object.keys(skillNames).filter(key => state.assessment[key] !== 'can' && (category==='language'?key==='object-name':key!=='object-name'));
     if (!open.length) {
       list.innerHTML = '<div class="empty-state"><span>🌟</span><strong>Bu bölümde çalışılacak beceri görünmüyor</strong><p>Kaba değerlendirmede tüm beceriler “Yapıyor” olarak işaretlendi.</p></div>';
       return;
@@ -501,7 +506,7 @@
       const skill = skillNames[key]; const playable = skill.playable;
       const status = state.assessment[key];
       const label = status === 'needs' ? 'Kaba değerlendirme: Henüz yapamıyor' : status === 'unknown' ? 'Kaba değerlendirme: Gözlenmedi' : 'Kaba değerlendirme: İşaretlenmedi';
-      const action = key === 'object-show' ? '<button class="primary-button" type="button" data-open-pointing>Kategorileri aç</button>' : key === 'object-match' ? '<button class="primary-button" type="button" data-open-matching>Kategorileri aç</button>' : !playable ? '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>' : key === 'pattern' || key === 'events'
+      const action = key==='object-name'?'<button class="primary-button" type="button" data-open-naming>Kategorileri aç</button>':key === 'object-show' ? '<button class="primary-button" type="button" data-open-pointing>Kategorileri aç</button>' : key === 'object-match' ? '<button class="primary-button" type="button" data-open-matching>Kategorileri aç</button>' : !playable ? '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>' : key === 'pattern' || key === 'events'
         ? `<button class="primary-button" type="button" data-open-levels="${key}">Seviyeleri aç</button>`
         : `<button class="primary-button" type="button" data-start-skill="${key}">5 denemeyi başlat</button>`;
       return `<article class="skill-item"><span class="skill-icon">${skill.icon}</span><div><strong>${skill.title}</strong><small>${skill.description}</small><span class="skill-status">${label}</span></div>${action}</article>`;
@@ -523,18 +528,22 @@
   }
 
   function renderMatchingPicker() {
+    const naming=state.objectPickerSkill==='object-name';
     const pointing=state.objectPickerSkill==='object-show';
-    document.getElementById('matchingPickerTitle').textContent=pointing?'Nesne gösterme':'Nesne eşleme';
-    document.querySelector('#matchingPicker .step-label').textContent='Bilişsel beceriler · '+(pointing?'Nesne gösterme':'Nesne eşleme');
-    document.querySelector('#matchingPicker .section-intro').textContent='Kategoriyi, nesneyi ve seviyeyi seçin. Nesne seviyelerinden sonra farklı kategorilerden üç karma seviye gelir. Her seviyede 5 deneme yapılır.';
+    document.getElementById('matchingPickerBack').textContent=naming?'← Dil ve İletişime dön':'← Bilişsel becerilere dön';
+    document.getElementById('matchingPickerTitle').textContent=naming?'Nesne ismi söyleme':pointing?'Nesne gösterme':'Nesne eşleme';
+    document.querySelector('#matchingPicker .step-label').textContent=(naming?'Dil ve İletişim':'Bilişsel beceriler')+' · '+(naming?'Nesne ismi söyleme':pointing?'Nesne gösterme':'Nesne eşleme');
+    document.querySelector('#matchingPicker .section-intro').textContent='Kategoriyi, nesneyi ve seviyeyi seçin. Nesne seviyelerinden sonra farklı kategorilerden karma seviyeler gelir. Her seviyede 5 deneme yapılır.';
     const category = objectData.categories.find(item => item.id === state.matchCategory);
     const item = objectData.items[state.matchItem];
     document.getElementById('matchingCategories').innerHTML = objectData.categories.map(c => `<button class="matching-category ${c.id === category.id ? 'is-selected' : ''}" type="button" data-match-category="${c.id}" aria-pressed="${c.id === category.id}">${c.title}<small>10 nesne</small></button>`).join('');
     document.getElementById('matchingItems').innerHTML = category.items.map(i => `<button class="matching-item ${i.id === item.id ? 'is-selected' : ''}" type="button" data-match-item="${i.id}" aria-pressed="${i.id === item.id}"><img src="${objectData.image(i.id)}" alt="" loading="lazy"><strong>${i.name}</strong></button>`).join('');
     document.getElementById('matchingObjectTitle').textContent = item.name + ' · Seviyeler';
-    document.getElementById('matchingStages').innerHTML = (pointing?objectData.pointingStages:objectData.stages).map((stage,index) => `<button class="level-card" type="button" data-match-stage="${index + 1}"><span class="level-number">Seviye ${index + 1}</span><strong>${stage.title}</strong><small>${stage.count} seçenek</small><em>5 deneme</em></button>`).join('');
+    document.getElementById('matchingStages').innerHTML = (naming?window.NamingRules.stages:pointing?objectData.pointingStages:objectData.stages).map((stage,index) => `<button class="level-card" type="button" data-match-stage="${index + 1}"><span class="level-number">Seviye ${index + 1}</span><strong>${stage.title}</strong><small>${naming?'Tek resim · Sesli yanıt':stage.count+' seçenek'}</small><em>5 deneme</em></button>`).join('');
   }
-  function shapeMarkup(shape, color) { return `<i class="shape ${shape} ${color}" aria-hidden="true"></i>`; }
+  function startNaming(level){state.skill='object-name';state.matchLevel=level;state.stats={independent:0,prompted:0,incorrect:0};window.speechSynthesis?.cancel();showScreen('naming');document.getElementById('namingFrame').src='./naming-activity.html?'+new URLSearchParams({item:state.matchItem,level:String(level),method:state.method||'wait',autoStart:window.LocalMicrophone?.available()?'1':'0',role:window.ParentGate?.role()||'guardian'});}
+ window.addEventListener('message',event=>{const frame=document.getElementById('namingFrame');if(event.origin!==location.origin||event.source!==frame.contentWindow||state.screen!=='naming')return;const msg=event.data;if(msg?.type==='naming-size'&&Number.isFinite(msg.height)){frame.style.height=Math.min(2200,Math.max(400,msg.height))+'px';return;}if(msg?.type==='naming-menu'){goPlatform();return;}if(msg?.type==='naming-start'&&Number.isInteger(msg.level)&&msg.level>=1&&msg.level<=7)state.matchLevel=msg.level;if(msg?.type==='naming-complete'){const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||Object.values(counts).reduce((a,b)=>a+b,0)!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();}});
+ function shapeMarkup(shape, color) { return `<i class="shape ${shape} ${color}" aria-hidden="true"></i>`; }
   function pairCardMarkup(type) { return `<i class="pair-symbol" aria-hidden="true">${pairSymbols[type]}</i>`; }
   function setGameMode(skill) {
     const pairMode = skill === 'same-red';
@@ -894,7 +903,7 @@
   function goPlatform(push = true) { state.editingAssessment = false; renderPlatform(); showScreen('platform', push); }
   function finishEarly() { saveState(); document.getElementById('pauseModal').hidden = true; goPlatform(); }
 
-  document.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', () => showScreen(button.dataset.next)));
+  document.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', () => {if(state.screen==='welcome'&&button.dataset.next==='profile')window.LocalMicrophone?.ensure().catch(()=>{});showScreen(button.dataset.next);}));
   document.getElementById('backButton').addEventListener('click', () => { const previous = state.history.pop(); if (previous) showScreen(previous, false); });
   document.getElementById('homeButton').addEventListener('click', () => { state.history = []; if (state.method) goPlatform(false); else showScreen('welcome', false); });
   document.getElementById('settingsButton').addEventListener('click', () => showScreen('settings'));
@@ -934,6 +943,7 @@
   document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { renderCategory(button.dataset.category); showScreen('category'); }));
   document.getElementById('categoryBack').addEventListener('click', () => { if (state.history[state.history.length - 1] === 'platform') state.history.pop(); goPlatform(false); });
   document.getElementById('skillList').addEventListener('click', event => {
+    if(event.target.closest('[data-open-naming]')){state.objectPickerSkill='object-name';renderMatchingPicker();showScreen('matching-picker');return;}
     if(event.target.closest('[data-open-pointing]')) { state.objectPickerSkill='object-show';renderMatchingPicker();showScreen('matching-picker');return; }
     if(event.target.closest('[data-open-matching]')) { state.objectPickerSkill='object-match';renderMatchingPicker(); showScreen('matching-picker'); return; }
     const opener = event.target.closest('[data-open-levels]');
@@ -945,7 +955,7 @@
   document.getElementById('matchingPicker').addEventListener('click',event=>{
     const category=event.target.closest('[data-match-category]'); if(category){state.matchCategory=category.dataset.matchCategory;state.matchItem=objectData.categories.find(c=>c.id===state.matchCategory).items[0].id;renderMatchingPicker();return;}
     const item=event.target.closest('[data-match-item]');if(item){state.matchItem=item.dataset.matchItem;renderMatchingPicker();return;}
-    const stage=event.target.closest('[data-match-stage]');if(stage){showScreen('activity');resetActivity(state.objectPickerSkill||'object-match',Number(stage.dataset.matchStage));}
+    const stage=event.target.closest('[data-match-stage]');if(stage){if(state.objectPickerSkill==='object-name'){startNaming(Number(stage.dataset.matchStage));return;}showScreen('activity');resetActivity(state.objectPickerSkill||'object-match',Number(stage.dataset.matchStage));}
   });
   document.getElementById('levelList').addEventListener('click', event => {
     const card = event.target.closest('[data-level]');
@@ -1014,6 +1024,7 @@
     document.getElementById('planNote').textContent = 'Ödeme sağlayıcısı henüz bağlanmadı. Gerçek ödeme alınmadı; entegrasyon için sağlayıcı hesabı ve sunucu uç noktası gerekir.';
   });
 
+  window.AppEntry={show:showScreen,platform:goPlatform,ready:()=>!!(state.method&&state.avatar&&state.profile.name),resetHistory:()=>{state.history=[];}};
   loadState(); loadAudioSettings(); loadVoices(); if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = loadVoices;
   tryStartMusic();
   renderPlanUI();
@@ -1026,7 +1037,7 @@
       name: 'start_two_color_matching', title: 'İki renk arasından eşleme çalışmasını başlat',
       description: 'Seçili öğretim yöntemiyle beş denemelik kırmızı-mavi renk eşleme çalışmasını görünür olarak başlatır.',
       inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false },
-      execute() { showScreen('activity'); resetActivity(); return { status: 'started', activity: 'two_color_matching', trials: 5, method: state.method }; }
+      execute() { if(window.ParentGate?.role()==='locked')return {status:'locked'}; showScreen('activity'); resetActivity(); return { status: 'started', activity: 'two_color_matching', trials: 5, method: state.method }; }
     })).catch(() => {});
   }
 })();

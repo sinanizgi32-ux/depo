@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0759e6">
-  <meta name="description" content="Eşleme, renk ve örüntü becerileri için Dijital Özel Eğitim uygulaması.">
-  <title>Dijital Özel Eğitim</title>
+  <meta name="description" content="Eşleme, renk ve örüntü becerileri için Dijital Erken Eğitim uygulaması.">
+  <title>Dijital Erken Eğitim</title>
   <link rel="icon" type="image/png" href="./assets/dijital-ozel-egitim-logo-tablet.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -13,15 +13,17 @@
   <div class="app-shell">
     <header class="topbar" id="topbar" hidden>
       <button class="icon-button" id="backButton" type="button" aria-label="Önceki ekrana dön">←</button>
-      <div class="brand-mini"><img src="./assets/dijital-ozel-egitim-logo-tablet.png" alt="" width="44" height="44"><span>Dijital Özel Eğitim</span></div>
+      <div class="brand-mini"><img src="./assets/dijital-ozel-egitim-logo-tablet.png" alt="" width="44" height="44"><span>Dijital Erken Eğitim</span></div>
       <div class="top-actions">
         <button class="quick-audio-button" id="quickMuteTop" type="button" aria-label="Müziği kapat" aria-pressed="false">🔊</button>
-        <button class="text-button" id="settingsButton" type="button">⚙️ Ayarlar</button>
+        <button class="text-button" id="panelButton" type="button">Uygulamacı paneli</button><button class="text-button" id="settingsButton" type="button">⚙️ Ayarlar</button>
         <button class="text-button" id="homeButton" type="button">Ana menü</button>
       </div>
     </header>
 
     <main id="app">
+<section class="screen" data-screen="guardian"><div class="content-card narrow"><span class="step-label">Yetişkinlere özel</span><h2>Uygulamacı paneli</h2><p>Çocuğun çalışmalarını buradan hazırlayabilirsiniz.</p><p id="guardianNote" role="status"></p><div class="guardian-actions"><button class="primary-button" data-guardian-screen="profile">Öğrenci ve oyun arkadaşı</button><button class="secondary-button" id="guardianAssessment">Kaba değerlendirme</button><button class="secondary-button" id="guardianMethod">Öğretim yöntemi</button><button class="secondary-button" data-guardian-screen="settings">Müzikleri dinle ve ayarları değiştir</button><button class="secondary-button" id="guardianActivities">Etkinlikleri incele</button><button class="primary-button" id="guardianChild">Çocuk moduna geç</button><button class="text-button" id="guardianLock">Kilitle ve girişe dön</button></div><p class="section-intro">PIN bu tarayıcıya özeldir. Telefonunuzun kilit şifresi kullanılmaz.</p></div></section>
+<section class="screen" data-screen="pin"><div class="content-card narrow"><h2 id="pinTitle">Uygulamacı girişi</h2><p id="pinHelp"></p><form id="pinForm"><label>6 haneli PIN<input id="parentPin" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="off" required></label><label id="pinConfirmLabel">PIN tekrar<input id="parentPinConfirm" type="password" inputmode="numeric" maxlength="6" autocomplete="off"></label><p id="pinMessage" role="status" aria-live="polite"></p><button class="primary-button" id="pinSubmit">Devam et</button></form><button class="text-button" id="pinCancel">Giriş ekranına dön</button></div></section>
       <section class="screen welcome-screen is-active" data-screen="welcome" aria-labelledby="welcomeTitle">
         <button class="welcome-plan-chip" id="welcomePlanButton" type="button">🛒 Satın al</button>
         <div class="welcome-controls" aria-label="Hızlı ayarlar">
@@ -30,9 +32,9 @@
         </div>
         <div class="welcome-visual"><img src="./assets/dijital-ozel-egitim-logo-tablet.png" alt="Tablet ekranından çıkan renkli öğrenme kartları" class="hero-logo"></div>
         <div class="welcome-copy">
-          <h1 id="welcomeTitle">Dijital Özel Eğitim</h1>
+          <h1 id="welcomeTitle">Dijital Erken Eğitim</h1>
           <p class="lead">Oyun arkadaşını seç, birlikte öğrenmeye başla.</p>
-          <button class="primary-button jumbo" type="button" data-next="profile">Başlayalım</button>
+          <div class="entry-actions"><button class="primary-button jumbo" id="childEntry" type="button">Çocuk girişi</button><button class="secondary-button" id="guardianEntry" type="button">🔒 Uygulamacı girişi</button></div><p id="entryNote" role="status"></p>
         </div>
       </section>
 
@@ -54,7 +56,7 @@
               <button class="secondary-button compact" id="settingsPlanButton" type="button">Planı yönet</button>
             </div>
           </div>
-          <button class="primary-button" id="settingsBack" type="button">Önceki ekrana dön</button>
+          <div id="musicChoices"></div><button class="primary-button" id="settingsBack" type="button">Önceki ekrana dön</button>
         </div>
       </section>
 
@@ -144,7 +146,7 @@
           <span class="step-label">Kaba değerlendirme</span>
           <h2 id="assessmentTitle">Çocuk şu anda neleri yapabiliyor?</h2>
           <p class="section-intro">Her beceri için gözleminize en uygun seçeneği işaretleyin. Çalışılacak beceriler ana menüde buna göre açılır.</p>
-          <div class="assessment-list" id="assessmentList">
+          <div class="assessment-list" id="assessmentList"><article class="assessment-row" data-skill="object-name"><div><strong>Nesnenin adını söyler</strong><small>Gösterilen nesnenin Türkçe adını söyler.</small></div><div class="status-choice" role="radiogroup" aria-label="Nesnenin adını söyleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
             <article class="assessment-row" data-skill="object-show"><div><strong>İstenen nesneyi gösterir</strong><small>Nesnenin adı söylendiğinde, iki ila beş resim arasından istenen nesneyi gösterir.</small></div><div class="status-choice" role="radiogroup" aria-label="İstenen nesneyi gösterme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article><article class="assessment-row" data-skill="object-match"><div><strong>Nesneleri eşler</strong><small>Nesnenin adı söylendiğinde, resmini aynı veya farklı görünümlü eşiyle eşler.</small></div><div class="status-choice" role="radiogroup" aria-label="Aynı nesneleri eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
             <article class="assessment-row" data-skill="same-red"><div><strong>Aynı tipte ve aynı renkte olanları eşler</strong><small>İki aynı kırmızı kartı eşler.</small></div><div class="status-choice" role="radiogroup" aria-label="Aynı tip aynı renk eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
             <article class="assessment-row featured" data-skill="two-color"><div><strong>İki renk arasından aynı rengi eşler</strong><small>Kırmızı ve mavi seçenekleri arasından kırmızıyı eşler.</small></div><div class="status-choice" role="radiogroup" aria-label="İki renk arasından eşleme"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div></article>
@@ -175,10 +177,10 @@
         <div class="platform-shell">
           <div class="platform-heading"><div><span class="step-label">Öğrenme alanı</span><h2 id="platformTitle">Çalışmalar</h2><p>Bir beceri alanına dokunarak içine girin.</p></div><div class="platform-actions"><button class="secondary-button" id="editMethod" type="button">Yöntem seçimini düzenle</button><button class="secondary-button" id="editAssessment" type="button">Kaba değerlendirmeyi düzenle</button></div></div>
           <div class="category-grid" aria-label="Beceri kategorileri">
-            <button type="button" class="category-card" data-category="cognitive"><span>🧠</span><strong>Bilişsel Beceriler</strong><small id="cognitiveCount">0 çalışma</small><b>İçine gir →</b></button>
-            <button type="button" class="category-card" data-category="language"><span>💬</span><strong>Dil ve İletişim</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
-            <button type="button" class="category-card" data-category="social"><span>🤝</span><strong>Sosyal Beceriler</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
-            <button type="button" class="category-card" data-category="daily"><span>🏠</span><strong>Günlük Yaşam</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
+            <button type="button" class="category-card" data-category="cognitive"><span class="category-eyebrow">Düşün · Keşfet · Öğren</span><strong>Bilişsel Beceriler</strong><small id="cognitiveCount">0 çalışma</small><b>İçine gir →</b></button>
+            <button type="button" class="category-card" data-category="language"><span class="category-eyebrow">Dinle · Anlat · İletişim kur</span><strong>Dil ve İletişim</strong><small id="languageCount">1 çalışma</small><b>İçine gir →</b></button>
+            <button type="button" class="category-card" data-category="social"><span class="category-eyebrow">Birlikte oyna · Paylaş · Bağ kur</span><strong>Sosyal Beceriler</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
+            <button type="button" class="category-card" data-category="daily"><span class="category-eyebrow">Kendin yap · Günü keşfet</span><strong>Günlük Yaşam</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
           </div>
         </div>
       </section>
@@ -197,7 +199,7 @@
         </div>
       </section>
 
-      <section class="screen" data-screen="matching-picker" id="matchingPicker" aria-labelledby="matchingPickerTitle"><button class="text-button" id="matchingPickerBack" type="button">← Bilişsel becerilere dön</button><section class="skill-panel"><span class="step-label">Bilişsel beceriler · Nesne eşleme</span><h2 id="matchingPickerTitle">Nesne eşleme</h2><p class="section-intro">Önce kategoriyi ve nesneyi, sonra çalışılacak seviyeyi seçin. Her seviyede aynı nesneyle 5 deneme yapılır.</p><div id="matchingCategories" class="matching-categories"></div><h3>Çalışılacak nesne</h3><div id="matchingItems" class="matching-items"></div><h3 id="matchingObjectTitle"></h3><div id="matchingStages" class="matching-stages"></div></section></section>
+      <section class="screen" data-screen="naming"><iframe id="namingFrame" title="Nesne ismi söyleme etkinliği" allow="microphone" style="width:100%;height:620px;border:0;border-radius:24px"></iframe></section><section class="screen" data-screen="matching-picker" id="matchingPicker" aria-labelledby="matchingPickerTitle"><button class="text-button" id="matchingPickerBack" type="button">← Bilişsel becerilere dön</button><section class="skill-panel"><span class="step-label">Bilişsel beceriler · Nesne eşleme</span><h2 id="matchingPickerTitle">Nesne eşleme</h2><p class="section-intro">Önce kategoriyi ve nesneyi, sonra çalışılacak seviyeyi seçin. Her seviyede aynı nesneyle 5 deneme yapılır.</p><div id="matchingCategories" class="matching-categories"></div><h3>Çalışılacak nesne</h3><div id="matchingItems" class="matching-items"></div><h3 id="matchingObjectTitle"></h3><div id="matchingStages" class="matching-stages"></div></section></section>
       <section class="screen game-screen" data-screen="activity" aria-labelledby="gameTitle">
         <div class="game-toolbar"><div><span class="step-label">Bilişsel beceriler · Renk eşleme</span><h2 id="gameTitle">Aynı renkte olanı seç</h2></div><div class="trial-progress"><span id="trialLabel">1 / 5</span><div class="progress-track"><span id="progressFill"></span></div></div></div>
         <div class="game-stage"><div class="target-area"><span>Örnek</span><div class="shape-card target" id="targetCard"></div></div><div class="answer-area" id="answerArea" aria-label="Cevap seçenekleri"></div><div class="pair-area" id="pairArea" hidden aria-label="Eşleme masası"></div><div class="pattern-area" id="patternArea" hidden aria-label="Örüntü sırası"></div><div id="eventArea" class="event-area" hidden><h3 id="eventStoryTitle"></h3><p class="event-instruction">Önce olanı, sonra olanı sırala.</p><div id="eventCards" class="event-cards" aria-label="Karışık olay kartları"></div><p class="event-touch-note">Kartlara sırayla dokun veya numaralı yerlere sürükle.</p><div id="eventSlots" class="event-slots" aria-label="Olayların oluş sırası"></div></div><div id="objectMatchingArea" class="object-matching-area" hidden><p id="objectInstruction" class="object-instruction"></p><div id="objectTargets" class="object-targets" aria-label="Üstteki eşleme yerleri"></div><p id="objectRoute" class="object-route" hidden>↑ Gösterilen resme götür</p><p class="object-note">Alttaki resmi üstteki eşiyle eşle. Sürükleyebilir veya önce karta, sonra eşine dokunabilirsin.</p><div class="object-source-row"><button id="objectSource" class="object-source" type="button"></button></div></div><div class="feedback" id="feedback" role="status" aria-live="polite"></div><button class="help-button" id="helpButton" type="button">💡 Yardım göster</button></div>
@@ -223,7 +225,7 @@
   <script src="./pofidik-viewer.js" defer></script>
   <script src="./events-data.js" defer></script>
   <script src="./matching-data.js" defer></script>
-  <script src="./object-matching.js" defer></script>
-  <script src="./app.js" defer></script>
+  <script src="./local-speech.js" defer></script><script src="./naming-rules.js" defer></script><script src="./object-matching.js" defer></script>
+  <script src="./app.js" defer></script><script src="./parent-gate.js" defer></script>
 </body>
 </html>

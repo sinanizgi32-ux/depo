@@ -1,4 +1,4 @@
-# Dijital Özel Eğitim — başka bilgisayarda çalıştırma
+# Dijital Erken Eğitim — başka bilgisayarda çalıştırma
 
 Bu klasörün tamamı güncel proje kaydıdır. Çalışan uygulama `dist` içinde; Pofidik modeli, sesler ve görseller de birlikte taşınır. Dosyalarda belirli bir kullanıcı adı veya masaüstü yolu gerekmez.
 

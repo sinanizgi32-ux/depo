@@ -56,6 +56,28 @@ function reply(response, status, message, method) {
 
 const server = createServer(async (request, response) => {
   const method = request.method || 'GET';
+  const route = new URL(request.url, `http://${host}:${port}`).pathname;
+  if (route === '/api/status' || route === '/api/transcribe') {
+    const statusRoute = route === '/api/status';
+    if (method !== (statusRoute ? 'GET' : 'POST')) { reply(response, 405, 'Geçersiz yöntem.', method); return; }
+    if (!statusRoute && request.headers.origin !== `http://${host}:${port}`) { reply(response, 403, 'Yalnızca yerel uygulama erişebilir.', method); return; }
+    try {
+      let body;
+      if (!statusRoute) {
+        if (request.headers['content-type'] !== 'audio/wav' || Number(request.headers['content-length']) > 500000) { reply(response, 400, 'Geçersiz ses.', method); return; }
+        const chunks = []; let size = 0;
+        for await (const chunk of request) { size += chunk.length; if (size > 500000) { reply(response, 413, 'Ses çok uzun.', method); return; } chunks.push(chunk); }
+        body = Buffer.concat(chunks);
+      }
+      const upstream = await fetch(`http://127.0.0.1:4181${route}`, { method, body, headers: statusRoute ? {} : { 'Content-Type': 'audio/wav', Origin: 'http://127.0.0.1:4181' }, signal: AbortSignal.timeout(30000) });
+      const result = await upstream.text();
+      response.writeHead(upstream.status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); response.end(result);
+    } catch {
+      response.writeHead(statusRoute ? 200 : 503, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      response.end(JSON.stringify({ ready: false, message: 'Yerel dinleme hizmeti açılmadı. Mikrofon izni alınabilir; ses hizmetinin başlaması gerekiyor.', error: 'Yerel dinleme hizmetine ulaşılamadı.' }));
+    }
+    return;
+  }
   if (method !== 'GET' && method !== 'HEAD') {
     reply(response, 405, 'Yalnızca GET ve HEAD desteklenir.', method);
     return;
@@ -141,7 +163,7 @@ server.on('error', (error) => {
 
 server.listen(port, host, () => {
   const url = `http://${host}:${port}/`;
-  console.log(`Dijital Özel Eğitim hazır: ${url}`);
+  console.log(`Dijital Erken Eğitim hazır: ${url}`);
   console.log('Bu pencere açık kalmalı. Kapatmak için Ctrl+C kullanabilirsiniz.');
   if (process.argv.includes('--open')) {
     const command = process.platform === 'win32'

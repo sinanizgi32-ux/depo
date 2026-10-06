@@ -1,0 +1,26 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const app=fs.readFileSync(new URL('../dist/app.js',import.meta.url),'utf8');
+const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
+assert(html.includes('data-skill="object-name"'));
+assert(html.includes('allow="microphone"'));
+const bridge=app.slice(app.indexOf('function startNaming('),app.indexOf('function shapeMarkup'));
+const frame={style:{},contentWindow:{},src:''};let listener,saved=0,menus=0;
+const state={matchItem:'cat',method:'immediate'};
+const context=vm.createContext({state,URLSearchParams,location:{origin:'http://localhost'},document:{getElementById:()=>frame},window:{speechSynthesis:{cancel(){}},addEventListener:(type,fn)=>{listener=fn;}},showScreen:screen=>state.screen=screen,saveState:()=>saved++,goPlatform:()=>menus++});
+vm.runInContext(bridge+';startNaming(2);',context);
+assert.equal(state.screen,'naming');
+assert(frame.src.includes('item=cat&level=2&method=immediate'));
+const send=(data,origin='http://localhost',source=frame.contentWindow)=>listener({data,origin,source});
+const stats={independent:2,prompted:2,incorrect:1};
+send({type:'naming-complete',stats},'https://other.test');assert.equal(saved,0);
+send({type:'naming-complete',stats},'http://localhost',{});assert.equal(saved,0);
+send({type:'naming-complete',stats:{independent:5,prompted:5,incorrect:0}});assert.equal(saved,0);
+send({type:'naming-complete',stats});assert.equal(saved,1);assert.equal(state.stats.incorrect,1);
+send({type:'naming-start',level:7});assert.equal(state.matchLevel,7);
+send({type:'naming-menu'});assert.equal(menus,1);
+state.screen='platform';send({type:'naming-complete',stats});assert.equal(saved,1);
+console.log('OK: Naming integration, selected method, safe totals, and menu navigation.');
+
+state.screen='naming';send({type:'naming-size',height:580});assert.equal(frame.style.height,'580px');send({type:'naming-size',height:999999});assert.equal(frame.style.height,'2200px');

@@ -1,16 +1,16 @@
 {
   "name": "dijital-ozel-egitim",
-  "version": "0.13.0",
+  "version": "0.16.1",
   "private": true,
-  "description": "Dijital Özel Eğitim — taşınabilir yerel uygulama",
+  "description": "Dijital Ã–zel EÄŸitim â€” taÅŸÄ±nabilir yerel uygulama",
   "type": "module",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "start": "node scripts/serve.mjs",
-    "start:open": "node scripts/serve.mjs --open",
-    "test": "node scripts/check-project.mjs && node scripts/check-pattern.mjs && node scripts/check-events.mjs --assets && node scripts/check-object-matching.mjs --assets && node scripts/check-object-pointing.mjs && node scripts/check-mixed-objects.mjs",
+    "start": "node scripts/start-with-speech.mjs",
+    "start:open": "node scripts/start-with-speech.mjs --open",
+    "test": "node scripts/check-project.mjs && node scripts/check-pattern.mjs && node scripts/check-events.mjs --assets && node scripts/check-object-matching.mjs --assets && node scripts/check-object-pointing.mjs && node scripts/check-mixed-objects.mjs && node scripts/check-naming-prototype.mjs && node scripts/check-naming-integration.mjs && node scripts/check-microphone-session.mjs && node scripts/check-naming-scenes.mjs && node scripts/check-parent-gate.mjs && node scripts/check-approved-music.mjs",
     "build:viewer": "node scripts/build-viewer.mjs",
     "compress:model": "node scripts/compress-pofidik.mjs"
   },
@@ -19,5 +19,3 @@
     "three": "0.186.1"
   }
 }
-
-

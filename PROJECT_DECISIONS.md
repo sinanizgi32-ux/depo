@@ -1,4 +1,4 @@
-# Dijital Özel Eğitim — Kalıcı Proje Kararları
+# Dijital Erken Eğitim — Kalıcı Proje Kararları
 
 Son güncelleme: 5 Ekim 2026 — Sürüm 0.9.2 üzerinde yerel düzenlemeler
 
