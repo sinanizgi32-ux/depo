@@ -8,6 +8,7 @@
   const musicBlockedScreens = new Set(['activity', 'endgame', 'summary']);
   const audioSettings = { enabled: true, volume: .35, lastVolume: .35 };
   const skillNames = {
+    'object-show': {title:'Nesne gösterme',description:'10 kategori, 100 nesne. Beş seviyede iki seçenekten beş seçeneğe ilerleyen gösterme çalışması.',icon:'👆',playable:true},
     'object-match': { title: 'Nesne eşleme', description: '10 kategori, 100 nesne. Her nesne için dört seviyede beşer eşleme denemesi.', icon: '🧩', playable: true },
     'same-red': { title: 'Aynı tip ve aynı renk kartları eşle', description: 'Aynı tip iki kırmızı kartı dağınık kartlar arasından bulup eşleme. 5 deneme ve bölüm sonu oyunu.', icon: '🟥', playable: true },
     'two-color': { title: 'İki renk arasından doğru olanı eşle', description: 'Kırmızı ve mavi arasından kırmızı olanı eşle. 5 deneme ve bölüm sonu oyunu.', icon: '🎨', playable: true },
@@ -500,7 +501,7 @@
       const skill = skillNames[key]; const playable = skill.playable;
       const status = state.assessment[key];
       const label = status === 'needs' ? 'Kaba değerlendirme: Henüz yapamıyor' : status === 'unknown' ? 'Kaba değerlendirme: Gözlenmedi' : 'Kaba değerlendirme: İşaretlenmedi';
-      const action = key === 'object-match' ? '<button class="primary-button" type="button" data-open-matching>Kategorileri aç</button>' : !playable ? '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>' : key === 'pattern' || key === 'events'
+      const action = key === 'object-show' ? '<button class="primary-button" type="button" data-open-pointing>Kategorileri aç</button>' : key === 'object-match' ? '<button class="primary-button" type="button" data-open-matching>Kategorileri aç</button>' : !playable ? '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>' : key === 'pattern' || key === 'events'
         ? `<button class="primary-button" type="button" data-open-levels="${key}">Seviyeleri aç</button>`
         : `<button class="primary-button" type="button" data-start-skill="${key}">5 denemeyi başlat</button>`;
       return `<article class="skill-item"><span class="skill-icon">${skill.icon}</span><div><strong>${skill.title}</strong><small>${skill.description}</small><span class="skill-status">${label}</span></div>${action}</article>`;
@@ -522,12 +523,16 @@
   }
 
   function renderMatchingPicker() {
+    const pointing=state.objectPickerSkill==='object-show';
+    document.getElementById('matchingPickerTitle').textContent=pointing?'Nesne gösterme':'Nesne eşleme';
+    document.querySelector('#matchingPicker .step-label').textContent='Bilişsel beceriler · '+(pointing?'Nesne gösterme':'Nesne eşleme');
+    document.querySelector('#matchingPicker .section-intro').textContent='Kategoriyi, nesneyi ve seviyeyi seçin. Her seviyede aynı nesneyle 5 deneme yapılır.';
     const category = objectData.categories.find(item => item.id === state.matchCategory);
     const item = objectData.items[state.matchItem];
     document.getElementById('matchingCategories').innerHTML = objectData.categories.map(c => `<button class="matching-category ${c.id === category.id ? 'is-selected' : ''}" type="button" data-match-category="${c.id}" aria-pressed="${c.id === category.id}">${c.title}<small>10 nesne</small></button>`).join('');
     document.getElementById('matchingItems').innerHTML = category.items.map(i => `<button class="matching-item ${i.id === item.id ? 'is-selected' : ''}" type="button" data-match-item="${i.id}" aria-pressed="${i.id === item.id}"><img src="${objectData.image(i.id)}" alt="" loading="lazy"><strong>${i.name}</strong></button>`).join('');
     document.getElementById('matchingObjectTitle').textContent = item.name + ' · Seviyeler';
-    document.getElementById('matchingStages').innerHTML = objectData.stages.map((stage,index) => `<button class="level-card" type="button" data-match-stage="${index + 1}"><span class="level-number">Seviye ${index + 1}</span><strong>${stage.title}</strong><small>${stage.count} seçenek</small><em>5 deneme</em></button>`).join('');
+    document.getElementById('matchingStages').innerHTML = (pointing?objectData.pointingStages:objectData.stages).map((stage,index) => `<button class="level-card" type="button" data-match-stage="${index + 1}"><span class="level-number">Seviye ${index + 1}</span><strong>${stage.title}</strong><small>${stage.count} seçenek</small><em>5 deneme</em></button>`).join('');
   }
   function shapeMarkup(shape, color) { return `<i class="shape ${shape} ${color}" aria-hidden="true"></i>`; }
   function pairCardMarkup(type) { return `<i class="pair-symbol" aria-hidden="true">${pairSymbols[type]}</i>`; }
@@ -535,7 +540,7 @@
     const pairMode = skill === 'same-red';
     const patternMode = skill === 'pattern';
     const eventMode = skill === 'events';
-    const objectMode = skill === 'object-match';
+    const objectMode = ['object-match','object-show'].includes(skill);
     document.querySelector('.game-screen').classList.toggle('is-object-matching', objectMode);
     document.querySelector('.game-stage').classList.toggle('is-object-matching', objectMode);
     document.querySelector('.game-stage').classList.toggle('is-events', eventMode || objectMode);
@@ -553,9 +558,9 @@
     state.skill = skill; state.trial = 0; state.stats = { independent: 0, prompted: 0, incorrect: 0 };
     if (skill === 'pattern') state.patternLevel = level;
     if (skill === 'events') state.eventLevel = level;
-    if (skill === 'object-match') state.matchLevel = level;
+    if (['object-match','object-show'].includes(skill)) state.matchLevel = level;
     setGameMode(skill);
-    if (skill === 'object-match') objectMatching.render(); else if (skill === 'same-red') renderPairTrial(); else if (skill === 'pattern') renderPatternTrial(); else if (skill === 'events') renderEventTrial(); else renderTrial();
+    if (['object-match','object-show'].includes(skill)) objectMatching.render(); else if (skill === 'same-red') renderPairTrial(); else if (skill === 'pattern') renderPatternTrial(); else if (skill === 'events') renderEventTrial(); else renderTrial();
   }
   function giveInstruction(text, hint) {
     const buttons = [...document.querySelectorAll('.answer-card, .pair-card, .pattern-choice, .event-card')];
@@ -854,7 +859,7 @@
   }
   function finishBlock() { saveState(); updateSummary(); state.history = []; showScreen('summary', false); }
   function nextPatternLevel() {
-    if (state.skill === 'object-match') { if(state.matchLevel >= 4) return; const next = state.matchLevel + 1; state.history=[]; showScreen('activity',false); resetActivity('object-match',next); return; }
+    if (['object-match','object-show'].includes(state.skill)) { if(state.matchLevel >= (state.skill==='object-show'?5:4)) return; const next = state.matchLevel + 1; state.history=[]; showScreen('activity',false); resetActivity(state.skill,next); return; }
     if (state.skill === 'events') {
       if (state.eventLevel >= eventContent.levels.length) return;
       const next = state.eventLevel + 1;
@@ -868,12 +873,13 @@
     saveState();
   }
   function updateSummary() {
-    document.getElementById('summaryNext').hidden = state.skill === 'object-match' ? state.matchLevel >= 4 : state.skill === 'events' ? state.eventLevel >= eventContent.levels.length : state.skill !== 'pattern' || state.patternLevel >= patternLevels.length;
+    document.getElementById('summaryNext').hidden = ['object-match','object-show'].includes(state.skill) ? state.matchLevel >= (state.skill==='object-show'?5:4) : state.skill === 'events' ? state.eventLevel >= eventContent.levels.length : state.skill !== 'pattern' || state.patternLevel >= patternLevels.length;
     const trialCounts = { 'two-color': trials.length, 'same-red': pairTrials.length, 'pattern': 5 };
-    document.getElementById('summaryTitle').textContent = state.skill === 'object-match' ? `${objectData.items[state.matchItem].name} · Seviye ${state.matchLevel} · 5 deneme tamamlandı` : state.skill === 'pattern' || state.skill === 'events'
+    document.getElementById('summaryTitle').textContent = ['object-match','object-show'].includes(state.skill) ? `${objectData.items[state.matchItem].name} · Seviye ${state.matchLevel} · 5 deneme tamamlandı` : state.skill === 'pattern' || state.skill === 'events'
       ? `Seviye ${state.skill === 'events' ? state.eventLevel : state.patternLevel} · 5 deneme tamamlandı`
       : `${trialCounts[state.skill] || 5} deneme tamamlandı`;
     const generalizations = {
+      'object-show':'Nesnenin adını söyleyip evdeki farklı örneklerini göstermesini isteyin. Örneğin: Muzu göster.',
       'object-match': 'Öğrendiği nesnenin evdeki farklı örneklerini bulup eşlemesini isteyin. Nesnenin adını söyleyerek eşleme yönergesi verin.',
       'two-color': 'Kırmızı ve mavi iki gerçek nesne arasından kırmızı olanı eşlemesini isteyin.',
       'same-red': 'Evde iki kırmızı eşya bulup aynı olanları birlikte eşlemesini isteyin.',
@@ -928,7 +934,8 @@
   document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { renderCategory(button.dataset.category); showScreen('category'); }));
   document.getElementById('categoryBack').addEventListener('click', () => { if (state.history[state.history.length - 1] === 'platform') state.history.pop(); goPlatform(false); });
   document.getElementById('skillList').addEventListener('click', event => {
-    if(event.target.closest('[data-open-matching]')) { renderMatchingPicker(); showScreen('matching-picker'); return; }
+    if(event.target.closest('[data-open-pointing]')) { state.objectPickerSkill='object-show';renderMatchingPicker();showScreen('matching-picker');return; }
+    if(event.target.closest('[data-open-matching]')) { state.objectPickerSkill='object-match';renderMatchingPicker(); showScreen('matching-picker'); return; }
     const opener = event.target.closest('[data-open-levels]');
     if (opener) { renderPatternLevels(opener.dataset.openLevels); showScreen('pattern-levels'); return; }
     const starter = event.target.closest('[data-start-skill]');
@@ -938,7 +945,7 @@
   document.getElementById('matchingPicker').addEventListener('click',event=>{
     const category=event.target.closest('[data-match-category]'); if(category){state.matchCategory=category.dataset.matchCategory;state.matchItem=objectData.categories.find(c=>c.id===state.matchCategory).items[0].id;renderMatchingPicker();return;}
     const item=event.target.closest('[data-match-item]');if(item){state.matchItem=item.dataset.matchItem;renderMatchingPicker();return;}
-    const stage=event.target.closest('[data-match-stage]');if(stage){showScreen('activity');resetActivity('object-match',Number(stage.dataset.matchStage));}
+    const stage=event.target.closest('[data-match-stage]');if(stage){showScreen('activity');resetActivity(state.objectPickerSkill||'object-match',Number(stage.dataset.matchStage));}
   });
   document.getElementById('levelList').addEventListener('click', event => {
     const card = event.target.closest('[data-level]');
@@ -947,9 +954,9 @@
   document.getElementById('patternLevelsBack').addEventListener('click', () => { if (state.history[state.history.length - 1] === 'category') state.history.pop(); renderCategory(); showScreen('category', false); });
   document.getElementById('editAssessment').addEventListener('click', () => { state.editingAssessment = true; restoreAssessmentUI(); updateAssessmentMode(); showScreen('assessment'); });
   document.getElementById('editMethod').addEventListener('click', () => { if (state.method) setMethod(state.method); showScreen('method'); });
-  document.getElementById('helpButton').addEventListener('click', () => { if (state.skill === 'object-match') objectMatching.hint(); else if (state.skill === 'events') showHintEvent(); else if (state.skill === 'same-red') showHintPair(); else if (state.skill === 'pattern') showHintPattern(); else showHint(); });
-  document.getElementById('pauseButton').addEventListener('click', () => { clearTimeout(promptTimer); document.getElementById('pauseModal').hidden = false; if (state.skill === 'object-match') objectMatching.pause(); if (state.skill === 'events' || state.skill === 'object-match') { window.speechSynthesis?.cancel(); speechToken += 1; window.Pofidik3D?.setSpeaking(false); } });
-  document.getElementById('resumeButton').addEventListener('click', () => { document.getElementById('pauseModal').hidden = true; if(state.skill === 'object-match'){objectMatching.resume();return;} if (state.skill === 'events') { if (eventAdvancePending) { const run = eventRun; speak(state.avatar, document.getElementById('feedback').textContent || praise(), () => scheduleEventAdvance(run)); } else if (eventNextSlot() >= 0) { if (state.hadPrompt || state.method === 'immediate') showHintEvent(); else { state.eventBusy = true; giveInstruction('Şimdi sıradaki olayı seç.', showHintEvent); } } return; } if (state.method === 'wait' && !state.hadPrompt) { if (state.skill === 'same-red') promptTimer = setTimeout(showHintPair, 4000); else if (state.skill === 'pattern') promptTimer = setTimeout(showHintPattern, 4000); else promptTimer = setTimeout(showHint, 4000); } });
+  document.getElementById('helpButton').addEventListener('click', () => { if (['object-match','object-show'].includes(state.skill)) objectMatching.hint(); else if (state.skill === 'events') showHintEvent(); else if (state.skill === 'same-red') showHintPair(); else if (state.skill === 'pattern') showHintPattern(); else showHint(); });
+  document.getElementById('pauseButton').addEventListener('click', () => { clearTimeout(promptTimer); document.getElementById('pauseModal').hidden = false; if (['object-match','object-show'].includes(state.skill)) objectMatching.pause(); if (state.skill === 'events' || ['object-match','object-show'].includes(state.skill)) { window.speechSynthesis?.cancel(); speechToken += 1; window.Pofidik3D?.setSpeaking(false); } });
+  document.getElementById('resumeButton').addEventListener('click', () => { document.getElementById('pauseModal').hidden = true; if(['object-match','object-show'].includes(state.skill)){objectMatching.resume();return;} if (state.skill === 'events') { if (eventAdvancePending) { const run = eventRun; speak(state.avatar, document.getElementById('feedback').textContent || praise(), () => scheduleEventAdvance(run)); } else if (eventNextSlot() >= 0) { if (state.hadPrompt || state.method === 'immediate') showHintEvent(); else { state.eventBusy = true; giveInstruction('Şimdi sıradaki olayı seç.', showHintEvent); } } return; } if (state.method === 'wait' && !state.hadPrompt) { if (state.skill === 'same-red') promptTimer = setTimeout(showHintPair, 4000); else if (state.skill === 'pattern') promptTimer = setTimeout(showHintPattern, 4000); else promptTimer = setTimeout(showHint, 4000); } });
   document.getElementById('finishButton').addEventListener('click', finishEarly); document.getElementById('pauseFinish').addEventListener('click', finishEarly);
   document.querySelectorAll('#bubbleZone button').forEach(button => button.addEventListener('click', () => {
     if (button.classList.contains('is-popped')) return; button.classList.add('is-popped'); bubbles -= 1;

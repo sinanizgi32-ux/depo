@@ -1,6 +1,6 @@
 {
   "name": "dijital-ozel-egitim",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "private": true,
   "description": "Dijital Özel Eğitim — taşınabilir yerel uygulama",
   "type": "module",
@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node scripts/serve.mjs",
     "start:open": "node scripts/serve.mjs --open",
-    "test": "node scripts/check-project.mjs && node scripts/check-pattern.mjs && node scripts/check-events.mjs --assets && node scripts/check-object-matching.mjs --assets",
+    "test": "node scripts/check-project.mjs && node scripts/check-pattern.mjs && node scripts/check-events.mjs --assets && node scripts/check-object-matching.mjs --assets && node scripts/check-object-pointing.mjs",
     "build:viewer": "node scripts/build-viewer.mjs",
     "compress:model": "node scripts/compress-pofidik.mjs"
   },

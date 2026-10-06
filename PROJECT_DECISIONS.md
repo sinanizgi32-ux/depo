@@ -184,3 +184,7 @@ Kaba değerlendirmede `object-match` anahtarı korunarak başlık Nesneleri eşl
 ## 0.11.1 akıcılık entegrasyonu
 
 Yerel denemelerde onaylanan Pofidik yükleme ve eşleme sürükleme düzeltmeleri ana projeye alındı. Otomatik model ön yüklemesi kaldırıldı; gizli karakterler çizilmez. Sıkıştırılmış modelin orijinalle birebir eşitliği proje kontrolüne eklendi. Öğretim yöntemleri, etkinlikler ve modelin 14 hareketi korunur.
+
+## Nesne gösterme
+
+Bilişsel becerilere ayrı Nesne gösterme kazanımı eklendi. Eşlemedeki onaylı 10 kategori ve 100 nesne korunur. İlk seviyede iki seçenekle aynı görsel; diğerlerinde aynı nesnenin farklı görünümleriyle 2, 3, 4, 5 seçenek kullanılır. Her seviyede beş deneme. Çeldiriciler kategori içinden karışık seçilir. Resme dokunulur; kaynak eşleme kartı gösterilmez. Seçilen öğretim yöntemi korunur ve her yönerge sesinin bitiminde öğretim başlar. Beşinci seviyede sonraki seviye düğmesi gizlenir. Oyun düğmesi mevcut hazırlanmadı ekranına gider.

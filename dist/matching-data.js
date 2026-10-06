@@ -31,5 +31,12 @@ window.ObjectMatchingData = (() => {
     return {item,source:stage===1?0:source,target:stage===1?0:target,options:[itemId,...Array.from({length:stages[stage-1].count-1},(_,i)=>category.items[(position+index+i+1)%10].id)]};
   }
   function image(id,variant=0){return `./assets/matching/${id}/${variant+1}.webp`;}
-  return {categories,items,stages,trial,image};
+  const pointingStages=[{title:'Aynı resim · İki seçenek',count:2},{title:'Farklı görünümler · İki seçenek',count:2},{title:'Farklı görünümler · Üç seçenek',count:3},{title:'Farklı görünümler · Dört seçenek',count:4},{title:'Farklı görünümler · Beş seçenek',count:5}];
+  function pointingTrial(itemId,stage,index){
+    const item=items[itemId],category=categories.find(c=>c.id===item.category);
+    const others=category.items.filter(i=>i.id!==itemId).map(i=>i.id);
+    for(let i=others.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[others[i],others[j]]=[others[j],others[i]];}
+    return {item,target:stage===1?0:[0,1,2,1,2][index],options:[itemId,...others.slice(0,pointingStages[stage-1].count-1)]};
+  }
+  return {categories,items,stages,trial,image,pointingStages,pointingTrial};
 })();

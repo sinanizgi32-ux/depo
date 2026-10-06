@@ -1,6 +1,6 @@
 Dijital Özel Eğitim
 Temel sürüm: 0.4.0
-Güncel sürüm: 0.11.1
+Güncel sürüm: 0.12.0
 Tarih: 6 Ekim 2026
 Durum: 0.9.1 — Örüntü çalışması 15 seviyeli listeye dönüştürüldü; seviye ekranından her seviyede 5 farklı deneme oynanır. 4 saniye sabit bekleme prototipi örüntüde sistematik öğretime bağlandı: 4 saniye içinde doğru yanıt bağımsız pekiştirme alır, yanlış yanıtta “Hayır, o değil…” düzeltmesiyle doğru seçenek belirtilir ve çocuğun doğruyu seçmesi beklenir, yanıtsızlıkta doğru seçenek gösterilir.
 
@@ -12,3 +12,5 @@ Durum: 0.9.1 — Örüntü çalışması 15 seviyeli listeye dönüştürüldü;
 
 0.11.1 — 6 Ekim 2026: Pofidik yalnızca seçilince yüklenir. Kayıpsız sıkıştırılmış model, gizli ekranlarda duran animasyon ve görünür sürükleme düzeltmeleri ana projeye işlendi.
 
+
+0.12.0: Nesne gösterme eklendi. Onaylı 10 kategori ve 100 nesne; her nesne 5 seviyede 5 deneme. Seçenek sayıları 2, 2, 3, 4, 5. İlk seviyede aynı resim, sonrakilerde aynı nesnenin farklı görünümleri. Eşzamanlı ve 4 saniye öğretim, kaba değerlendirme ve bölüm sonu seçenekleri bağlandı.

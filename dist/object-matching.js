@@ -3,32 +3,35 @@ window.ObjectMatching = (() => {
   function create({state,speak,praise,finishBlock}) {
     let run=0,timer,busy=false,selected=false,completed=false,pending=false,gesture=null,ignoreClick=false,current;
     const el=id=>document.getElementById(id);
-    const active=()=>state.screen==='activity'&&state.skill==='object-match'&&el('pauseModal').hidden;
+    const pointing=()=>state.skill==='object-show';
+    const verb=()=>pointing()?'göster':'eşle';
+    const active=()=>state.screen==='activity'&&['object-match','object-show'].includes(state.skill)&&el('pauseModal').hidden;
     const say=(text,done)=>{const token=run;speak(state.avatar,text,()=>{if(token===run&&active())done?.();});};
     const img=(id,variant)=>`<img src="${data.image(id,variant)}" alt="${data.items[id].name}" draggable="false">`;
     function controls(disabled){el('objectSource').disabled=disabled;el('objectTargets').querySelectorAll('button').forEach(button=>button.disabled=disabled);}
     function stop(){run++;clearTimeout(timer);gesture=null;busy=false;selected=false;}
-    function instruction(){busy=true;controls(true);say(`${current.item.accusative} eşle.`,()=>{busy=false;controls(false);if(state.method==='immediate')hint();else timer=setTimeout(hint,4000);});}
+    function instruction(){busy=true;controls(true);say(`${current.item.accusative} ${verb()}.`,()=>{busy=false;controls(false);if(state.method==='immediate')hint();else timer=setTimeout(hint,4000);});}
     function render(){
       stop();completed=false;pending=false;ignoreClick=false;state.hadPrompt=false;state.attempts=0;
-      current=data.trial(state.matchItem,state.matchLevel,state.trial);
-      el('gameTitle').textContent=`${current.item.accusative} eşle`;
-      document.querySelector('.game-toolbar .step-label').textContent=`Bilişsel beceriler · Nesne eşleme · Seviye ${state.matchLevel}`;
+      current=(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,state.trial);
+      el('gameTitle').textContent=`${current.item.accusative} ${verb()}`;
+      document.querySelector('.game-toolbar .step-label').textContent=`Bilişsel beceriler · ${pointing()?'Nesne gösterme':'Nesne eşleme'} · Seviye ${state.matchLevel}`;
       el('trialLabel').textContent=`${state.trial+1} / 5`;el('progressFill').style.width=`${(state.trial+1)*20}%`;
-      el('objectInstruction').textContent=`${current.item.accusative} eşle.`;
+      el('objectInstruction').textContent=`${current.item.accusative} ${verb()}.`;
       el('objectRoute').hidden=true;el('objectRoute').textContent='↑ Gösterilen resme götür';
       el('feedback').textContent='';el('feedback').className='feedback';
+      el('objectMatchingArea').classList.toggle('is-pointing',pointing());
       const options=[...current.options];for(let i=options.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[options[i],options[j]]=[options[j],options[i]];}
-      const targets=el('objectTargets');targets.innerHTML='';
-      options.forEach(id=>{const button=document.createElement('button');button.type='button';button.className='object-target';button.dataset.object=id;button.setAttribute('aria-label',`${data.items[id].name} eşleme yeri`);button.innerHTML=img(id,current.target);button.addEventListener('click',()=>{if(selected)answer(id);});targets.appendChild(button);});
-      const source=el('objectSource');source.className='object-source';source.style.transform='';source.hidden=false;source.innerHTML=img(current.item.id,current.source);source.setAttribute('aria-label',`${current.item.name} kartını seç ve eşleme yerine götür`);
+      const targets=el('objectTargets');targets.innerHTML='';targets.setAttribute('aria-label',pointing()?'Gösterilecek nesneler':'Üstteki eşleme yerleri');
+      options.forEach(id=>{const button=document.createElement('button');button.type='button';button.className='object-target';button.dataset.object=id;button.setAttribute('aria-label',pointing()?data.items[id].name:`${data.items[id].name} eşleme yeri`);button.innerHTML=img(id,id===current.item.id?current.target:Math.floor(Math.random()*3));button.addEventListener('click',()=>{if(pointing()||selected)answer(id);});targets.appendChild(button);});
+      const source=el('objectSource');source.className='object-source';source.style.transform='';source.hidden=pointing();source.innerHTML=img(current.item.id,current.source);source.setAttribute('aria-label',`${current.item.name} kartını seç ve eşleme yerine götür`);
       instruction();
     }
     function hint(wrong=false){
       if(!active()||completed)return;clearTimeout(timer);state.hadPrompt=true;busy=true;controls(true);
-      el('objectSource').classList.add('is-hint');el('objectRoute').hidden=false;
+      if(!pointing())el('objectSource').classList.add('is-hint');el('objectRoute').hidden=pointing();
       el('objectTargets').querySelectorAll('button').forEach(button=>button.classList.toggle('is-hint',button.dataset.object===current.item.id));
-      const text=`${wrong?'Bu eşleşme olmadı. ':''}Bu ${current.item.name.toLocaleLowerCase('tr')}. Yukarıda da ${current.item.name.toLocaleLowerCase('tr')} var. Alttaki resmi gösterilen resmin üstüne götür. ${current.item.accusative} eşle.`;
+      const text=pointing()?`${wrong?'Hayır, o değil. ':''}Bu ${current.item.name.toLocaleLowerCase('tr')}. Gösterilen resme dokun. ${current.item.accusative} göster.`:`${wrong?'Bu eşleşme olmadı. ':''}Bu ${current.item.name.toLocaleLowerCase('tr')}. Yukarıda da ${current.item.name.toLocaleLowerCase('tr')} var. Alttaki resmi gösterilen resmin üstüne götür. ${current.item.accusative} ${verb()}.`;
       el('feedback').textContent=text;el('feedback').className='feedback hint-feedback';
       say(text,()=>{busy=false;controls(false);});
     }
@@ -43,7 +46,7 @@ window.ObjectMatching = (() => {
       completed=true;pending=true;busy=true;controls(true);
       if(state.hadPrompt||state.attempts)state.stats.prompted++;else state.stats.independent++;
       el('objectSource').hidden=true;el('objectRoute').hidden=true;
-      el('objectTargets').querySelectorAll('button').forEach(button=>{button.classList.remove('is-hint');if(button.dataset.object===id){button.classList.add('is-correct');button.insertAdjacentHTML('beforeend','<span class="object-match-done">Eşleşti ✓</span>');}});
+      el('objectTargets').querySelectorAll('button').forEach(button=>{button.classList.remove('is-hint');if(button.dataset.object===id){button.classList.add('is-correct');button.insertAdjacentHTML('beforeend',`<span class="object-match-done">${pointing()?'Doğru ✓':'Eşleşti ✓'}</span>`);}});
       const reward=praise();el('feedback').textContent=reward;el('feedback').className='feedback good';say(reward,advance);
     }
     function rearm(){if(active()&&!busy&&!completed&&!state.hadPrompt&&state.method==='wait'){clearTimeout(timer);timer=setTimeout(hint,4000);}}
