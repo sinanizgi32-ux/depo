@@ -40,5 +40,21 @@ window.ObjectMatchingData = (() => {
     for(let i=others.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[others[i],others[j]]=[others[j],others[i]];}
     return {item,target:stage===1?0:item.category==='animals'?variedAnimal(stage,index):[0,1,2,1,2][index],options:[itemId,...others.slice(0,pointingStages[stage-1].count-1)]};
   }
-  return {categories,items,stages,trial,image,pointingStages,pointingTrial,variantCount};
+  const isMixed=(skill,level)=>level>(skill==='object-show'?5:4);
+  for(let i=1;i<=3;i++){
+    stages.push({title:`Karma nesneler ${i}`,count:4,mixed:true});
+    pointingStages.push({title:`Karma nesneler ${i}`,count:4,mixed:true});
+  }
+  function shuffle(values){const result=[...values];for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}return result;}
+  function mixedBlock(){
+    return shuffle(categories).slice(0,5).map(category=>{
+      const item=items[shuffle(category.items)[0].id];
+      const target=Math.floor(Math.random()*variantCount(item.id));
+      const source=(target+1+Math.floor(Math.random()*(variantCount(item.id)-1)))%variantCount(item.id);
+      const related=shuffle(category.items.filter(i=>i.id!==item.id))[0].id;
+      const others=shuffle(Object.keys(items).filter(id=>id!==item.id&&id!==related&&items[id].category!==item.category));
+      return {item,target,source,options:[item.id,related,...others.slice(0,2)]};
+    });
+  }
+  return {categories,items,stages,trial,image,pointingStages,pointingTrial,variantCount,isMixed,mixedBlock};
 })();

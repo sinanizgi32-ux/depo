@@ -8,8 +8,8 @@
   const musicBlockedScreens = new Set(['activity', 'endgame', 'summary']);
   const audioSettings = { enabled: true, volume: .35, lastVolume: .35 };
   const skillNames = {
-    'object-show': {title:'Nesne gösterme',description:'10 kategori, 100 nesne. Beş seviyede iki seçenekten beş seçeneğe ilerleyen gösterme çalışması.',icon:'👆',playable:true},
-    'object-match': { title: 'Nesne eşleme', description: '10 kategori, 100 nesne. Her nesne için dört seviyede beşer eşleme denemesi.', icon: '🧩', playable: true },
+    'object-show': {title:'Nesne gösterme',description:'10 kategori, 100 nesne. Beş nesne seviyesi ve ardından dört seçenekli üç karma seviye.',icon:'👆',playable:true},
+    'object-match': { title: 'Nesne eşleme', description: '10 kategori, 100 nesne. Her nesne için dört seviye ve ardından üç karma seviye; her seviyede beş deneme.', icon: '🧩', playable: true },
     'same-red': { title: 'Aynı tip ve aynı renk kartları eşle', description: 'Aynı tip iki kırmızı kartı dağınık kartlar arasından bulup eşleme. 5 deneme ve bölüm sonu oyunu.', icon: '🟥', playable: true },
     'two-color': { title: 'İki renk arasından doğru olanı eşle', description: 'Kırmızı ve mavi arasından kırmızı olanı eşle. 5 deneme ve bölüm sonu oyunu.', icon: '🎨', playable: true },
     'spoken-color': { title: 'Söylenen rengi göster', description: 'Sözel yönergeye göre doğru rengi seçme çalışması.', icon: '👆' },
@@ -526,7 +526,7 @@
     const pointing=state.objectPickerSkill==='object-show';
     document.getElementById('matchingPickerTitle').textContent=pointing?'Nesne gösterme':'Nesne eşleme';
     document.querySelector('#matchingPicker .step-label').textContent='Bilişsel beceriler · '+(pointing?'Nesne gösterme':'Nesne eşleme');
-    document.querySelector('#matchingPicker .section-intro').textContent='Kategoriyi, nesneyi ve seviyeyi seçin. Her seviyede aynı nesneyle 5 deneme yapılır.';
+    document.querySelector('#matchingPicker .section-intro').textContent='Kategoriyi, nesneyi ve seviyeyi seçin. Nesne seviyelerinden sonra farklı kategorilerden üç karma seviye gelir. Her seviyede 5 deneme yapılır.';
     const category = objectData.categories.find(item => item.id === state.matchCategory);
     const item = objectData.items[state.matchItem];
     document.getElementById('matchingCategories').innerHTML = objectData.categories.map(c => `<button class="matching-category ${c.id === category.id ? 'is-selected' : ''}" type="button" data-match-category="${c.id}" aria-pressed="${c.id === category.id}">${c.title}<small>10 nesne</small></button>`).join('');
@@ -859,7 +859,7 @@
   }
   function finishBlock() { saveState(); updateSummary(); state.history = []; showScreen('summary', false); }
   function nextPatternLevel() {
-    if (['object-match','object-show'].includes(state.skill)) { if(state.matchLevel >= (state.skill==='object-show'?5:4)) return; const next = state.matchLevel + 1; state.history=[]; showScreen('activity',false); resetActivity(state.skill,next); return; }
+    if (['object-match','object-show'].includes(state.skill)) { if(state.matchLevel >= (state.skill==='object-show'?objectData.pointingStages.length:objectData.stages.length)) return; const next = state.matchLevel + 1; state.history=[]; showScreen('activity',false); resetActivity(state.skill,next); return; }
     if (state.skill === 'events') {
       if (state.eventLevel >= eventContent.levels.length) return;
       const next = state.eventLevel + 1;
@@ -873,9 +873,9 @@
     saveState();
   }
   function updateSummary() {
-    document.getElementById('summaryNext').hidden = ['object-match','object-show'].includes(state.skill) ? state.matchLevel >= (state.skill==='object-show'?5:4) : state.skill === 'events' ? state.eventLevel >= eventContent.levels.length : state.skill !== 'pattern' || state.patternLevel >= patternLevels.length;
+    document.getElementById('summaryNext').hidden = ['object-match','object-show'].includes(state.skill) ? state.matchLevel >= (state.skill==='object-show'?objectData.pointingStages.length:objectData.stages.length) : state.skill === 'events' ? state.eventLevel >= eventContent.levels.length : state.skill !== 'pattern' || state.patternLevel >= patternLevels.length;
     const trialCounts = { 'two-color': trials.length, 'same-red': pairTrials.length, 'pattern': 5 };
-    document.getElementById('summaryTitle').textContent = ['object-match','object-show'].includes(state.skill) ? `${objectData.items[state.matchItem].name} · Seviye ${state.matchLevel} · 5 deneme tamamlandı` : state.skill === 'pattern' || state.skill === 'events'
+    document.getElementById('summaryTitle').textContent = ['object-match','object-show'].includes(state.skill) ? `${objectData.isMixed(state.skill,state.matchLevel)?"Karma nesneler":objectData.items[state.matchItem].name} · Seviye ${state.matchLevel} · 5 deneme tamamlandı` : state.skill === 'pattern' || state.skill === 'events'
       ? `Seviye ${state.skill === 'events' ? state.eventLevel : state.patternLevel} · 5 deneme tamamlandı`
       : `${trialCounts[state.skill] || 5} deneme tamamlandı`;
     const generalizations = {
@@ -1030,3 +1030,4 @@
     })).catch(() => {});
   }
 })();
+

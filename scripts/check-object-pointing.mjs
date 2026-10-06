@@ -50,10 +50,11 @@ context.resetActivity=(skill,level)=>{assert.equal(skill,'object-show');state.ma
 vm.runInContext(app.slice(app.indexOf('  function nextPatternLevel()'),app.indexOf('  function goPlatform(')),context);
 for(let level=1;level<=5;level++){
  reset('cat',level,'immediate');context.state=state;state.stats={independent:2,prompted:3,incorrect:1};
- context.updateSummary();assert.equal(nodes.summaryNext.hidden,level===5);
- context.nextPatternLevel();assert.equal(state.matchLevel,level===5?5:level+1);assert.equal(state.matchItem,'cat');assert.equal(state.method,'immediate');
+ context.updateSummary();assert.equal(nodes.summaryNext.hidden,false);
+ context.nextPatternLevel();assert.equal(state.matchLevel,level+1);assert.equal(state.matchItem,'cat');assert.equal(state.method,'immediate');
 }
-assert.equal(nextStarted,4);
+assert.equal(nextStarted,5);
 const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');assert(html.includes('data-skill="object-show"><div><strong>İstenen nesneyi gösterir</strong>'));
 for(const id of Object.keys(data.items))for(let variant=1;variant<=data.variantCount(id);variant++)assert(fs.existsSync(new URL('../dist/assets/matching/'+id+'/'+variant+'.webp',import.meta.url)));
 console.log('OK: Nesne gösterme — 100 nesne, 5 seviye, 2500 deneme; iki öğretim yöntemi, yanlış/yanıtsızlık, duraklatma, pekiştirme ve son seviye.');
+

@@ -192,3 +192,7 @@ Bilişsel becerilere ayrı Nesne gösterme kazanımı eklendi. Eşlemedeki onayl
 ## Hayvan örneklerini genelleme
 
 Renk farkının ötesinde 10 hayvan için altışar yeni iki boyutlu gerçekçi görünüm oluşturuldu. Kedi örnekleri yavru, iri uzun tüylü yetişkin, tombul kısa tüylü, ince yapılı Siyam, hafif çamurlu ve bakımlı İran kedisidir. Diğer hayvanlarda da yaş, boyut, vücut yapısı ve doğal görünüm çeşitliliği vardır. İlk seviye aynı resimle korunur. Yeni örnekler sonraki seviyelere ve eşleme kazanımına bağlandı; hayvan adı/yönergesi ve öğretim yöntemleri korunur.
+
+## Karma nesne seviyeleri
+
+Her iki etkinliğin sonuna üç karma seviye eklendi. Her blokta beş farklı kategori ve beş farklı hedef vardır; 100 nesnenin tamamı seçim havuzuna dahildir. Hedefler blok başında oluşturulur ve ipucu/hata sırasında değişmez. Dört seçenek içinde bir doğru ve üç ayrı çeldirici bulunur. Nesneye özel adlandırılmış yönerge ve mevcut öğretim akışı kullanılır. Eşlemenin 7., göstermenin 8. seviyesinde sonraki seviye gizlenir.

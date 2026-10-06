@@ -13,7 +13,10 @@ window.ObjectMatching = (() => {
     function instruction(){busy=true;controls(true);say(`${current.item.accusative} ${verb()}.`,()=>{busy=false;controls(false);if(state.method==='immediate')hint();else timer=setTimeout(hint,4000);});}
     function render(){
       stop();completed=false;pending=false;ignoreClick=false;state.hadPrompt=false;state.attempts=0;
-      current=(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,state.trial);
+      if(data.isMixed(state.skill,state.matchLevel)){
+        if(state.trial===0)state.mixedTrials=data.mixedBlock();
+        current=state.mixedTrials[state.trial];
+      }else current=(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,state.trial);
       el('gameTitle').textContent=`${current.item.accusative} ${verb()}`;
       document.querySelector('.game-toolbar .step-label').textContent=`Bilişsel beceriler · ${pointing()?'Nesne gösterme':'Nesne eşleme'} · Seviye ${state.matchLevel}`;
       el('trialLabel').textContent=`${state.trial+1} / 5`;el('progressFill').style.width=`${(state.trial+1)*20}%`;

@@ -55,10 +55,11 @@ context.resetActivity=(skill,level)=>{assert.equal(skill,'object-match');state.m
 vm.runInContext(app.slice(app.indexOf('  function nextPatternLevel()'),app.indexOf('  function goPlatform(')),context);
 for(let level=1;level<=4;level++){
   reset('cat',level,'immediate');context.state=state;state.stats={independent:2,prompted:3,incorrect:1};
-  context.updateSummary();assert.equal(nodes.summaryNext.hidden,level===4);assert.equal(nodes.summaryTitle.textContent,`Kedi · Seviye ${level} · 5 deneme tamamlandı`);
-  context.nextPatternLevel();assert.equal(state.matchLevel,level===4?4:level+1);assert.equal(state.matchItem,'cat');assert.equal(state.method,'immediate');
+  context.updateSummary();assert.equal(nodes.summaryNext.hidden,false);assert.equal(nodes.summaryTitle.textContent,`Kedi · Seviye ${level} · 5 deneme tamamlandı`);
+  context.nextPatternLevel();assert.equal(state.matchLevel,level+1);assert.equal(state.matchItem,'cat');assert.equal(state.method,'immediate');
 }
-assert.equal(nextStarted,3);
+assert.equal(nextStarted,4);
 const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');assert(html.includes('data-skill="object-match"><div><strong>Nesneleri eşler</strong>'));assert(html.indexOf('matching-data.js')<html.indexOf('object-matching.js'));assert(html.indexOf('object-matching.js')<html.indexOf('./app.js'));
 if(process.argv.includes('--assets'))for(const id of Object.keys(data.items))for(let variant=1;variant<=data.variantCount(id);variant++)assert(fs.existsSync(new URL(`../dist/assets/matching/${id}/${variant}.webp`,import.meta.url)),`${id}/${variant} görseli eksik`);
 console.log('OK: 100 objects, 4 stages, 2000 trials; exact and varied matching, named instructions, independent/prompted responses, speech timing, dragging, pause and stale callbacks.');
+
