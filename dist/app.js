@@ -17,6 +17,14 @@
     'pattern': { title: 'Örüntü: boş kutuya hangisi gelir?', description: 'Örüntüdeki sırada bir sonraki nesneyi bulma. 15 seviye, giderek zorlaşan örüntüler.', icon: '🔁', playable: true },
     'events': { title: 'Olay kartlarını oluş sırasına göre sıralar', description: 'İki karttan beş karta ilerleyen 10 seviye. Her seviyede 5 olay sıralama denemesi.', icon: '🖼️', playable: true }
   };
+  Object.assign(skillNames,{
+    'action-match':{title:'Eylem eşleme',description:'30 eylemi aynı ve farklı video örnekleriyle eşleme. Her seviyede beş deneme.',icon:'🧩',playable:true},
+    'action-show':{title:'Eylem gösterme',description:'İki, üç, dört ve beş eylem arasından istenen hareketi gösterme. Her seviyede beş deneme.',icon:'👆',playable:true},
+    'action-name':{title:'Eylem ismi söyleme',description:'Videodaki hareketi Türkçe adlandırma. Her seviyede beş sesli deneme.',icon:'🎙️',playable:true}
+  });
+  for(const [key,title,detail] of [['action-match','Eylemleri eşler','Aynı eylemi gösteren videoları eşler.'],['action-show','İstenen eylemi gösterir','Eylemin adı söylendiğinde uygun videoyu gösterir.'],['action-name','Eylemin adını söyler','Videoda yapılan eylemi Türkçe adlandırır.']]){
+    const row=document.createElement('article');row.className='assessment-row';row.dataset.skill=key;row.innerHTML=`<div><strong>${title}</strong><small>${detail}</small></div><div class="status-choice" role="radiogroup" aria-label="${title}"><button type="button" data-status="can">Yapıyor</button><button type="button" data-status="needs">Henüz yapamıyor</button><button type="button" data-status="unknown">Gözlenmedi</button></div>`;document.getElementById('assessmentList').append(row);
+  }
   const eventContent = window.EventSequences;
   let eventRun = 0;
   let eventAdvancePending = false;
@@ -293,7 +301,7 @@
   function saveAudioSettings() {
     localStorage.setItem(audioStorageKey, JSON.stringify(audioSettings));
   }
-  function musicCanPlay() { return !Array.from(document.querySelectorAll('#musicChoices audio')).some(a=>!a.paused) && audioSettings.enabled && !musicBlockedScreens.has(state.screen); }
+  function musicCanPlay() { return state.screen!=='action-preview' && !Array.from(document.querySelectorAll('#musicChoices audio')).some(a=>!a.paused) && audioSettings.enabled && !musicBlockedScreens.has(state.screen); }
   function tryStartMusic() {
     if (!musicCanPlay()) { backgroundMusic.pause(); return; }
     backgroundMusic.volume = audioSettings.volume;
@@ -368,6 +376,7 @@
   }
 
   function showScreen(name, push = true) {
+    if(state.screen==='action-preview'&&name!=='action-preview')document.getElementById('actionPreviewFrame').src='about:blank';
     if(window.ParentGate && !window.ParentGate.allow(name)){window.ParentGate.open(name);return;}
     window.ParentGate?.stopPreviews();
     if(state.screen==='naming'&&name!=='naming')document.getElementById('namingFrame').src='about:blank';
@@ -378,7 +387,7 @@
     screens.forEach(s => s.classList.toggle('is-active', s.dataset.screen === name));
     topbar.hidden = name === 'welcome';
     document.getElementById('backButton').style.visibility = state.history.length ? 'visible' : 'hidden';
-    const buddyHiddenScreens = ['welcome', 'pin', 'guardian', 'profile', 'avatar', 'intro','naming'];
+    const buddyHiddenScreens = ['welcome', 'pin', 'guardian', 'profile', 'avatar', 'intro','naming','action-preview'];
     floatingBuddy.hidden = !state.avatar || !state.buddyActivated || buddyHiddenScreens.includes(name);
     if (musicBlockedScreens.has(name)) backgroundMusic.pause(); else tryStartMusic();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -455,8 +464,8 @@
 
   function renderPlatform() {
     const open = Object.keys(skillNames).filter(key => state.assessment[key] !== 'can');
-    document.getElementById('cognitiveCount').textContent = `${open.filter(key=>key!=='object-name').length} çalışma`;
-    document.getElementById('languageCount').textContent=`${open.includes('object-name')?1:0} çalışma`;
+    document.getElementById('cognitiveCount').textContent = `${open.filter(key=>!['object-name','action-name'].includes(key)).length} çalışma`;
+    document.getElementById('languageCount').textContent=`${open.filter(key=>['object-name','action-name'].includes(key)).length} çalışma`;
   }
   const planInfo = {
     free: { title: 'Premium üyelik', detail: 'Aylık 300 ₺ · Ödeme ekranından üyeliği başlatabilirsin.' },
@@ -497,7 +506,7 @@
     }
     document.getElementById('categoryKicker').textContent = category==='language'?'Dil ve İletişim':'Bilişsel Beceriler';
     document.getElementById('categoryTitle').textContent = 'Çalışılacak beceriler';
-    const open = Object.keys(skillNames).filter(key => state.assessment[key] !== 'can' && (category==='language'?key==='object-name':key!=='object-name'));
+    const open = Object.keys(skillNames).filter(key => state.assessment[key] !== 'can' && (category==='language'?['object-name','action-name'].includes(key):!['object-name','action-name'].includes(key)));
     if (!open.length) {
       list.innerHTML = '<div class="empty-state"><span>🌟</span><strong>Bu bölümde çalışılacak beceri görünmüyor</strong><p>Kaba değerlendirmede tüm beceriler “Yapıyor” olarak işaretlendi.</p></div>';
       return;
@@ -506,7 +515,7 @@
       const skill = skillNames[key]; const playable = skill.playable;
       const status = state.assessment[key];
       const label = status === 'needs' ? 'Kaba değerlendirme: Henüz yapamıyor' : status === 'unknown' ? 'Kaba değerlendirme: Gözlenmedi' : 'Kaba değerlendirme: İşaretlenmedi';
-      const action = key==='object-name'?'<button class="primary-button" type="button" data-open-naming>Kategorileri aç</button>':key === 'object-show' ? '<button class="primary-button" type="button" data-open-pointing>Kategorileri aç</button>' : key === 'object-match' ? '<button class="primary-button" type="button" data-open-matching>Kategorileri aç</button>' : !playable ? '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>' : key === 'pattern' || key === 'events'
+      const action = key.startsWith('action-')?`<button class="primary-button" type="button" data-open-action="${key}">Eylemleri aç</button>`:key==='object-name'?'<button class="primary-button" type="button" data-open-naming>Kategorileri aç</button>':key === 'object-show' ? '<button class="primary-button" type="button" data-open-pointing>Kategorileri aç</button>' : key === 'object-match' ? '<button class="primary-button" type="button" data-open-matching>Kategorileri aç</button>' : !playable ? '<button class="secondary-button" type="button" disabled>Hazırlanıyor</button>' : key === 'pattern' || key === 'events'
         ? `<button class="primary-button" type="button" data-open-levels="${key}">Seviyeleri aç</button>`
         : `<button class="primary-button" type="button" data-start-skill="${key}">5 denemeyi başlat</button>`;
       return `<article class="skill-item"><span class="skill-icon">${skill.icon}</span><div><strong>${skill.title}</strong><small>${skill.description}</small><span class="skill-status">${label}</span></div>${action}</article>`;
@@ -943,6 +952,7 @@
   document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { renderCategory(button.dataset.category); showScreen('category'); }));
   document.getElementById('categoryBack').addEventListener('click', () => { if (state.history[state.history.length - 1] === 'platform') state.history.pop(); goPlatform(false); });
   document.getElementById('skillList').addEventListener('click', event => {
+    const actionOpener=event.target.closest('[data-open-action]');if(actionOpener){state.skill=actionOpener.dataset.openAction;showScreen('action-preview');const frame=document.getElementById('actionPreviewFrame');frame.setAttribute('allow','microphone');frame.src='./action-teaching.html?'+new URLSearchParams({mode:state.skill.slice(7),method:state.method||'wait'});backgroundMusic.pause();return;}
     if(event.target.closest('[data-open-naming]')){state.objectPickerSkill='object-name';renderMatchingPicker();showScreen('matching-picker');return;}
     if(event.target.closest('[data-open-pointing]')) { state.objectPickerSkill='object-show';renderMatchingPicker();showScreen('matching-picker');return; }
     if(event.target.closest('[data-open-matching]')) { state.objectPickerSkill='object-match';renderMatchingPicker(); showScreen('matching-picker'); return; }
@@ -1024,6 +1034,8 @@
     document.getElementById('planNote').textContent = 'Ödeme sağlayıcısı henüz bağlanmadı. Gerçek ödeme alınmadı; entegrasyon için sağlayıcı hesabı ve sunucu uç noktası gerekir.';
   });
 
+  document.getElementById('actionPreviewButton').onclick=()=>{showScreen('action-preview');document.getElementById('actionPreviewFrame').src='./action-video-local.html';backgroundMusic.pause();};
+  window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==document.getElementById('actionPreviewFrame').contentWindow)return;const msg=event.data;if(msg?.type==='action-preview-menu'){goPlatform();return;}if(msg?.type==='action-teaching-complete'&&state.screen==='action-preview'&&state.skill===`action-${msg.mode}`){const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||counts.independent+counts.prompted+counts.incorrect!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();}});
   window.AppEntry={show:showScreen,platform:goPlatform,ready:()=>!!(state.method&&state.avatar&&state.profile.name),resetHistory:()=>{state.history=[];}};
   loadState(); loadAudioSettings(); loadVoices(); if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = loadVoices;
   tryStartMusic();

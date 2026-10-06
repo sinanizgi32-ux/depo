@@ -176,7 +176,7 @@
       <section class="screen platform-screen" data-screen="platform" aria-labelledby="platformTitle">
         <div class="platform-shell">
           <div class="platform-heading"><div><span class="step-label">Öğrenme alanı</span><h2 id="platformTitle">Çalışmalar</h2><p>Bir beceri alanına dokunarak içine girin.</p></div><div class="platform-actions"><button class="secondary-button" id="editMethod" type="button">Yöntem seçimini düzenle</button><button class="secondary-button" id="editAssessment" type="button">Kaba değerlendirmeyi düzenle</button></div></div>
-          <div class="category-grid" aria-label="Beceri kategorileri">
+          <p><button class="secondary-button" id="actionPreviewButton">▶ Hareketli eylem kartlarını dene</button></p><div class="category-grid" aria-label="Beceri kategorileri">
             <button type="button" class="category-card" data-category="cognitive"><span class="category-eyebrow">Düşün · Keşfet · Öğren</span><strong>Bilişsel Beceriler</strong><small id="cognitiveCount">0 çalışma</small><b>İçine gir →</b></button>
             <button type="button" class="category-card" data-category="language"><span class="category-eyebrow">Dinle · Anlat · İletişim kur</span><strong>Dil ve İletişim</strong><small id="languageCount">1 çalışma</small><b>İçine gir →</b></button>
             <button type="button" class="category-card" data-category="social"><span class="category-eyebrow">Birlikte oyna · Paylaş · Bağ kur</span><strong>Sosyal Beceriler</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
@@ -185,7 +185,7 @@
         </div>
       </section>
 
-      <section class="screen category-screen" data-screen="category" aria-labelledby="categoryTitle">
+      <section class="screen" data-screen="action-preview"><iframe id="actionPreviewFrame" title="Hareketli eylem kartları" src="about:blank" style="width:100%;height:85vh;border:0;border-radius:24px"></iframe></section><section class="screen category-screen" data-screen="category" aria-labelledby="categoryTitle">
         <div class="platform-shell">
           <button class="category-back" id="categoryBack" type="button">← Ana menüye dön</button>
           <section class="skill-panel" aria-live="polite"><div class="skill-panel-head"><div><span id="categoryKicker">Bilişsel Beceriler</span><h2 id="categoryTitle">Çalışılacak beceriler</h2></div></div><div id="skillList" class="skill-list"></div></section>

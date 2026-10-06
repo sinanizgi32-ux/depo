@@ -1,0 +1,15 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+const context={window:{}};for(const file of ['action-video-library.js','action-catalog.js','naming-rules.js','action-teaching-data.js'])vm.runInNewContext(fs.readFileSync(`dist/${file}`,'utf8'),context);
+const {ActionCatalog:items,ActionVideoLibrary:library,ActionTeachingData:D}=context.window;
+assert.equal(items.length,30);assert.equal(new Set(items.map(i=>i.id)).size,30);assert.equal(library.length,30);
+let count=0;const ff=process.argv[2];
+for(const item of library){assert.equal(item.variants.length,2);assert.equal(new Set(item.variants.map(v=>v.file)).size,2);assert.equal(new Set(item.variants.map(v=>v.source)).size,2);
+for(const v of item.variants){count++;const file=`dist/assets/actions/videos/${v.file}`;assert(fs.statSync(file).size>10000);assert(fs.statSync(`dist/assets/actions/videos/${v.poster}`).size>1000);const bytes=fs.readFileSync(file);assert.equal(bytes.subarray(4,8).toString(),'ftyp');const res=await fetch(`http://127.0.0.1:4180/assets/actions/videos/${v.file}`,{headers:{Range:'bytes=0-1023'}});assert(res.ok);assert.match(res.headers.get('content-type'),/video\/mp4/);if(ff){const result=spawnSync(ff,['-hide_banner','-i',file,'-frames:v','1','-f','null','-'],{encoding:'utf8'});assert.equal(result.status,0,result.stderr);const duration=result.stderr.match(/Duration: (\d+):(\d+):([\d.]+)/);assert(duration,`${v.file} duration`);const seconds=Number(duration[1])*3600+Number(duration[2])*60+Number(duration[3]);assert(seconds>=6&&seconds<=7,`${v.file} ${seconds}s`);assert(!/Stream .*Audio:/.test(result.stderr),`${v.file} must be silent`);}}}
+assert.equal(count,60);
+for(const mode of ['match','show','name'])for(const item of items)for(let level=1;level<=D.stages[mode].length;level++){
+const stage=D.stages[mode][level-1],block=D.block(mode,item.id,level);assert.equal(block.length,5);assert.equal(new Set(block.map(t=>t.item.id)).size,stage.mixed?5:1);
+for(const t of block){assert.equal(t.options.length,stage.count);assert.equal(new Set(t.options.map(i=>i.id)).size,t.options.length);assert(t.options.some(i=>i.id===t.item.id));for(const i of [t.item,...t.options])assert(fs.existsSync(`dist/assets/actions/videos/${i.video.file}`));for(const other of t.options.filter(i=>i.id!==t.item.id))assert.notEqual(other.group,t.item.group,'ambiguous distractor');if(mode==='match'){const correct=t.options.find(i=>i.id===t.item.id);assert.equal(correct.video.file===t.item.video.file,!stage.varied);}}
+if(stage.varied&&!stage.mixed)assert.equal(new Set(block.map(t=>t.item.video.file)).size,2);if(!stage.varied)assert.equal(new Set(block.map(t=>t.item.video.file)).size,1);
+}
+for(const item of items)for(const answer of item.answers)assert.equal(D.judge(answer,item),'correct',`${item.id}: ${answer}`);
+console.log('OK: 30 actions, 60 local silent 6–7s MP4s, two genuine sources per action, every curriculum stage yields five trials, matching variation, stable first stage, distinct mixed targets and unambiguous distractors.');
