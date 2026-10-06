@@ -60,5 +60,5 @@ for(let level=1;level<=4;level++){
 }
 assert.equal(nextStarted,3);
 const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');assert(html.includes('data-skill="object-match"><div><strong>Nesneleri eşler</strong>'));assert(html.indexOf('matching-data.js')<html.indexOf('object-matching.js'));assert(html.indexOf('object-matching.js')<html.indexOf('./app.js'));
-if(process.argv.includes('--assets'))for(const id of Object.keys(data.items))for(let variant=1;variant<=3;variant++)assert(fs.existsSync(new URL(`../dist/assets/matching/${id}/${variant}.webp`,import.meta.url)),`${id}/${variant} görseli eksik`);
+if(process.argv.includes('--assets'))for(const id of Object.keys(data.items))for(let variant=1;variant<=data.variantCount(id);variant++)assert(fs.existsSync(new URL(`../dist/assets/matching/${id}/${variant}.webp`,import.meta.url)),`${id}/${variant} görseli eksik`);
 console.log('OK: 100 objects, 4 stages, 2000 trials; exact and varied matching, named instructions, independent/prompted responses, speech timing, dragging, pause and stale callbacks.');

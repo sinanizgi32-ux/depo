@@ -188,3 +188,7 @@ Yerel denemelerde onaylanan Pofidik yükleme ve eşleme sürükleme düzeltmeler
 ## Nesne gösterme
 
 Bilişsel becerilere ayrı Nesne gösterme kazanımı eklendi. Eşlemedeki onaylı 10 kategori ve 100 nesne korunur. İlk seviyede iki seçenekle aynı görsel; diğerlerinde aynı nesnenin farklı görünümleriyle 2, 3, 4, 5 seçenek kullanılır. Her seviyede beş deneme. Çeldiriciler kategori içinden karışık seçilir. Resme dokunulur; kaynak eşleme kartı gösterilmez. Seçilen öğretim yöntemi korunur ve her yönerge sesinin bitiminde öğretim başlar. Beşinci seviyede sonraki seviye düğmesi gizlenir. Oyun düğmesi mevcut hazırlanmadı ekranına gider.
+
+## Hayvan örneklerini genelleme
+
+Renk farkının ötesinde 10 hayvan için altışar yeni iki boyutlu gerçekçi görünüm oluşturuldu. Kedi örnekleri yavru, iri uzun tüylü yetişkin, tombul kısa tüylü, ince yapılı Siyam, hafif çamurlu ve bakımlı İran kedisidir. Diğer hayvanlarda da yaş, boyut, vücut yapısı ve doğal görünüm çeşitliliği vardır. İlk seviye aynı resimle korunur. Yeni örnekler sonraki seviyelere ve eşleme kazanımına bağlandı; hayvan adı/yönergesi ve öğretim yöntemleri korunur.

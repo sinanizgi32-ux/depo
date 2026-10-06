@@ -34,7 +34,7 @@ for(const item of Object.values(data.items))for(let level=1;level<=5;level++){
   choose(item.id);engine.answer(item.id);assert.equal(state.stats.independent,trial+1);
   assert.equal(timers.size,0);speakEnd();fire(1000);count++;
  }
- assert.equal(finished,1);assert.equal(variants.size,level===1?1:3);
+ assert.equal(finished,1);assert.equal(variants.size,level===1?1:item.category==='animals'?5:3);
 }
 assert.equal(count,2500);
 reset();speakEnd();choose(targets().find(t=>t.dataset.object!=='cat').dataset.object);assert.equal(state.stats.incorrect,1);assert(state.hadPrompt);assert(speakEnd().includes('Kediyi göster.'));choose('cat');speakEnd();assert.equal(state.stats.prompted,1);
@@ -55,5 +55,5 @@ for(let level=1;level<=5;level++){
 }
 assert.equal(nextStarted,4);
 const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');assert(html.includes('data-skill="object-show"><div><strong>İstenen nesneyi gösterir</strong>'));
-for(const id of Object.keys(data.items))for(let variant=1;variant<=3;variant++)assert(fs.existsSync(new URL('../dist/assets/matching/'+id+'/'+variant+'.webp',import.meta.url)));
+for(const id of Object.keys(data.items))for(let variant=1;variant<=data.variantCount(id);variant++)assert(fs.existsSync(new URL('../dist/assets/matching/'+id+'/'+variant+'.webp',import.meta.url)));
 console.log('OK: Nesne gösterme — 100 nesne, 5 seviye, 2500 deneme; iki öğretim yöntemi, yanlış/yanıtsızlık, duraklatma, pekiştirme ve son seviye.');

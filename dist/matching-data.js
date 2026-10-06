@@ -24,10 +24,12 @@ window.ObjectMatchingData = (() => {
   const categories=definitions.map(([id,title,rows])=>({id,title,items:rows.map(([id,name,accusative,visual])=>({id,name,accusative,visual}))}));
   const items=Object.fromEntries(categories.flatMap(category=>category.items.map(item=>[item.id,{...item,category:category.id}])));
   const stages=[{title:'Aynı resimle eşleme',count:1},{title:'Farklı görünümlerle eşleme',count:1},{title:'İki seçenek arasından eşleme',count:2},{title:'Üç seçenek arasından eşleme',count:3}];
+  const variantCount=id=>items[id].category==='animals'?9:3;
+  const variedAnimal=(stage,index)=>3+((index+stage-2)%6);
   function trial(itemId,stage,index){
     const item=items[itemId],category=categories.find(c=>c.id===item.category),position=category.items.findIndex(i=>i.id===itemId);
     const pairs=[[0,1],[1,2],[2,0],[0,2],[1,0]];
-    const [source,target]=stage===1?[index%3,index%3]:pairs[index];
+    const [source,target]=stage===1?[0,0]:item.category==='animals'?[variedAnimal(stage,index),3+((index+stage-1)%6)]:pairs[index];
     return {item,source:stage===1?0:source,target:stage===1?0:target,options:[itemId,...Array.from({length:stages[stage-1].count-1},(_,i)=>category.items[(position+index+i+1)%10].id)]};
   }
   function image(id,variant=0){return `./assets/matching/${id}/${variant+1}.webp`;}
@@ -36,7 +38,7 @@ window.ObjectMatchingData = (() => {
     const item=items[itemId],category=categories.find(c=>c.id===item.category);
     const others=category.items.filter(i=>i.id!==itemId).map(i=>i.id);
     for(let i=others.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[others[i],others[j]]=[others[j],others[i]];}
-    return {item,target:stage===1?0:[0,1,2,1,2][index],options:[itemId,...others.slice(0,pointingStages[stage-1].count-1)]};
+    return {item,target:stage===1?0:item.category==='animals'?variedAnimal(stage,index):[0,1,2,1,2][index],options:[itemId,...others.slice(0,pointingStages[stage-1].count-1)]};
   }
-  return {categories,items,stages,trial,image,pointingStages,pointingTrial};
+  return {categories,items,stages,trial,image,pointingStages,pointingTrial,variantCount};
 })();

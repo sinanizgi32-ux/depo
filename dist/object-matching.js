@@ -23,8 +23,8 @@ window.ObjectMatching = (() => {
       el('objectMatchingArea').classList.toggle('is-pointing',pointing());
       const options=[...current.options];for(let i=options.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[options[i],options[j]]=[options[j],options[i]];}
       const targets=el('objectTargets');targets.innerHTML='';targets.setAttribute('aria-label',pointing()?'Gösterilecek nesneler':'Üstteki eşleme yerleri');
-      options.forEach(id=>{const button=document.createElement('button');button.type='button';button.className='object-target';button.dataset.object=id;button.setAttribute('aria-label',pointing()?data.items[id].name:`${data.items[id].name} eşleme yeri`);button.innerHTML=img(id,id===current.item.id?current.target:Math.floor(Math.random()*3));button.addEventListener('click',()=>{if(pointing()||selected)answer(id);});targets.appendChild(button);});
-      const source=el('objectSource');source.className='object-source';source.style.transform='';source.hidden=pointing();source.innerHTML=img(current.item.id,current.source);source.setAttribute('aria-label',`${current.item.name} kartını seç ve eşleme yerine götür`);
+      options.forEach(id=>{const button=document.createElement('button');button.type='button';button.className='object-target';button.dataset.object=id;button.setAttribute('aria-label',pointing()?data.items[id].name:`${data.items[id].name} eşleme yeri`);button.innerHTML=img(id,id===current.item.id?current.target:Math.floor(Math.random()*data.variantCount(id)));button.addEventListener('click',()=>{if(pointing()||selected)answer(id);});targets.appendChild(button);});
+      const source=el('objectSource');source.className='object-source';source.style.transform='';source.hidden=pointing();source.innerHTML=pointing()?'':img(current.item.id,current.source);source.setAttribute('aria-label',`${current.item.name} kartını seç ve eşleme yerine götür`);
       instruction();
     }
     function hint(wrong=false){
@@ -63,3 +63,4 @@ window.ObjectMatching = (() => {
   }
   return {create};
 })();
+

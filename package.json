@@ -1,6 +1,6 @@
 {
   "name": "dijital-ozel-egitim",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "private": true,
   "description": "Dijital Özel Eğitim — taşınabilir yerel uygulama",
   "type": "module",
@@ -19,3 +19,4 @@
     "three": "0.186.1"
   }
 }
+
