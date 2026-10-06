@@ -180,3 +180,7 @@ Kullanıcının onayladığı 10 kategori ve 100 nesne için bilişsel beceriler
 Kaynak kart altta, hedefler üsttedir. Fare/parmakla sürükleme ve karta ardından hedefine dokunma desteklenir. Dört saniye süreli öğretimde yönerge sesi tamamlandıktan sonra yanıt fırsatı başlar; eşzamanlı yöntemde aynı noktada açıklamalı ipucu açılır. İpucu otomatik olarak eşleme yapmaz; doğru hedef ve kaynak vurgulanır, çocuğun yerleştirmesi beklenir. Yanlış yerleştirme tek hata sayılır ve açıklanır. Ödül konuşması bitmeden deneme değişmez. Duraklatma ve ekran değiştirme eski ses/timer yanıtlarını geçersiz kılar.
 
 Kaba değerlendirmede `object-match` anahtarı korunarak başlık Nesneleri eşler olarak güncellendi. Seviye sonu üç seçenek korunur; 4. seviyede sonraki seviye gizlenir. 2.000 denemenin tamamı ve öğretim/etkileşim akışları `scripts/check-object-matching.mjs` ile kontrol edilir. Görseller beyaz arka planda gerçeğe yakın iki boyutlu nesne resimleridir; üretim yönergeleri görsel klasöründe saklanır.
+
+## 0.11.1 akıcılık entegrasyonu
+
+Yerel denemelerde onaylanan Pofidik yükleme ve eşleme sürükleme düzeltmeleri ana projeye alındı. Otomatik model ön yüklemesi kaldırıldı; gizli karakterler çizilmez. Sıkıştırılmış modelin orijinalle birebir eşitliği proje kontrolüne eklendi. Öğretim yöntemleri, etkinlikler ve modelin 14 hareketi korunur.

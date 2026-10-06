@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { gunzipSync } from 'node:zlib';
 
 const root = new URL('../', import.meta.url);
 const expected = ['breathe', 'nod_yes', 'shake_no', 'look_left', 'look_right', 'look_up', 'curious', 'ears', 'listen', 'bow', 'sway', 'stretch', 'blink', 'talk'];
@@ -15,6 +16,9 @@ assert(!/data-avatar="mimo"|mimo-viewer\.js/.test(html), 'Eski Mimo artık uygul
 assert(html.includes('./pofidik-viewer.js'));
 for (const match of html.matchAll(/(?:src|href)="(\.\/[^"?#]+)"/g)) await access(new URL(`dist/${match[1].slice(2)}`, root));
 const data = await readFile(new URL('dist/assets/avatars/pofidik/model.glb', root));
+const compressed = await readFile(new URL('dist/assets/avatars/pofidik/model.glb.gz', root));
+assert(gunzipSync(compressed).equals(data), 'Sıkıştırılmış model onaylı modelle birebir aynı olmalı');
+assert(compressed.length < data.length, 'Sıkıştırılmış model aktarımı küçültmeli');
 assert.equal(data.readUInt32LE(0), 0x46546c67, 'GLB başlığı');
 assert.equal(data.readUInt32LE(4), 2, 'GLB sürümü');
 assert.equal(data.readUInt32LE(8), data.length, 'GLB uzunluğu');

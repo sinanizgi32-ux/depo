@@ -14,7 +14,18 @@ let sourcePromise;
 
 function source() {
   // The URL is relative to the page, so copies and GitHub clones need no machine-specific paths.
-  return sourcePromise ||= new GLTFLoader().loadAsync(new URL('./assets/avatars/pofidik/model.glb', window.location.href).href);
+  return sourcePromise ||= (async () => {
+    const base = new URL('./assets/avatars/pofidik/', window.location.href);
+    const loader = new GLTFLoader();
+    if ('DecompressionStream' in window) {
+      const response = await fetch(new URL('model.glb.gz', base));
+      if (response.ok && response.body) {
+        const bytes = await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+        return loader.parseAsync(bytes, base.href);
+      }
+    }
+    return loader.loadAsync(new URL('model.glb', base).href);
+  })().catch(error => { sourcePromise = undefined; throw error; });
 }
 function resolveViewer(target) {
   if (!target) return null;
@@ -22,6 +33,10 @@ function resolveViewer(target) {
 }
 function visible(element) {
   return !document.hidden && element.getClientRects().length > 0 && element.clientWidth > 0 && element.clientHeight > 0;
+}
+function shouldLoad(element) {
+  const card = element.closest('.avatar-card');
+  return !card || card.classList.contains('is-selected');
 }
 async function mount(element) {
   if (viewers.has(element)) return viewers.get(element);
@@ -84,25 +99,32 @@ async function mount(element) {
       camera.position.set(0, .01, distance); camera.lookAt(0, 0, 0); camera.updateProjectionMatrix();
     }
     const resizeObserver = new ResizeObserver(resize); resizeObserver.observe(element); resize();
-    const observer = new IntersectionObserver(entries => { inView = entries[0].isIntersecting; }); observer.observe(element);
+    const observer = new IntersectionObserver(entries => { inView = entries[0].isIntersecting; updateRunning(); }); observer.observe(element);
     const api = { play, speaking(value) {
       element.dataset.speaking = String(value);
       if (value) speechAction?.reset().setLoop(THREE.LoopRepeat, Infinity).setEffectiveWeight(1).fadeIn(.12).play();
       else speechAction?.fadeOut(.12);
-    }, clips: [...actions.keys()] };
+    }, updateRunning, clips: [...actions.keys()] };
     viewers.set(element, api);
     element.classList.add('is-loaded');
     element.dataset.animationCount = String(actions.size);
     idle();
     api.speaking(speaking);
-    renderer.setAnimationLoop(time => {
+    function frame(time) {
       if (!inView || !visible(element)) { lastTime = time; return; }
-      if (time - lastRender < 1000 / 30) return;
+      if (time - lastRender < 1000 / (element.closest('.avatar-card') ? 20 : 30)) return;
       mixer.update(lastTime ? Math.min((time - lastTime) / 1000, .10) : 0);
       lastTime = time; lastRender = time;
       if (!speaking && !reducedMotion.matches && time > nextAmbient) play(ambientClips[Math.floor(Math.random() * ambientClips.length)]);
       renderer.render(scene, camera);
-    });
+    }
+    function updateRunning() {
+      const running = inView && visible(element);
+      element.dataset.rendering = String(running);
+      renderer.setAnimationLoop(running ? frame : null);
+      if (!running) lastTime = 0;
+    }
+    updateRunning();
     return api;
   })();
   mounting.set(element, promise);
@@ -115,17 +137,19 @@ async function mount(element) {
   }
 }
 function refresh() {
+  for (const api of viewers.values()) api.updateRunning();
   document.querySelectorAll('[data-pofidik-viewer]').forEach(element => {
-    if (visible(element)) mount(element).catch(() => {});
+    if (shouldLoad(element) && visible(element)) mount(element).catch(() => {});
   });
 }
 const lazyObserver = new IntersectionObserver(entries => {
-  for (const entry of entries) if (entry.isIntersecting && visible(entry.target)) mount(entry.target).catch(() => {});
+  for (const entry of entries) if (entry.isIntersecting && shouldLoad(entry.target) && visible(entry.target)) mount(entry.target).catch(() => {});
 });
 document.querySelectorAll('[data-pofidik-viewer]').forEach(element => lazyObserver.observe(element));
 document.addEventListener('visibilitychange', refresh);
 window.Pofidik3D = {
   refresh,
+  preload: () => source().catch(() => {}),
   async play(target, name, once = true) {
     const element = resolveViewer(target);
     if (!element || !allowedClips.has(name)) return false;
