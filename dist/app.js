@@ -688,6 +688,7 @@
     document.getElementById('progressFill').style.width = `${((state.trial + 1) / level.examples.length) * 100}%`;
     const area = document.getElementById('patternArea');
     area.classList.toggle('is-long', trial.shown.length >= 6);
+    area.style.setProperty('--pattern-columns', trial.shown.length + 1);
     area.innerHTML = '';
     trial.shown.forEach(key => {
       const cell = document.createElement('div'); cell.className = 'pattern-cell'; cell.setAttribute('role', 'img'); cell.setAttribute('aria-label', patternItems[key].name); cell.innerHTML = patternItems[key].html; area.appendChild(cell);
@@ -935,7 +936,7 @@
     const button = document.getElementById('readyButton'); button.disabled = true; button.textContent = 'Süpersin!';
     document.getElementById('introText').textContent = 'Süpersin! Haydi o zaman başlayalım.'; speak(state.avatar, 'Süpersin! Haydi o zaman başlayalım.');
     state.buddyActivated = true; state.editingAssessment = false; saveState();
-    setTimeout(() => { restoreAssessmentUI(); updateAssessmentMode(); showScreen('assessment'); }, 1100);
+    setTimeout(() => { if (state.screen !== 'intro') return; if (window.ParentGate?.role()==='child' || (state.method && state.profile.name)) { goPlatform(); return; } restoreAssessmentUI(); updateAssessmentMode(); showScreen('assessment'); }, 1100);
   });
   document.querySelectorAll('.assessment-row [data-status]').forEach(button => button.addEventListener('click', () => {
     const row = button.closest('.assessment-row'); state.assessment[row.dataset.skill] = button.dataset.status;
@@ -1034,7 +1035,6 @@
     document.getElementById('planNote').textContent = 'Ödeme sağlayıcısı henüz bağlanmadı. Gerçek ödeme alınmadı; entegrasyon için sağlayıcı hesabı ve sunucu uç noktası gerekir.';
   });
 
-  document.getElementById('actionPreviewButton').onclick=()=>{showScreen('action-preview');document.getElementById('actionPreviewFrame').src='./action-video-local.html';backgroundMusic.pause();};
   window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==document.getElementById('actionPreviewFrame').contentWindow)return;const msg=event.data;if(msg?.type==='action-preview-menu'){goPlatform();return;}if(msg?.type==='action-teaching-complete'&&state.screen==='action-preview'&&state.skill===`action-${msg.mode}`){const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||counts.independent+counts.prompted+counts.incorrect!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();}});
   window.AppEntry={show:showScreen,platform:goPlatform,ready:()=>!!(state.method&&state.avatar&&state.profile.name),resetHistory:()=>{state.history=[];}};
   loadState(); loadAudioSettings(); loadVoices(); if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = loadVoices;

@@ -1,3 +1,7 @@
+import { promisify } from 'node:util';
+import { gzip } from 'node:zlib';
+import { readFile } from 'node:fs/promises';
+const zipText=promisify(gzip), compressedText=new Map();
 import { createReadStream } from 'node:fs';
 import { realpath, stat } from 'node:fs/promises';
 import { createServer } from 'node:http';
@@ -113,6 +117,13 @@ const server = createServer(async (request, response) => {
       'X-Content-Type-Options': 'nosniff',
       'Accept-Ranges': 'bytes',
     };
+    const textFile=/\.(html|js|mjs|css|json|svg)$/.test(filename);
+    const zipped=!request.headers.range&&textFile&&info.size<2*1024*1024&&/\bgzip\b/.test(request.headers['accept-encoding']||'');
+    const etag='"'+info.size.toString(16)+'-'+Math.trunc(info.mtimeMs).toString(16)+(zipped?'-gzip':'')+'"';
+    headers.ETag=etag;headers['Last-Modified']=info.mtime.toUTCString();
+    if(textFile)headers.Vary='Accept-Encoding';
+    if(request.headers['if-none-match']?.split(',').some(tag=>tag.trim()===etag||tag.trim()==='*')||(!request.headers['if-none-match']&&request.headers['if-modified-since']&&Math.floor(info.mtimeMs/1000)<=Math.floor(Date.parse(request.headers['if-modified-since'])/1000))){response.writeHead(304,headers);response.end();return;}
+    if(zipped){let cached=compressedText.get(filename);if(cached?.etag!==etag){cached={etag,bytes:await zipText(await readFile(filename))};if(compressedText.size>=40)compressedText.delete(compressedText.keys().next().value);compressedText.set(filename,cached);}response.writeHead(200,{...headers,'Content-Encoding':'gzip','Content-Length':cached.bytes.length});response.end(method==='HEAD'?undefined:cached.bytes);return;}
     let start = 0;
     let end = info.size - 1;
     let status = 200;

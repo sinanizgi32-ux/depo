@@ -7,7 +7,7 @@ const functions = source.slice(source.indexOf('  function giveInstruction('), so
 let nodes, choices, timers, ended;
 function element() {
   const classes = new Set();
-  return { dataset: {}, style: {}, children: [], disabled: false, classList: { add: x => classes.add(x), remove: x => classes.delete(x), toggle: (x, on) => on ? classes.add(x) : classes.delete(x), contains: x => classes.has(x) }, appendChild(x) { this.children.push(x); if (x.className === 'pattern-choice') choices.push(x); }, setAttribute() {}, addEventListener() {} };
+  return { dataset: {}, style: {setProperty(name,value){this[name]=String(value);}}, children: [], disabled: false, classList: { add: x => classes.add(x), remove: x => classes.delete(x), toggle: (x, on) => on ? classes.add(x) : classes.delete(x), contains: x => classes.has(x) }, appendChild(x) { this.children.push(x); if (x.className === 'pattern-choice') choices.push(x); }, setAttribute() {}, addEventListener() {} };
 }
 const context = vm.createContext({ document: { getElementById: id => nodes[id] ||= { ...element(), hidden: true }, createElement: element, querySelectorAll: () => choices }, speak(key, text, done) { done?.(); }, praise: () => 'Aferin!', finishBlock: () => ended++, setTimeout: (fn, ms) => { const timer = { fn, ms }; timers.add(timer); return timer; }, clearTimeout: timer => timers.delete(timer), Math });
 vm.runInContext(`function shapeMarkup(shape, color) { return '<i class="' + shape + ' ' + color + '"></i>'; }\n${data}\nlet promptTimer;\n${functions}\nglobalThis.api = {state, patternLevels, patternItems, renderPatternTrial, patternAnswer};`, context);

@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#0759e6">
   <meta name="description" content="Eşleme, renk ve örüntü becerileri için Dijital Erken Eğitim uygulaması.">
   <title>Dijital Erken Eğitim</title>
-  <link rel="icon" type="image/png" href="./assets/dijital-ozel-egitim-logo-tablet.png">
+  <link rel="icon" type="image/png" href="./assets/dijital-ozel-egitim-logo-tablet.webp">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar" id="topbar" hidden>
       <button class="icon-button" id="backButton" type="button" aria-label="Önceki ekrana dön">←</button>
-      <div class="brand-mini"><img src="./assets/dijital-ozel-egitim-logo-tablet.png" alt="" width="44" height="44"><span>Dijital Erken Eğitim</span></div>
+      <div class="brand-mini"><img loading="lazy" decoding="async" src="./assets/dijital-ozel-egitim-logo-tablet.webp" alt="" width="44" height="44"><span>Dijital Erken Eğitim</span></div>
       <div class="top-actions">
         <button class="quick-audio-button" id="quickMuteTop" type="button" aria-label="Müziği kapat" aria-pressed="false">🔊</button>
         <button class="text-button" id="panelButton" type="button">Uygulamacı paneli</button><button class="text-button" id="settingsButton" type="button">⚙️ Ayarlar</button>
@@ -22,7 +22,7 @@
     </header>
 
     <main id="app">
-<section class="screen" data-screen="guardian"><div class="content-card narrow"><span class="step-label">Yetişkinlere özel</span><h2>Uygulamacı paneli</h2><p>Çocuğun çalışmalarını buradan hazırlayabilirsiniz.</p><p id="guardianNote" role="status"></p><div class="guardian-actions"><button class="primary-button" data-guardian-screen="profile">Öğrenci ve oyun arkadaşı</button><button class="secondary-button" id="guardianAssessment">Kaba değerlendirme</button><button class="secondary-button" id="guardianMethod">Öğretim yöntemi</button><button class="secondary-button" data-guardian-screen="settings">Müzikleri dinle ve ayarları değiştir</button><button class="secondary-button" id="guardianActivities">Etkinlikleri incele</button><button class="primary-button" id="guardianChild">Çocuk moduna geç</button><button class="text-button" id="guardianLock">Kilitle ve girişe dön</button></div><p class="section-intro">PIN bu tarayıcıya özeldir. Telefonunuzun kilit şifresi kullanılmaz.</p></div></section>
+<section class="screen" data-screen="guardian"><div class="content-card narrow"><span class="step-label">Yetişkinlere özel</span><h2>Uygulamacı paneli</h2><p>Çocuğun çalışmalarını buradan hazırlayabilirsiniz.</p><p id="guardianNote" role="status"></p><div class="guardian-actions"><button class="primary-button" data-guardian-screen="profile">Öğrenci bilgileri</button><button class="secondary-button" data-guardian-screen="avatar">Oyun arkadaşını seç</button><button class="secondary-button" id="guardianAssessment">Kaba değerlendirme</button><button class="secondary-button" id="guardianMethod">Öğretim yöntemi</button><button class="secondary-button" data-guardian-screen="settings">Müzikleri dinle ve ayarları değiştir</button><button class="secondary-button" id="guardianActivities">Etkinlikleri incele</button><button class="primary-button" id="guardianChild">Çocuk moduna geç</button><button class="text-button" id="guardianLock">Kilitle ve girişe dön</button></div><p class="section-intro">PIN bu tarayıcıya özeldir. Telefonunuzun kilit şifresi kullanılmaz.</p></div></section>
 <section class="screen" data-screen="pin"><div class="content-card narrow"><h2 id="pinTitle">Uygulamacı girişi</h2><p id="pinHelp"></p><form id="pinForm"><label>6 haneli PIN<input id="parentPin" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="off" required></label><label id="pinConfirmLabel">PIN tekrar<input id="parentPinConfirm" type="password" inputmode="numeric" maxlength="6" autocomplete="off"></label><p id="pinMessage" role="status" aria-live="polite"></p><button class="primary-button" id="pinSubmit">Devam et</button></form><button class="text-button" id="pinCancel">Giriş ekranına dön</button></div></section>
       <section class="screen welcome-screen is-active" data-screen="welcome" aria-labelledby="welcomeTitle">
         <button class="welcome-plan-chip" id="welcomePlanButton" type="button">🛒 Satın al</button>
@@ -30,7 +30,7 @@
           <button class="welcome-control-button" id="quickMuteWelcome" type="button" aria-label="Müziği kapat" aria-pressed="false">🔊 <span>Müzik</span></button>
           <button class="welcome-control-button" id="welcomeSettingsButton" type="button">⚙️ <span>Ayarlar</span></button>
         </div>
-        <div class="welcome-visual"><img src="./assets/dijital-ozel-egitim-logo-tablet.png" alt="Tablet ekranından çıkan renkli öğrenme kartları" class="hero-logo"></div>
+        <div class="welcome-visual"><img fetchpriority="high" decoding="async" src="./assets/dijital-ozel-egitim-logo-tablet.webp" alt="Tablet ekranından çıkan renkli öğrenme kartları" class="hero-logo"></div>
         <div class="welcome-copy">
           <h1 id="welcomeTitle">Dijital Erken Eğitim</h1>
           <p class="lead">Oyun arkadaşını seç, birlikte öğrenmeye başla.</p>
@@ -114,19 +114,19 @@
           <p class="section-intro">Seslerini dinle, sonra oyun arkadaşını seç.</p>
           <div class="avatar-grid">
             <article class="avatar-card" data-avatar="pofidik" tabindex="0" role="button" aria-label="Pofidik Ayı'yı seç">
-              <div class="mascot-crop is-pofidik" data-sprite="bear"><img src="./assets/oyun-arkadaslari-v2.png" alt="Pofidik Ayı"><div class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></div></div>
+              <div class="mascot-crop is-pofidik" data-sprite="bear"><img loading="lazy" decoding="async" src="./assets/oyun-arkadaslari-v2.webp" alt="Pofidik Ayı"><div class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></div></div>
               <h3>Pofidik Ayı</h3><button class="voice-button" type="button" data-speak="pofidik">🔊 Sesimi dinle</button>
             </article>
             <article class="avatar-card" data-avatar="dila" tabindex="0" role="button" aria-label="Dila Panda'yı seç">
-              <div class="mascot-crop" data-sprite="panda"><img src="./assets/oyun-arkadaslari-v2.png" alt="Dila Panda"></div>
+              <div class="mascot-crop" data-sprite="panda"><img loading="lazy" decoding="async" src="./assets/oyun-arkadaslari-v2.webp" alt="Dila Panda"></div>
               <h3>Dila Panda</h3><button class="voice-button" type="button" data-speak="dila">🔊 Sesimi dinle</button>
             </article>
             <article class="avatar-card" data-avatar="kipir" tabindex="0" role="button" aria-label="Kıpır Kunduz'u seç">
-              <div class="mascot-crop" data-sprite="beaver"><img src="./assets/oyun-arkadaslari-v2.png" alt="Kıpır Kunduz"></div>
+              <div class="mascot-crop" data-sprite="beaver"><img loading="lazy" decoding="async" src="./assets/oyun-arkadaslari-v2.webp" alt="Kıpır Kunduz"></div>
               <h3>Kıpır Kunduz</h3><button class="voice-button" type="button" data-speak="kipir">🔊 Sesimi dinle</button>
             </article>
             <article class="avatar-card" data-avatar="mina" tabindex="0" role="button" aria-label="Mina Tilki'yi seç">
-              <div class="mascot-crop" data-sprite="fox"><img src="./assets/oyun-arkadaslari-v2.png" alt="Mina Tilki"></div>
+              <div class="mascot-crop" data-sprite="fox"><img loading="lazy" decoding="async" src="./assets/oyun-arkadaslari-v2.webp" alt="Mina Tilki"></div>
               <h3>Mina Tilki</h3><button class="voice-button" type="button" data-speak="mina">🔊 Sesimi dinle</button>
             </article>
           </div>
@@ -136,7 +136,7 @@
 
       <section class="screen" data-screen="intro" aria-labelledby="introTitle">
         <div class="intro-card">
-          <div class="mascot-crop intro-mascot" data-mascot-display data-sprite="bear"><img src="./assets/oyun-arkadaslari-v2.png" alt="Seçilen oyun arkadaşı"><div class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></div></div>
+          <div class="mascot-crop intro-mascot" data-mascot-display data-sprite="bear"><img loading="lazy" decoding="async" src="./assets/oyun-arkadaslari-v2.webp" alt="Seçilen oyun arkadaşı"><div class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></div></div>
           <div class="speech-card"><span class="step-label">Yeni oyun arkadaşın</span><h2 id="introTitle">Merhaba!</h2><p id="introText"></p><button class="primary-button jumbo" id="readyButton" type="button">Hazırım</button></div>
         </div>
       </section>
@@ -176,7 +176,7 @@
       <section class="screen platform-screen" data-screen="platform" aria-labelledby="platformTitle">
         <div class="platform-shell">
           <div class="platform-heading"><div><span class="step-label">Öğrenme alanı</span><h2 id="platformTitle">Çalışmalar</h2><p>Bir beceri alanına dokunarak içine girin.</p></div><div class="platform-actions"><button class="secondary-button" id="editMethod" type="button">Yöntem seçimini düzenle</button><button class="secondary-button" id="editAssessment" type="button">Kaba değerlendirmeyi düzenle</button></div></div>
-          <p><button class="secondary-button" id="actionPreviewButton">▶ Hareketli eylem kartlarını dene</button></p><div class="category-grid" aria-label="Beceri kategorileri">
+          <div class="category-grid" aria-label="Beceri kategorileri">
             <button type="button" class="category-card" data-category="cognitive"><span class="category-eyebrow">Düşün · Keşfet · Öğren</span><strong>Bilişsel Beceriler</strong><small id="cognitiveCount">0 çalışma</small><b>İçine gir →</b></button>
             <button type="button" class="category-card" data-category="language"><span class="category-eyebrow">Dinle · Anlat · İletişim kur</span><strong>Dil ve İletişim</strong><small id="languageCount">1 çalışma</small><b>İçine gir →</b></button>
             <button type="button" class="category-card" data-category="social"><span class="category-eyebrow">Birlikte oyna · Paylaş · Bağ kur</span><strong>Sosyal Beceriler</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
@@ -219,10 +219,10 @@
       <section class="modal" id="pauseModal" hidden aria-modal="true" role="dialog" aria-labelledby="pauseTitle"><div class="modal-card"><div class="pause-illustration">🌤️</div><h2 id="pauseTitle">Biraz dinlenelim</h2><p>Hazır olduğunda devam edebilirsin.</p><button class="primary-button" id="resumeButton" type="button">Devam et</button><button class="text-button danger" id="pauseFinish" type="button">Bitir ve ana menüye dön</button></div></section>
     </main>
 
-    <button class="floating-buddy" id="floatingBuddy" type="button" hidden aria-label="Oyun arkadaşını konuştur ve hareket ettir"><span class="mascot-crop" data-mascot-display data-sprite="bear"><img src="./assets/oyun-arkadaslari-v2.png" alt=""><span class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></span></span></button>
+    <button class="floating-buddy" id="floatingBuddy" type="button" hidden aria-label="Oyun arkadaşını konuştur ve hareket ettir"><span class="mascot-crop" data-mascot-display data-sprite="bear"><img loading="lazy" decoding="async" src="./assets/oyun-arkadaslari-v2.webp" alt=""><span class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></span></span></button>
   </div>
-  <audio id="backgroundMusic" src="./assets/dijital-ozel-egitim-menu-muzigi.mp3" preload="auto" loop></audio>
-  <script src="./pofidik-viewer.js" defer></script>
+  <audio id="backgroundMusic" src="./assets/music/life-of-riley.mp3" preload="metadata" loop></audio>
+  <script src="./pofidik-loader.js" data-viewer="./pofidik-viewer.js" defer></script>
   <script src="./events-data.js" defer></script>
   <script src="./matching-data.js" defer></script>
   <script src="./local-speech.js" defer></script><script src="./naming-rules.js" defer></script><script src="./object-matching.js" defer></script>
