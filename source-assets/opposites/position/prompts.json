@@ -1,0 +1,10 @@
+{
+  "method": "built-in image_gen",
+  "source": "scene.png",
+  "layout": "5 columns, top/bottom opposite concept pairs",
+  "labels": [
+    "inside",
+    "outside"
+  ],
+  "invariants": "same pair camera, object color, size; vary only concept; complete safe margins; no text; photoreal"
+}

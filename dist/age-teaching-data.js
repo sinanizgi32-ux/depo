@@ -1,0 +1,15 @@
+window.AgeTeachingData=(()=>{
+ const old=new URLSearchParams(location.search).get('concept')==='old',id=old?'old':'young',other=old?'young':'old';
+ const colors=[{id,name:old?'Yaşlı':'Genç',cue:old?'Yaşlı olanı':'Genç olanı',hex:'#4387ab'}];
+ const color=value=>value===id?colors[0]:{id:value,name:old?'Genç':'Yaşlı',cue:old?'Genç olanı':'Yaşlı olanı'};
+ const defs=[['İki kişi · aynı örnek',2,'portrait',true],['İki kişi · farklı kişiler',2,'portrait'],['Günlük ortamda iki kişi · aynı örnek',2,'scene',true],['Günlük ortamda iki kişi · farklı örnekler',2,'scene'],['Üç kişi arasından',3,'portrait'],['Dört kişi arasından',4,'portrait'],['Karışık kişi ve ortamlar · üç seçenek',3,'mixed'],['Karışık kişi ve ortamlar · dört seçenek',4,'mixed'],['Farklı kişiler · iki seçenek',2,'portrait',false,true],['Farklı kişiler · üç seçenek',3,'scene',false,true],['Farklı kişi ve ortamlar · dört seçenek',4,'mixed',false,true]];
+ const stages=Object.fromEntries(['match','show','name'].map(mode=>[mode,defs.map(([title,count,kind,same,generalize])=>({title,count,kind,same,generalize}))]));
+ const person=(age,n,kind,c)=>({color:c,kind:'person',name:age==='old'?'yaşlı kişi':'genç kişi',age,variant:n%5,src:`./assets/age/${kind}-${age}-${n%5}.webp`});
+ const media=x=>`<svg viewBox="0 0 200 200" aria-hidden="true"><image href="${x.src}" x="12" y="12" width="176" height="176" preserveAspectRatio="xMidYMid meet"/></svg>`;
+ function baseCourse(mode,level){const s=stages[mode][level-1];return[{color:id,trials:Array.from({length:5},(_,n)=>{const kind=s.kind==='mixed'?(n%2?'scene':'portrait'):s.kind,index=s.same?0:n,target=person(id,index,kind,id),options=Array.from({length:s.count-1},(_,i)=>person(other,index+i+(s.count>=3&&n!==level%5?1:0),kind,other+(i+1))),slot=Math.floor(Math.random()*s.count);options.splice(slot,0,target);return{color:id,source:s.generalize?person(id,(kind==='portrait'?[1,2,3,4,1]:[1,2,3,4,3])[index],kind,id):{...target},correct:target,options,slot};})}];}
+ function course(mode,level){const blocks=baseCourse(mode,level);if(level>=4)for(const block of blocks)for(const trial of block.trials)for(const x of [trial.source,...trial.options]){const filename=x.src.split('/').pop();x.src=`./assets/age/color-v2/${filename}`;x.visualColor=['coral','green','yellow','lavender','blue'][x.variant];}return blocks;}
+ const nextStep=(mode,c,level)=>level<stages[mode].length?{color:id,level:level+1,block:0}:null;
+ function judge(text){if(window.NamingRules.hasInappropriate(text))return'inappropriate';const words=window.NamingRules.normalize(text).split(' ').filter(w=>!['bu','bir','kisi','olan','insan'].includes(w));return!words.length?'uncertain':words.every(w=>w===(old?'yasli':'genc'))?'correct':'wrong';}
+ function correction(c,text,kind,retry=true){const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();return(kind==='inappropriate'?'Bu söylediğin sözcük uygun bir sözcük değil. ':safe?`Hayır, bu ${safe} değil. `:'')+`Bu kişi ${old?'yaşlı':'genç'}.`+(retry?' Şimdi sen söyle.':'');}
+ return{colors,color,stages,course,nextStep,media,judge,correction};
+})();

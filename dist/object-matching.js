@@ -10,14 +10,14 @@ window.ObjectMatching = (() => {
     const img=(id,variant)=>`<img src="${data.image(id,variant)}" alt="${data.items[id].name}" draggable="false">`;
     function controls(disabled){el('objectSource').disabled=disabled;el('objectTargets').querySelectorAll('button').forEach(button=>button.disabled=disabled);}
     function stop(){run++;clearTimeout(timer);gesture=null;busy=false;selected=false;}
-    function instruction(){busy=true;controls(true);say(`${current.item.accusative} ${verb()}.`,()=>{busy=false;controls(false);if(state.method==='immediate')hint();else timer=setTimeout(hint,4000);});}
+    function instruction(){busy=true;controls(true);el('feedback').textContent=`${current.item.accusative} ${verb()}.`;say(`${current.item.accusative} ${verb()}.`,()=>{busy=false;controls(false);if(state.method==='immediate')hint();else timer=setTimeout(hint,4000);});}
     function render(){
       stop();completed=false;pending=false;ignoreClick=false;state.hadPrompt=false;state.attempts=0;
       if(data.isMixed(state.skill,state.matchLevel)){
         if(state.trial===0)state.mixedTrials=data.mixedBlock();
         current=state.mixedTrials[state.trial];
       }else current=(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,state.trial);
-      el('gameTitle').textContent=`${current.item.accusative} ${verb()}`;
+      el('gameTitle').textContent=pointing()?'Nesne gösterme':'Nesne eşleme';
       document.querySelector('.game-toolbar .step-label').textContent=`Bilişsel beceriler · ${pointing()?'Nesne gösterme':'Nesne eşleme'} · Seviye ${state.matchLevel}`;
       el('trialLabel').textContent=`${state.trial+1} / 5`;el('progressFill').style.width=`${(state.trial+1)*20}%`;
       el('objectInstruction').textContent=`${current.item.accusative} ${verb()}.`;

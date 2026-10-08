@@ -47,7 +47,7 @@ window.LocalSpeechRecognition=class {
    const wav=new ArrayBuffer(44+pcm.byteLength),view=new DataView(wav);const str=(o,s)=>{for(let i=0;i<s.length;i++)view.setUint8(o+i,s.charCodeAt(i));};
    str(0,'RIFF');view.setUint32(4,36+pcm.byteLength,true);str(8,'WAVE');str(12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,16000,true);view.setUint32(28,32000,true);view.setUint16(32,2,true);view.setUint16(34,16,true);str(36,'data');view.setUint32(40,pcm.byteLength,true);for(let i=0;i<count;i++)view.setInt16(44+i*2,pcm[i],true);
    this.onprocessing?.();
-   const response=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':'audio/wav'},body:wav,signal:this.controller.signal});const result=await response.json();
+   const response=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':'audio/wav',...(['colors','length','age','opposites'].includes(this.domain)?{'X-Teaching-Domain':this.domain}:{})},body:wav,signal:this.controller.signal});const result=await response.json();
    if(!this.active)return;if(!response.ok)throw new Error(result.error||'local-service');
    const value=[{transcript:result.text,confidence:result.uncertain?0:.8}];value.isFinal=true;this.onresult?.({resultIndex:0,results:[value]});this.onend?.();
   }catch(error){if(this.active&&error.name!=='AbortError')this.onerror?.({error:'local-service'});}

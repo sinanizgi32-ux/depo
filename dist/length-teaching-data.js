@@ -1,0 +1,33 @@
+window.LengthTeachingData=(()=>{
+ const isShort=new URLSearchParams(location.search).get('concept')==='short',targetId=isShort?'short':'long';
+ const colors=[{id:targetId,name:isShort?'Kısa':'Uzun',cue:isShort?'Kısa olanı':'Uzun olanı',hex:'#3488b8'}];
+ const color=id=>id===targetId?colors[0]:{id,name:isShort?'Uzun':'Kısa',cue:isShort?'Uzun olanı':'Kısa olanı',hex:'#3488b8'};
+ const sequence=[['İki şekil · belirgin uzunluk farkı',2,'shape',false],['İki şekil · farklı biçimler',2,'shape',true],['İki gerçek nesne · aynı tür',2,'photo',false],['İki farklı gerçek nesne',2,'real',true],['Üç farklı gerçek nesne',3,'real',true],['Dört farklı gerçek nesne',4,'real',true],['Karışık şekil ve nesneler · üç seçenek',3,'mixed',true],['Karışık şekil ve nesneler · dört seçenek',4,'mixed',true],['Farklı nesneler · iki seçenek',2,'generalize',true],['Farklı nesneler · üç seçenek',3,'generalize',true],['Farklı nesneler · dört seçenek',4,'generalize',true]];
+ const stages=Object.fromEntries(['match','show','name'].map(mode=>[mode,sequence.map(([title,count,kind,varied])=>({title,count,kind,varied}))]));
+ const objects=['kalem','cetvel','kurdele','pipet','çubuk'];
+ function item(n,long,variant=0,kind='shape',length=1){return{color:long?'long':'short'+variant,kind,name:kind==='shape'?['şerit','oval','çubuk','dikdörtgen','yuvarlak uçlu şerit'][n%5]:objects[n%5],type:n%5,long,length,variant,src:kind==='photo'?`./assets/length/${n%5}-${long?'long':'short'}.webp`:null};}
+ const stripBoxes={"./assets/length/0-long.webp": [62, 94, 885, 45, 1024, 205], "./assets/length/0-short.webp": [318, 96, 384, 42, 1024, 205], "./assets/length/2-long.webp": [64, 64, 883, 62, 1024, 204], "./assets/length/4-long.webp": [59, 38, 895, 45, 1024, 205]};
+ const realBoxes={"./assets/length/real-v2/banana.webp": [40, 163, 335, 229, 390, 512], "./assets/length/real-v2/truck.webp": [17, 194, 370, 176, 405, 512], "./assets/length/real-v2/car.webp": [15, 243, 361, 121, 400, 512], "./assets/length/real-v2/toycar.webp": [25, 231, 258, 150, 316, 512], "./assets/length/real-v2/spoon.webp": [30, 184, 388, 110, 445, 512], "./assets/length/real-v2/eraser.webp": [17, 206, 265, 127, 315, 512], "./assets/length/real-v2/sharpener.webp": [34, 146, 201, 195, 280, 512], "./assets/length/real-v2/toothpaste.webp": [14, 167, 384, 139, 431, 512]};
+ const realBanks=[
+  [['banana','muz'],['strip0','kalem'],['eraser','silgi'],['sharpener','kalemtıraş']],
+  [['truck','kamyon'],['car','araba'],['toycar','oyuncak araba'],['sharpener','kalemtıraş']],
+  [['strip0','kalem'],['spoon','kaşık'],['eraser','silgi'],['sharpener','kalemtıraş']],
+  [['strip2','kurdele'],['strip0short','kısa kalem'],['eraser','silgi'],['sharpener','kalemtıraş']],
+  [['strip4','çubuk'],['strip0short','kısa kalem'],['toothpaste','diş macunu'],['sharpener','kalemtıraş']]
+ ];
+ function realItem(n,rank){const [id,name]=realBanks[n%5][rank],strip=id.startsWith('strip'),row=strip?Number(id[5]):null;return{color:'',kind:'real',name,object:id,extent:[166,96,70,48][rank],strip,src:strip?`./assets/length/${row}-${id.endsWith('short')?'short':'long'}.webp`:`./assets/length/real-v2/${id}.webp`};}
+ function media(x){const wide=x.long?Math.round(166*x.length):Math.round(55*x.length),y=85,h=24;let body;if(x.kind==='real'){const w=x.extent,[bx,by,bw,bh,iw,ih]=(x.strip?stripBoxes:realBoxes)[x.src],h=w*(bh+8)/(bw+8);body=`<svg x="${(200-w)/2}" y="${150-h}" width="${w}" height="${h}" viewBox="${bx-4} ${by-4} ${bw+8} ${bh+8}"><image href="${x.src}" width="${iw}" height="${ih}"/></svg>`;}else if(x.kind==='photo'){const w=Math.round(190*x.length);body=`<image href="${x.src}" x="${(200-w)/2}" y="75" width="${w}" height="38" preserveAspectRatio="none"/>`;}else{const rx=[0,12,3,0,12][x.type];body=`<rect x="${(200-wide)/2}" y="${y}" width="${wide}" height="${h}" rx="${rx}" fill="${x.paint||'#3488b8'}"/>`;}
+ return `<svg viewBox="0 0 200 200" aria-hidden="true">${body}</svg>`;}
+ function baseCourse(mode,level){const s=stages[mode][level-1];return[{color:targetId,trials:Array.from({length:5},(_,n)=>{const kind=s.kind==='mixed'?(n%2?'real':'shape'):s.kind;if(kind==='generalize'){
+ const pool=[realItem(0,0),realItem(1,0),realItem(2,0),realItem(3,0),realItem(4,0),realItem(0,2),realItem(1,2),realItem(0,3),realItem(3,1),realItem(4,2)];
+ const target={...pool[(isShort?5:0)+n],extent:isShort?48:166,color:targetId};
+ const source={...pool[(isShort?5:0)+(n+2)%5],extent:target.extent,color:targetId};
+ const distractors=pool.filter(x=>x.object!==target.object&&x.object!==source.object).slice(n%3,n%3+s.count-1);
+ const options=distractors.map((x,i)=>({...x,extent:(isShort?[166,120,96]:[48,70,96])[i],color:(isShort?'long':'short')+(i+1)})),slot=Math.floor(Math.random()*s.count);options.splice(slot,0,target);return{color:targetId,source,correct:target,options,slot};
+ }if(kind==='real'){const rank=isShort?3:0,target=realItem(n,rank);target.color=targetId;const ranks=(isShort?[0,1,2]:[3,2,1]).slice(0,s.count-1),options=ranks.map((r,i)=>({...realItem(n,r),color:(isShort?'long':'short')+(i+1)})),slot=Math.floor(Math.random()*s.count);options.splice(slot,0,target);return{color:targetId,source:{...target},correct:target,options,slot};}const target=item(n,!isShort,0,kind),source=item(n,!isShort,0,kind);target.color=source.color=targetId;const options=Array.from({length:s.count-1},(_,i)=>Object.assign(item(n,isShort,i+1,kind,isShort?.65+i*.15:1+i*.2),{color:(isShort?'long':'short')+(i+1)}));const slot=Math.floor(Math.random()*s.count);options.splice(slot,0,target);return{color:targetId,source,correct:target,options,slot};})}];}
+ function course(mode,level){const blocks=baseCourse(mode,level);if(level>=4)for(const block of blocks)block.trials.forEach((t,n)=>{for(const x of [t.source,...t.options])if(x.kind==='shape')x.paint=['#3488b8','#57944a','#d9ad33','#c66d59','#9972ba'][n];});return blocks;}
+ const nextStep=(mode,id,level)=>level<stages[mode].length?{color:targetId,level:level+1,block:0}:null;
+ function judge(text){if(window.NamingRules.hasInappropriate(text))return'inappropriate';const words=window.NamingRules.normalize(text).split(' ').filter(x=>!['bu','olan','nesne','bir'].includes(x));return!words.length?'uncertain':words.every(x=>(isShort?['kisa','kisaolan']:['uzun','uzunolan']).includes(x))?'correct':'wrong';}
+ function correction(c,text,kind,retry=true){const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();return(kind==='inappropriate'?'Bu söylediğin sözcük uygun bir sözcük değil. ':safe?`Hayır, bu ${safe} değil. `:'')+(isShort?'Bu kısa.':'Bu uzun.')+(retry?' Şimdi sen söyle.':'');}
+ return{colors,color,stages,course,nextStep,media,judge,correction};
+})();

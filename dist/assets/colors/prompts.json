@@ -1,0 +1,16 @@
+{
+ "tool":"built-in image_gen",
+ "useCase":"scientific-educational",
+ "common":"Photoreal product and natural scene photography; recognizable objects, saturated unequivocal red/blue/yellow/green; real textures, volume and shadows. No text, logos or labels. Reviewed contact sheets cropped into independent lossless WebP assets without recoloring.",
+ "atlases":[
+  {"id":"red","grid":"5x5","prompt":"All primary objects red. Row1 five different single socks (ankle,long,baby,wool,sport). Row2 five books (thick hardback,thin paperback,square,tall slim,spiral notebook). Row3 five pencils varying short,long,chunky,triangular,hexagonal. Row4 five cabinets (tall two doors,short one door,broad three doors,narrow single door,low sideboard). Row5 five doors (paneled,smooth,rounded top,four panel,broad flat). White background, complete isolated objects."},
+  {"id":"blue","grid":"5x5","prompt":"Same five-by-five object specification as red atlas; all primary objects blue."},
+  {"id":"yellow","grid":"5x5","prompt":"Same five-by-five object specification as red atlas; all primary objects yellow."},
+  {"id":"green","grid":"5x5","prompt":"Same five-by-five object specification as red atlas; all primary objects green."},
+  {"id":"extras","grid":"4x4","prompt":"Row1 red car,red notebook,red apple,red cherries. Row2 blue car,blue notebook,blue sharpener,blue-frosted cake. Row3 yellow car,yellow notebook,yellow sharpener,yellow sunflower. Row4 green car,green notebook,green apple,green-frosted cake. Single realistic objects on white."},
+  {"id":"regions","grid":"2x3","prompt":"Real ball,cake,flowers,erasers,blank wooden sign and shelf with boxes. Four large color areas in each image: red upper-left,blue upper-right,yellow lower-left,green lower-right. Real textures,neutral surroundings,no text."},
+  {"id":"rooms","grid":"2x2","prompt":"Four realistic simple study rooms: white walls,neutral table and floor. Wardrobe upper-left,door upper-right,book bottom-left,pencil bottom-right. The four specified objects in each room red,blue,yellow,green respectively. Complete objects,no extra clutter or people."},
+  {"id":"natural","grid":"2x2","prompt":"Fully dressed child with red knit hat,blue shirt,yellow trousers,green boots; colorful parrot with red crown,blue wing,yellow breast,green tail; garden red poppy,blue hydrangea,yellow sunflower,green leaves; four pencils left to right red blue yellow green. Photoreal natural context,clear target regions."},
+  {"id":"completion","grid":"3x4","prompt":"Columns red,blue,yellow,green. Row1 plastic sharpeners,row2 single-color frosted small cakes,row3 red rose,blue hydrangea,yellow sunflower,green chrysanthemum. Twelve realistic isolated objects on white,no borders labels or text."}
+ ]
+}

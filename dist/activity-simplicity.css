@@ -1,0 +1,10 @@
+/* A single heading and feedback area keep teaching screens uncluttered. */
+.kicker,#work #instruction,#work #question{display:none!important}
+#work .source-note,#work #heard{display:none!important}
+body:has(#work:not([hidden])) main>h1+ p:not(#methodLabel){display:none!important}
+body:has(#work:not([hidden])) main>span.step-label{display:none!important}
+[data-screen="activity"] .game-toolbar .step-label,
+[data-screen="activity"] #objectInstruction,
+[data-screen="activity"] .object-note,
+[data-screen="activity"] .event-instruction,
+[data-screen="activity"] .event-touch-note{display:none!important}

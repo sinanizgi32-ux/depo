@@ -13,7 +13,7 @@ status={'ready':False,'message':'Türkçe ses modeli hazırlanıyor.'}
 lock=threading.Lock()
 names=re.findall(r"\['[a-z]+','([^']+)','",(ROOT/'matching-data.js').read_text(encoding='utf-8-sig'))
 # The complete 100-word vocabulary is supplied, never the trial's expected answer.
-vocabulary='Türkçe nesne adları: '+', '.join(names)
+vocabulary='Türkçe renk ve nesne adları: kırmızı, mavi, sarı, yeşil, '+', '.join(names)
 def load_model():
  global model
  try:
@@ -56,7 +56,9 @@ class Handler(SimpleHTTPRequestHandler):
    if not samples.size or np.sqrt(np.mean(samples*samples))<.003:self.json(200,{'text':'','uncertain':True});return
    start=time.monotonic()
    samples=np.pad(samples,(6400,8000))
-   segments,info=model.transcribe(samples,language='tr',task='transcribe',initial_prompt=vocabulary,beam_size=5,condition_on_previous_text=False,vad_filter=False,temperature=0)
+   # A task-wide vocabulary contains every possible color, never this trial's answer.
+   prompt='Renk adları: kırmızı, mavi, sarı, yeşil.' if self.headers.get('X-Teaching-Domain')=='colors' else 'Uzunluk kavramları: uzun, kısa.' if self.headers.get('X-Teaching-Domain')=='length' else 'Yaş kavramları: genç, yaşlı.' if self.headers.get('X-Teaching-Domain')=='age' else 'Zıt kavramlar: temiz, kirli, sıcak, soğuk, büyük, küçük, ağır, hafif, ince, kalın, gece, gündüz, içinde, dışında.' if self.headers.get('X-Teaching-Domain')=='opposites' else vocabulary
+   segments,info=model.transcribe(samples,language='tr',task='transcribe',initial_prompt=prompt,beam_size=5,condition_on_previous_text=False,vad_filter=False,temperature=0)
    segments=list(segments)
    text=' '.join(s.text.strip() for s in segments if s.no_speech_prob<.6 and s.avg_logprob> -1.5)
    self.json(200,{'text':text,'uncertain':not bool(text),'elapsed':round(time.monotonic()-start,2)})

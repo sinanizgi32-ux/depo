@@ -1,0 +1,5 @@
+/* Matching cards share their frame, padding and drawing scale. */
+body[data-mode="match"] .targets{grid-template-columns:repeat(var(--count,2),minmax(0,180px));justify-content:center}
+body[data-mode="match"] .target,body[data-mode="match"] .source{box-sizing:border-box;border-width:3px;padding:6px;border-radius:16px}
+body[data-mode="match"] .target svg,body[data-mode="match"] .source svg{display:block;width:100%;height:auto;max-height:none;aspect-ratio:1}
+body[data-mode="match"] .source{max-width:none;min-width:0}

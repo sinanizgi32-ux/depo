@@ -1,0 +1,405 @@
+{
+  "origin": "Built-in image generation; no external photographs",
+  "images": [
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-clean-0.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        5,
+        0,
+        392,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-clean-1.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        402,
+        0,
+        788,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-clean-2.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        798,
+        0,
+        1185,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-clean-3.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        1195,
+        0,
+        1581,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-clean-4.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        1591,
+        0,
+        1978,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-dirty-0.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        5,
+        396,
+        392,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-dirty-1.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        402,
+        396,
+        788,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-dirty-2.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        798,
+        396,
+        1185,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-dirty-3.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        1195,
+        396,
+        1581,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\object-dirty-4.webp",
+      "source": "source-assets\\opposites\\cleanliness\\object.png",
+      "crop": [
+        1591,
+        396,
+        1978,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-clean-0.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        5,
+        0,
+        392,
+        389
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-clean-1.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        402,
+        0,
+        788,
+        389
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-clean-2.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        798,
+        0,
+        1185,
+        389
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-clean-3.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        1195,
+        0,
+        1581,
+        389
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-clean-4.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        1591,
+        0,
+        1978,
+        389
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-dirty-0.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        5,
+        403,
+        392,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-dirty-1.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        402,
+        403,
+        788,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-dirty-2.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        798,
+        403,
+        1185,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-dirty-3.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        1195,
+        403,
+        1581,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\cleanliness\\scene-dirty-4.webp",
+      "source": "source-assets\\opposites\\cleanliness\\scene.png",
+      "crop": [
+        1591,
+        403,
+        1978,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-hot-0.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        5,
+        0,
+        392,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-hot-1.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        402,
+        0,
+        788,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-hot-2.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        798,
+        0,
+        1185,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-hot-3.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        1195,
+        0,
+        1581,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-hot-4.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        1591,
+        0,
+        1978,
+        396
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-cold-0.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        5,
+        396,
+        392,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-cold-1.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        402,
+        396,
+        788,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-cold-2.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        798,
+        396,
+        1185,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-cold-3.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        1195,
+        396,
+        1581,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\object-cold-4.webp",
+      "source": "source-assets\\opposites\\temperature\\object.png",
+      "crop": [
+        1591,
+        396,
+        1978,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-hot-0.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        5,
+        0,
+        392,
+        407
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-hot-1.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        402,
+        0,
+        788,
+        407
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-hot-2.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        798,
+        0,
+        1185,
+        407
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-hot-3.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        1195,
+        0,
+        1581,
+        407
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-hot-4.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        1591,
+        0,
+        1978,
+        407
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-cold-0.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        5,
+        417,
+        392,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-cold-1.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        402,
+        417,
+        788,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-cold-2.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        798,
+        417,
+        1185,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-cold-3.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        1195,
+        417,
+        1581,
+        793
+      ]
+    },
+    {
+      "file": "dist\\assets\\opposites\\temperature\\scene-cold-4.webp",
+      "source": "source-assets\\opposites\\temperature\\scene.png",
+      "crop": [
+        1591,
+        417,
+        1978,
+        793
+      ]
+    }
+  ]
+}

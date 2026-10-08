@@ -73,7 +73,7 @@ const server = createServer(async (request, response) => {
         for await (const chunk of request) { size += chunk.length; if (size > 500000) { reply(response, 413, 'Ses çok uzun.', method); return; } chunks.push(chunk); }
         body = Buffer.concat(chunks);
       }
-      const upstream = await fetch(`http://127.0.0.1:4181${route}`, { method, body, headers: statusRoute ? {} : { 'Content-Type': 'audio/wav', Origin: 'http://127.0.0.1:4181' }, signal: AbortSignal.timeout(30000) });
+      const upstream = await fetch(`http://127.0.0.1:4181${route}`, { method, body, headers: statusRoute ? {} : { 'Content-Type': 'audio/wav', Origin: 'http://127.0.0.1:4181', ...(['colors','length','age','opposites'].includes(request.headers['x-teaching-domain'])?{'X-Teaching-Domain':request.headers['x-teaching-domain']}:{}) }, signal: AbortSignal.timeout(30000) });
       const result = await upstream.text();
       response.writeHead(upstream.status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); response.end(result);
     } catch {

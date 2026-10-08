@@ -1,0 +1,18 @@
+{
+  "tool": "built-in image_gen",
+  "originals": "source-assets/colors",
+  "atlasFiles": {
+    "red": "866328df-129a-4889-a2f5-b9daee41fd29",
+    "blue": "e2aa0761-42ff-4a75-861e-b2cbc9c975fb",
+    "yellow": "0f3fa4b8-aae4-45ee-a6b9-1d86d370e1eb",
+    "green": "4ec80640-fd61-4090-a657-ae31481b1db5",
+    "extras": "7533004d-29be-4a22-869f-2eec5cfb585c",
+    "regions": "a7b6678e-29d5-44f6-a49a-74bcf625cd47",
+    "rooms": "3131e622-5e5f-4bb5-81e8-9bf2bc076736",
+    "natural": "00c684b8-eff8-4efe-9836-b45a74a0836f",
+    "completion": "c1edacec-19d4-41de-9892-1694bdc10925"
+  },
+  "processing": "Reviewed cell and object-bound crops only; original pixels/colors retained; lossless WebP.",
+  "document": "renk-kavrami-son-3.docx",
+  "date": "2026-10-08"
+}
