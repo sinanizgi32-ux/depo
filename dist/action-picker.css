@@ -1,0 +1,14 @@
+/* Shared action selection for matching, showing and naming. */
+#setup .picker-section{margin:24px 0 30px}#setup h2{font-size:clamp(19px,2vw,24px);margin:0 0 14px}
+#setup .choices{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0}
+#setup .action-choice{display:flex;flex-direction:column;min-width:0;padding:0;overflow:hidden;border:2px solid #d6e5f5;border-radius:18px;background:#fff;text-align:center;color:#16375e;box-shadow:0 3px 12px #17396108;transition:border-color .15s,box-shadow .15s}
+#setup .action-choice img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e8f0f5}
+#setup .action-choice>span{display:grid;place-items:center;padding:12px 8px;min-height:48px;box-sizing:border-box;font-size:16px;font-weight:650;line-height:1.3}
+#setup .action-choice.selected{outline:none;border-color:#176bde;box-shadow:0 0 0 2px #176bde22;background:#edf5ff}
+#setup .levels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
+#setup .level-choice{display:flex;align-items:center;gap:12px;text-align:left;min-width:0;padding:16px;color:#16375e;box-shadow:0 3px 12px #17396108}
+#setup .level-number{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:13px;background:#e9f2ff;color:#176bde;font-weight:750;font-size:20px}
+#setup .level-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:5px;line-height:1.35}#setup .level-copy strong{font-size:16px}#setup .level-copy>span{font-size:14px;color:#526c85}#setup .trial-count{flex-shrink:0;font-size:12px;color:#526c85;background:#f1f6fa;border-radius:20px;padding:6px 8px}
+#setup button:focus-visible{outline:3px solid #176bde;outline-offset:3px}#setup button:hover{border-color:#176bde}
+@media(max-width:850px){#setup .choices{grid-template-columns:repeat(3,minmax(0,1fr))}#setup .levels{grid-template-columns:1fr}}
+@media(max-width:480px){#setup .choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#setup .level-choice{padding:12px;gap:10px}#setup .action-choice>span{font-size:15px}#setup .trial-count{font-size:11px;padding:5px 6px}}

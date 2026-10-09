@@ -8,3 +8,23 @@ body:has(#work:not([hidden])) main>span.step-label{display:none!important}
 [data-screen="activity"] .object-note,
 [data-screen="activity"] .event-instruction,
 [data-screen="activity"] .event-touch-note{display:none!important}
+
+/* One responsive drawing area: every peer card is centered and shares its scale. */
+body:has(#work:not([hidden])) main{max-width:1240px;padding:clamp(8px,1.6vw,20px)}
+body[data-mode]:has(#work:not([hidden])) .targets{--card-limit:min(380px,52svh);display:grid;grid-template-columns:repeat(var(--count,1),minmax(0,1fr));align-items:center;gap:clamp(4px,1vw,14px);width:100%;max-width:min(100%,calc(var(--count,1)*var(--card-limit) + (var(--count,1) - 1)*14px));margin:12px auto;min-width:0}
+body[data-mode="match"]:has(#work:not([hidden])) .targets{--card-limit:clamp(80px,calc((100svh - 260px)/2),330px)}
+body[data-mode]:has(#work:not([hidden])) .target,body[data-mode]:has(#work:not([hidden])) .source{box-sizing:border-box;display:grid;place-items:center;align-self:center;min-width:0;max-width:100%;padding:clamp(2px,.5vw,6px);line-height:0}
+body[data-mode]:has(#work:not([hidden])) .target svg,body[data-mode]:has(#work:not([hidden])) .source svg,body[data-mode]:has(#work:not([hidden])) .target img,body[data-mode]:has(#work:not([hidden])) .source img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:1;object-fit:contain;object-position:center}
+body[data-mode]:has(#work:not([hidden])) .targets:has(>.target:only-child){max-width:min(580px,64svh,100%)}
+body[data-mode="match"]:has(#work:not([hidden])) .targets:has(>.target:only-child){max-width:min(330px,calc((100svh - 260px)/2),100%)}
+body[data-mode]:has(#work:not([hidden])) .source{margin:12px auto}
+body:has(#work:not([hidden])) .scene{max-width:min(640px,64svh,100%);margin:12px auto}
+/* Object naming has one large image instead of a small image inside a large empty frame. */
+body:has(#category):has(#work #scene.scene) #work #scene.scene{width:min(100%,640px,64svh);height:auto;aspect-ratio:1;margin:12px auto;overflow:hidden}
+body:has(#category):has(#work #scene.scene) #work #scene.scene img{width:100%;height:100%;object-fit:contain;object-position:center;margin:0;background:transparent}
+.game-screen.is-object-matching{max-width:1240px;padding-inline:clamp(8px,1.6vw,20px)}
+.game-stage.is-object-matching{padding:clamp(6px,1vw,14px)}
+.is-object-matching .object-targets{max-width:min(100%,calc(var(--object-columns,3)*330px));margin-inline:auto;align-items:center}
+.is-object-matching .object-target,.is-object-matching .object-source{width:100%;max-width:min(330px,calc((100svh - 290px)/2));min-width:0;display:grid;place-items:center;padding:clamp(2px,.5vw,6px)}
+.is-pointing .object-target{max-width:min(380px,55svh)}
+.is-object-matching .object-target img,.is-object-matching .object-source img{display:block;object-fit:contain;object-position:center;width:100%;height:auto;aspect-ratio:1}

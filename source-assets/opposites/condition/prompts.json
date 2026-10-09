@@ -1,0 +1,9 @@
+{
+  "method": "built-in image_gen",
+  "layout": "5 columns 2 rows; paired objects same color, position and size",
+  "concept": "unused vs visibly worn through use; clean in both states",
+  "source_atlases": [
+    "object.png",
+    "scene.png"
+  ]
+}

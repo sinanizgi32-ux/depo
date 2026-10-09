@@ -1,0 +1,5 @@
+{
+  "method": "built-in image_gen edit",
+  "reference": "original object.png/scene.png",
+  "prompt": "Preserve subjects/colors/concepts; five equal columns and two rows; whole object and all handles/straps/wheels/legs visible within cell, 15% safe margins; no neighbor fragments, divider lines, outside smudges; clean uncluttered backgrounds; preserve wear on old objects; paired scale and baseline."
+}

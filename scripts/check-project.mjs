@@ -5,6 +5,10 @@ import { spawnSync } from 'node:child_process';
 import { gunzipSync } from 'node:zlib';
 
 const root = new URL('../', import.meta.url);
+for(const name of ['wh-data.js','wh-rules.js','wh-scene-renderer.js','wh-teaching.js']){
+  const result=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+name,root))],{encoding:'utf8'});
+  assert.equal(result.status,0,`${name}: ${result.stderr}`);
+}
 const expected = ['breathe', 'nod_yes', 'shake_no', 'look_left', 'look_right', 'look_up', 'curious', 'ears', 'listen', 'bow', 'sway', 'stretch', 'blink', 'talk'];
 for (const name of ['dist/app.js', 'dist/color-teaching.js', 'dist/color-teaching-data.js', 'dist/local-speech.js', 'dist/naming-scenes.js', 'dist/naming-rules.js', 'dist/naming-prototype.js', 'scripts/start-with-speech.mjs', 'dist/events-data.js', 'dist/matching-data.js', 'dist/object-matching.js', 'dist/pofidik-viewer.js', 'scripts/serve.mjs', 'scripts/pofidik-viewer-source.js']) {
   const result = spawnSync(process.execPath, ['--check', fileURLToPath(new URL(name, root))], { encoding: 'utf8' });

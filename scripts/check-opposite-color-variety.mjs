@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
-for(const [file,global,ids] of [['opposite-teaching-data.js','OppositeTeachingData',['clean','dirty','hot','cold','big','small','heavy','light','thin','thick','day','night','inside','outside']],['age-teaching-data.js','AgeTeachingData',['young','old']]]){
+for(const [file,global,ids] of [['opposite-teaching-data.js','OppositeTeachingData',['clean','dirty','hot','cold','big','small','heavy','light','thin','thick','day','night','inside','outside','full','empty','new','worn','hard','soft','wet','dry']],['age-teaching-data.js','AgeTeachingData',['young','old']]]){
  for(const concept of ids){
   const w={};vm.runInNewContext(fs.readFileSync('dist/'+file,'utf8'),{window:w,location:{search:'?concept='+concept},URLSearchParams});const D=w[global];
   for(const mode of ['match','show','name'])for(let level=1;level<=11;level++){
@@ -16,4 +16,4 @@ for(const [file,global,ids] of [['opposite-teaching-data.js','OppositeTeachingDa
   }
  }
 }
-console.log('OK: sixteen concepts, all modes and 11 stages; original beginning, varied target hues and varied distractors with one counterpart trial.');
+console.log('OK: twenty-four concepts, all modes and 11 stages; original beginning, varied target hues and varied distractors with one counterpart trial.');

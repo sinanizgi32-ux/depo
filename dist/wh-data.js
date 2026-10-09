@@ -1,0 +1,4657 @@
+window.WhData={
+  "types": [
+    "ne",
+    "nerede",
+    "kim",
+    "nasıl",
+    "ne zaman",
+    "neden"
+  ],
+  "places": {
+    "park": [
+      "parkta",
+      "park"
+    ],
+    "kitchen": [
+      "mutfakta",
+      "mutfak"
+    ],
+    "library": [
+      "kütüphanede",
+      "kütüphane"
+    ],
+    "classroom": [
+      "sınıfta",
+      "sınıf"
+    ],
+    "garden": [
+      "bahçede",
+      "bahçe"
+    ],
+    "playroom": [
+      "oyun odasında",
+      "oyun odası"
+    ],
+    "bedroom": [
+      "yatak odasında",
+      "yatak odası"
+    ],
+    "schoolyard": [
+      "okul bahçesinde",
+      "okul bahçesi"
+    ],
+    "bathroom": [
+      "banyoda",
+      "banyo"
+    ]
+  },
+  "levels": [
+    {
+      "number": 1,
+      "steps": 2,
+      "title": "2 adımlı olaylar",
+      "stories": [
+        "story-01",
+        "story-02",
+        "story-03",
+        "story-04",
+        "story-05"
+      ]
+    },
+    {
+      "number": 2,
+      "steps": 2,
+      "title": "2 adımlı olaylar",
+      "stories": [
+        "story-06",
+        "story-07",
+        "story-08",
+        "story-09",
+        "story-10"
+      ]
+    },
+    {
+      "number": 3,
+      "steps": 3,
+      "title": "3 adımlı olaylar",
+      "stories": [
+        "story-11",
+        "story-12",
+        "story-13",
+        "story-14",
+        "story-15"
+      ]
+    },
+    {
+      "number": 4,
+      "steps": 3,
+      "title": "3 adımlı olaylar",
+      "stories": [
+        "story-16",
+        "story-17",
+        "story-18",
+        "story-19",
+        "story-20"
+      ]
+    },
+    {
+      "number": 5,
+      "steps": 4,
+      "title": "4 adımlı olaylar",
+      "stories": [
+        "story-21",
+        "story-22",
+        "story-23",
+        "story-24",
+        "story-25"
+      ]
+    },
+    {
+      "number": 6,
+      "steps": 4,
+      "title": "4 adımlı olaylar",
+      "stories": [
+        "story-26",
+        "story-27",
+        "story-28",
+        "story-29",
+        "story-30"
+      ]
+    },
+    {
+      "number": 7,
+      "steps": 5,
+      "title": "5 adımlı olaylar",
+      "stories": [
+        "story-31",
+        "story-32",
+        "story-33",
+        "story-34",
+        "story-35"
+      ]
+    },
+    {
+      "number": 8,
+      "steps": 5,
+      "title": "5 adımlı olaylar",
+      "stories": [
+        "story-36",
+        "story-37",
+        "story-38",
+        "story-39",
+        "story-40"
+      ]
+    },
+    {
+      "number": 9,
+      "steps": 6,
+      "title": "6 adımlı olaylar",
+      "stories": [
+        "story-41",
+        "story-42",
+        "story-43",
+        "story-44",
+        "story-45"
+      ]
+    },
+    {
+      "number": 10,
+      "steps": 6,
+      "title": "6 adımlı olaylar",
+      "stories": [
+        "story-46",
+        "story-47",
+        "story-48",
+        "story-49",
+        "story-50"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "story-01",
+      "level": 1,
+      "title": "Ela · top",
+      "actor": "Ela",
+      "friend": "Emir",
+      "place": "park",
+      "object": "top",
+      "actions": [
+        "al",
+        "kutuya koy"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "oyuncakları toplamak",
+      "narration": "Sabah Ela parkta. Ela topu aldı. Ela topu kutuya koydu. Ela bunları dikkatlice yaptı. Oyuncakları toplamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ela ne aldı?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Ela topu aldı"
+          ],
+          "evidence": "Ela topu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ela neredeydi?",
+          "answer": "parkta",
+          "aliases": [
+            "parkta",
+            "park",
+            "Ela parkta"
+          ],
+          "evidence": "Ela parkta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ela",
+          "aliases": [
+            "Ela",
+            "Ela yaptı"
+          ],
+          "evidence": "Bu hareketleri Ela yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ela bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ela bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ela neden böyle yaptı?",
+          "answer": "oyuncakları toplamak",
+          "aliases": [
+            "oyuncakları toplamak",
+            "oyuncakları toplamak için",
+            "oyuncakları toplamak",
+            "oyuncakları toplamak için"
+          ],
+          "evidence": "Ela oyuncakları toplamak için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-01.mp4",
+      "poster": "assets/5n1k/posters/story-01.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-02",
+      "level": 1,
+      "title": "Ali · bardak",
+      "actor": "Ali",
+      "friend": "İpek",
+      "place": "kitchen",
+      "object": "bardak",
+      "actions": [
+        "al",
+        "iç"
+      ],
+      "time": "sabah",
+      "manner": "yavaşça",
+      "purpose": "susuzluğunu gidermek",
+      "narration": "Sabah Ali mutfakta. Ali bardağı aldı. Ali bardaktaki suyu içti. Ali bunları yavaşça yaptı. Susuzluğunu gidermek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ali ne aldı?",
+          "answer": "bardak",
+          "aliases": [
+            "bardak",
+            "bardağı",
+            "Ali bardağı aldı"
+          ],
+          "evidence": "Ali bardağı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ali neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Ali mutfakta"
+          ],
+          "evidence": "Ali mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ali",
+          "aliases": [
+            "Ali",
+            "Ali yaptı"
+          ],
+          "evidence": "Bu hareketleri Ali yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ali bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Ali bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ali neden böyle yaptı?",
+          "answer": "susuzluğunu gidermek",
+          "aliases": [
+            "susuzluğunu gidermek",
+            "susuzluğunu gidermek için",
+            "su içmek",
+            "su içmek için"
+          ],
+          "evidence": "Ali susuzluğunu gidermek için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-02.mp4",
+      "poster": "assets/5n1k/posters/story-02.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-03",
+      "level": 1,
+      "title": "Ece · kitap",
+      "actor": "Ece",
+      "friend": "Emir",
+      "place": "library",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "oku"
+      ],
+      "time": "sabah",
+      "manner": "sakince",
+      "purpose": "öyküyü öğrenmek",
+      "narration": "Sabah Ece kütüphanede. Ece kitabı aldı. Ece kitabı okudu. Ece bunları sakince yaptı. Öyküyü öğrenmek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ece ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Ece kitabı aldı"
+          ],
+          "evidence": "Ece kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ece neredeydi?",
+          "answer": "kütüphanede",
+          "aliases": [
+            "kütüphanede",
+            "kütüphane",
+            "Ece kütüphanede"
+          ],
+          "evidence": "Ece kütüphanede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ece",
+          "aliases": [
+            "Ece",
+            "Ece yaptı"
+          ],
+          "evidence": "Bu hareketleri Ece yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ece bunları nasıl yaptı?",
+          "answer": "sakince",
+          "aliases": [
+            "sakince",
+            "sakin"
+          ],
+          "evidence": "Ece bunları sakince yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ece neden böyle yaptı?",
+          "answer": "öyküyü öğrenmek",
+          "aliases": [
+            "öyküyü öğrenmek",
+            "öyküyü öğrenmek için",
+            "öyküyü öğrenmek",
+            "öyküyü öğrenmek için"
+          ],
+          "evidence": "Ece öyküyü öğrenmek için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-03.mp4",
+      "poster": "assets/5n1k/posters/story-03.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-04",
+      "level": 1,
+      "title": "Can · kalem",
+      "actor": "Can",
+      "friend": "İpek",
+      "place": "classroom",
+      "object": "kalem",
+      "actions": [
+        "al",
+        "çiz"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "resim yapmak",
+      "narration": "Sabah Can sınıfta. Can kalemi aldı. Can kâğıda resim çizdi. Can bunları dikkatlice yaptı. Resim yapmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Can ne aldı?",
+          "answer": "kalem",
+          "aliases": [
+            "kalem",
+            "kalemi",
+            "Can kalemi aldı"
+          ],
+          "evidence": "Can kalemi aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Can neredeydi?",
+          "answer": "sınıfta",
+          "aliases": [
+            "sınıfta",
+            "sınıf",
+            "Can sınıfta"
+          ],
+          "evidence": "Can sınıfta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Can",
+          "aliases": [
+            "Can",
+            "Can yaptı"
+          ],
+          "evidence": "Bu hareketleri Can yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Can bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Can bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Can neden böyle yaptı?",
+          "answer": "resim yapmak",
+          "aliases": [
+            "resim yapmak",
+            "resim yapmak için",
+            "resim yapmak",
+            "resim yapmak için"
+          ],
+          "evidence": "Can resim yapmak için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-04.mp4",
+      "poster": "assets/5n1k/posters/story-04.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-05",
+      "level": 1,
+      "title": "Ada · sulama kabı",
+      "actor": "Ada",
+      "friend": "Emir",
+      "place": "garden",
+      "object": "sulama kabı",
+      "actions": [
+        "al",
+        "sula"
+      ],
+      "time": "sabah",
+      "manner": "yavaşça",
+      "purpose": "çiçeğe su vermek",
+      "narration": "Sabah Ada bahçede. Ada sulama kabını aldı. Ada çiçeği suladı. Ada bunları yavaşça yaptı. Çiçeğe su vermek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ada ne aldı?",
+          "answer": "sulama kabı",
+          "aliases": [
+            "sulama kabı",
+            "sulama kabını",
+            "Ada sulama kabını aldı"
+          ],
+          "evidence": "Ada sulama kabını aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ada neredeydi?",
+          "answer": "bahçede",
+          "aliases": [
+            "bahçede",
+            "bahçe",
+            "Ada bahçede"
+          ],
+          "evidence": "Ada bahçede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ada",
+          "aliases": [
+            "Ada",
+            "Ada yaptı"
+          ],
+          "evidence": "Bu hareketleri Ada yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ada bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Ada bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ada neden böyle yaptı?",
+          "answer": "çiçeğe su vermek",
+          "aliases": [
+            "çiçeğe su vermek",
+            "çiçeğe su vermek için",
+            "çiçeği sulamak",
+            "çiçeği sulamak için"
+          ],
+          "evidence": "Ada çiçeğe su vermek için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-05.mp4",
+      "poster": "assets/5n1k/posters/story-05.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-06",
+      "level": 2,
+      "title": "Mert · araba",
+      "actor": "Mert",
+      "friend": "İpek",
+      "place": "playroom",
+      "object": "araba",
+      "actions": [
+        "al",
+        "kutuya koy"
+      ],
+      "time": "öğleden sonra",
+      "manner": "dikkatlice",
+      "purpose": "oyuncakları toplamak",
+      "narration": "Öğleden sonra Mert oyun odasında. Mert arabayı aldı. Mert arabayı kutuya koydu. Mert bunları dikkatlice yaptı. Oyuncakları toplamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Mert ne aldı?",
+          "answer": "araba",
+          "aliases": [
+            "araba",
+            "arabayı",
+            "Mert arabayı aldı"
+          ],
+          "evidence": "Mert arabayı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Mert neredeydi?",
+          "answer": "oyun odasında",
+          "aliases": [
+            "oyun odasında",
+            "oyun odası",
+            "Mert oyun odasında"
+          ],
+          "evidence": "Mert oyun odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Mert",
+          "aliases": [
+            "Mert",
+            "Mert yaptı"
+          ],
+          "evidence": "Bu hareketleri Mert yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Mert bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Mert bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Mert neden böyle yaptı?",
+          "answer": "oyuncakları toplamak",
+          "aliases": [
+            "oyuncakları toplamak",
+            "oyuncakları toplamak için",
+            "oyuncakları toplamak",
+            "oyuncakları toplamak için"
+          ],
+          "evidence": "Mert oyuncakları toplamak için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-06.mp4",
+      "poster": "assets/5n1k/posters/story-06.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-07",
+      "level": 2,
+      "title": "Zeynep · kitap",
+      "actor": "Zeynep",
+      "friend": "Emir",
+      "place": "bedroom",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "oku"
+      ],
+      "time": "öğleden sonra",
+      "manner": "sakince",
+      "purpose": "öyküyü öğrenmek",
+      "narration": "Öğleden sonra Zeynep yatak odasında. Zeynep kitabı aldı. Zeynep kitabı okudu. Zeynep bunları sakince yaptı. Öyküyü öğrenmek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Zeynep ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Zeynep kitabı aldı"
+          ],
+          "evidence": "Zeynep kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Zeynep neredeydi?",
+          "answer": "yatak odasında",
+          "aliases": [
+            "yatak odasında",
+            "yatak odası",
+            "Zeynep yatak odasında"
+          ],
+          "evidence": "Zeynep yatak odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Zeynep",
+          "aliases": [
+            "Zeynep",
+            "Zeynep yaptı"
+          ],
+          "evidence": "Bu hareketleri Zeynep yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Zeynep bunları nasıl yaptı?",
+          "answer": "sakince",
+          "aliases": [
+            "sakince",
+            "sakin"
+          ],
+          "evidence": "Zeynep bunları sakince yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Zeynep neden böyle yaptı?",
+          "answer": "öyküyü öğrenmek",
+          "aliases": [
+            "öyküyü öğrenmek",
+            "öyküyü öğrenmek için",
+            "öyküyü öğrenmek",
+            "öyküyü öğrenmek için"
+          ],
+          "evidence": "Zeynep öyküyü öğrenmek için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-07.mp4",
+      "poster": "assets/5n1k/posters/story-07.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-08",
+      "level": 2,
+      "title": "Deniz · top",
+      "actor": "Deniz",
+      "friend": "İpek",
+      "place": "schoolyard",
+      "object": "top",
+      "actions": [
+        "al",
+        "ver"
+      ],
+      "time": "öğleden sonra",
+      "manner": "nazikçe",
+      "purpose": "arkadaşıyla oynamak",
+      "narration": "Öğleden sonra Deniz okul bahçesinde. Deniz topu aldı. Deniz topu arkadaşına verdi. Deniz bunları nazikçe yaptı. Arkadaşıyla oynamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Deniz ne aldı?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Deniz topu aldı"
+          ],
+          "evidence": "Deniz topu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Deniz neredeydi?",
+          "answer": "okul bahçesinde",
+          "aliases": [
+            "okul bahçesinde",
+            "okul bahçesi",
+            "Deniz okul bahçesinde"
+          ],
+          "evidence": "Deniz okul bahçesinde."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Deniz",
+          "aliases": [
+            "Deniz",
+            "Deniz yaptı"
+          ],
+          "evidence": "Bu hareketleri Deniz yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Deniz bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Deniz bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Deniz neden böyle yaptı?",
+          "answer": "arkadaşıyla oynamak",
+          "aliases": [
+            "arkadaşıyla oynamak",
+            "arkadaşıyla oynamak için",
+            "oynamak",
+            "oynamak için"
+          ],
+          "evidence": "Deniz arkadaşıyla oynamak için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-08.mp4",
+      "poster": "assets/5n1k/posters/story-08.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-09",
+      "level": 2,
+      "title": "Elif · havlu",
+      "actor": "Elif",
+      "friend": "Emir",
+      "place": "bathroom",
+      "object": "havlu",
+      "actions": [
+        "al",
+        "kurula"
+      ],
+      "time": "öğleden sonra",
+      "manner": "dikkatlice",
+      "purpose": "ellerini kurulamak",
+      "narration": "Öğleden sonra Elif banyoda. Elif havluyu aldı. Elif ellerini havluyla kuruladı. Elif bunları dikkatlice yaptı. Ellerini kurulamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Elif ne aldı?",
+          "answer": "havlu",
+          "aliases": [
+            "havlu",
+            "havluyu",
+            "Elif havluyu aldı"
+          ],
+          "evidence": "Elif havluyu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Elif neredeydi?",
+          "answer": "banyoda",
+          "aliases": [
+            "banyoda",
+            "banyo",
+            "Elif banyoda"
+          ],
+          "evidence": "Elif banyoda."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Elif",
+          "aliases": [
+            "Elif",
+            "Elif yaptı"
+          ],
+          "evidence": "Bu hareketleri Elif yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Elif bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Elif bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Elif neden böyle yaptı?",
+          "answer": "ellerini kurulamak",
+          "aliases": [
+            "ellerini kurulamak",
+            "ellerini kurulamak için",
+            "ellerini kurulamak",
+            "ellerini kurulamak için"
+          ],
+          "evidence": "Elif ellerini kurulamak için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-09.mp4",
+      "poster": "assets/5n1k/posters/story-09.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-10",
+      "level": 2,
+      "title": "Arda · kitap",
+      "actor": "Arda",
+      "friend": "İpek",
+      "place": "classroom",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "ver"
+      ],
+      "time": "öğleden sonra",
+      "manner": "nazikçe",
+      "purpose": "arkadaşının okumasına yardım etmek",
+      "narration": "Öğleden sonra Arda sınıfta. Arda kitabı aldı. Arda kitabı arkadaşına verdi. Arda bunları nazikçe yaptı. Arkadaşının okumasına yardım etmek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Arda ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Arda kitabı aldı"
+          ],
+          "evidence": "Arda kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Arda neredeydi?",
+          "answer": "sınıfta",
+          "aliases": [
+            "sınıfta",
+            "sınıf",
+            "Arda sınıfta"
+          ],
+          "evidence": "Arda sınıfta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Arda",
+          "aliases": [
+            "Arda",
+            "Arda yaptı"
+          ],
+          "evidence": "Bu hareketleri Arda yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Arda bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Arda bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Arda neden böyle yaptı?",
+          "answer": "arkadaşının okumasına yardım etmek",
+          "aliases": [
+            "arkadaşının okumasına yardım etmek",
+            "arkadaşının okumasına yardım etmek için",
+            "yardım etmek",
+            "yardım etmek için"
+          ],
+          "evidence": "Arda arkadaşının okumasına yardım etmek için böyle yaptı."
+        }
+      ],
+      "duration": 7,
+      "video": "assets/5n1k/videos/story-10.mp4",
+      "poster": "assets/5n1k/posters/story-10.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-11",
+      "level": 3,
+      "title": "Ela · elma",
+      "actor": "Ela",
+      "friend": "Emir",
+      "place": "kitchen",
+      "object": "elma",
+      "actions": [
+        "al",
+        "yıka",
+        "ye"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "temiz bir meyve yemek",
+      "narration": "Akşam Ela mutfakta. Ela elmayı aldı. Ela elmayı yıkadı. Ela elmayı yedi. Ela bunları dikkatlice yaptı. Temiz bir meyve yemek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ela ne aldı?",
+          "answer": "elma",
+          "aliases": [
+            "elma",
+            "elmayı",
+            "Ela elmayı aldı"
+          ],
+          "evidence": "Ela elmayı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ela neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Ela mutfakta"
+          ],
+          "evidence": "Ela mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ela",
+          "aliases": [
+            "Ela",
+            "Ela yaptı"
+          ],
+          "evidence": "Bu hareketleri Ela yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ela bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ela bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ela neden böyle yaptı?",
+          "answer": "temiz bir meyve yemek",
+          "aliases": [
+            "temiz bir meyve yemek",
+            "temiz bir meyve yemek için",
+            "meyve yemek",
+            "meyve yemek için"
+          ],
+          "evidence": "Ela temiz bir meyve yemek için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-11.mp4",
+      "poster": "assets/5n1k/posters/story-11.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-12",
+      "level": 3,
+      "title": "Ali · top",
+      "actor": "Ali",
+      "friend": "İpek",
+      "place": "park",
+      "object": "top",
+      "actions": [
+        "yürü",
+        "al",
+        "ver"
+      ],
+      "time": "akşam",
+      "manner": "yavaşça",
+      "purpose": "arkadaşıyla oynamak",
+      "narration": "Akşam Ali parkta. Ali yürüdü. Ali topu aldı. Ali topu arkadaşına verdi. Ali bunları yavaşça yaptı. Arkadaşıyla oynamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ali ne aldı?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Ali topu aldı"
+          ],
+          "evidence": "Ali topu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ali neredeydi?",
+          "answer": "parkta",
+          "aliases": [
+            "parkta",
+            "park",
+            "Ali parkta"
+          ],
+          "evidence": "Ali parkta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ali",
+          "aliases": [
+            "Ali",
+            "Ali yaptı"
+          ],
+          "evidence": "Bu hareketleri Ali yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ali bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Ali bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ali neden böyle yaptı?",
+          "answer": "arkadaşıyla oynamak",
+          "aliases": [
+            "arkadaşıyla oynamak",
+            "arkadaşıyla oynamak için",
+            "oynamak",
+            "oynamak için"
+          ],
+          "evidence": "Ali arkadaşıyla oynamak için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-12.mp4",
+      "poster": "assets/5n1k/posters/story-12.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-13",
+      "level": 3,
+      "title": "Ece · kalem",
+      "actor": "Ece",
+      "friend": "Emir",
+      "place": "classroom",
+      "object": "kalem",
+      "actions": [
+        "yürü",
+        "al",
+        "çiz"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "resim yapmak",
+      "narration": "Akşam Ece sınıfta. Ece yürüdü. Ece kalemi aldı. Ece kâğıda resim çizdi. Ece bunları dikkatlice yaptı. Resim yapmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ece ne aldı?",
+          "answer": "kalem",
+          "aliases": [
+            "kalem",
+            "kalemi",
+            "Ece kalemi aldı"
+          ],
+          "evidence": "Ece kalemi aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ece neredeydi?",
+          "answer": "sınıfta",
+          "aliases": [
+            "sınıfta",
+            "sınıf",
+            "Ece sınıfta"
+          ],
+          "evidence": "Ece sınıfta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ece",
+          "aliases": [
+            "Ece",
+            "Ece yaptı"
+          ],
+          "evidence": "Bu hareketleri Ece yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ece bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ece bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ece neden böyle yaptı?",
+          "answer": "resim yapmak",
+          "aliases": [
+            "resim yapmak",
+            "resim yapmak için",
+            "resim yapmak",
+            "resim yapmak için"
+          ],
+          "evidence": "Ece resim yapmak için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-13.mp4",
+      "poster": "assets/5n1k/posters/story-13.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-14",
+      "level": 3,
+      "title": "Can · kitap",
+      "actor": "Can",
+      "friend": "İpek",
+      "place": "library",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "oku",
+        "kutuya koy"
+      ],
+      "time": "akşam",
+      "manner": "sakince",
+      "purpose": "kitabı yerine kaldırmak",
+      "narration": "Akşam Can kütüphanede. Can kitabı aldı. Can kitabı okudu. Can kitabı kutuya koydu. Can bunları sakince yaptı. Kitabı yerine kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Can ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Can kitabı aldı"
+          ],
+          "evidence": "Can kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Can neredeydi?",
+          "answer": "kütüphanede",
+          "aliases": [
+            "kütüphanede",
+            "kütüphane",
+            "Can kütüphanede"
+          ],
+          "evidence": "Can kütüphanede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Can",
+          "aliases": [
+            "Can",
+            "Can yaptı"
+          ],
+          "evidence": "Bu hareketleri Can yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Can bunları nasıl yaptı?",
+          "answer": "sakince",
+          "aliases": [
+            "sakince",
+            "sakin"
+          ],
+          "evidence": "Can bunları sakince yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Can neden böyle yaptı?",
+          "answer": "kitabı yerine kaldırmak",
+          "aliases": [
+            "kitabı yerine kaldırmak",
+            "kitabı yerine kaldırmak için",
+            "kitabı yerine kaldırmak",
+            "kitabı yerine kaldırmak için"
+          ],
+          "evidence": "Can kitabı yerine kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-14.mp4",
+      "poster": "assets/5n1k/posters/story-14.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-15",
+      "level": 3,
+      "title": "Ada · sulama kabı",
+      "actor": "Ada",
+      "friend": "Emir",
+      "place": "garden",
+      "object": "sulama kabı",
+      "actions": [
+        "yürü",
+        "al",
+        "sula"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "çiçeğe su vermek",
+      "narration": "Akşam Ada bahçede. Ada yürüdü. Ada sulama kabını aldı. Ada çiçeği suladı. Ada bunları dikkatlice yaptı. Çiçeğe su vermek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ada ne aldı?",
+          "answer": "sulama kabı",
+          "aliases": [
+            "sulama kabı",
+            "sulama kabını",
+            "Ada sulama kabını aldı"
+          ],
+          "evidence": "Ada sulama kabını aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ada neredeydi?",
+          "answer": "bahçede",
+          "aliases": [
+            "bahçede",
+            "bahçe",
+            "Ada bahçede"
+          ],
+          "evidence": "Ada bahçede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ada",
+          "aliases": [
+            "Ada",
+            "Ada yaptı"
+          ],
+          "evidence": "Bu hareketleri Ada yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ada bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ada bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ada neden böyle yaptı?",
+          "answer": "çiçeğe su vermek",
+          "aliases": [
+            "çiçeğe su vermek",
+            "çiçeğe su vermek için",
+            "çiçeği sulamak",
+            "çiçeği sulamak için"
+          ],
+          "evidence": "Ada çiçeğe su vermek için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-15.mp4",
+      "poster": "assets/5n1k/posters/story-15.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-16",
+      "level": 4,
+      "title": "Mert · araba",
+      "actor": "Mert",
+      "friend": "İpek",
+      "place": "playroom",
+      "object": "araba",
+      "actions": [
+        "yürü",
+        "al",
+        "kutuya koy"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "oyuncakları toplamak",
+      "narration": "Sabah Mert oyun odasında. Mert yürüdü. Mert arabayı aldı. Mert arabayı kutuya koydu. Mert bunları dikkatlice yaptı. Oyuncakları toplamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Mert ne aldı?",
+          "answer": "araba",
+          "aliases": [
+            "araba",
+            "arabayı",
+            "Mert arabayı aldı"
+          ],
+          "evidence": "Mert arabayı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Mert neredeydi?",
+          "answer": "oyun odasında",
+          "aliases": [
+            "oyun odasında",
+            "oyun odası",
+            "Mert oyun odasında"
+          ],
+          "evidence": "Mert oyun odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Mert",
+          "aliases": [
+            "Mert",
+            "Mert yaptı"
+          ],
+          "evidence": "Bu hareketleri Mert yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Mert bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Mert bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Mert neden böyle yaptı?",
+          "answer": "oyuncakları toplamak",
+          "aliases": [
+            "oyuncakları toplamak",
+            "oyuncakları toplamak için",
+            "oyuncakları toplamak",
+            "oyuncakları toplamak için"
+          ],
+          "evidence": "Mert oyuncakları toplamak için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-16.mp4",
+      "poster": "assets/5n1k/posters/story-16.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-17",
+      "level": 4,
+      "title": "Zeynep · bardak",
+      "actor": "Zeynep",
+      "friend": "Emir",
+      "place": "kitchen",
+      "object": "bardak",
+      "actions": [
+        "yürü",
+        "al",
+        "iç"
+      ],
+      "time": "sabah",
+      "manner": "yavaşça",
+      "purpose": "susuzluğunu gidermek",
+      "narration": "Sabah Zeynep mutfakta. Zeynep yürüdü. Zeynep bardağı aldı. Zeynep bardaktaki suyu içti. Zeynep bunları yavaşça yaptı. Susuzluğunu gidermek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Zeynep ne aldı?",
+          "answer": "bardak",
+          "aliases": [
+            "bardak",
+            "bardağı",
+            "Zeynep bardağı aldı"
+          ],
+          "evidence": "Zeynep bardağı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Zeynep neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Zeynep mutfakta"
+          ],
+          "evidence": "Zeynep mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Zeynep",
+          "aliases": [
+            "Zeynep",
+            "Zeynep yaptı"
+          ],
+          "evidence": "Bu hareketleri Zeynep yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Zeynep bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Zeynep bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Zeynep neden böyle yaptı?",
+          "answer": "susuzluğunu gidermek",
+          "aliases": [
+            "susuzluğunu gidermek",
+            "susuzluğunu gidermek için",
+            "su içmek",
+            "su içmek için"
+          ],
+          "evidence": "Zeynep susuzluğunu gidermek için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-17.mp4",
+      "poster": "assets/5n1k/posters/story-17.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-18",
+      "level": 4,
+      "title": "Deniz · kitap",
+      "actor": "Deniz",
+      "friend": "İpek",
+      "place": "schoolyard",
+      "object": "kitap",
+      "actions": [
+        "yürü",
+        "al",
+        "ver"
+      ],
+      "time": "sabah",
+      "manner": "nazikçe",
+      "purpose": "arkadaşının okumasına yardım etmek",
+      "narration": "Sabah Deniz okul bahçesinde. Deniz yürüdü. Deniz kitabı aldı. Deniz kitabı arkadaşına verdi. Deniz bunları nazikçe yaptı. Arkadaşının okumasına yardım etmek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Deniz ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Deniz kitabı aldı"
+          ],
+          "evidence": "Deniz kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Deniz neredeydi?",
+          "answer": "okul bahçesinde",
+          "aliases": [
+            "okul bahçesinde",
+            "okul bahçesi",
+            "Deniz okul bahçesinde"
+          ],
+          "evidence": "Deniz okul bahçesinde."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Deniz",
+          "aliases": [
+            "Deniz",
+            "Deniz yaptı"
+          ],
+          "evidence": "Bu hareketleri Deniz yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Deniz bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Deniz bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Deniz neden böyle yaptı?",
+          "answer": "arkadaşının okumasına yardım etmek",
+          "aliases": [
+            "arkadaşının okumasına yardım etmek",
+            "arkadaşının okumasına yardım etmek için",
+            "yardım etmek",
+            "yardım etmek için"
+          ],
+          "evidence": "Deniz arkadaşının okumasına yardım etmek için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-18.mp4",
+      "poster": "assets/5n1k/posters/story-18.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-19",
+      "level": 4,
+      "title": "Elif · kalem",
+      "actor": "Elif",
+      "friend": "Emir",
+      "place": "bedroom",
+      "object": "kalem",
+      "actions": [
+        "al",
+        "çiz",
+        "kutuya koy"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "resim malzemesini kaldırmak",
+      "narration": "Sabah Elif yatak odasında. Elif kalemi aldı. Elif kâğıda resim çizdi. Elif kalemi kutuya koydu. Elif bunları dikkatlice yaptı. Resim malzemesini kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Elif ne aldı?",
+          "answer": "kalem",
+          "aliases": [
+            "kalem",
+            "kalemi",
+            "Elif kalemi aldı"
+          ],
+          "evidence": "Elif kalemi aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Elif neredeydi?",
+          "answer": "yatak odasında",
+          "aliases": [
+            "yatak odasında",
+            "yatak odası",
+            "Elif yatak odasında"
+          ],
+          "evidence": "Elif yatak odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Elif",
+          "aliases": [
+            "Elif",
+            "Elif yaptı"
+          ],
+          "evidence": "Bu hareketleri Elif yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Elif bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Elif bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Elif neden böyle yaptı?",
+          "answer": "resim malzemesini kaldırmak",
+          "aliases": [
+            "resim malzemesini kaldırmak",
+            "resim malzemesini kaldırmak için",
+            "resim yapmak",
+            "resim yapmak için"
+          ],
+          "evidence": "Elif resim malzemesini kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-19.mp4",
+      "poster": "assets/5n1k/posters/story-19.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-20",
+      "level": 4,
+      "title": "Arda · havlu",
+      "actor": "Arda",
+      "friend": "İpek",
+      "place": "bathroom",
+      "object": "havlu",
+      "actions": [
+        "yürü",
+        "al",
+        "kurula"
+      ],
+      "time": "sabah",
+      "manner": "yavaşça",
+      "purpose": "ellerini kurulamak",
+      "narration": "Sabah Arda banyoda. Arda yürüdü. Arda havluyu aldı. Arda ellerini havluyla kuruladı. Arda bunları yavaşça yaptı. Ellerini kurulamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Arda ne aldı?",
+          "answer": "havlu",
+          "aliases": [
+            "havlu",
+            "havluyu",
+            "Arda havluyu aldı"
+          ],
+          "evidence": "Arda havluyu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Arda neredeydi?",
+          "answer": "banyoda",
+          "aliases": [
+            "banyoda",
+            "banyo",
+            "Arda banyoda"
+          ],
+          "evidence": "Arda banyoda."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Arda",
+          "aliases": [
+            "Arda",
+            "Arda yaptı"
+          ],
+          "evidence": "Bu hareketleri Arda yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Arda bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Arda bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Arda neden böyle yaptı?",
+          "answer": "ellerini kurulamak",
+          "aliases": [
+            "ellerini kurulamak",
+            "ellerini kurulamak için",
+            "ellerini kurulamak",
+            "ellerini kurulamak için"
+          ],
+          "evidence": "Arda ellerini kurulamak için böyle yaptı."
+        }
+      ],
+      "duration": 10,
+      "video": "assets/5n1k/videos/story-20.mp4",
+      "poster": "assets/5n1k/posters/story-20.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-21",
+      "level": 5,
+      "title": "Ela · top",
+      "actor": "Ela",
+      "friend": "Emir",
+      "place": "park",
+      "object": "top",
+      "actions": [
+        "yürü",
+        "al",
+        "ver",
+        "selamla"
+      ],
+      "time": "öğleden sonra",
+      "manner": "nazikçe",
+      "purpose": "arkadaşıyla oynamak",
+      "narration": "Öğleden sonra Ela parkta. Ela yürüdü. Ela topu aldı. Ela topu arkadaşına verdi. Ela arkadaşına el salladı. Ela bunları nazikçe yaptı. Arkadaşıyla oynamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ela ne aldı?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Ela topu aldı"
+          ],
+          "evidence": "Ela topu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ela neredeydi?",
+          "answer": "parkta",
+          "aliases": [
+            "parkta",
+            "park",
+            "Ela parkta"
+          ],
+          "evidence": "Ela parkta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ela",
+          "aliases": [
+            "Ela",
+            "Ela yaptı"
+          ],
+          "evidence": "Bu hareketleri Ela yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ela bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Ela bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ela neden böyle yaptı?",
+          "answer": "arkadaşıyla oynamak",
+          "aliases": [
+            "arkadaşıyla oynamak",
+            "arkadaşıyla oynamak için",
+            "oynamak",
+            "oynamak için"
+          ],
+          "evidence": "Ela arkadaşıyla oynamak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-21.mp4",
+      "poster": "assets/5n1k/posters/story-21.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-22",
+      "level": 5,
+      "title": "Ali · kitap",
+      "actor": "Ali",
+      "friend": "İpek",
+      "place": "classroom",
+      "object": "kitap",
+      "actions": [
+        "yürü",
+        "al",
+        "oku",
+        "kutuya koy"
+      ],
+      "time": "öğleden sonra",
+      "manner": "sakince",
+      "purpose": "kitabı yerine kaldırmak",
+      "narration": "Öğleden sonra Ali sınıfta. Ali yürüdü. Ali kitabı aldı. Ali kitabı okudu. Ali kitabı kutuya koydu. Ali bunları sakince yaptı. Kitabı yerine kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ali ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Ali kitabı aldı"
+          ],
+          "evidence": "Ali kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ali neredeydi?",
+          "answer": "sınıfta",
+          "aliases": [
+            "sınıfta",
+            "sınıf",
+            "Ali sınıfta"
+          ],
+          "evidence": "Ali sınıfta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ali",
+          "aliases": [
+            "Ali",
+            "Ali yaptı"
+          ],
+          "evidence": "Bu hareketleri Ali yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ali bunları nasıl yaptı?",
+          "answer": "sakince",
+          "aliases": [
+            "sakince",
+            "sakin"
+          ],
+          "evidence": "Ali bunları sakince yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ali neden böyle yaptı?",
+          "answer": "kitabı yerine kaldırmak",
+          "aliases": [
+            "kitabı yerine kaldırmak",
+            "kitabı yerine kaldırmak için",
+            "kitabı yerine kaldırmak",
+            "kitabı yerine kaldırmak için"
+          ],
+          "evidence": "Ali kitabı yerine kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-22.mp4",
+      "poster": "assets/5n1k/posters/story-22.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-23",
+      "level": 5,
+      "title": "Ece · elma",
+      "actor": "Ece",
+      "friend": "Emir",
+      "place": "kitchen",
+      "object": "elma",
+      "actions": [
+        "yürü",
+        "al",
+        "yıka",
+        "ye"
+      ],
+      "time": "öğleden sonra",
+      "manner": "dikkatlice",
+      "purpose": "temiz bir meyve yemek",
+      "narration": "Öğleden sonra Ece mutfakta. Ece yürüdü. Ece elmayı aldı. Ece elmayı yıkadı. Ece elmayı yedi. Ece bunları dikkatlice yaptı. Temiz bir meyve yemek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ece ne aldı?",
+          "answer": "elma",
+          "aliases": [
+            "elma",
+            "elmayı",
+            "Ece elmayı aldı"
+          ],
+          "evidence": "Ece elmayı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ece neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Ece mutfakta"
+          ],
+          "evidence": "Ece mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ece",
+          "aliases": [
+            "Ece",
+            "Ece yaptı"
+          ],
+          "evidence": "Bu hareketleri Ece yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ece bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ece bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ece neden böyle yaptı?",
+          "answer": "temiz bir meyve yemek",
+          "aliases": [
+            "temiz bir meyve yemek",
+            "temiz bir meyve yemek için",
+            "meyve yemek",
+            "meyve yemek için"
+          ],
+          "evidence": "Ece temiz bir meyve yemek için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-23.mp4",
+      "poster": "assets/5n1k/posters/story-23.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-24",
+      "level": 5,
+      "title": "Can · sulama kabı",
+      "actor": "Can",
+      "friend": "İpek",
+      "place": "garden",
+      "object": "sulama kabı",
+      "actions": [
+        "yürü",
+        "al",
+        "sula",
+        "kutuya koy"
+      ],
+      "time": "öğleden sonra",
+      "manner": "yavaşça",
+      "purpose": "çiçeğe su verip kabı kaldırmak",
+      "narration": "Öğleden sonra Can bahçede. Can yürüdü. Can sulama kabını aldı. Can çiçeği suladı. Can sulama kabını kutuya koydu. Can bunları yavaşça yaptı. Çiçeğe su verip kabı kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Can ne aldı?",
+          "answer": "sulama kabı",
+          "aliases": [
+            "sulama kabı",
+            "sulama kabını",
+            "Can sulama kabını aldı"
+          ],
+          "evidence": "Can sulama kabını aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Can neredeydi?",
+          "answer": "bahçede",
+          "aliases": [
+            "bahçede",
+            "bahçe",
+            "Can bahçede"
+          ],
+          "evidence": "Can bahçede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Can",
+          "aliases": [
+            "Can",
+            "Can yaptı"
+          ],
+          "evidence": "Bu hareketleri Can yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Can bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Can bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Can neden böyle yaptı?",
+          "answer": "çiçeğe su verip kabı kaldırmak",
+          "aliases": [
+            "çiçeğe su verip kabı kaldırmak",
+            "çiçeğe su verip kabı kaldırmak için",
+            "çiçeği sulamak",
+            "çiçeği sulamak için"
+          ],
+          "evidence": "Can çiçeğe su verip kabı kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-24.mp4",
+      "poster": "assets/5n1k/posters/story-24.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-25",
+      "level": 5,
+      "title": "Ada · araba",
+      "actor": "Ada",
+      "friend": "Emir",
+      "place": "playroom",
+      "object": "araba",
+      "actions": [
+        "yürü",
+        "al",
+        "ver",
+        "selamla"
+      ],
+      "time": "öğleden sonra",
+      "manner": "nazikçe",
+      "purpose": "oyuncağını paylaşmak",
+      "narration": "Öğleden sonra Ada oyun odasında. Ada yürüdü. Ada arabayı aldı. Ada arabayı arkadaşına verdi. Ada arkadaşına el salladı. Ada bunları nazikçe yaptı. Oyuncağını paylaşmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ada ne aldı?",
+          "answer": "araba",
+          "aliases": [
+            "araba",
+            "arabayı",
+            "Ada arabayı aldı"
+          ],
+          "evidence": "Ada arabayı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ada neredeydi?",
+          "answer": "oyun odasında",
+          "aliases": [
+            "oyun odasında",
+            "oyun odası",
+            "Ada oyun odasında"
+          ],
+          "evidence": "Ada oyun odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ada",
+          "aliases": [
+            "Ada",
+            "Ada yaptı"
+          ],
+          "evidence": "Bu hareketleri Ada yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ada bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Ada bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ada neden böyle yaptı?",
+          "answer": "oyuncağını paylaşmak",
+          "aliases": [
+            "oyuncağını paylaşmak",
+            "oyuncağını paylaşmak için",
+            "paylaşmak",
+            "paylaşmak için"
+          ],
+          "evidence": "Ada oyuncağını paylaşmak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-25.mp4",
+      "poster": "assets/5n1k/posters/story-25.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-26",
+      "level": 6,
+      "title": "Mert · top",
+      "actor": "Mert",
+      "friend": "İpek",
+      "place": "schoolyard",
+      "object": "top",
+      "actions": [
+        "al",
+        "yürü",
+        "ver",
+        "selamla"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "arkadaşıyla oynamak",
+      "narration": "Akşam Mert okul bahçesinde. Mert topu aldı. Mert yürüdü. Mert topu arkadaşına verdi. Mert arkadaşına el salladı. Mert bunları dikkatlice yaptı. Arkadaşıyla oynamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Mert ne aldı?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Mert topu aldı"
+          ],
+          "evidence": "Mert topu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Mert neredeydi?",
+          "answer": "okul bahçesinde",
+          "aliases": [
+            "okul bahçesinde",
+            "okul bahçesi",
+            "Mert okul bahçesinde"
+          ],
+          "evidence": "Mert okul bahçesinde."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Mert",
+          "aliases": [
+            "Mert",
+            "Mert yaptı"
+          ],
+          "evidence": "Bu hareketleri Mert yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Mert bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Mert bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Mert neden böyle yaptı?",
+          "answer": "arkadaşıyla oynamak",
+          "aliases": [
+            "arkadaşıyla oynamak",
+            "arkadaşıyla oynamak için",
+            "oynamak",
+            "oynamak için"
+          ],
+          "evidence": "Mert arkadaşıyla oynamak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-26.mp4",
+      "poster": "assets/5n1k/posters/story-26.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-27",
+      "level": 6,
+      "title": "Zeynep · kalem",
+      "actor": "Zeynep",
+      "friend": "Emir",
+      "place": "bedroom",
+      "object": "kalem",
+      "actions": [
+        "yürü",
+        "al",
+        "çiz",
+        "kutuya koy"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "resim malzemesini kaldırmak",
+      "narration": "Akşam Zeynep yatak odasında. Zeynep yürüdü. Zeynep kalemi aldı. Zeynep kâğıda resim çizdi. Zeynep kalemi kutuya koydu. Zeynep bunları dikkatlice yaptı. Resim malzemesini kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Zeynep ne aldı?",
+          "answer": "kalem",
+          "aliases": [
+            "kalem",
+            "kalemi",
+            "Zeynep kalemi aldı"
+          ],
+          "evidence": "Zeynep kalemi aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Zeynep neredeydi?",
+          "answer": "yatak odasında",
+          "aliases": [
+            "yatak odasında",
+            "yatak odası",
+            "Zeynep yatak odasında"
+          ],
+          "evidence": "Zeynep yatak odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Zeynep",
+          "aliases": [
+            "Zeynep",
+            "Zeynep yaptı"
+          ],
+          "evidence": "Bu hareketleri Zeynep yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Zeynep bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Zeynep bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Zeynep neden böyle yaptı?",
+          "answer": "resim malzemesini kaldırmak",
+          "aliases": [
+            "resim malzemesini kaldırmak",
+            "resim malzemesini kaldırmak için",
+            "resim yapmak",
+            "resim yapmak için"
+          ],
+          "evidence": "Zeynep resim malzemesini kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-27.mp4",
+      "poster": "assets/5n1k/posters/story-27.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-28",
+      "level": 6,
+      "title": "Deniz · kitap",
+      "actor": "Deniz",
+      "friend": "İpek",
+      "place": "library",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "yürü",
+        "ver",
+        "selamla"
+      ],
+      "time": "akşam",
+      "manner": "nazikçe",
+      "purpose": "arkadaşının okumasına yardım etmek",
+      "narration": "Akşam Deniz kütüphanede. Deniz kitabı aldı. Deniz yürüdü. Deniz kitabı arkadaşına verdi. Deniz arkadaşına el salladı. Deniz bunları nazikçe yaptı. Arkadaşının okumasına yardım etmek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Deniz ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Deniz kitabı aldı"
+          ],
+          "evidence": "Deniz kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Deniz neredeydi?",
+          "answer": "kütüphanede",
+          "aliases": [
+            "kütüphanede",
+            "kütüphane",
+            "Deniz kütüphanede"
+          ],
+          "evidence": "Deniz kütüphanede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Deniz",
+          "aliases": [
+            "Deniz",
+            "Deniz yaptı"
+          ],
+          "evidence": "Bu hareketleri Deniz yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Deniz bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Deniz bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Deniz neden böyle yaptı?",
+          "answer": "arkadaşının okumasına yardım etmek",
+          "aliases": [
+            "arkadaşının okumasına yardım etmek",
+            "arkadaşının okumasına yardım etmek için",
+            "yardım etmek",
+            "yardım etmek için"
+          ],
+          "evidence": "Deniz arkadaşının okumasına yardım etmek için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-28.mp4",
+      "poster": "assets/5n1k/posters/story-28.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-29",
+      "level": 6,
+      "title": "Elif · havlu",
+      "actor": "Elif",
+      "friend": "Emir",
+      "place": "bathroom",
+      "object": "havlu",
+      "actions": [
+        "yürü",
+        "al",
+        "kurula",
+        "kutuya koy"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "ellerini kurulayıp havluyu kaldırmak",
+      "narration": "Akşam Elif banyoda. Elif yürüdü. Elif havluyu aldı. Elif ellerini havluyla kuruladı. Elif havluyu sepete koydu. Elif bunları dikkatlice yaptı. Ellerini kurulayıp havluyu kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Elif ne aldı?",
+          "answer": "havlu",
+          "aliases": [
+            "havlu",
+            "havluyu",
+            "Elif havluyu aldı"
+          ],
+          "evidence": "Elif havluyu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Elif neredeydi?",
+          "answer": "banyoda",
+          "aliases": [
+            "banyoda",
+            "banyo",
+            "Elif banyoda"
+          ],
+          "evidence": "Elif banyoda."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Elif",
+          "aliases": [
+            "Elif",
+            "Elif yaptı"
+          ],
+          "evidence": "Bu hareketleri Elif yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Elif bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Elif bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Elif neden böyle yaptı?",
+          "answer": "ellerini kurulayıp havluyu kaldırmak",
+          "aliases": [
+            "ellerini kurulayıp havluyu kaldırmak",
+            "ellerini kurulayıp havluyu kaldırmak için",
+            "ellerini kurulamak",
+            "ellerini kurulamak için"
+          ],
+          "evidence": "Elif ellerini kurulayıp havluyu kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-29.mp4",
+      "poster": "assets/5n1k/posters/story-29.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-30",
+      "level": 6,
+      "title": "Arda · bardak",
+      "actor": "Arda",
+      "friend": "İpek",
+      "place": "kitchen",
+      "object": "bardak",
+      "actions": [
+        "yürü",
+        "al",
+        "iç",
+        "kutuya koy"
+      ],
+      "time": "akşam",
+      "manner": "yavaşça",
+      "purpose": "susuzluğunu giderip bardağı kaldırmak",
+      "narration": "Akşam Arda mutfakta. Arda yürüdü. Arda bardağı aldı. Arda bardaktaki suyu içti. Arda bardağı kutuya koydu. Arda bunları yavaşça yaptı. Susuzluğunu giderip bardağı kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Arda ne aldı?",
+          "answer": "bardak",
+          "aliases": [
+            "bardak",
+            "bardağı",
+            "Arda bardağı aldı"
+          ],
+          "evidence": "Arda bardağı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Arda neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Arda mutfakta"
+          ],
+          "evidence": "Arda mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Arda",
+          "aliases": [
+            "Arda",
+            "Arda yaptı"
+          ],
+          "evidence": "Bu hareketleri Arda yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Arda bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Arda bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Arda neden böyle yaptı?",
+          "answer": "susuzluğunu giderip bardağı kaldırmak",
+          "aliases": [
+            "susuzluğunu giderip bardağı kaldırmak",
+            "susuzluğunu giderip bardağı kaldırmak için",
+            "su içmek",
+            "su içmek için"
+          ],
+          "evidence": "Arda susuzluğunu giderip bardağı kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 13,
+      "video": "assets/5n1k/videos/story-30.mp4",
+      "poster": "assets/5n1k/posters/story-30.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-31",
+      "level": 7,
+      "title": "Ela · kalem",
+      "actor": "Ela",
+      "friend": "Emir",
+      "place": "classroom",
+      "object": "kalem",
+      "actions": [
+        "selamla",
+        "yürü",
+        "al",
+        "çiz",
+        "kutuya koy"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "resim yapıp malzemesini kaldırmak",
+      "narration": "Sabah Ela sınıfta. Ela arkadaşına el salladı. Ela yürüdü. Ela kalemi aldı. Ela kâğıda resim çizdi. Ela kalemi kutuya koydu. Ela bunları dikkatlice yaptı. Resim yapıp malzemesini kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ela ne aldı?",
+          "answer": "kalem",
+          "aliases": [
+            "kalem",
+            "kalemi",
+            "Ela kalemi aldı"
+          ],
+          "evidence": "Ela kalemi aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ela neredeydi?",
+          "answer": "sınıfta",
+          "aliases": [
+            "sınıfta",
+            "sınıf",
+            "Ela sınıfta"
+          ],
+          "evidence": "Ela sınıfta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ela",
+          "aliases": [
+            "Ela",
+            "Ela yaptı"
+          ],
+          "evidence": "Bu hareketleri Ela yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ela bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ela bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ela neden böyle yaptı?",
+          "answer": "resim yapıp malzemesini kaldırmak",
+          "aliases": [
+            "resim yapıp malzemesini kaldırmak",
+            "resim yapıp malzemesini kaldırmak için",
+            "resim yapmak",
+            "resim yapmak için"
+          ],
+          "evidence": "Ela resim yapıp malzemesini kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-31.mp4",
+      "poster": "assets/5n1k/posters/story-31.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-32",
+      "level": 7,
+      "title": "Ali · top",
+      "actor": "Ali",
+      "friend": "İpek",
+      "place": "park",
+      "object": "top",
+      "actions": [
+        "selamla",
+        "yürü",
+        "al",
+        "ver",
+        "selamla"
+      ],
+      "time": "sabah",
+      "manner": "nazikçe",
+      "purpose": "arkadaşıyla oynamak",
+      "narration": "Sabah Ali parkta. Ali arkadaşına el salladı. Ali yürüdü. Ali topu aldı. Ali topu arkadaşına verdi. Ali arkadaşına el salladı. Ali bunları nazikçe yaptı. Arkadaşıyla oynamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ali ne aldı?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Ali topu aldı"
+          ],
+          "evidence": "Ali topu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ali neredeydi?",
+          "answer": "parkta",
+          "aliases": [
+            "parkta",
+            "park",
+            "Ali parkta"
+          ],
+          "evidence": "Ali parkta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ali",
+          "aliases": [
+            "Ali",
+            "Ali yaptı"
+          ],
+          "evidence": "Bu hareketleri Ali yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ali bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Ali bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ali neden böyle yaptı?",
+          "answer": "arkadaşıyla oynamak",
+          "aliases": [
+            "arkadaşıyla oynamak",
+            "arkadaşıyla oynamak için",
+            "oynamak",
+            "oynamak için"
+          ],
+          "evidence": "Ali arkadaşıyla oynamak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-32.mp4",
+      "poster": "assets/5n1k/posters/story-32.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-33",
+      "level": 7,
+      "title": "Ece · elma",
+      "actor": "Ece",
+      "friend": "Emir",
+      "place": "kitchen",
+      "object": "elma",
+      "actions": [
+        "selamla",
+        "yürü",
+        "al",
+        "yıka",
+        "ye"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "temiz bir meyve yemek",
+      "narration": "Sabah Ece mutfakta. Ece arkadaşına el salladı. Ece yürüdü. Ece elmayı aldı. Ece elmayı yıkadı. Ece elmayı yedi. Ece bunları dikkatlice yaptı. Temiz bir meyve yemek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ece ne aldı?",
+          "answer": "elma",
+          "aliases": [
+            "elma",
+            "elmayı",
+            "Ece elmayı aldı"
+          ],
+          "evidence": "Ece elmayı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ece neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Ece mutfakta"
+          ],
+          "evidence": "Ece mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ece",
+          "aliases": [
+            "Ece",
+            "Ece yaptı"
+          ],
+          "evidence": "Bu hareketleri Ece yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ece bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ece bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ece neden böyle yaptı?",
+          "answer": "temiz bir meyve yemek",
+          "aliases": [
+            "temiz bir meyve yemek",
+            "temiz bir meyve yemek için",
+            "meyve yemek",
+            "meyve yemek için"
+          ],
+          "evidence": "Ece temiz bir meyve yemek için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-33.mp4",
+      "poster": "assets/5n1k/posters/story-33.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-34",
+      "level": 7,
+      "title": "Can · sulama kabı",
+      "actor": "Can",
+      "friend": "İpek",
+      "place": "garden",
+      "object": "sulama kabı",
+      "actions": [
+        "selamla",
+        "yürü",
+        "al",
+        "sula",
+        "kutuya koy"
+      ],
+      "time": "sabah",
+      "manner": "yavaşça",
+      "purpose": "çiçeğe su verip kabı kaldırmak",
+      "narration": "Sabah Can bahçede. Can arkadaşına el salladı. Can yürüdü. Can sulama kabını aldı. Can çiçeği suladı. Can sulama kabını kutuya koydu. Can bunları yavaşça yaptı. Çiçeğe su verip kabı kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Can ne aldı?",
+          "answer": "sulama kabı",
+          "aliases": [
+            "sulama kabı",
+            "sulama kabını",
+            "Can sulama kabını aldı"
+          ],
+          "evidence": "Can sulama kabını aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Can neredeydi?",
+          "answer": "bahçede",
+          "aliases": [
+            "bahçede",
+            "bahçe",
+            "Can bahçede"
+          ],
+          "evidence": "Can bahçede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Can",
+          "aliases": [
+            "Can",
+            "Can yaptı"
+          ],
+          "evidence": "Bu hareketleri Can yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Can bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Can bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Can neden böyle yaptı?",
+          "answer": "çiçeğe su verip kabı kaldırmak",
+          "aliases": [
+            "çiçeğe su verip kabı kaldırmak",
+            "çiçeğe su verip kabı kaldırmak için",
+            "çiçeği sulamak",
+            "çiçeği sulamak için"
+          ],
+          "evidence": "Can çiçeğe su verip kabı kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-34.mp4",
+      "poster": "assets/5n1k/posters/story-34.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-35",
+      "level": 7,
+      "title": "Ada · kitap",
+      "actor": "Ada",
+      "friend": "Emir",
+      "place": "library",
+      "object": "kitap",
+      "actions": [
+        "selamla",
+        "al",
+        "yürü",
+        "ver",
+        "selamla"
+      ],
+      "time": "sabah",
+      "manner": "nazikçe",
+      "purpose": "arkadaşının okumasına yardım etmek",
+      "narration": "Sabah Ada kütüphanede. Ada arkadaşına el salladı. Ada kitabı aldı. Ada yürüdü. Ada kitabı arkadaşına verdi. Ada arkadaşına el salladı. Ada bunları nazikçe yaptı. Arkadaşının okumasına yardım etmek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ada ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Ada kitabı aldı"
+          ],
+          "evidence": "Ada kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Ada neredeydi?",
+          "answer": "kütüphanede",
+          "aliases": [
+            "kütüphanede",
+            "kütüphane",
+            "Ada kütüphanede"
+          ],
+          "evidence": "Ada kütüphanede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ada",
+          "aliases": [
+            "Ada",
+            "Ada yaptı"
+          ],
+          "evidence": "Bu hareketleri Ada yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ada bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Ada bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ada neden böyle yaptı?",
+          "answer": "arkadaşının okumasına yardım etmek",
+          "aliases": [
+            "arkadaşının okumasına yardım etmek",
+            "arkadaşının okumasına yardım etmek için",
+            "yardım etmek",
+            "yardım etmek için"
+          ],
+          "evidence": "Ada arkadaşının okumasına yardım etmek için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-35.mp4",
+      "poster": "assets/5n1k/posters/story-35.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-36",
+      "level": 8,
+      "title": "Mert · araba",
+      "actor": "Mert",
+      "friend": "İpek",
+      "place": "playroom",
+      "object": "araba",
+      "actions": [
+        "selamla",
+        "yürü",
+        "al",
+        "ver",
+        "selamla"
+      ],
+      "time": "öğleden sonra",
+      "manner": "nazikçe",
+      "purpose": "oyuncağını paylaşmak",
+      "narration": "Öğleden sonra Mert oyun odasında. Mert arkadaşına el salladı. Mert yürüdü. Mert arabayı aldı. Mert arabayı arkadaşına verdi. Mert arkadaşına el salladı. Mert bunları nazikçe yaptı. Oyuncağını paylaşmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Mert ne aldı?",
+          "answer": "araba",
+          "aliases": [
+            "araba",
+            "arabayı",
+            "Mert arabayı aldı"
+          ],
+          "evidence": "Mert arabayı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Mert neredeydi?",
+          "answer": "oyun odasında",
+          "aliases": [
+            "oyun odasında",
+            "oyun odası",
+            "Mert oyun odasında"
+          ],
+          "evidence": "Mert oyun odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Mert",
+          "aliases": [
+            "Mert",
+            "Mert yaptı"
+          ],
+          "evidence": "Bu hareketleri Mert yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Mert bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Mert bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Mert neden böyle yaptı?",
+          "answer": "oyuncağını paylaşmak",
+          "aliases": [
+            "oyuncağını paylaşmak",
+            "oyuncağını paylaşmak için",
+            "paylaşmak",
+            "paylaşmak için"
+          ],
+          "evidence": "Mert oyuncağını paylaşmak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-36.mp4",
+      "poster": "assets/5n1k/posters/story-36.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-37",
+      "level": 8,
+      "title": "Zeynep · kitap",
+      "actor": "Zeynep",
+      "friend": "Emir",
+      "place": "bedroom",
+      "object": "kitap",
+      "actions": [
+        "yürü",
+        "al",
+        "oku",
+        "kutuya koy",
+        "selamla"
+      ],
+      "time": "öğleden sonra",
+      "manner": "sakince",
+      "purpose": "kitabı okuyup yerine kaldırmak",
+      "narration": "Öğleden sonra Zeynep yatak odasında. Zeynep yürüdü. Zeynep kitabı aldı. Zeynep kitabı okudu. Zeynep kitabı kutuya koydu. Zeynep arkadaşına el salladı. Zeynep bunları sakince yaptı. Kitabı okuyup yerine kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Zeynep ne aldı?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Zeynep kitabı aldı"
+          ],
+          "evidence": "Zeynep kitabı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Zeynep neredeydi?",
+          "answer": "yatak odasında",
+          "aliases": [
+            "yatak odasında",
+            "yatak odası",
+            "Zeynep yatak odasında"
+          ],
+          "evidence": "Zeynep yatak odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Zeynep",
+          "aliases": [
+            "Zeynep",
+            "Zeynep yaptı"
+          ],
+          "evidence": "Bu hareketleri Zeynep yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Zeynep bunları nasıl yaptı?",
+          "answer": "sakince",
+          "aliases": [
+            "sakince",
+            "sakin"
+          ],
+          "evidence": "Zeynep bunları sakince yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Zeynep neden böyle yaptı?",
+          "answer": "kitabı okuyup yerine kaldırmak",
+          "aliases": [
+            "kitabı okuyup yerine kaldırmak",
+            "kitabı okuyup yerine kaldırmak için",
+            "kitabı okuyup yerine kaldırmak",
+            "kitabı okuyup yerine kaldırmak için"
+          ],
+          "evidence": "Zeynep kitabı okuyup yerine kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-37.mp4",
+      "poster": "assets/5n1k/posters/story-37.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-38",
+      "level": 8,
+      "title": "Deniz · havlu",
+      "actor": "Deniz",
+      "friend": "İpek",
+      "place": "bathroom",
+      "object": "havlu",
+      "actions": [
+        "selamla",
+        "yürü",
+        "al",
+        "kurula",
+        "kutuya koy"
+      ],
+      "time": "öğleden sonra",
+      "manner": "dikkatlice",
+      "purpose": "ellerini kurulayıp havluyu kaldırmak",
+      "narration": "Öğleden sonra Deniz banyoda. Deniz arkadaşına el salladı. Deniz yürüdü. Deniz havluyu aldı. Deniz ellerini havluyla kuruladı. Deniz havluyu sepete koydu. Deniz bunları dikkatlice yaptı. Ellerini kurulayıp havluyu kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Deniz ne aldı?",
+          "answer": "havlu",
+          "aliases": [
+            "havlu",
+            "havluyu",
+            "Deniz havluyu aldı"
+          ],
+          "evidence": "Deniz havluyu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Deniz neredeydi?",
+          "answer": "banyoda",
+          "aliases": [
+            "banyoda",
+            "banyo",
+            "Deniz banyoda"
+          ],
+          "evidence": "Deniz banyoda."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Deniz",
+          "aliases": [
+            "Deniz",
+            "Deniz yaptı"
+          ],
+          "evidence": "Bu hareketleri Deniz yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Deniz bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Deniz bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Deniz neden böyle yaptı?",
+          "answer": "ellerini kurulayıp havluyu kaldırmak",
+          "aliases": [
+            "ellerini kurulayıp havluyu kaldırmak",
+            "ellerini kurulayıp havluyu kaldırmak için",
+            "ellerini kurulamak",
+            "ellerini kurulamak için"
+          ],
+          "evidence": "Deniz ellerini kurulayıp havluyu kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-38.mp4",
+      "poster": "assets/5n1k/posters/story-38.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-39",
+      "level": 8,
+      "title": "Elif · top",
+      "actor": "Elif",
+      "friend": "Emir",
+      "place": "schoolyard",
+      "object": "top",
+      "actions": [
+        "selamla",
+        "al",
+        "yürü",
+        "ver",
+        "selamla"
+      ],
+      "time": "öğleden sonra",
+      "manner": "yavaşça",
+      "purpose": "arkadaşıyla oynamak",
+      "narration": "Öğleden sonra Elif okul bahçesinde. Elif arkadaşına el salladı. Elif topu aldı. Elif yürüdü. Elif topu arkadaşına verdi. Elif arkadaşına el salladı. Elif bunları yavaşça yaptı. Arkadaşıyla oynamak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Elif ne aldı?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Elif topu aldı"
+          ],
+          "evidence": "Elif topu aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Elif neredeydi?",
+          "answer": "okul bahçesinde",
+          "aliases": [
+            "okul bahçesinde",
+            "okul bahçesi",
+            "Elif okul bahçesinde"
+          ],
+          "evidence": "Elif okul bahçesinde."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Elif",
+          "aliases": [
+            "Elif",
+            "Elif yaptı"
+          ],
+          "evidence": "Bu hareketleri Elif yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Elif bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Elif bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Elif neden böyle yaptı?",
+          "answer": "arkadaşıyla oynamak",
+          "aliases": [
+            "arkadaşıyla oynamak",
+            "arkadaşıyla oynamak için",
+            "oynamak",
+            "oynamak için"
+          ],
+          "evidence": "Elif arkadaşıyla oynamak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-39.mp4",
+      "poster": "assets/5n1k/posters/story-39.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-40",
+      "level": 8,
+      "title": "Arda · bardak",
+      "actor": "Arda",
+      "friend": "İpek",
+      "place": "kitchen",
+      "object": "bardak",
+      "actions": [
+        "selamla",
+        "yürü",
+        "al",
+        "iç",
+        "kutuya koy"
+      ],
+      "time": "öğleden sonra",
+      "manner": "yavaşça",
+      "purpose": "susuzluğunu giderip bardağı kaldırmak",
+      "narration": "Öğleden sonra Arda mutfakta. Arda arkadaşına el salladı. Arda yürüdü. Arda bardağı aldı. Arda bardaktaki suyu içti. Arda bardağı kutuya koydu. Arda bunları yavaşça yaptı. Susuzluğunu giderip bardağı kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Arda ne aldı?",
+          "answer": "bardak",
+          "aliases": [
+            "bardak",
+            "bardağı",
+            "Arda bardağı aldı"
+          ],
+          "evidence": "Arda bardağı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Arda neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Arda mutfakta"
+          ],
+          "evidence": "Arda mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Arda",
+          "aliases": [
+            "Arda",
+            "Arda yaptı"
+          ],
+          "evidence": "Bu hareketleri Arda yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Arda bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Arda bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "öğleden sonra",
+          "aliases": [
+            "öğleden sonra",
+            "öğle sonrası"
+          ],
+          "evidence": "Olay öğleden sonra oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Arda neden böyle yaptı?",
+          "answer": "susuzluğunu giderip bardağı kaldırmak",
+          "aliases": [
+            "susuzluğunu giderip bardağı kaldırmak",
+            "susuzluğunu giderip bardağı kaldırmak için",
+            "su içmek",
+            "su içmek için"
+          ],
+          "evidence": "Arda susuzluğunu giderip bardağı kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 16,
+      "video": "assets/5n1k/videos/story-40.mp4",
+      "poster": "assets/5n1k/posters/story-40.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-41",
+      "level": 9,
+      "title": "Ela · top",
+      "actor": "Ela",
+      "friend": "Emir",
+      "place": "park",
+      "object": "top",
+      "actions": [
+        "al",
+        "yürü",
+        "düşür",
+        "al",
+        "ver",
+        "selamla"
+      ],
+      "time": "akşam",
+      "manner": "nazikçe",
+      "purpose": "yere düşen topu arkadaşına vermek",
+      "narration": "Akşam Ela parkta. Ela topu aldı. Ela yürüdü. Ela topu yanlışlıkla yere düşürdü. Ela topu aldı. Ela topu arkadaşına verdi. Ela arkadaşına el salladı. Ela bunları nazikçe yaptı. Yere düşen topu arkadaşına vermek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ela neyi yere düşürdü?",
+          "answer": "top",
+          "aliases": [
+            "top",
+            "topu",
+            "Ela topu aldı"
+          ],
+          "evidence": "Ela topu yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Ela neredeydi?",
+          "answer": "parkta",
+          "aliases": [
+            "parkta",
+            "park",
+            "Ela parkta"
+          ],
+          "evidence": "Ela parkta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ela",
+          "aliases": [
+            "Ela",
+            "Ela yaptı"
+          ],
+          "evidence": "Bu hareketleri Ela yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ela bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Ela bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ela neden böyle yaptı?",
+          "answer": "yere düşen topu arkadaşına vermek",
+          "aliases": [
+            "yere düşen topu arkadaşına vermek",
+            "yere düşen topu arkadaşına vermek için",
+            "yere düşen topu arkadaşına vermek",
+            "yere düşen topu arkadaşına vermek için"
+          ],
+          "evidence": "Ela yere düşen topu arkadaşına vermek için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-41.mp4",
+      "poster": "assets/5n1k/posters/story-41.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-42",
+      "level": 9,
+      "title": "Ali · kalem",
+      "actor": "Ali",
+      "friend": "İpek",
+      "place": "classroom",
+      "object": "kalem",
+      "actions": [
+        "al",
+        "çiz",
+        "düşür",
+        "al",
+        "kutuya koy",
+        "selamla"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "yere düşen kalemi yerine kaldırmak",
+      "narration": "Akşam Ali sınıfta. Ali kalemi aldı. Ali kâğıda resim çizdi. Ali kalemi yanlışlıkla yere düşürdü. Ali kalemi aldı. Ali kalemi kutuya koydu. Ali arkadaşına el salladı. Ali bunları dikkatlice yaptı. Yere düşen kalemi yerine kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ali neyi yere düşürdü?",
+          "answer": "kalem",
+          "aliases": [
+            "kalem",
+            "kalemi",
+            "Ali kalemi aldı"
+          ],
+          "evidence": "Ali kalemi yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Ali neredeydi?",
+          "answer": "sınıfta",
+          "aliases": [
+            "sınıfta",
+            "sınıf",
+            "Ali sınıfta"
+          ],
+          "evidence": "Ali sınıfta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ali",
+          "aliases": [
+            "Ali",
+            "Ali yaptı"
+          ],
+          "evidence": "Bu hareketleri Ali yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ali bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ali bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ali neden böyle yaptı?",
+          "answer": "yere düşen kalemi yerine kaldırmak",
+          "aliases": [
+            "yere düşen kalemi yerine kaldırmak",
+            "yere düşen kalemi yerine kaldırmak için",
+            "yere düşen kalemi yerine kaldırmak",
+            "yere düşen kalemi yerine kaldırmak için"
+          ],
+          "evidence": "Ali yere düşen kalemi yerine kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-42.mp4",
+      "poster": "assets/5n1k/posters/story-42.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-43",
+      "level": 9,
+      "title": "Ece · elma",
+      "actor": "Ece",
+      "friend": "Emir",
+      "place": "kitchen",
+      "object": "elma",
+      "actions": [
+        "al",
+        "yürü",
+        "düşür",
+        "al",
+        "yıka",
+        "ye"
+      ],
+      "time": "akşam",
+      "manner": "dikkatlice",
+      "purpose": "yere düşen meyveyi yıkayıp yemek",
+      "narration": "Akşam Ece mutfakta. Ece elmayı aldı. Ece yürüdü. Ece elmayı yanlışlıkla yere düşürdü. Ece elmayı aldı. Ece elmayı yıkadı. Ece elmayı yedi. Ece bunları dikkatlice yaptı. Yere düşen meyveyi yıkayıp yemek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ece neyi yere düşürdü?",
+          "answer": "elma",
+          "aliases": [
+            "elma",
+            "elmayı",
+            "Ece elmayı aldı"
+          ],
+          "evidence": "Ece elmayı yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Ece neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Ece mutfakta"
+          ],
+          "evidence": "Ece mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ece",
+          "aliases": [
+            "Ece",
+            "Ece yaptı"
+          ],
+          "evidence": "Bu hareketleri Ece yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ece bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Ece bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ece neden böyle yaptı?",
+          "answer": "yere düşen meyveyi yıkayıp yemek",
+          "aliases": [
+            "yere düşen meyveyi yıkayıp yemek",
+            "yere düşen meyveyi yıkayıp yemek için",
+            "meyve yemek",
+            "meyve yemek için"
+          ],
+          "evidence": "Ece yere düşen meyveyi yıkayıp yemek için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-43.mp4",
+      "poster": "assets/5n1k/posters/story-43.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-44",
+      "level": 9,
+      "title": "Can · sulama kabı",
+      "actor": "Can",
+      "friend": "İpek",
+      "place": "garden",
+      "object": "sulama kabı",
+      "actions": [
+        "al",
+        "yürü",
+        "sula",
+        "düşür",
+        "al",
+        "kutuya koy"
+      ],
+      "time": "akşam",
+      "manner": "yavaşça",
+      "purpose": "çiçeği sulayıp düşen kabı kaldırmak",
+      "narration": "Akşam Can bahçede. Can sulama kabını aldı. Can yürüdü. Can çiçeği suladı. Can sulama kabını yanlışlıkla yere düşürdü. Can sulama kabını aldı. Can sulama kabını kutuya koydu. Can bunları yavaşça yaptı. Çiçeği sulayıp düşen kabı kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Can neyi yere düşürdü?",
+          "answer": "sulama kabı",
+          "aliases": [
+            "sulama kabı",
+            "sulama kabını",
+            "Can sulama kabını aldı"
+          ],
+          "evidence": "Can sulama kabını yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Can neredeydi?",
+          "answer": "bahçede",
+          "aliases": [
+            "bahçede",
+            "bahçe",
+            "Can bahçede"
+          ],
+          "evidence": "Can bahçede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Can",
+          "aliases": [
+            "Can",
+            "Can yaptı"
+          ],
+          "evidence": "Bu hareketleri Can yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Can bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Can bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Can neden böyle yaptı?",
+          "answer": "çiçeği sulayıp düşen kabı kaldırmak",
+          "aliases": [
+            "çiçeği sulayıp düşen kabı kaldırmak",
+            "çiçeği sulayıp düşen kabı kaldırmak için",
+            "çiçeği sulamak",
+            "çiçeği sulamak için"
+          ],
+          "evidence": "Can çiçeği sulayıp düşen kabı kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-44.mp4",
+      "poster": "assets/5n1k/posters/story-44.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-45",
+      "level": 9,
+      "title": "Ada · kitap",
+      "actor": "Ada",
+      "friend": "Emir",
+      "place": "library",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "oku",
+        "düşür",
+        "al",
+        "ver",
+        "selamla"
+      ],
+      "time": "akşam",
+      "manner": "nazikçe",
+      "purpose": "okuduğu kitabı arkadaşıyla paylaşmak",
+      "narration": "Akşam Ada kütüphanede. Ada kitabı aldı. Ada kitabı okudu. Ada kitabı yanlışlıkla yere düşürdü. Ada kitabı aldı. Ada kitabı arkadaşına verdi. Ada arkadaşına el salladı. Ada bunları nazikçe yaptı. Okuduğu kitabı arkadaşıyla paylaşmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Ada neyi yere düşürdü?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Ada kitabı aldı"
+          ],
+          "evidence": "Ada kitabı yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Ada neredeydi?",
+          "answer": "kütüphanede",
+          "aliases": [
+            "kütüphanede",
+            "kütüphane",
+            "Ada kütüphanede"
+          ],
+          "evidence": "Ada kütüphanede."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Ada",
+          "aliases": [
+            "Ada",
+            "Ada yaptı"
+          ],
+          "evidence": "Bu hareketleri Ada yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Ada bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Ada bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "akşam",
+          "aliases": [
+            "akşam",
+            "akşamleyin",
+            "akşam vakti"
+          ],
+          "evidence": "Olay akşam oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Ada neden böyle yaptı?",
+          "answer": "okuduğu kitabı arkadaşıyla paylaşmak",
+          "aliases": [
+            "okuduğu kitabı arkadaşıyla paylaşmak",
+            "okuduğu kitabı arkadaşıyla paylaşmak için",
+            "paylaşmak",
+            "paylaşmak için"
+          ],
+          "evidence": "Ada okuduğu kitabı arkadaşıyla paylaşmak için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-45.mp4",
+      "poster": "assets/5n1k/posters/story-45.webp",
+      "palette": 4
+    },
+    {
+      "id": "story-46",
+      "level": 10,
+      "title": "Mert · araba",
+      "actor": "Mert",
+      "friend": "İpek",
+      "place": "playroom",
+      "object": "araba",
+      "actions": [
+        "al",
+        "yürü",
+        "düşür",
+        "al",
+        "kutuya koy",
+        "selamla"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "yere düşen oyuncağı yerine kaldırmak",
+      "narration": "Sabah Mert oyun odasında. Mert arabayı aldı. Mert yürüdü. Mert arabayı yanlışlıkla yere düşürdü. Mert arabayı aldı. Mert arabayı kutuya koydu. Mert arkadaşına el salladı. Mert bunları dikkatlice yaptı. Yere düşen oyuncağı yerine kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Mert neyi yere düşürdü?",
+          "answer": "araba",
+          "aliases": [
+            "araba",
+            "arabayı",
+            "Mert arabayı aldı"
+          ],
+          "evidence": "Mert arabayı yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Mert neredeydi?",
+          "answer": "oyun odasında",
+          "aliases": [
+            "oyun odasında",
+            "oyun odası",
+            "Mert oyun odasında"
+          ],
+          "evidence": "Mert oyun odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Mert",
+          "aliases": [
+            "Mert",
+            "Mert yaptı"
+          ],
+          "evidence": "Bu hareketleri Mert yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Mert bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Mert bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Mert neden böyle yaptı?",
+          "answer": "yere düşen oyuncağı yerine kaldırmak",
+          "aliases": [
+            "yere düşen oyuncağı yerine kaldırmak",
+            "yere düşen oyuncağı yerine kaldırmak için",
+            "yere düşen oyuncağı yerine kaldırmak",
+            "yere düşen oyuncağı yerine kaldırmak için"
+          ],
+          "evidence": "Mert yere düşen oyuncağı yerine kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-46.mp4",
+      "poster": "assets/5n1k/posters/story-46.webp",
+      "palette": 0
+    },
+    {
+      "id": "story-47",
+      "level": 10,
+      "title": "Zeynep · kitap",
+      "actor": "Zeynep",
+      "friend": "Emir",
+      "place": "bedroom",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "oku",
+        "düşür",
+        "al",
+        "kutuya koy",
+        "selamla"
+      ],
+      "time": "sabah",
+      "manner": "sakince",
+      "purpose": "yere düşen kitabı yerine kaldırmak",
+      "narration": "Sabah Zeynep yatak odasında. Zeynep kitabı aldı. Zeynep kitabı okudu. Zeynep kitabı yanlışlıkla yere düşürdü. Zeynep kitabı aldı. Zeynep kitabı kutuya koydu. Zeynep arkadaşına el salladı. Zeynep bunları sakince yaptı. Yere düşen kitabı yerine kaldırmak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Zeynep neyi yere düşürdü?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Zeynep kitabı aldı"
+          ],
+          "evidence": "Zeynep kitabı yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Zeynep neredeydi?",
+          "answer": "yatak odasında",
+          "aliases": [
+            "yatak odasında",
+            "yatak odası",
+            "Zeynep yatak odasında"
+          ],
+          "evidence": "Zeynep yatak odasında."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Zeynep",
+          "aliases": [
+            "Zeynep",
+            "Zeynep yaptı"
+          ],
+          "evidence": "Bu hareketleri Zeynep yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Zeynep bunları nasıl yaptı?",
+          "answer": "sakince",
+          "aliases": [
+            "sakince",
+            "sakin"
+          ],
+          "evidence": "Zeynep bunları sakince yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Zeynep neden böyle yaptı?",
+          "answer": "yere düşen kitabı yerine kaldırmak",
+          "aliases": [
+            "yere düşen kitabı yerine kaldırmak",
+            "yere düşen kitabı yerine kaldırmak için",
+            "yere düşen kitabı yerine kaldırmak",
+            "yere düşen kitabı yerine kaldırmak için"
+          ],
+          "evidence": "Zeynep yere düşen kitabı yerine kaldırmak için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-47.mp4",
+      "poster": "assets/5n1k/posters/story-47.webp",
+      "palette": 1
+    },
+    {
+      "id": "story-48",
+      "level": 10,
+      "title": "Deniz · havlu",
+      "actor": "Deniz",
+      "friend": "İpek",
+      "place": "bathroom",
+      "object": "havlu",
+      "actions": [
+        "al",
+        "kurula",
+        "düşür",
+        "al",
+        "kutuya koy",
+        "selamla"
+      ],
+      "time": "sabah",
+      "manner": "dikkatlice",
+      "purpose": "düşen havluyu kirli sepetine koymak",
+      "narration": "Sabah Deniz banyoda. Deniz havluyu aldı. Deniz ellerini havluyla kuruladı. Deniz havluyu yanlışlıkla yere düşürdü. Deniz havluyu aldı. Deniz havluyu sepete koydu. Deniz arkadaşına el salladı. Deniz bunları dikkatlice yaptı. Düşen havluyu kirli sepetine koymak için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Deniz neyi yere düşürdü?",
+          "answer": "havlu",
+          "aliases": [
+            "havlu",
+            "havluyu",
+            "Deniz havluyu aldı"
+          ],
+          "evidence": "Deniz havluyu yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Deniz neredeydi?",
+          "answer": "banyoda",
+          "aliases": [
+            "banyoda",
+            "banyo",
+            "Deniz banyoda"
+          ],
+          "evidence": "Deniz banyoda."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Deniz",
+          "aliases": [
+            "Deniz",
+            "Deniz yaptı"
+          ],
+          "evidence": "Bu hareketleri Deniz yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Deniz bunları nasıl yaptı?",
+          "answer": "dikkatlice",
+          "aliases": [
+            "dikkatlice",
+            "dikkatli"
+          ],
+          "evidence": "Deniz bunları dikkatlice yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Deniz neden böyle yaptı?",
+          "answer": "düşen havluyu kirli sepetine koymak",
+          "aliases": [
+            "düşen havluyu kirli sepetine koymak",
+            "düşen havluyu kirli sepetine koymak için",
+            "düşen havluyu kirli sepetine koymak",
+            "düşen havluyu kirli sepetine koymak için"
+          ],
+          "evidence": "Deniz düşen havluyu kirli sepetine koymak için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-48.mp4",
+      "poster": "assets/5n1k/posters/story-48.webp",
+      "palette": 2
+    },
+    {
+      "id": "story-49",
+      "level": 10,
+      "title": "Elif · kitap",
+      "actor": "Elif",
+      "friend": "Emir",
+      "place": "schoolyard",
+      "object": "kitap",
+      "actions": [
+        "al",
+        "yürü",
+        "düşür",
+        "al",
+        "ver",
+        "selamla"
+      ],
+      "time": "sabah",
+      "manner": "nazikçe",
+      "purpose": "yere düşen kitabı arkadaşına vermek",
+      "narration": "Sabah Elif okul bahçesinde. Elif kitabı aldı. Elif yürüdü. Elif kitabı yanlışlıkla yere düşürdü. Elif kitabı aldı. Elif kitabı arkadaşına verdi. Elif arkadaşına el salladı. Elif bunları nazikçe yaptı. Yere düşen kitabı arkadaşına vermek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Elif neyi yere düşürdü?",
+          "answer": "kitap",
+          "aliases": [
+            "kitap",
+            "kitabı",
+            "Elif kitabı aldı"
+          ],
+          "evidence": "Elif kitabı yanlışlıkla yere düşürdü."
+        },
+        {
+          "type": "nerede",
+          "text": "Elif neredeydi?",
+          "answer": "okul bahçesinde",
+          "aliases": [
+            "okul bahçesinde",
+            "okul bahçesi",
+            "Elif okul bahçesinde"
+          ],
+          "evidence": "Elif okul bahçesinde."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Elif",
+          "aliases": [
+            "Elif",
+            "Elif yaptı"
+          ],
+          "evidence": "Bu hareketleri Elif yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Elif bunları nasıl yaptı?",
+          "answer": "nazikçe",
+          "aliases": [
+            "nazikçe",
+            "nazik"
+          ],
+          "evidence": "Elif bunları nazikçe yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Elif neden böyle yaptı?",
+          "answer": "yere düşen kitabı arkadaşına vermek",
+          "aliases": [
+            "yere düşen kitabı arkadaşına vermek",
+            "yere düşen kitabı arkadaşına vermek için",
+            "yere düşen kitabı arkadaşına vermek",
+            "yere düşen kitabı arkadaşına vermek için"
+          ],
+          "evidence": "Elif yere düşen kitabı arkadaşına vermek için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-49.mp4",
+      "poster": "assets/5n1k/posters/story-49.webp",
+      "palette": 3
+    },
+    {
+      "id": "story-50",
+      "level": 10,
+      "title": "Arda · bardak",
+      "actor": "Arda",
+      "friend": "İpek",
+      "place": "kitchen",
+      "object": "bardak",
+      "actions": [
+        "al",
+        "iç",
+        "yürü",
+        "ver",
+        "selamla",
+        "yürü"
+      ],
+      "time": "sabah",
+      "manner": "yavaşça",
+      "purpose": "boş bardağı arkadaşına vermek",
+      "narration": "Sabah Arda mutfakta. Arda bardağı aldı. Arda bardaktaki suyu içti. Arda yürüdü. Arda bardağı arkadaşına verdi. Arda arkadaşına el salladı. Arda yürüdü. Arda bunları yavaşça yaptı. Boş bardağı arkadaşına vermek için böyle yaptı.",
+      "questions": [
+        {
+          "type": "ne",
+          "text": "Arda ne aldı?",
+          "answer": "bardak",
+          "aliases": [
+            "bardak",
+            "bardağı",
+            "Arda bardağı aldı"
+          ],
+          "evidence": "Arda bardağı aldı."
+        },
+        {
+          "type": "nerede",
+          "text": "Arda neredeydi?",
+          "answer": "mutfakta",
+          "aliases": [
+            "mutfakta",
+            "mutfak",
+            "Arda mutfakta"
+          ],
+          "evidence": "Arda mutfakta."
+        },
+        {
+          "type": "kim",
+          "text": "Bu olayda bunları kim yaptı?",
+          "answer": "Arda",
+          "aliases": [
+            "Arda",
+            "Arda yaptı"
+          ],
+          "evidence": "Bu hareketleri Arda yaptı."
+        },
+        {
+          "type": "nasıl",
+          "text": "Arda bunları nasıl yaptı?",
+          "answer": "yavaşça",
+          "aliases": [
+            "yavaşça",
+            "yavaş"
+          ],
+          "evidence": "Arda bunları yavaşça yaptı."
+        },
+        {
+          "type": "ne zaman",
+          "text": "Bu olay ne zaman oldu?",
+          "answer": "sabah",
+          "aliases": [
+            "sabah",
+            "sabahleyin",
+            "sabah vakti"
+          ],
+          "evidence": "Olay sabah oldu."
+        },
+        {
+          "type": "neden",
+          "text": "Arda neden böyle yaptı?",
+          "answer": "boş bardağı arkadaşına vermek",
+          "aliases": [
+            "boş bardağı arkadaşına vermek",
+            "boş bardağı arkadaşına vermek için",
+            "boş bardağı arkadaşına vermek",
+            "boş bardağı arkadaşına vermek için"
+          ],
+          "evidence": "Arda boş bardağı arkadaşına vermek için böyle yaptı."
+        }
+      ],
+      "duration": 19,
+      "video": "assets/5n1k/videos/story-50.mp4",
+      "poster": "assets/5n1k/posters/story-50.webp",
+      "palette": 4
+    }
+  ]
+};

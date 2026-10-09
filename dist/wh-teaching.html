@@ -1,0 +1,12 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5N1K · Dijital Erken Eğitim</title><link rel="stylesheet" href="wh-teaching.css"></head>
+<body><main>
+ <nav><button id="menu">← Ana menü</button><button id="reportOpen" hidden>Sonuçlar</button><button id="pause" hidden>Mola</button></nav>
+ <h1>5N1K</h1><p id="methodLabel"></p>
+ <section id="setup"><p>Olayları izle, soruları yanıtla.</p><div class="mode-choice" aria-label="Yanıt biçimi"><button id="voiceMode" aria-pressed="true">Söyle</button><button id="choiceMode" aria-pressed="false">Seç</button></div><div id="levels" class="levels"></div><p id="setupStatus" role="status"></p></section>
+ <section id="work" hidden><p id="counter"></p><div class="film"><video id="video" playsinline preload="metadata" disablepictureinpicture controlslist="nodownload" aria-label="Olay videosu"></video><button id="play">▶ İzle</button></div>
+  <div id="questionArea" hidden><h2 id="question"></h2><div id="answers" class="answers" hidden></div><p id="feedback" role="status" aria-live="polite"></p><div class="tools"><button id="help">İpucu</button><button id="listenAgain" hidden>Yeniden dinle</button><button id="replay">Olayı tekrar izle</button></div></div>
+ </section>
+ <section id="storyEnd" hidden><h2>Olay tamamlandı</h2><p id="storyTotal"></p><button id="nextStory" class="primary">Sonraki olayı izle</button></section>
+ <section id="levelEnd" hidden><h2>Seviyeyi tamamladın, tebrikler!</h2><p id="levelTotal"></p><div class="end-actions"><button id="nextLevel" class="primary">Bir sonraki seviyeye geç</button><button id="game">Oyuna geç</button><button id="endMenu">Ana menüye dön</button></div><p id="gameNote" hidden>Bölüm sonu oyunu henüz hazırlanmadı.</p></section>
+ <section id="report" hidden><h2>Soru türlerine göre sonuçlar</h2><p>Bu tarayıcıdaki çalışmalar. Ses kaydı tutulmaz.</p><div class="table-wrap"><table><thead><tr><th>Soru</th><th>Bağımsız</th><th>İpucuyla</th><th>Yanlış</th><th>Yanıtsız</th></tr></thead><tbody id="reportRows"></tbody></table></div><details><summary>Olay ve soru ayrıntıları</summary><div id="reportDetail"></div></details><button id="export">Sonuçları indir</button><button id="reportBack">Geri dön</button></section>
+</main><script src="local-speech.js"></script><script src="naming-rules.js"></script><script src="wh-data.js"></script><script src="wh-rules.js"></script><script src="wh-scene-renderer.js"></script><script src="wh-teaching.js"></script></body></html>

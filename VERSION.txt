@@ -1,6 +1,6 @@
 Dijital Erken Eğitim
 Temel sürüm: 0.4.0
-Güncel sürüm: 0.22.0
+Güncel sürüm: 0.23.0
 Tarih: 9 Ekim 2026
 Durum: 0.9.1 — Örüntü çalışması 15 seviyeli listeye dönüştürüldü; seviye ekranından her seviyede 5 farklı deneme oynanır. 4 saniye sabit bekleme prototipi örüntüde sistematik öğretime bağlandı: 4 saniye içinde doğru yanıt bağımsız pekiştirme alır, yanlış yanıtta “Hayır, o değil…” düzeltmesiyle doğru seçenek belirtilir ve çocuğun doğruyu seçmesi beklenir, yanıtsızlıkta doğru seçenek gösterilir.
 
@@ -29,3 +29,5 @@ Durum: 0.9.1 — Örüntü çalışması 15 seviyeli listeye dönüştürüldü;
 0.20.0: Otuz eylem, altmış yerel video örneği; eşleme, gösterme ve söylemede beşer denemelik aşamalar ve iki öğretim yöntemi.
 
 0.20.1–0.20.3: Üç müzik, Life of Riley varsayılanı, küçük ekranda tek sıra kart düzeni, girişte oyun arkadaşı seçimi ve kaliteyi koruyan yükleme optimizasyonları.
+
+0.23.0: 5N1K — 10 seviye, 50 akıcı yerel çizgi film ve 300 soru. Video sonrası anlatım, altı soru türünde ayrı sonuçlar, eşzamanlı/4 saniye, iki yanıt fırsatı, sesli/seçerek yanıt, uygulamacı raporu/CSV ve yedi kaba değerlendirme satırı.

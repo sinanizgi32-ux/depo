@@ -57,7 +57,10 @@ class Handler(SimpleHTTPRequestHandler):
    start=time.monotonic()
    samples=np.pad(samples,(6400,8000))
    # A task-wide vocabulary contains every possible color, never this trial's answer.
-   prompt='Renk adları: kırmızı, mavi, sarı, yeşil.' if self.headers.get('X-Teaching-Domain')=='colors' else 'Uzunluk kavramları: uzun, kısa.' if self.headers.get('X-Teaching-Domain')=='length' else 'Yaş kavramları: genç, yaşlı.' if self.headers.get('X-Teaching-Domain')=='age' else 'Zıt kavramlar: temiz, kirli, sıcak, soğuk, büyük, küçük, ağır, hafif, ince, kalın, gece, gündüz, içinde, dışında.' if self.headers.get('X-Teaching-Domain')=='opposites' else vocabulary
+   prompt='Renk adları: kırmızı, mavi, sarı, yeşil.' if self.headers.get('X-Teaching-Domain')=='colors' else 'Uzunluk kavramları: uzun, kısa.' if self.headers.get('X-Teaching-Domain')=='length' else 'Yaş kavramları: genç, yaşlı.' if self.headers.get('X-Teaching-Domain')=='age' else 'Zıt kavramlar: temiz, kirli, sıcak, soğuk, büyük, küçük, ağır, hafif, ince, kalın, gece, gündüz, içinde, dışında, dolu, boş, yeni, eski, sert, yumuşak, ıslak, kuru.' if self.headers.get('X-Teaching-Domain')=='opposites' else vocabulary
+   if self.headers.get('X-Teaching-Domain')=='wh':
+    # Task-wide vocabulary, not the expected answer to the current question.
+    prompt='Türkçe olay yanıtları: Ela, Ali, Ece, Can, Ada, Mert, Zeynep, Deniz, Elif, Arda, Emir, İpek. Top, bardak, kitap, kalem, sulama kabı, araba, havlu, elma. Park, mutfak, kütüphane, sınıf, bahçe, oyun odası, yatak odası, okul bahçesi, banyo. Sabah, öğleden sonra, akşam. Dikkatlice, yavaşça, sakince, nazikçe. Oyuncakları toplamak, susuzluğunu gidermek, öyküyü öğrenmek, resim yapmak, çiçeğe su vermek, arkadaşıyla oynamak, ellerini kurulamak, yardım etmek, temiz meyve yemek, kitabı kaldırmak, paylaşmak.'
    segments,info=model.transcribe(samples,language='tr',task='transcribe',initial_prompt=prompt,beam_size=5,condition_on_previous_text=False,vad_filter=False,temperature=0)
    segments=list(segments)
    text=' '.join(s.text.strip() for s in segments if s.no_speech_prob<.6 and s.avg_logprob> -1.5)

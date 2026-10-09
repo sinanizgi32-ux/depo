@@ -8,6 +8,9 @@ window.ObjectMatching = (() => {
     const active=()=>state.screen==='activity'&&['object-match','object-show'].includes(state.skill)&&el('pauseModal').hidden;
     const say=(text,done)=>{const token=run;speak(state.avatar,text,()=>{if(token===run&&active())done?.();});};
     const img=(id,variant)=>`<img src="${data.image(id,variant)}" alt="${data.items[id].name}" draggable="false">`;
+    function syncCardSize(){if(pointing())return;const target=el('objectTargets')?.querySelector?.('.object-target'),source=el('objectSource');if(target&&source){const width=target.getBoundingClientRect().width;if(width>0)source.style.width=width+'px';}}
+    if(window.ResizeObserver)new ResizeObserver(syncCardSize).observe(el('objectTargets'));
+    window.addEventListener?.('resize',syncCardSize);
     function controls(disabled){el('objectSource').disabled=disabled;el('objectTargets').querySelectorAll('button').forEach(button=>button.disabled=disabled);}
     function stop(){run++;clearTimeout(timer);gesture=null;busy=false;selected=false;}
     function instruction(){busy=true;controls(true);el('feedback').textContent=`${current.item.accusative} ${verb()}.`;say(`${current.item.accusative} ${verb()}.`,()=>{busy=false;controls(false);if(state.method==='immediate')hint();else timer=setTimeout(hint,4000);});}
@@ -28,7 +31,7 @@ window.ObjectMatching = (() => {
       const targets=el('objectTargets');targets.style.setProperty('--object-columns',options.length);targets.innerHTML='';targets.setAttribute('aria-label',pointing()?'Gösterilecek nesneler':'Üstteki eşleme yerleri');
       options.forEach(id=>{const button=document.createElement('button');button.type='button';button.className='object-target';button.dataset.object=id;button.setAttribute('aria-label',pointing()?data.items[id].name:`${data.items[id].name} eşleme yeri`);button.innerHTML=img(id,id===current.item.id?current.target:Math.floor(Math.random()*data.variantCount(id)));button.addEventListener('click',()=>{if(pointing()||selected)answer(id);});targets.appendChild(button);});
       const source=el('objectSource');source.className='object-source';source.style.transform='';source.hidden=pointing();source.innerHTML=pointing()?'':img(current.item.id,current.source);source.setAttribute('aria-label',`${current.item.name} kartını seç ve eşleme yerine götür`);
-      instruction();
+      syncCardSize();instruction();
     }
     function hint(wrong=false){
       if(!active()||completed)return;clearTimeout(timer);state.hadPrompt=true;busy=true;controls(true);
