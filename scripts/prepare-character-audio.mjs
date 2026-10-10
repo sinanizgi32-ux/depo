@@ -6,7 +6,7 @@ const common=['Aferin!','Çok güzel!','Bravo!','Süpersin!','Harikasın!','Mük
 const buddy=['Evet, buradayım!','Çok güzel gidiyorsun!','Oynamak ister misin?','Devam edelim mi?','Ben hep yanındayım.','Harikasın, böyle devam!','Bir oyun daha oynayalım mı?','Seninle oynamak çok güzel!','Ne oynayalım, sen söyle!','Bugün çok iyi çalışıyoruz!'];
 const items=Object.values(ctx.window.ObjectMatchingData.items);const instructions=items.flatMap(item=>[`${item.accusative} eşle.`,`${item.accusative} göster.`]);
 const activity=await activityPhrases(root,items);
-const phrases=[...new Set(['Balığı eşle.','Balığı göster.','Diş macununu eşle.','Diş macununu göster.','Çileği eşle.','Çileği göster.','Kediyi eşle.','Kediyi göster.',...common,...instructions,...buddy,...activity])];
+const phrases=[...new Set(['Balığı eşle.','Balığı göster.','Diş macununu eşle.','Diş macununu göster.','Çileği eşle.','Çileği göster.','Kediyi eşle.','Kediyi göster.',...common,...instructions,...buddy,...activity.filter(text=>text.length<=110),...activity])];
 
 const names={pofidik:'Pofidik Ayı',dila:'Dila Panda',kipir:'Kıpır Kunduz',mina:'Mina Tilki'};
 const jobs=[];for(const [character,name]of Object.entries(names))for(const text of [`Selam! Ben ${name}. Beni seçmek ister misin?`,`Merhaba! Ben ${name}. Benimle oynamak ister misin?`,`Selam! Ben ${name}. Birlikte oyun oynayalım mı?`])jobs.push({character,text});
