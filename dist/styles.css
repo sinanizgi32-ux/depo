@@ -145,3 +145,5 @@
 .object-target,.is-pointing .object-target{width:100%;max-width:205px;min-width:0;justify-self:center;padding:clamp(3px,1vw,8px)}
 .game-stage{min-width:0}
 @media(max-width:480px){.game-stage{padding:12px;gap:14px}.game-screen{padding-inline:10px}.object-target{border-radius:12px}}
+
+.buddy-react{animation:buddy-nod .75s ease-in-out}@keyframes buddy-nod{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(-7deg) translateY(-8px)}60%{transform:rotate(7deg) translateY(-3px)}}

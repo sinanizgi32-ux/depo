@@ -1,0 +1,10 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pofidik’in Hazine Şifresi</title><link rel="stylesheet" href="pofidik-island.css"></head><body>
+<canvas id="world" aria-label="Pofidik'in üç boyutlu hazine adası"></canvas>
+<header><a href="./">← Program</a><span>Pofidik <b>Hazine Şifresi</b></span><button id="sound" aria-label="Sesi kapat" aria-pressed="true">🔊</button></header>
+<div id="progress" hidden aria-label="Açılan beş hazine mührü"><span></span><span></span><span></span><span></span><span></span></div>
+<section id="welcome" class="overlay"><div class="intro-card"><p class="eyebrow">KÜÇÜK BİR MACERA</p><h1>Hazine Şifresi</h1><p>Pofidik’le beş meşaleyi yak.</p><button id="start" disabled>Oyun hazırlanıyor…</button><p id="loading" role="status">Pofidik adaya geliyor.</p><button id="retry" hidden>Yeniden yükle</button></div></section>
+<div id="caption" role="status" aria-live="polite"></div><button id="skip" hidden>Açılışı geç</button>
+<button id="story-go" hidden>Pofidik’e yardım et</button>
+<section id="puzzle" hidden><div class="puzzle-top"><span id="count"></span><button id="help">İpucu</button></div><h2>Buraya hangisi gelir?</h2><div id="sequence" aria-label="Örüntü"></div><div id="choices" aria-label="Cevap seçenekleri"></div><p id="feedback" role="status" aria-live="polite"></p></section>
+<section id="finish" class="overlay" hidden><div class="intro-card"><p class="eyebrow">BEŞ MEŞALE YANDI</p><h1>Hazineyi buldun!</h1><p>Pofidik’le harika bir iş çıkardın.</p><button id="again">Yeniden oyna</button><a class="secondary" href="./">Programa dön</a></div></section>
+<link rel="stylesheet" href="pofidik-island-polish.css"><script src="./character-voice.js"></script><script src="pofidik-island.js" defer></script></body></html>

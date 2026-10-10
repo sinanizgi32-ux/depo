@@ -5,7 +5,7 @@
   const storageKey = 'dijitalOzelEgitimStateV2';
   const audioStorageKey = 'dijitalOzelEgitimAudioV1';
   const backgroundMusic = document.getElementById('backgroundMusic');
-  const musicBlockedScreens = new Set(['activity', 'naming', 'color-teaching', 'endgame', 'summary']);
+  const musicBlockedScreens = new Set(['activity', 'naming', 'color-teaching', 'endgame', 'summary', 'island-game']);
   const audioSettings = { enabled: true, volume: .35, lastVolume: .35 };
   const skillNames = {
     'wh-questions': {title:'5N1K',description:'Olayları izle, soruları yanıtla.',icon:'💬',playable:true},
@@ -102,10 +102,10 @@
   let eventRun = 0;
   let eventAdvancePending = false;
   const mascots = {
-    pofidik: { name: 'Pofidik', fullName: 'Pofidik Ayı', sprite: 'bear', voiceKind: 'male', pitch: 1, rate: 1, voiceIndex: 0, model: 'pofidik' },
-    dila: { name: 'Dila', fullName: 'Dila Panda', sprite: 'panda', voiceKind: 'female', pitch: 1, rate: 1, voiceIndex: 0 },
-    kipir: { name: 'Kıpır', fullName: 'Kıpır Kunduz', sprite: 'beaver', voiceKind: 'male', pitch: 1, rate: 1, voiceIndex: 1 },
-    mina: { name: 'Mina', fullName: 'Mina Tilki', sprite: 'fox', voiceKind: 'female', pitch: 1, rate: 1, voiceIndex: 1 }
+    pofidik: { name: 'Pofidik', fullName: 'Pofidik Ayı', sprite: 'bear', model: 'pofidik' },
+    dila: { name: 'Dila', fullName: 'Dila Panda', sprite: 'panda' },
+    kipir: { name: 'Kıpır', fullName: 'Kıpır Kunduz', sprite: 'beaver' },
+    mina: { name: 'Mina', fullName: 'Mina Tilki', sprite: 'fox' }
   };
   const buddyPhrases = [
     'Evet, buradayım!',
@@ -348,7 +348,7 @@
     buddyActivated: false, assessment: {}, chooser: 'child', method: null, category: 'cognitive', editingAssessment: false,
     plan: 'free', skill: 'two-color', trial: 0, patternLevel: 1, eventLevel: 1, levelSkill: 'pattern', eventPlaced: [], eventBusy: false, hadPrompt: false, attempts: 0, pairWrongTries: 0, selectedPair: [], stats: { independent: 0, prompted: 0, incorrect: 0 }
   };
-  let voices = [];
+
   let promptTimer = null;
   const objectData = window.ObjectMatchingData;
   const objectMatching = window.ObjectMatching.create({state, speak, praise, finishBlock});
@@ -416,39 +416,24 @@
     saveAudioSettings(); syncAudioUI();
   }
 
-  function loadVoices() { voices = window.speechSynthesis?.getVoices?.() || []; }
-  function pickVoice(profile) {
-    if (!voices.length) return null;
-    const femaleWords = /emel|filiz|aylin|seda|zeynep|selin|dilek|yelda|buket|özlem|merve|esra|ece|kadın|female/i;
-    const maleWords = /tolga|ahmet|mehmet|burak|emre|kerem|mustafa|erkek|male/i;
-    const matcher = profile.voiceKind === 'female' ? femaleWords : maleWords;
-    const scored = voices.map(voice => {
-      let score = 0;
-      if (/^tr([_-]|$)/i.test(voice.lang)) score += 100;
-      if (matcher.test(voice.name)) score += 10;
-      if (/natural|online|premium|enhanced/i.test(voice.name)) score += 5;
-      if (voice.localService) score += 1;
-      return { voice, score };
-    }).sort((a, b) => b.score - a.score);
-    const pool = scored.filter(item => item.score === scored[0].score).map(item => item.voice);
-    return pool[profile.voiceIndex % pool.length];
-  }
   function speak(key, text, onComplete) {
     if (!('speechSynthesis' in window)) { onComplete?.(); return; }
     const profile = mascots[key] || mascots.pofidik;
     window.speechSynthesis.cancel();
     window.Pofidik3D?.setSpeaking(false);
-    loadVoices();
-    const utterance = new SpeechSynthesisUtterance(text || `Merhaba, ben ${profile.name}. Oyun arkadaşın olmaya hazırım.`);
-    utterance.lang = 'tr-TR'; utterance.pitch = profile.pitch; utterance.rate = profile.rate;
-    const voice = pickVoice(profile); if (voice) utterance.voice = voice;
+
+    const utterance = new SpeechSynthesisUtterance(text || 'Selam, ben senin yeni oyun arkadaşın.');
+    utterance.character=key;utterance.lang = 'tr-TR';
+
     const token = ++speechToken;
     utterance.onstart = () => { if (token === speechToken && profile.model === 'pofidik') window.Pofidik3D?.setSpeaking(true); };
-    utterance.onend = utterance.onerror = () => { if (token === speechToken) { window.Pofidik3D?.setSpeaking(false); onComplete?.(); } };
+    utterance.onend = () => { if (token === speechToken) { window.Pofidik3D?.setSpeaking(false); onComplete?.(); } };
+    utterance.onerror = () => { if (token !== speechToken) return; window.Pofidik3D?.setSpeaking(false); if(state.screen==='activity'){document.getElementById('feedback').textContent='Ses açılamadı. Yardım düğmesiyle yeniden dene.';}else onComplete?.(); };
     window.speechSynthesis.speak(utterance);
   }
 
   function showScreen(name, push = true) {
+    if(state.screen==='island-game'&&name!=='island-game')document.getElementById('islandGameFrame').src='about:blank';
     if(state.screen==='color-teaching'&&name!=='color-teaching')document.getElementById('colorTeachingFrame').src='about:blank';
     if(state.screen==='action-preview'&&name!=='action-preview')document.getElementById('actionPreviewFrame').src='about:blank';
     if(window.ParentGate && !window.ParentGate.allow(name)){window.ParentGate.open(name);return;}
@@ -461,7 +446,7 @@
     screens.forEach(s => s.classList.toggle('is-active', s.dataset.screen === name));
     topbar.hidden = name === 'welcome';
     document.getElementById('backButton').style.visibility = state.history.length ? 'visible' : 'hidden';
-    const buddyHiddenScreens = ['welcome', 'pin', 'guardian', 'profile', 'avatar', 'intro','naming','action-preview','color-teaching'];
+    const buddyHiddenScreens = ['welcome', 'pin', 'guardian', 'profile', 'avatar', 'intro','naming','action-preview','color-teaching','island-game'];
     floatingBuddy.hidden = !state.avatar || !state.buddyActivated || buddyHiddenScreens.includes(name);
     if (musicBlockedScreens.has(name)) backgroundMusic.pause(); else tryStartMusic();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -488,6 +473,8 @@
     } catch (_) {}
   }
   function mascot() { return mascots[state.avatar] || mascots.pofidik; }
+  function profileName(key){return (mascots[key]||mascots.pofidik).fullName;}
+  function selectionMessage(key){const name=profileName(key),messages=[`Selam! Ben ${name}. Beni seçmek ister misin?`,`Merhaba! Ben ${name}. Benimle oynamak ister misin?`,`Selam! Ben ${name}. Birlikte oyun oynayalım mı?`];return messages[Math.floor(Math.random()*messages.length)];}
   function updateMascotDisplays() {
     const selected = mascot();
     document.querySelectorAll('[data-mascot-display]').forEach(el => {
@@ -496,11 +483,14 @@
     });
     window.Pofidik3D?.refresh();
   }
-  function setAvatar(key) {
-    state.avatar = key; updateMascotDisplays();
+  function setAvatar(key, announce = true) {
+    state.avatar = key;window.CharacterVoice?.set(key); updateMascotDisplays();
     document.querySelectorAll('.avatar-card').forEach(c => c.classList.toggle('is-selected', c.dataset.avatar === key));
     document.getElementById('avatarContinue').disabled = false;
     if (key === 'pofidik') window.Pofidik3D?.play(document.querySelector('.avatar-card[data-avatar="pofidik"]'), 'curious');
+    if (announce) {
+      speak(key,selectionMessage(key));
+    }
   }
   function introMessage() {
     const child = state.profile.name ? ` ${state.profile.name}` : '';
@@ -583,6 +573,8 @@
     skillFolder=folder;
     state.category = category;
     const list = document.getElementById('skillList');
+    list.classList.toggle('games-grid',category==='games');
+    if(category==='games'){document.getElementById('categoryKicker').textContent='Oyunlar';document.getElementById('categoryTitle').textContent='Oyun seç';document.getElementById('categoryBack').textContent='← Ana menüye dön';list.innerHTML='<button class="treasure-game-card" type="button" data-open-island><img src="./assets/games/treasure-icon.png" alt=""><strong>Pofidik’in Hazine Şifresi</strong></button>';return;}
     if (!['cognitive','language'].includes(category)) {
       const titles = { language: 'Dil ve İletişim', social: 'Sosyal Beceriler', daily: 'Günlük Yaşam' };
       document.getElementById('categoryKicker').textContent = titles[category];
@@ -639,6 +631,7 @@
     document.getElementById('matchingItems').innerHTML = category.items.map(i => `<button class="matching-item ${i.id === item.id ? 'is-selected' : ''}" type="button" data-match-item="${i.id}" aria-pressed="${i.id === item.id}"><img src="${objectData.image(i.id)}" alt="" loading="lazy"><strong>${i.name}</strong></button>`).join('');
     document.getElementById('matchingObjectTitle').textContent = item.name + ' · Seviyeler';
     document.getElementById('matchingStages').innerHTML = (naming?window.NamingRules.stages:pointing?objectData.pointingStages:objectData.stages).map((stage,index) => `<button class="level-card" type="button" data-match-stage="${index + 1}"><span class="level-number">Seviye ${index + 1}</span><strong>${stage.title}</strong><small>${naming?'Tek resim · Sesli yanıt':stage.count+' seçenek'}</small><em>5 deneme</em></button>`).join('');
+    window.CharacterVoice?.preload(naming?['Bu ne? Söyle.']:[`${item.accusative} ${pointing?'göster':'eşle'}.`]);
   }
   function startNaming(level){state.skill='object-name';state.matchLevel=level;state.stats={independent:0,prompted:0,incorrect:0};window.speechSynthesis?.cancel();showScreen('naming');document.getElementById('namingFrame').src='./naming-activity.html?'+new URLSearchParams({item:state.matchItem,level:String(level),method:state.method||'wait',autoStart:window.LocalMicrophone?.available()?'1':'0',role:window.ParentGate?.role()||'guardian'});}
  window.addEventListener('message',event=>{const frame=document.getElementById('namingFrame');if(event.origin!==location.origin||event.source!==frame.contentWindow||state.screen!=='naming')return;const msg=event.data;if(msg?.type==='naming-size'&&Number.isFinite(msg.height)){frame.style.height=Math.min(2200,Math.max(400,msg.height))+'px';return;}if(msg?.type==='naming-menu'){goPlatform();return;}if(msg?.type==='naming-start'&&Number.isInteger(msg.level)&&msg.level>=1&&msg.level<=7)state.matchLevel=msg.level;if(msg?.type==='naming-complete'){const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||Object.values(counts).reduce((a,b)=>a+b,0)!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();}});
@@ -901,6 +894,8 @@
       state.eventBusy = false;
       cards.forEach(card => card.disabled = card.dataset.used === 'true');
     });
+    state.eventBusy = false;
+    cards.forEach(card => card.disabled = card.dataset.used === 'true');
   }
   function bindEventCardDrag(card) {
     let gesture = null; let ignoreClick = false;
@@ -1001,6 +996,9 @@
     document.getElementById('promptedCount').textContent = state.stats.prompted;
     document.getElementById('incorrectCount').textContent = state.stats.incorrect;
   }
+  function openIsland(){showScreen('island-game');if(state.screen==='island-game'){document.getElementById('islandGameFrame').src='./pofidik-island.html?embedded=1';window.speechSynthesis?.cancel();}}
+  window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==document.getElementById('islandGameFrame').contentWindow||event.data?.type!=='island-exit'||state.screen!=='island-game')return;const previous=state.history.pop();showScreen(previous==='summary'?'summary':'category',false);});
+  document.getElementById('skillList').addEventListener('click',e=>{if(e.target.closest('[data-open-island]'))openIsland();});
   function goPlatform(push = true) { state.editingAssessment = false; renderPlatform(); showScreen('platform', push); }
   function finishEarly() { saveState(); document.getElementById('pauseModal').hidden = true; goPlatform(); }
 
@@ -1014,18 +1012,18 @@
   document.getElementById('musicToggle').addEventListener('click', toggleMusic);
   document.getElementById('musicVolume').addEventListener('input', event => setMusicVolume(event.target.value));
   document.getElementById('profileForm').addEventListener('submit', event => {
-    event.preventDefault(); state.profile.name = document.getElementById('childName').value.trim(); state.profile.age = document.getElementById('childAge').value;
+    event.preventDefault(); state.profile.name = document.getElementById('childName').value.trim();window.CharacterVoice?.setName(state.profile.name); state.profile.age = document.getElementById('childAge').value;
     state.profile.diagnosis = document.getElementById('diagnosis').value.trim(); saveState(); showScreen('avatar');
   });
   document.querySelectorAll('.avatar-card').forEach(card => {
     card.addEventListener('click', event => { if (!event.target.closest('.voice-button')) setAvatar(card.dataset.avatar); });
     card.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setAvatar(card.dataset.avatar); } });
   });
-  document.querySelectorAll('[data-speak]').forEach(button => button.addEventListener('click', event => { event.stopPropagation(); speak(button.dataset.speak); }));
-  document.getElementById('avatarContinue').addEventListener('click', () => { prepareIntro(); saveState(); showScreen('intro'); setTimeout(() => speak(state.avatar, introMessage()), 250); });
+  document.querySelectorAll('[data-speak]').forEach(button => button.addEventListener('click', event => { event.stopPropagation(); speak(button.dataset.speak,selectionMessage(button.dataset.speak)); }));
+  document.getElementById('avatarContinue').addEventListener('click', () => { prepareIntro(); saveState(); showScreen('intro'); setTimeout(() => speak(state.avatar), 250); });
   document.getElementById('readyButton').addEventListener('click', () => {
     const button = document.getElementById('readyButton'); button.disabled = true; button.textContent = 'Süpersin!';
-    document.getElementById('introText').textContent = 'Süpersin! Haydi o zaman başlayalım.'; speak(state.avatar, 'Süpersin! Haydi o zaman başlayalım.');
+    document.getElementById('introText').textContent = 'Süpersin! Haydi o zaman başlayalım.'; speak(state.avatar, 'Süpersin!');
     state.buddyActivated = true; state.editingAssessment = false; saveState();
     setTimeout(() => { if (state.screen !== 'intro') return; if (window.ParentGate?.role()==='child' || (state.method && state.profile.name)) { goPlatform(); return; } restoreAssessmentUI(); updateAssessmentMode(); showScreen('assessment'); }, 1100);
   });
@@ -1080,9 +1078,10 @@
   document.getElementById('endgameContinue').addEventListener('click', () => { updateSummary(); showScreen('summary'); });
   document.getElementById('summaryHome').addEventListener('click', () => { state.history = []; goPlatform(false); });
   document.getElementById('summaryNext').addEventListener('click', nextPatternLevel);
-  document.getElementById('summaryGame').addEventListener('click', () => showScreen('planned-game'));
+  document.getElementById('summaryGame').addEventListener('click', () => state.skill==='pattern'?openIsland():showScreen('planned-game'));
   document.getElementById('plannedGameBack').addEventListener('click', () => { state.history = []; updateSummary(); showScreen('summary', false); });
   floatingBuddy.addEventListener('click', () => {
+    floatingBuddy.classList.remove('buddy-react');void floatingBuddy.offsetWidth;floatingBuddy.classList.add('buddy-react');
     buddyPhraseIndex = (buddyPhraseIndex + 1) % buddyPhrases.length;
     speak(state.avatar, buddyPhrases[buddyPhraseIndex]);
     if (state.avatar === 'pofidik') window.Pofidik3D?.react(floatingBuddy);
@@ -1132,13 +1131,13 @@
   window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==document.getElementById('actionPreviewFrame').contentWindow)return;const msg=event.data;if(msg?.type==='action-preview-menu'){goPlatform();return;}if(msg?.type==='action-teaching-complete'&&state.screen==='action-preview'&&state.skill===`action-${msg.mode}`){const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||counts.independent+counts.prompted+counts.incorrect!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();}});
   window.AppEntry={show:showScreen,platform:goPlatform,ready:()=>!!(state.method&&state.avatar&&state.profile.name),resetHistory:()=>{state.history=[];}};
   window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==document.getElementById('colorTeachingFrame').contentWindow||state.screen!=='color-teaching')return;const msg=event.data;if(['color-teaching-menu','length-teaching-menu','age-teaching-menu','opposite-teaching-menu','wh-teaching-menu'].includes(msg?.type)){goPlatform();return;}if(msg?.type==='wh-teaching-complete'){const counts=msg.stats;if(state.skill!=='wh-questions'||!Number.isInteger(msg.level)||msg.level<1||msg.level>10||!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=30)||counts.independent+counts.prompted+counts.incorrect!==30)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();return;}if(!['color-teaching-complete','length-teaching-complete','age-teaching-complete','opposite-teaching-complete'].includes(msg?.type)||state.skill!==`${msg.type.startsWith('opposite-')?(['clean','dirty','hot','cold','big','small','heavy','light','thin','thick','day','night','inside','outside','full','empty','new','worn','hard','soft','wet','dry'].includes(msg.concept)?msg.concept:'invalid'):msg.type.startsWith('age-')?(['young','old'].includes(msg.concept)?msg.concept:'invalid'):msg.type.startsWith('length-')?(msg.concept==='short'?'short':'length'):'color'}-${msg.mode}`)return;const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||counts.independent+counts.prompted+counts.incorrect!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();});
-  loadState(); loadAudioSettings(); loadVoices(); if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = loadVoices;
+  loadState(); loadAudioSettings();
   tryStartMusic();
   renderPlanUI();
   document.addEventListener('pointerdown', tryStartMusic, { once: true, capture: true });
   document.addEventListener('keydown', tryStartMusic, { once: true, capture: true });
   document.getElementById('childName').value = state.profile.name; document.getElementById('childAge').value = state.profile.age; document.getElementById('diagnosis').value = state.profile.diagnosis;
-  if (state.avatar) setAvatar(state.avatar); restoreAssessmentUI(); updateAssessmentMode(); updateMascotDisplays();
+  if (state.avatar) setAvatar(state.avatar, false); restoreAssessmentUI(); updateAssessmentMode(); updateMascotDisplays();
   if (document.modelContext?.registerTool) {
     Promise.resolve(document.modelContext.registerTool({
       name: 'start_two_color_matching', title: 'İki renk arasından eşleme çalışmasını başlat',
@@ -1148,4 +1147,3 @@
     })).catch(() => {});
   }
 })();
-

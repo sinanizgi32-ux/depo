@@ -8,7 +8,7 @@
   <title>Dijital Erken Eğitim</title>
   <link rel="icon" type="image/png" href="./assets/dijital-ozel-egitim-logo-tablet.webp">
   <link rel="stylesheet" href="./styles.css">
-<link rel="stylesheet" href="activity-simplicity.css"></head>
+<link rel="stylesheet" href="activity-simplicity.css"><link rel="stylesheet" href="./games-menu.css"></head>
 <body>
   <div class="app-shell">
     <header class="topbar" id="topbar" hidden>
@@ -181,11 +181,13 @@
             <button type="button" class="category-card" data-category="language"><span class="category-eyebrow">Dinle · Anlat · İletişim kur</span><strong>Dil ve İletişim</strong><small id="languageCount">1 çalışma</small><b>İçine gir →</b></button>
             <button type="button" class="category-card" data-category="social"><span class="category-eyebrow">Birlikte oyna · Paylaş · Bağ kur</span><strong>Sosyal Beceriler</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
             <button type="button" class="category-card" data-category="daily"><span class="category-eyebrow">Kendin yap · Günü keşfet</span><strong>Günlük Yaşam</strong><small>Sonraki kapsam</small><b>İçine gir →</b></button>
+<button type="button" class="category-card games-category" data-category="games"><span class="category-eyebrow">Oyna · Keşfet</span><strong>Oyunlar</strong><small>1 oyun</small><b>İçine gir →</b></button>
           </div>
         </div>
       </section>
 
-      <section class="screen" data-screen="color-teaching"><iframe id="colorTeachingFrame" title="Renk kavramı çalışmaları" allow="microphone" src="about:blank" style="width:100%;height:85vh;border:0;border-radius:24px"></iframe></section>
+      <section class="screen island-game-screen" data-screen="island-game"><iframe id="islandGameFrame" title="Pofidik’in Hazine Şifresi" src="about:blank"></iframe></section>
+<section class="screen" data-screen="color-teaching"><iframe id="colorTeachingFrame" title="Renk kavramı çalışmaları" allow="microphone" src="about:blank" style="width:100%;height:85vh;border:0;border-radius:24px"></iframe></section>
       <section class="screen" data-screen="action-preview"><iframe id="actionPreviewFrame" title="Hareketli eylem kartları" src="about:blank" style="width:100%;height:85vh;border:0;border-radius:24px"></iframe></section><section class="screen category-screen" data-screen="category" aria-labelledby="categoryTitle">
         <div class="platform-shell">
           <button class="category-back" id="categoryBack" type="button">← Ana menüye dön</button>
@@ -223,7 +225,7 @@
     <button class="floating-buddy" id="floatingBuddy" type="button" hidden aria-label="Oyun arkadaşını konuştur ve hareket ettir"><span class="mascot-crop" data-mascot-display data-sprite="bear"><img loading="lazy" decoding="async" src="./assets/oyun-arkadaslari-v2.webp" alt=""><span class="pofidik-viewer" data-pofidik-viewer aria-label="Animasyonlu üç boyutlu Pofidik karakteri"></span></span></button>
   </div>
   <audio id="backgroundMusic" src="./assets/music/life-of-riley.mp3" preload="metadata" loop></audio>
-  <script src="./pofidik-loader.js" data-viewer="./pofidik-viewer.js" defer></script>
+  <script src="./character-voice.js"></script><script src="./pofidik-loader.js" data-viewer="./pofidik-viewer.js" defer></script>
   <script src="./events-data.js" defer></script>
   <script src="./matching-data.js" defer></script>
   <script src="./local-speech.js" defer></script><script src="./naming-rules.js" defer></script><script src="./object-matching.js" defer></script>

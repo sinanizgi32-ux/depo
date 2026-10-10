@@ -19,6 +19,7 @@ window.ObjectMatching = (() => {
       if(data.isMixed(state.skill,state.matchLevel)){
         if(state.trial===0)state.mixedTrials=data.mixedBlock();
         current=state.mixedTrials[state.trial];
+        window.CharacterVoice?.preload(state.mixedTrials.slice(state.trial+1).map(trial=>`${trial.item.accusative} ${verb()}.`),state.avatar);
       }else current=(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,state.trial);
       el('gameTitle').textContent=pointing()?'Nesne gösterme':'Nesne eşleme';
       document.querySelector('.game-toolbar .step-label').textContent=`Bilişsel beceriler · ${pointing()?'Nesne gösterme':'Nesne eşleme'} · Seviye ${state.matchLevel}`;
@@ -39,7 +40,8 @@ window.ObjectMatching = (() => {
       el('objectTargets').querySelectorAll('button').forEach(button=>button.classList.toggle('is-hint',button.dataset.object===current.item.id));
       const text=pointing()?`${wrong?'Hayır, o değil. ':''}Bu ${current.item.name.toLocaleLowerCase('tr')}. Gösterilen resme dokun. ${current.item.accusative} göster.`:`${wrong?'Bu eşleşme olmadı. ':''}Bu ${current.item.name.toLocaleLowerCase('tr')}. Yukarıda da ${current.item.name.toLocaleLowerCase('tr')} var. Alttaki resmi gösterilen resmin üstüne götür. ${current.item.accusative} ${verb()}.`;
       el('feedback').textContent=text;el('feedback').className='feedback hint-feedback';
-      say(text,()=>{busy=false;controls(false);});
+      say(text,()=>{if(!completed){busy=false;controls(false);}});
+      busy=false;controls(false);
     }
     function advance(){
       clearTimeout(timer);const token=run;

@@ -21,3 +21,11 @@ Thumbs.db
 __pycache__/
 *.pyc
 source-assets/action-videos/
+
+.voice-runtime/
+outputs/voice-cache/
+
+.voice-runtime/
+outputs/voice-cache/
+/outputs/character-voice-service.log
+/outputs/character-voice-service*.log

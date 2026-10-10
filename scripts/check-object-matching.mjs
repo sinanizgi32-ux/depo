@@ -3,7 +3,7 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 let nodes,timers,speeches,dropTarget,state,engine,finished;
 function node(){let html='';const classes=new Set();const n={children:[],dataset:{},style: {setProperty(name,value){this[name]=String(value);}},hidden:true,disabled:false,className:'',handlers:{},classList:{add:(...names)=>names.forEach(name=>classes.add(name)),remove:(...names)=>names.forEach(name=>classes.delete(name)),toggle:(name,on)=>on?classes.add(name):classes.delete(name),contains:name=>classes.has(name)},setAttribute(name,value){this[name]=value;},appendChild(child){this.children.push(child);},addEventListener(name,fn){this.handlers[name]=fn;},querySelectorAll(){return this.children;},insertAdjacentHTML(position,text){html+=text;},setPointerCapture(id){this.pointer=id;},releasePointerCapture(){this.pointer=null;},hasPointerCapture(id){return this.pointer===id;},closest(selector){return this.className===selector.slice(1)?this:null;}};Object.defineProperty(n,'innerHTML',{get:()=>html,set:value=>{html=value;n.children=[];}});return n;}
-const context=vm.createContext({window:{},document:{getElementById:id=>nodes[id] ||= node(),querySelector:()=>nodes.toolbar ||= node(),createElement:node,elementFromPoint:()=>dropTarget},setTimeout:(fn,ms)=>{const t={fn,ms};timers.add(t);return t;},clearTimeout:t=>timers.delete(t),Math});
+const context=vm.createContext({window:{addEventListener(){}},document:{getElementById:id=>nodes[id] ||= node(),querySelector:()=>nodes.toolbar ||= node(),createElement:node,elementFromPoint:()=>dropTarget},setTimeout:(fn,ms)=>{const t={fn,ms};timers.add(t);return t;},clearTimeout:t=>timers.delete(t),Math});
 for(const file of ['matching-data','object-matching'])vm.runInContext(fs.readFileSync(new URL(`../dist/${file}.js`,import.meta.url),'utf8'),context);
 const data=context.window.ObjectMatchingData;
 assert.equal(data.categories.length,10);assert.equal(Object.keys(data.items).length,100);assert.equal(new Set(Object.keys(data.items)).size,100);
@@ -35,7 +35,7 @@ for(const item of Object.values(data.items))for(let level=1;level<=4;level++){
   assert.equal(finished,1);assert.equal(state.stats.independent,5);
 }
 assert.equal(count,2000);
-reset('cat',3);speakEnd();choose('dog');assert.equal(state.stats.incorrect,1);assert(state.hadPrompt);assert(source().disabled);assert(speakEnd().includes('Kediyi eşle.'));assert(!source().disabled);choose('cat');speakEnd();assert.equal(state.stats.prompted,1);
+reset('cat',3);speakEnd();choose('dog');assert.equal(state.stats.incorrect,1);assert(state.hadPrompt);assert(!source().disabled,'Görsel ipucu açıkken ses beklenmesi kartı kilitlememeli');assert(speakEnd().includes('Kediyi eşle.'));assert(!source().disabled);choose('cat');speakEnd();assert.equal(state.stats.prompted,1);
 reset();assert.equal(timers.size,0);speakEnd();fire(4000);assert(state.hadPrompt);assert(!source().hidden,'İpucu otomatik tamamlamamalı');speakEnd();choose('cat');speakEnd();assert.equal(state.stats.prompted,1);
 for(let level=1;level<=4;level++){
   reset('cat',level,'immediate');speakEnd();assert(state.hadPrompt);assert.equal(timers.size,0);speakEnd();choose('cat');speakEnd();assert.equal(state.stats.independent,0);assert.equal(state.stats.prompted,1);

@@ -14,7 +14,7 @@
  function stopRec(){const old=rec;rec=null;if(old){old.onresult=old.onerror=old.onend=old.onstart=old.onspeechstart=old.onprocessing=null;try{old.abort();}catch{}}}
  function cancel(){run++;clear();stopRec();window.speechSynthesis?.cancel();}
  function message(text){$('status').textContent=text;}
- function say(text,done){stopRec();clear();phase='speaking';message(text);const token=run;if(!window.speechSynthesis){phase='review';message(text+' Seslendirme bu tarayıcıda bulunmuyor; yönergeyi okuyup Yeniden dinle düğmesine basın.');return;}const speech=new SpeechSynthesisUtterance(text);speech.lang='tr-TR';speech.rate=.9;const voice=speechSynthesis.getVoices().find(v=>v.lang.toLowerCase().startsWith('tr'));if(voice)speech.voice=voice;speech.onend=()=>{if(token===run&&!paused)done?.();};speech.onerror=()=>{if(token!==run)return;phase='review';message('Yönerge sesi tamamlanamadı. Yeniden dinle düğmesiyle devam edebilirsiniz.');};speechSynthesis.speak(speech);}
+ function say(text,done){stopRec();clear();phase='speaking';message(text);const token=run;if(!window.speechSynthesis){phase='review';message(text+' Seslendirme bu tarayıcıda bulunmuyor; yönergeyi okuyup Yeniden dinle düğmesine basın.');return;}const speech=new SpeechSynthesisUtterance(text);speech.lang='tr-TR';speech.onend=()=>{if(token===run&&!paused)done?.();};speech.onerror=()=>{if(token!==run)return;phase='review';message('Yönerge sesi tamamlanamadı. Yeniden dinle düğmesiyle devam edebilirsiniz.');};speechSynthesis.speak(speech);}
  function review(text){clear();stopRec();phase='review';$('clock').textContent='';message(text);}
  function listen(){
   clear();stopRec();if(paused||!current())return;if(!Recognition){review('Konuşma tanıma desteklenmiyor. Uygulamacı kontrolünü kullanın.');return;}
@@ -91,7 +91,3 @@
  if(embedded&&window.ResizeObserver){const main=document.querySelector('main');new ResizeObserver(()=>notify('naming-size',{height:Math.ceil(main.getBoundingClientRect().height+48)})).observe(main);}
  window.addEventListener('pagehide',()=>{if(embedded)embedded.autoStart=false;cancel();});document.addEventListener('visibilitychange',()=>{if(document.hidden&&!$('work').hidden&&!paused)$('pause').click();});
 })();
-
-
-
-

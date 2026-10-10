@@ -1,0 +1,14 @@
+/* Keep navigation and sound available above the intro card. */
+header{z-index:6}
+#finish{align-items:end;padding-bottom:24px}
+#finish .intro-card{padding:16px 22px;width:min(470px,100%)}
+#finish h1{font-size:30px;margin:6px 0}
+#finish p{margin:7px 0}
+#finish #again{margin:12px 0 4px;padding:12px}
+#finish .secondary{padding:5px}
+
+#story-go{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);z-index:7;border:0;border-radius:18px;padding:18px 26px;background:#ffe3a4;color:#3e5146;font:700 19px system-ui;box-shadow:0 8px 30px #183b3933;white-space:nowrap}#story-go[hidden]{display:none}
+
+#sequence{display:grid;grid-template-columns:repeat(var(--tiles,8),minmax(0,74px))}#sequence .tile{width:100%}
+
+body:has(#welcome[hidden]) header span{visibility:hidden}

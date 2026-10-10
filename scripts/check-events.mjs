@@ -14,14 +14,14 @@ function element() {
 }
 function allNodes() { const visit = node => [node, ...node.children.flatMap(visit)]; return Object.values(nodes).flatMap(visit); }
 const randomMath = Object.create(Math);
-const context = vm.createContext({ window: {}, document: {
+const context = vm.createContext({ window: {addEventListener(){}}, document: {
   getElementById: id => nodes[id] ||= element(), createElement: element,
   elementFromPoint: () => dropTarget,
   querySelectorAll: selector => allNodes().filter(node => selector.split(',').some(part => node.className.split(' ').includes(part.trim().slice(1))))
 }, speak: (key, text, done) => speeches.push({ text, done }), praise: () => 'Harikasın!', finishBlock: () => ended++,
 setTimeout: (fn, ms) => { const timer = { fn, ms }; timers.add(timer); return timer; }, clearTimeout: timer => timers.delete(timer), Math: randomMath });
 vm.runInContext(fs.readFileSync(new URL('../dist/events-data.js', import.meta.url), 'utf8'), context);
-const data = source.slice(source.indexOf('  const state ='), source.indexOf('  let voices'));
+const data = source.slice(source.indexOf('  const state ='), source.indexOf('  let promptTimer'));
 const instruction = source.slice(source.indexOf('  function giveInstruction('), source.indexOf('  function renderTrial()'));
 const events = source.slice(source.indexOf('  function eventExample()'), source.indexOf('  function resetEndgame()'));
 vm.runInContext(`const eventContent = window.EventSequences; let eventRun = 0; let eventAdvancePending = false; let promptTimer; ${data}\n${instruction}\n${events}\nglobalThis.api={state,eventContent,renderEventTrial,eventAnswer,showHintEvent,eventNextSlot};`, context);
