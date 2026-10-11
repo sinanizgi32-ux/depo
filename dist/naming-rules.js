@@ -11,7 +11,8 @@ window.NamingRules=(()=>{
   if(kind==='inappropriate'||hasInappropriate(text))return `Bu söylediğin sözcük uygun bir sözcük değil. Bu ${name}.`+ending;
   if(kind==='partial')return `Evet, yaklaştın. Tam adı ${name}.`+ending;
   const spoken=safeText(text).replace(/[.!?;:"“”]/g,'').trim().toLocaleLowerCase('tr');
-  return (spoken?`Hayır, bu ${spoken} değil. `:'')+`Bu ${name}.`+ending;
+  const message=(spoken?`Hayır, bu ${spoken} değil. `:'')+`Bu ${name}.`+ending;
+  return window.CharacterVoice?.quickCorrection?.(message)||message;
  }
  function judge(text,item,items,custom=[]){
   if(hasInappropriate(text))return 'inappropriate';

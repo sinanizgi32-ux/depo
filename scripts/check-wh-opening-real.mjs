@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import vm from 'node:vm';
+import {chromium} from 'file:///C:/Users/sinan/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs';
+import {voiceBankPlan} from './voice-bank-plan.mjs';
+import {voiceBankReader} from './voice-bank-files.mjs';
+const voiceInput=process.argv.includes('--input=voice');
+const character=process.argv.find(x=>x.startsWith('--voice='))?.slice(8)||'dila';
+const level=Number(process.argv.find(x=>x.startsWith('--level='))?.slice(8)||1);
+const ctx={window:{}};vm.runInNewContext(await fs.readFile('dist/wh-data.js','utf8'),ctx);
+const story=ctx.window.WhData.stories.find(s=>s.id===ctx.window.WhData.levels[level-1].stories[0]);
+const plan=await voiceBankPlan(),{bank}=await voiceBankReader()();assert(plan.covered(bank,{character:'narrator',text:story.narration}),'Opening narration is not ready');
+const b=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true,args:voiceInput?['--use-fake-ui-for-media-stream','--use-fake-device-for-media-stream']:[]});
+try{const p=await b.newPage(voiceInput?{permissions:['microphone']}:{}),foreground=[];p.on('request',r=>{if(r.url().endsWith('/api/voice')&&!r.postDataJSON()?.background)foreground.push(r.postDataJSON().text);});
+ await p.addInitScript(character=>localStorage.setItem('dijitalOzelEgitimStateV2',JSON.stringify({avatar:character,profile:{}})),character);
+ await p.goto('http://127.0.0.1:4180/wh-teaching.html?method=wait');if(!voiceInput)await p.locator('#choiceMode').click();
+ await p.evaluate(text=>{window.opening={events:[],done:false};const Original=window.Audio;window.Audio=class extends Original{constructor(url){super(url);if(window.trackingOpening){this.addEventListener('playing',()=>opening.events.push({type:'playing',at:performance.now()}));this.addEventListener('ended',()=>opening.events.push({type:'ended',at:performance.now()}));}}};
+ const speak=speechSynthesis.speak.bind(speechSynthesis);speechSynthesis.speak=u=>{if(u.text===text){window.trackingOpening=true;const start=u.onstart,end=u.onend;u.onstart=e=>{opening.role=u.voiceRole;opening.start=performance.now()-opening.click;opening.videoEnded=document.getElementById('video').ended;start?.(e);};u.onend=e=>{window.trackingOpening=false;opening.done=true;end?.(e);};}return speak(u);};document.querySelector('#levels').addEventListener('click',()=>opening.click=performance.now(),true);
+ },story.narration);
+ await p.locator('#levels button').nth(level-1).click();await p.waitForFunction(()=>opening.done,null,{timeout:60000});
+ const result=await p.evaluate(()=>opening);assert.equal(result.role,'narrator');assert(result.start<1000,JSON.stringify(result));assert.equal(result.videoEnded,false,'Narration must start during video');
+ const expected=plan.recording(bank,'narrator',story.narration)?1:plan.units(story.narration).length;assert.equal(result.events.filter(e=>e.type==='ended').length,expected,'Every narration sentence must finish');
+ let maxGap=0;for(let i=1;i<result.events.length;i++)if(result.events[i].type==='playing'&&result.events[i-1].type==='ended')maxGap=Math.max(maxGap,result.events[i].at-result.events[i-1].at);assert(maxGap<1000,'Narration pauses must stay below one second');
+ assert(!foreground.some(text=>plan.units(story.narration).includes(text)),'Narration must not generate live');console.log(`OK: ${character} level ${level} ${voiceInput?'voice':'choice'} mode narration starts ${Math.round(result.start)} ms after opening, before video ends; all ${expected} recordings finish; max gap ${Math.round(maxGap)} ms; no live narration generation.`);
+}finally{await b.close();}

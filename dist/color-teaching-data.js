@@ -72,7 +72,7 @@ window.ColorTeachingData=(()=>{
   return blocks;
  }
  function judge(text,c){if(window.NamingRules.hasInappropriate(text))return'inappropriate';const words=window.NamingRules.normalize(text).split(' ').filter(t=>!['bu','renk','rengi','iste','bir'].includes(t));if(!words.length)return'uncertain';return words.every(word=>color(c).aliases.includes(word))?'correct':'wrong';}
- function correction(c,text,kind,retry=true){const end=retry?' Şimdi sen söyle.':'';const model=`Bu ${color(c).name.toLocaleLowerCase('tr')}.`;if(kind==='inappropriate')return'Bu söylediğin sözcük uygun bir sözcük değil. '+model+end;const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();return(safe?`Hayır, bu ${safe} değil. `:'')+model+end;}
+ function correction(c,text,kind,retry=true){const end=retry?' Şimdi sen söyle.':'';const model=`Bu ${color(c).name.toLocaleLowerCase('tr')}.`;if(kind==='inappropriate')return'Bu söylediğin sözcük uygun bir sözcük değil. '+model+end;const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();const message=(safe?`Hayır, bu ${safe} değil. `:'')+model+end;return window.CharacterVoice?.quickCorrection?.(message)||message;}
  function nextStep(mode,id,level,block=0){
   const list=stages[mode],s=list[level-1];
   const count=s.objectBlocks?4:s.mixed?(s.blocks||4):1;

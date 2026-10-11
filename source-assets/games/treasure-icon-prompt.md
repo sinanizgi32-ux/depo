@@ -1,0 +1,1 @@
+Built-in image_gen, stylized-concept. Square children’s treasure game icon: antique open wooden chest full of glowing gold coins, stone doorway, warm torches, tropical foliage, clear silhouette, gold/turquoise/green, no text or characters. Final asset: dist/assets/games/treasure-icon.png.

@@ -28,6 +28,6 @@ window.LengthTeachingData=(()=>{
  function course(mode,level){const blocks=baseCourse(mode,level);if(level>=4)for(const block of blocks)block.trials.forEach((t,n)=>{for(const x of [t.source,...t.options])if(x.kind==='shape')x.paint=['#3488b8','#57944a','#d9ad33','#c66d59','#9972ba'][n];});return blocks;}
  const nextStep=(mode,id,level)=>level<stages[mode].length?{color:targetId,level:level+1,block:0}:null;
  function judge(text){if(window.NamingRules.hasInappropriate(text))return'inappropriate';const words=window.NamingRules.normalize(text).split(' ').filter(x=>!['bu','olan','nesne','bir'].includes(x));return!words.length?'uncertain':words.every(x=>(isShort?['kisa','kisaolan']:['uzun','uzunolan']).includes(x))?'correct':'wrong';}
- function correction(c,text,kind,retry=true){const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();return(kind==='inappropriate'?'Bu söylediğin sözcük uygun bir sözcük değil. ':safe?`Hayır, bu ${safe} değil. `:'')+(isShort?'Bu kısa.':'Bu uzun.')+(retry?' Şimdi sen söyle.':'');}
+ function correction(c,text,kind,retry=true){const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();const message=(kind==='inappropriate'?'Bu söylediğin sözcük uygun bir sözcük değil. ':safe?`Hayır, bu ${safe} değil. `:'')+(isShort?'Bu kısa.':'Bu uzun.')+(retry?' Şimdi sen söyle.':'');return window.CharacterVoice?.quickCorrection?.(message)||message;}
  return{colors,color,stages,course,nextStep,media,judge,correction};
 })();

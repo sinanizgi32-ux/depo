@@ -31,4 +31,31 @@ for(const method of ['wait','immediate'])for(let level=1;level<=10;level++){cons
 {
  const a=await app('wait',true);await a.start(1);a.ended();const r=a.instances.at(-1);assert.equal(r.domain,'wh');r.onspeechstart();assert(![...a.timers.values()].some(t=>t.ms===4000),'Speech start stops the response window');a.correct(D.stories[0].questions[0]);assert.equal(a.rows()[0].input,'voice');const next=a.instances.at(-1);next.onerror();assert.equal(a.rows().length,1,'Technical error is not a child failure');a.$('listenAgain').click();a.flush();const rr=a.instances.at(-1),value=[{transcript:'salak'}];value.isFinal=true;rr.onresult({resultIndex:0,results:[value]});assert(!a.spoken.some(t=>t.includes('salak')));a.flush();assert(a.spoken.some(t=>t.includes('uygun bir sözcük değil')));a.dom.window.close();
 }
-console.log(`OK: ${checked} soru akışı, 50 video, 300 cevap anahtarı; 4 saniye, eşzamanlı, iki fırsat, teknik hata ve kayıt denetimleri.`);
+{
+ const a=await app('wait');await a.start(1);a.$('video').onended();const narration=a.speech.shift();assert.equal(narration.voiceRole,'narrator');narration.onerror();assert.equal(a.speech.length,0);a.$('listenAgain').click();const retried=a.speech.shift();assert.equal(retried.text,D.stories[0].narration,'Retry must repeat narration, not skip straight to question');assert.equal(retried.voiceRole,'narrator');retried.onend();a.flush();a.tick(4000);const hint=a.speech.shift();assert.equal(hint.voiceRole,'companion');hint.onerror();a.$('listenAgain').click();assert.equal(a.speech[0].text,hint.text,'Retry must repeat the exact correction');a.flush();a.dom.window.close();
+}
+{
+ const a=await app('wait');await a.start(1);assert.equal(a.speech[0].text,D.stories[0].narration,'Narration must be requested when the event opens, before video ends');const u=a.speech.shift();u.onend();assert.equal(a.speech.length,0,'Do not ask while video still plays');a.$('video').onended();assert.equal(a.speech[0].text,D.stories[0].questions[0].text);a.dom.window.close();
+}
+{
+ const a=await app('wait');await a.start(1);a.$('pause').click();assert.equal(a.speech.length,0);a.$('pause').click();assert.equal(a.speech[0].text,D.stories[0].narration,'Resume event narration and video together');a.ended();a.dom.window.close();
+}
+{
+ const a=await app('wait',true);a.w.LocalMicrophone.ensure=()=>new Promise(()=>{});await a.start(1);assert.equal(a.speech[0].text,D.stories[0].narration,'Microphone preparation must not delay event narration');assert(!a.$('work').hidden);a.dom.window.close();
+}
+let errorChecks=0;
+for(const method of ['wait','immediate'])for(let level=1;level<=10;level++){
+ const a=await app(method);await a.start(level);
+ for(let n=0;n<5;n++){
+  const s=D.stories[(level-1)*5+n];a.ended();
+  for(const q of s.questions){
+   if(method==='wait'){a.tick(4000);assert(a.speech.some(u=>u.text===q.evidence+' Şimdi seç.'),'Timeout must explain the exact event');a.flush();}
+   const wrong=[...a.w.document.querySelectorAll('[data-answer]')].find(b=>b.dataset.answer!==q.answer);assert(wrong);wrong.click();assert(a.speech.some(u=>u.text===q.evidence||u.text===q.evidence+' Şimdi seç.'),'Wrong answer must explain the exact event');a.flush();
+   if(method==='immediate'){wrong.click();a.flush();}
+   a.tick(700);a.flush();errorChecks++;
+  }
+  if(n<4)a.$('nextStory').click();
+ }
+ assert.equal(a.rows().length,30);assert(a.rows().every(r=>r.outcome==='incorrect'));a.dom.window.close();
+}
+console.log(`OK: ${checked} doğru ve ${errorChecks} yanlış/yanıtsız soru akışı, 50 video, 300 cevap anahtarı; 4 saniye, eşzamanlı, iki fırsat, teknik hata ve kayıt denetimleri.`);

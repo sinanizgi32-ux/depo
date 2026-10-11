@@ -422,7 +422,7 @@
     window.speechSynthesis.cancel();
     window.Pofidik3D?.setSpeaking(false);
 
-    const utterance = new SpeechSynthesisUtterance(text || 'Selam, ben senin yeni oyun arkadaşın.');
+    const utterance = new SpeechSynthesisUtterance(text || selectionMessage(key));
     utterance.character=key;utterance.lang = 'tr-TR';
 
     const token = ++speechToken;
@@ -439,6 +439,7 @@
     if(window.ParentGate && !window.ParentGate.allow(name)){window.ParentGate.open(name);return;}
     window.ParentGate?.stopPreviews();
     if(state.screen==='naming'&&name!=='naming')document.getElementById('namingFrame').src='about:blank';
+    if(state.screen!==name){window.CharacterVoice?.cancelPreparation?.();if(['activity','color-teaching','naming','island-game'].includes(state.screen)){window.speechSynthesis?.cancel();window.Pofidik3D?.setSpeaking(false);}}
     if (name !== 'activity') objectMatching.stop();
     clearTimeout(promptTimer);
     if (push && state.screen !== name) state.history.push(state.screen);
@@ -631,7 +632,9 @@
     document.getElementById('matchingItems').innerHTML = category.items.map(i => `<button class="matching-item ${i.id === item.id ? 'is-selected' : ''}" type="button" data-match-item="${i.id}" aria-pressed="${i.id === item.id}"><img src="${objectData.image(i.id)}" alt="" loading="lazy"><strong>${i.name}</strong></button>`).join('');
     document.getElementById('matchingObjectTitle').textContent = item.name + ' · Seviyeler';
     document.getElementById('matchingStages').innerHTML = (naming?window.NamingRules.stages:pointing?objectData.pointingStages:objectData.stages).map((stage,index) => `<button class="level-card" type="button" data-match-stage="${index + 1}"><span class="level-number">Seviye ${index + 1}</span><strong>${stage.title}</strong><small>${naming?'Tek resim · Sesli yanıt':stage.count+' seçenek'}</small><em>5 deneme</em></button>`).join('');
-    window.CharacterVoice?.preload(naming?['Bu ne? Söyle.']:[`${item.accusative} ${pointing?'göster':'eşle'}.`]);
+    const cue=naming?'Bu ne? Söyle.':`${item.accusative} ${pointing?'göster':'eşle'}.`;
+    if(window.CharacterVoice?.prepareCue)void window.CharacterVoice.prepareCue(cue,state.avatar);
+    else window.CharacterVoice?.preload([cue],state.avatar);
   }
   function startNaming(level){state.skill='object-name';state.matchLevel=level;state.stats={independent:0,prompted:0,incorrect:0};window.speechSynthesis?.cancel();showScreen('naming');document.getElementById('namingFrame').src='./naming-activity.html?'+new URLSearchParams({item:state.matchItem,level:String(level),method:state.method||'wait',autoStart:window.LocalMicrophone?.available()?'1':'0',role:window.ParentGate?.role()||'guardian'});}
  window.addEventListener('message',event=>{const frame=document.getElementById('namingFrame');if(event.origin!==location.origin||event.source!==frame.contentWindow||state.screen!=='naming')return;const msg=event.data;if(msg?.type==='naming-size'&&Number.isFinite(msg.height)){frame.style.height=Math.min(2200,Math.max(400,msg.height))+'px';return;}if(msg?.type==='naming-menu'){goPlatform();return;}if(msg?.type==='naming-start'&&Number.isInteger(msg.level)&&msg.level>=1&&msg.level<=7)state.matchLevel=msg.level;if(msg?.type==='naming-complete'){const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||Object.values(counts).reduce((a,b)=>a+b,0)!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();}});
@@ -656,7 +659,7 @@
   }
   function resetActivity(skill = 'two-color', level = 1) {
     objectMatching.stop();
-    state.skill = skill; state.trial = 0; state.stats = { independent: 0, prompted: 0, incorrect: 0 };
+    state.audioPrepared = false; state.audioRun = (state.audioRun || 0) + 1; state.skill = skill; state.trial = 0; state.stats = { independent: 0, prompted: 0, incorrect: 0 };
     if (skill === 'pattern') state.patternLevel = level;
     if (skill === 'events') state.eventLevel = level;
     if (['object-match','object-show'].includes(skill)) state.matchLevel = level;
@@ -678,6 +681,7 @@
     });
   }
   function renderTrial() {
+    if (!state.audioPrepared && window.CharacterVoice?.prepareLesson && window.LessonAudioPlan) return prepareBlockAudio(window.LessonAudioPlan.unique(['Aynı renkte olanı seç.', ...[false,true].map(wrong=>`${wrong?'Hayır, bu aynı renk değil. ':''}Bak, örneğin rengi kırmızı. Gösterilen seçenek de kırmızı, renkleri aynı. Şimdi kırmızı seçeneğe bas.`)]), 'answerArea', renderTrial);
     clearTimeout(promptTimer); state.hadPrompt = false; state.attempts = 0;
     const trial = trials[state.trial];
     document.getElementById('trialLabel').textContent = `${state.trial + 1} / ${trials.length}`;
@@ -694,6 +698,7 @@
     giveInstruction('Aynı renkte olanı seç.', showHint);
   }
   function renderPairTrial() {
+    if (!state.audioPrepared && window.CharacterVoice?.prepareLesson && window.LessonAudioPlan) return prepareBlockAudio(window.LessonAudioPlan.unique(['Aynı olan iki kırmızı kartı bulun.', ...pairTrials.flatMap(t=>[false,true].map(wrong=>`${wrong?'Hayır, bu iki kart aynı değil. ':''}Bak, bu iki kart da kırmızı ${pairTypeNames[t.correct]}. Renkleri ve şekilleri aynı. Şimdi gösterilen iki karta bas.`))]), 'pairArea', renderPairTrial);
     clearTimeout(promptTimer); state.hadPrompt = false; state.attempts = 0; state.pairWrongTries = 0; state.selectedPair = [];
     const trial = pairTrials[state.trial];
     document.getElementById('trialLabel').textContent = `${state.trial + 1} / ${pairTrials.length}`;
@@ -764,7 +769,16 @@
       feedback.className = 'feedback try'; showHint(true);
     }
   }
+  function prepareBlockAudio(texts, areaId, resume) {
+    const area = document.getElementById(areaId), run = state.audioRun, skill = state.skill;
+    area.hidden = true;
+    window.CharacterVoice.prepareLesson(texts, state.avatar, () => state.screen === 'activity' && state.audioRun === run && state.skill === skill).then(ok => {
+      if (!ok || state.screen !== 'activity' || state.audioRun !== run || state.skill !== skill) return;
+      state.audioPrepared = true; area.hidden = false; resume();
+    });
+  }
   function renderPatternTrial() {
+    if (!state.audioPrepared && window.CharacterVoice?.prepareLesson && window.LessonAudioPlan) return prepareBlockAudio(window.LessonAudioPlan.pattern(patternLevels[state.patternLevel - 1].examples, patternItems), 'patternArea', renderPatternTrial);
     clearTimeout(promptTimer); state.hadPrompt = false; state.attempts = 0;
     const level = patternLevels[state.patternLevel - 1];
     const trial = patternExample();
@@ -855,6 +869,7 @@
     });
   }
   function renderEventTrial() {
+    if (!state.audioPrepared && window.CharacterVoice?.prepareLesson && window.LessonAudioPlan) return prepareBlockAudio(window.LessonAudioPlan.events(eventContent.levels[state.eventLevel - 1].examples, eventContent.stories), 'eventArea', renderEventTrial);
     clearTimeout(promptTimer); eventRun += 1;
     eventAdvancePending = false;
     state.hadPrompt = false; state.attempts = 0; state.eventBusy = true;
@@ -887,7 +902,11 @@
     cards.forEach(card => { card.disabled = true; card.classList.toggle('is-hint', Number(card.dataset.step) === example.indices[next]); });
     document.querySelectorAll('.event-slot').forEach(slot => slot.classList.toggle('is-hint', Number(slot.dataset.slot) === next));
     const sequence = example.indices.map((step, index) => `${index === 0 ? 'Önce' : index === example.indices.length - 1 ? 'En son' : 'Sonra'} ${story.steps[step]}`).join(' ');
-    const message = `${correction ? 'Hayır, bu kartın yeri farklı. ' : ''}${sequence} Şimdi gösterilen karta dokun; ${next + 1}. yere gelsin.`;
+    const detailed = `${correction ? 'Hayır, bu kartın yeri farklı. ' : ''}${sequence} Şimdi gösterilen karta dokun; ${next + 1}. yere gelsin.`;
+    const shortHint = `${correction ? 'Hayır, bu kartın yeri farklı. ' : ''}Şimdi gösterilen karta dokun; ${next + 1}. yere gelsin.`;
+    const fallback = `${correction ? 'Hayır, bu kartın yeri farklı. ' : ''}Gösterilen karta dokun.`;
+    const message = window.CharacterVoice?.ready&&!window.CharacterVoice.ready(detailed,state.avatar)?window.CharacterVoice.ready(shortHint,state.avatar)?shortHint:fallback:detailed;
+    if(message!==detailed)void window.CharacterVoice.preload([detailed],state.avatar);
     const feedback = document.getElementById('feedback'); feedback.className = correction ? 'feedback try' : 'feedback'; feedback.textContent = message;
     speak(state.avatar, message, () => {
       if (run !== eventRun || state.screen !== 'activity' || state.skill !== 'events') return;
@@ -1129,6 +1148,7 @@
   });
 
   window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==document.getElementById('actionPreviewFrame').contentWindow)return;const msg=event.data;if(msg?.type==='action-preview-menu'){goPlatform();return;}if(msg?.type==='action-teaching-complete'&&state.screen==='action-preview'&&state.skill===`action-${msg.mode}`){const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||counts.independent+counts.prompted+counts.incorrect!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();}});
+  window.addEventListener('lesson-audio-cancel', () => goPlatform());
   window.AppEntry={show:showScreen,platform:goPlatform,ready:()=>!!(state.method&&state.avatar&&state.profile.name),resetHistory:()=>{state.history=[];}};
   window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==document.getElementById('colorTeachingFrame').contentWindow||state.screen!=='color-teaching')return;const msg=event.data;if(['color-teaching-menu','length-teaching-menu','age-teaching-menu','opposite-teaching-menu','wh-teaching-menu'].includes(msg?.type)){goPlatform();return;}if(msg?.type==='wh-teaching-complete'){const counts=msg.stats;if(state.skill!=='wh-questions'||!Number.isInteger(msg.level)||msg.level<1||msg.level>10||!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=30)||counts.independent+counts.prompted+counts.incorrect!==30)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();return;}if(!['color-teaching-complete','length-teaching-complete','age-teaching-complete','opposite-teaching-complete'].includes(msg?.type)||state.skill!==`${msg.type.startsWith('opposite-')?(['clean','dirty','hot','cold','big','small','heavy','light','thin','thick','day','night','inside','outside','full','empty','new','worn','hard','soft','wet','dry'].includes(msg.concept)?msg.concept:'invalid'):msg.type.startsWith('age-')?(['young','old'].includes(msg.concept)?msg.concept:'invalid'):msg.type.startsWith('length-')?(msg.concept==='short'?'short':'length'):'color'}-${msg.mode}`)return;const counts=msg.stats;if(!counts||!['independent','prompted','incorrect'].every(k=>Number.isInteger(counts[k])&&counts[k]>=0&&counts[k]<=5)||counts.independent+counts.prompted+counts.incorrect!==5)return;state.stats={independent:counts.independent,prompted:counts.prompted,incorrect:counts.incorrect};saveState();});
   loadState(); loadAudioSettings();

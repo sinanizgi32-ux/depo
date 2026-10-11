@@ -1,0 +1,3 @@
+import fs from 'node:fs/promises';
+const keys=['pofidik','kipir','dila','mina'];
+for(const character of keys){const response=await fetch('http://127.0.0.1:4182/api/voice',{method:'POST',headers:{Origin:'http://127.0.0.1:4180','Content-Type':'application/json'},body:JSON.stringify({character,text:'Aferin!'}),signal:AbortSignal.timeout(240000)});if(!response.ok)throw Error(character+' sample failed');const wav=Buffer.from(await response.arrayBuffer());if(wav.toString('ascii',0,4)!=='RIFF')throw Error('Invalid wave');await fs.writeFile('outputs/new-reference-'+character+'-aferin.wav',wav);console.log(character+' new reference sample ready');}

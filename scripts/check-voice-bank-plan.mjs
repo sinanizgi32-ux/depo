@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {voiceBankPlan} from './voice-bank-plan.mjs';
+const plan=await voiceBankPlan();
+assert.deepEqual(plan.units('Şimdi karta dokun; 1. yere gelsin. Şimdi sen söyle.'),['Şimdi karta dokun; 1. yere gelsin.','Şimdi sen söyle.']);
+assert.deepEqual(plan.units('Saat 10.30 oldu. Nerede?'),['Saat 10.30 oldu.','Nerede?']);
+const manifest={};
+const jobs=plan.production(manifest),ids=new Set();
+const matching=jobs.filter(job=>plan.primary.has(job.text)&&/(?:eşle|göster)\.$/.test(job.text));
+assert(matching.length>0);
+assert(matching.every(job=>job.rank===0),'Matching and showing cues must precede correction bodies and long hints');
+assert(jobs.filter(job=>job.rank===0).every(job=>plan.urgent.has(job.text)||['Bu ne? Söyle.','Ne yapıyor? Söyle.','Bu hangi renk? Söyle.','İşaretli nesne uzun mu, kısa mı? Söyle.','İşaretli kişi genç mi, yaşlı mı? Söyle.'].includes(job.text)||(plan.primary.has(job.text)&&/(?:eşle|göster)\.$/.test(job.text))));
+assert(jobs.findIndex(job=>job.text==='Aferin!')<jobs.findIndex(job=>job.rank===0),'New reference rewards precede instruction regeneration');
+assert(jobs.some(job=>job.rank===-2),'Character invitations are prioritized');
+for(const job of jobs){const id=job.character+'|'+job.text;assert(!ids.has(id),'Duplicate model work: '+id);ids.add(id);assert(plan.allowed.includes(job.text));(manifest[job.character]??={})[job.text]='./assets/character-voices/ready/test.wav';}
+assert.equal(plan.coverage(manifest).ready,plan.targets.length,'All teacher phrases must have complete playback coverage');
+assert.equal(plan.production(manifest).length,0);
+delete manifest.pofidik['Şimdi sen söyle.'];
+assert(plan.production(manifest).some(job=>job.character==='pofidik'&&job.text==='Şimdi sen söyle.'));
+const originalChars=plan.targets.reduce((n,target)=>n+target.text.length,0),unitChars=jobs.reduce((n,job)=>n+job.text.length,0);
+assert(unitChars<originalChars/2,'Sentence reuse should remove redundant teacher generation');
+console.log(`OK: ${plan.targets.length} teacher phrases fully covered by ${jobs.length} unique recordings; generation text ${originalChars} -> ${unitChars} characters; ordinals and decimals intact.`);

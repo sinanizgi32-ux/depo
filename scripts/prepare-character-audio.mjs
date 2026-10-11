@@ -1,28 +1,50 @@
-import fs from 'node:fs/promises';import vm from 'node:vm';import crypto from 'node:crypto';
-import {activityPhrases} from './character-audio-catalog.mjs';
-const root=new URL('../',import.meta.url),folder=new URL('dist/assets/character-voices/ready/',root);await fs.mkdir(folder,{recursive:true});
-const ctx={window:{}};vm.runInNewContext(await fs.readFile(new URL('dist/matching-data.js',root),'utf8'),ctx);
-const common=['Aferin!','Çok güzel!','Bravo!','Süpersin!','Harikasın!','Mükemmel!','Muhteşem!','Ne güzel yaptın!','Böyle devam et!','İşte bu, başardın!','Çok iyi yaptın!','Başardın!','Çok başarılısın!','Harika bir cevap!','Çok dikkatliydin!','Tebrik ederim!','Şahane!','Çok güzel ilerliyorsun!','Çok güzel söyledin!','Doğru.','Kediyi eşle.','Kediyi göster.'];
-const buddy=['Evet, buradayım!','Çok güzel gidiyorsun!','Oynamak ister misin?','Devam edelim mi?','Ben hep yanındayım.','Harikasın, böyle devam!','Bir oyun daha oynayalım mı?','Seninle oynamak çok güzel!','Ne oynayalım, sen söyle!','Bugün çok iyi çalışıyoruz!'];
-const items=Object.values(ctx.window.ObjectMatchingData.items);const instructions=items.flatMap(item=>[`${item.accusative} eşle.`,`${item.accusative} göster.`]);
-const activity=await activityPhrases(root,items);
-const phrases=[...new Set(['Balığı eşle.','Balığı göster.','Diş macununu eşle.','Diş macununu göster.','Çileği eşle.','Çileği göster.','Kediyi eşle.','Kediyi göster.',...common,...instructions,...buddy,...activity.filter(text=>text.length<=110),...activity])];
-
-const names={pofidik:'Pofidik Ayı',dila:'Dila Panda',kipir:'Kıpır Kunduz',mina:'Mina Tilki'};
-const jobs=[];for(const [character,name]of Object.entries(names))for(const text of [`Selam! Ben ${name}. Beni seçmek ister misin?`,`Merhaba! Ben ${name}. Benimle oynamak ister misin?`,`Selam! Ben ${name}. Birlikte oyun oynayalım mı?`])jobs.push({character,text});
-for(const text of phrases)for(const character of Object.keys(names))jobs.push({character,text});
-await fs.writeFile(new URL('static-phrases.json',folder),JSON.stringify([...new Set(jobs.map(job=>job.text))]));
-if(process.argv.includes('--catalog-only')){console.log('Sabit ses kataloğu hazır.');process.exit(0);}
-const manifestFile=new URL('dist/assets/character-voices/ready/manifest.json',root);let manifest={};try{manifest=JSON.parse(await fs.readFile(manifestFile,'utf8'));}catch{}
-const progressFile=new URL('progress.json',folder);const progress=async()=>fs.writeFile(progressFile,JSON.stringify({ready:Object.values(manifest).reduce((n,entries)=>n+Object.keys(entries).length,0),total:jobs.length}));await progress();
-while(true){try{if((await(await fetch('http://127.0.0.1:4182/api/voice-status')).json()).ready)break;}catch{}await new Promise(resolve=>setTimeout(resolve,1000));}
-const requested=process.argv.find(arg=>arg.startsWith('--items='))?.slice(8).split(',');
-const selected=requested?new Set(items.filter(item=>requested.includes(item.id)).flatMap(item=>[`${item.accusative} eşle.`,`${item.accusative} göster.`])):null;
-let total=0;for(const {text,character} of jobs){
-if(selected&&!selected.has(text))continue;
-manifest[character]??={};if(manifest[character][text])continue;
-const response=await fetch('http://127.0.0.1:4182/api/voice',{method:'POST',headers:{Origin:'http://127.0.0.1:4180','Content-Type':'application/json'},body:JSON.stringify({character,text,background:true})});if(!response.ok)throw Error(`Ses üretilemedi: ${response.status}`);
-const name=character+'-'+crypto.createHash('sha256').update(text).digest('hex').slice(0,20)+'.wav';await fs.writeFile(new URL(name,folder),Buffer.from(await response.arrayBuffer()));manifest[character][text]='./assets/character-voices/ready/'+name;
-manifest=JSON.parse(await fs.readFile(manifestFile,'utf8'));await progress();total++;if(selected||total%25===0)console.log(`${character}: ${text} hazır (${total}).`);
+import fs from 'node:fs/promises';
+import vm from 'node:vm';
+import {voiceBankPlan} from './voice-bank-plan.mjs';
+import {voiceBankReader} from './voice-bank-files.mjs';
+const root=new URL('../',import.meta.url),folder=new URL('dist/assets/character-voices/ready/',root);
+const plan=await voiceBankPlan(root);await fs.mkdir(folder,{recursive:true});
+const catalog=new URL('static-phrases.json',folder),temporary=new URL(`static-phrases.${process.pid}.tmp`,folder);
+await fs.writeFile(temporary,JSON.stringify(plan.allowed));await fs.rename(temporary,catalog);
+if(process.argv.includes('--catalog-only')){console.log('Sabit öğretmen metni ve cümle kataloğu hazır.');process.exit(0);}
+// Only one producer may use the model. A crashed producer's lock is recoverable.
+await fs.mkdir(new URL('outputs/',root),{recursive:true});
+const lockFile=new URL('outputs/voice-preparation.lock',root);let lock;
+for(let attempt=0;attempt<2;attempt++){
+ try{lock=await fs.open(lockFile,'wx');await lock.writeFile(String(process.pid));break;}catch(error){
+  if(error.code!=='EEXIST')throw error;
+  const pid=Number(await fs.readFile(lockFile,'utf8'));let alive=true;try{process.kill(pid,0);}catch(e){if(e.code==='ESRCH')alive=false;}
+  if(alive){console.log('Ses hazırlığı zaten çalışıyor.');process.exit(0);}await fs.unlink(lockFile);
+ }
 }
-console.log(requested?'Seçilen nesnelerin dört karakterde eşle/göster kayıtları hazır.':'Bütün nesne yönergeleri, pekiştirmeler ve arkadaş konuşmaları hazır.');
+if(!lock)throw Error('Ses hazırlığı kilidi alınamadı.');
+const progressFile=new URL('progress.json',folder),readBank=voiceBankReader(root);
+async function manifest(){return(await readBank()).bank;}
+async function progress(m){const tmp=new URL('progress.tmp',folder);await fs.writeFile(tmp,JSON.stringify({...plan.coverage(m),updatedAt:new Date().toISOString()}));await fs.rename(tmp,progressFile);}
+try{
+ let bank=await manifest();await progress(bank);
+ while(true){try{if((await(await fetch('http://127.0.0.1:4182/api/voice-status',{signal:AbortSignal.timeout(1500)})).json()).ready)break;}catch{}await new Promise(resolve=>setTimeout(resolve,1000));}
+ const requested=process.argv.find(arg=>arg.startsWith('--items='))?.slice(8).split(',');
+ const selected=requested?new Set(plan.items.filter(item=>requested.includes(item.id)).flatMap(item=>[`${item.accusative} eşle.`,`${item.accusative} göster.`])):null;
+ const jobs=plan.production(bank,selected);
+ const priorityItems=process.argv.find(arg=>arg.startsWith('--priority-items='))?.slice(17).split(',');
+ if(priorityItems){const c={window:{}};vm.runInNewContext(await fs.readFile(new URL('dist/lesson-audio-plan.js',root),'utf8'),c);const trials=plan.items.filter(item=>priorityItems.includes(item.id)).map(item=>({item}));const P=c.window.LessonAudioPlan;const phrases=[...P.object(trials,'match'),...P.object(trials,'show')].filter(text=>!P.rewards.includes(text));const priorityUnits=new Set(phrases.flatMap(plan.units));jobs.sort((a,b)=>Number(priorityUnits.has(b.text))-Number(priorityUnits.has(a.text)));}
+ console.log(`${jobs.length} eksik cümle kaydı hazırlanacak; ${plan.coverage(bank).ready}/${plan.targets.length} konuşma hazır.`);
+ let count=0;
+ for(const {character,text}of jobs){
+  bank=await manifest();if(plan.recording(bank,character,text))continue;
+  while(true){try{
+   const response=await fetch('http://127.0.0.1:4182/api/voice',{method:'POST',headers:{Origin:'http://127.0.0.1:4180','Content-Type':'application/json'},body:JSON.stringify({character,text,background:true})});
+   if(!response.ok)throw Error('Ses hizmeti yanıtı '+response.status);
+   await response.arrayBuffer();bank=await manifest();
+   if(!plan.recording(bank,character,text))throw Error('Sabit ses bankaya kaydedilemedi.');
+   // Python publishes the WAV. Never truncate an already playable file here.
+   break;
+  }catch{await new Promise(resolve=>setTimeout(resolve,1500));}}
+  await progress(bank);if(++count%10===0){const c=plan.coverage(bank);console.log(`${c.ready}/${c.total} konuşma hazır · ${count}/${jobs.length} yeni kayıt.`);}
+ }
+ bank=(await voiceBankReader(root)()).bank;await progress(bank);const c=plan.coverage(bank);
+ if(!selected&&c.ready!==c.total)throw Error(`Hazırlık eksik: ${c.ready}/${c.total}`);
+ if(!selected){const updateFile=new URL('outputs/voice-reference-update.json',root);try{const update=JSON.parse(await fs.readFile(updateFile,'utf8'));update.status='complete';update.completedAt=new Date().toISOString();await fs.writeFile(updateFile,JSON.stringify(update,null,2));}catch{}}
+ console.log(selected?'Seçilen nesne kayıtları hazır.':'Bütün sabit öğretmen konuşmaları dört karakterde hazır.');
+}finally{await lock.close();await fs.unlink(lockFile).catch(()=>{});}

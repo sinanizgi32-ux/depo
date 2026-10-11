@@ -10,6 +10,6 @@ window.AgeTeachingData=(()=>{
  function course(mode,level){const blocks=baseCourse(mode,level);if(level>=4)for(const block of blocks)for(const trial of block.trials)for(const x of [trial.source,...trial.options]){const filename=x.src.split('/').pop();x.src=`./assets/age/color-v2/${filename}`;x.visualColor=['coral','green','yellow','lavender','blue'][x.variant];}return blocks;}
  const nextStep=(mode,c,level)=>level<stages[mode].length?{color:id,level:level+1,block:0}:null;
  function judge(text){if(window.NamingRules.hasInappropriate(text))return'inappropriate';const words=window.NamingRules.normalize(text).split(' ').filter(w=>!['bu','bir','kisi','olan','insan'].includes(w));return!words.length?'uncertain':words.every(w=>w===(old?'yasli':'genc'))?'correct':'wrong';}
- function correction(c,text,kind,retry=true){const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();return(kind==='inappropriate'?'Bu söylediğin sözcük uygun bir sözcük değil. ':safe?`Hayır, bu ${safe} değil. `:'')+`Bu kişi ${old?'yaşlı':'genç'}.`+(retry?' Şimdi sen söyle.':'');}
+ function correction(c,text,kind,retry=true){const safe=window.NamingRules.safeText(text).replace(/[.!?;:"“”]/g,'').trim();const message=(kind==='inappropriate'?'Bu söylediğin sözcük uygun bir sözcük değil. ':safe?`Hayır, bu ${safe} değil. `:'')+`Bu kişi ${old?'yaşlı':'genç'}.`+(retry?' Şimdi sen söyle.':'');return window.CharacterVoice?.quickCorrection?.(message)||message;}
  return{colors,color,stages,course,nextStep,media,judge,correction};
 })();

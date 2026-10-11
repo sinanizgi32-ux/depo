@@ -109,4 +109,12 @@ for (let level = 1; level <= 10; level++) {
   context.completion.nextPatternLevel(); assert.equal(state.eventLevel, level < 10 ? level + 1 : 10); assert.equal(state.method, 'wait');
   if (level < 10) assert.equal(state.trial, 0);
 }
+context.window.CharacterVoice={ready:()=>false,preload:()=>Promise.resolve()};
+for(const method of ['wait','immediate'])for(let level=1;level<=10;level++){
+ reset(method,level);finishSpeech();if(method==='wait')fire(4000);
+ assert.equal(speeches[0].text,'Gösterilen karta dokun.','Missing narration must use the short spoken visual prompt');finishSpeech();
+ const example=eventContent.levels[level-1].examples[0];eventAnswer(card(example.indices[1]));
+ assert.equal(speeches[0].text,'Hayır, bu kartın yeri farklı. Gösterilen karta dokun.','Wrong order must also give a spoken short correction');
+}
+delete context.window.CharacterVoice;
 console.log('OK: 10 levels, 50 trials; shuffled cards, numbered slots, speech completion, 4-second teaching, correction, simultaneous hints, drag order, pause and stale instruction.');

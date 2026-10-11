@@ -1,7 +1,7 @@
 window.ObjectMatching = (() => {
   const data=window.ObjectMatchingData;
   function create({state,speak,praise,finishBlock}) {
-    let run=0,timer,busy=false,selected=false,completed=false,pending=false,gesture=null,ignoreClick=false,current;
+    let run=0,timer,busy=false,selected=false,completed=false,pending=false,gesture=null,ignoreClick=false,current,audioTrials=null;
     const el=id=>document.getElementById(id);
     const pointing=()=>state.skill==='object-show';
     const verb=()=>pointing()?'göster':'eşle';
@@ -15,12 +15,16 @@ window.ObjectMatching = (() => {
     function stop(){run++;clearTimeout(timer);gesture=null;busy=false;selected=false;}
     function instruction(){busy=true;controls(true);el('feedback').textContent=`${current.item.accusative} ${verb()}.`;say(`${current.item.accusative} ${verb()}.`,()=>{busy=false;controls(false);if(state.method==='immediate')hint();else timer=setTimeout(hint,4000);});}
     function render(){
+      if(state.trial===0&&window.CharacterVoice?.prepareLesson&&window.LessonAudioPlan){stop();const check=run;audioTrials=data.isMixed(state.skill,state.matchLevel)?data.mixedBlock():Array.from({length:5},(_,n)=>(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,n));state.mixedTrials=audioTrials;el('objectMatchingArea').hidden=true;return window.CharacterVoice.prepareLesson(window.LessonAudioPlan.object(audioTrials,pointing()?'show':'match'),state.avatar,()=>run===check&&active()).then(ok=>{if(ok&&run===check&&active()){el('objectMatchingArea').hidden=false;renderReady();}});}
+      renderReady();
+    }
+    function renderReady(){
       stop();completed=false;pending=false;ignoreClick=false;state.hadPrompt=false;state.attempts=0;
       if(data.isMixed(state.skill,state.matchLevel)){
-        if(state.trial===0)state.mixedTrials=data.mixedBlock();
+        if(state.trial===0&&!audioTrials)state.mixedTrials=data.mixedBlock();
         current=state.mixedTrials[state.trial];
         window.CharacterVoice?.preload(state.mixedTrials.slice(state.trial+1).map(trial=>`${trial.item.accusative} ${verb()}.`),state.avatar);
-      }else current=(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,state.trial);
+      }else current=audioTrials?.[state.trial]||(pointing()?data.pointingTrial:data.trial)(state.matchItem,state.matchLevel,state.trial);
       el('gameTitle').textContent=pointing()?'Nesne gösterme':'Nesne eşleme';
       document.querySelector('.game-toolbar .step-label').textContent=`Bilişsel beceriler · ${pointing()?'Nesne gösterme':'Nesne eşleme'} · Seviye ${state.matchLevel}`;
       el('trialLabel').textContent=`${state.trial+1} / 5`;el('progressFill').style.width=`${(state.trial+1)*20}%`;
