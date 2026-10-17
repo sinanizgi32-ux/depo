@@ -13,10 +13,10 @@ export async function voiceBankPlan(root=new URL('../',import.meta.url)){
  const buddy=['Evet, buradayım!','Çok güzel gidiyorsun!','Oynamak ister misin?','Devam edelim mi?','Ben hep yanındayım.','Harikasın, böyle devam!','Bir oyun daha oynayalım mı?','Seninle oynamak çok güzel!','Ne oynayalım, sen söyle!','Bugün çok iyi çalışıyoruz!'];
  const instructions=items.flatMap(item=>[`${item.accusative} eşle.`,`${item.accusative} göster.`]);
  const activity=await activityPhrases(root,items);
- const urgent=new Set(['Gösterilen karta dokun.','Hayır, bu kartın yeri farklı.']);
+ const urgent=new Set(['Gösterilen karta dokun.','Hayır, bu kartın yeri farklı.','Sıraya bakalım. Boş kutuya hangisi gelmeli? Doğru olanı seç.','Resimlere bak. Önce olanı, sonra olanı sırala. Önce olan karta dokun.']);
  const primary=new Set([...urgent,...common,...instructions,...activity.filter(text=>units(text).length===1&&/(?:eşle|göster)[.!?]$/.test(text)),...activity.filter(text=>/^(?:Bu ne\?|Ne yapıyor\?|Bu hangi renk\?|Bak dikkat! Burası|İşaretli )/.test(text)&&text.length<100)]);
  const phrases=[...new Set([...primary,...buddy,...activity])];
- const targets=Object.entries(voices).flatMap(([character,name])=>[...phrases,`Selam! Ben ${name}. Beni seçmek ister misin?`,`Merhaba! Ben ${name}. Benimle oynamak ister misin?`,`Selam! Ben ${name}. Birlikte oyun oynayalım mı?`].map(text=>({character,text})));
+ const targets=Object.entries(voices).flatMap(([character,name])=>[...phrases,`Selam! Ben ${name}. Beni seçmek ister misin?`,`Merhaba! Ben ${name}. Benimle oynamak ister misin?`,`Selam! Ben ${name}. Birlikte oyun oynayalım mı?`,`Merhaba! Ben ${name}. Bundan sonra senin oyun arkadaşınım. Oyunlar oynarken hep yanında olacağım ve ihtiyacın olduğunda sana yardım edeceğim. Hazırsan başlayalım!`].map(text=>({character,text})));
  const island=await fs.readFile(new URL('scripts/pofidik-island-source.js',root),'utf8'),storyContext={};
  vm.runInNewContext(island.slice(island.indexOf('const fruits='),island.indexOf('let index='))+island.slice(island.indexOf('const story=['),island.indexOf('function land()'))+';this.stories=story;this.trials=trials;this.fruits=fruits;',storyContext);
  const gameNarration=[...storyContext.stories.map(s=>s.text),'Dikkatli bak. Buraya hangisi gelir?','Sıraya bir daha bakalım.','Harikasın! Son meşale yandı!','Aferin! Bir meşale yandı.','Harika! Bir meşale daha yandı.','Hazineyi bulduk! Pofidik seninle çok mutlu.',...storyContext.trials.map(t=>{const names=t.block.map(id=>storyContext.fruits[id].toLocaleLowerCase('tr')).join(', ');return `Bak, ${names}. Yine ${names}. Buraya ${storyContext.fruits[t.block[t.shown%t.block.length]].toLocaleLowerCase('tr')} gelmeli. Şimdi seç.`;})];
@@ -34,7 +34,7 @@ export async function voiceBankPlan(root=new URL('../',import.meta.url)){
    const {character,text}=target;
    for(const part of primary.has(text)?[text]:units(text)){
     if(recording(manifest,character,part))continue;
-    const rank=character!=='narrator'&&(/^(?:Selam!|Merhaba!|Ben (?:Pofidik|Dila|Kıpır|Mina)|Beni seçmek|Benimle oynamak|Birlikte oyun)/.test(part))?-2:['Aferin!','Harikasın!','Süpersin!'].includes(part)?-1:urgent.has(part)||['Bu ne? Söyle.','Ne yapıyor? Söyle.','Bu hangi renk? Söyle.','İşaretli nesne uzun mu, kısa mı? Söyle.','İşaretli kişi genç mi, yaşlı mı? Söyle.'].includes(part)?0:primary.has(text)&&/(?:eşle|göster)\.$/.test(part)?0:/(?:eşle|göster)[.!?]$/.test(text)?1:/^(?:Şimdi sen söyle|Bu söylediğin sözcük uygun|Bu |Evet, yaklaştın)/.test(part)?2:primary.has(text)?3:4;
+    const rank=character!=='narrator'&&(/^(?:Selam!|Merhaba!|Ben (?:Pofidik|Dila|Kıpır|Mina)|Beni seçmek|Benimle oynamak|Birlikte oyun|Bundan sonra senin|Oyunlar oynarken|Hazırsan başlayalım)/.test(part))?-2:['Aferin!','Harikasın!','Süpersin!'].includes(part)?-1:urgent.has(part)||['Bu ne? Söyle.','Ne yapıyor? Söyle.','Bu hangi renk? Söyle.','İşaretli nesne uzun mu, kısa mı? Söyle.','İşaretli kişi genç mi, yaşlı mı? Söyle.'].includes(part)?0:primary.has(text)&&/(?:eşle|göster)\.$/.test(part)?0:/(?:eşle|göster)[.!?]$/.test(text)?1:/^(?:Şimdi sen söyle|Bu söylediğin sözcük uygun|Bu |Evet, yaklaştın)/.test(part)?2:primary.has(text)?3:4;
     const id=character+'|'+canonical(part),entry=jobs.get(id)||{character,text:part,rank,uses:0};entry.rank=Math.min(entry.rank,rank);entry.uses++;jobs.set(id,entry);
    }
   }

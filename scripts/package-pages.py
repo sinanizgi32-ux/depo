@@ -1,6 +1,6 @@
 """Build a self-contained static preview; PCM samples remain unchanged."""
 from pathlib import Path
-import json,shutil
+import json,shutil,hashlib
 import soundfile as sf
 import numpy as np
 
@@ -31,11 +31,12 @@ for url in urls:
  src=(source/url.removeprefix('./')).resolve()
  if src.parent!=folder.resolve() or src.suffix!='.wav':raise ValueError('Invalid bank URL')
  samples,rate=sf.read(src,dtype='int16',always_2d=True)
- dst=target/'assets/character-voices/ready'/src.with_suffix('.flac').name
+ name=src.stem+'-'+hashlib.sha256(src.read_bytes()).hexdigest()[:12]+'.flac'
+ dst=target/'assets/character-voices/ready'/name
  sf.write(dst,samples,rate,format='FLAC',subtype='PCM_16',compression_level=1.0)
  decoded,decoded_rate=sf.read(dst,dtype='int16',always_2d=True)
  if rate!=decoded_rate or not np.array_equal(samples,decoded):raise ValueError('PCM mismatch')
- mapped[url]=url[:-4]+'.flac'
+ mapped[url]='./assets/character-voices/ready/'+name
 for entries in bank.values():
  for text,url in entries.items():entries[text]=mapped[url]
 for entries in parts.values():

@@ -8,6 +8,7 @@ const fixture={pofidik:Object.fromEntries(units.map(text=>[text,file]))};
 const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
 try{
  const p=await browser.newPage();let modelFinished=false,modelStarted=false;
+ await p.route('**/assets/character-voices/ready/quality.json',r=>r.fulfill({json:{}}));
  await p.route('**/assets/character-voices/ready/manifest.json',r=>r.fulfill({json:fixture}));
  await p.route('**/*.wav',r=>r.fulfill({body:wav,contentType:'audio/wav'}));
  await p.route('**/api/voice-status',r=>r.fulfill({json:{ready:true}}));

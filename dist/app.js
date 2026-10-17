@@ -493,13 +493,13 @@
       speak(key,selectionMessage(key));
     }
   }
-  function introMessage() {
-    const child = state.profile.name ? ` ${state.profile.name}` : '';
-    return `Merhaba${child}! Ben ${mascot().name}. Bundan sonra senin oyun arkadaşınım. Oyunlar oynarken hep yanında olacağım ve ihtiyacın olduğunda sana yardım edeceğim. Hazırsan başlayalım!`;
+  function introMessage(includeName = true) {
+    const child = includeName && state.profile.name ? ` ${state.profile.name}` : '';
+    return `Merhaba${child}! Ben ${profileName(state.avatar)}. Bundan sonra senin oyun arkadaşınım. Oyunlar oynarken hep yanında olacağım ve ihtiyacın olduğunda sana yardım edeceğim. Hazırsan başlayalım!`;
   }
   function prepareIntro() {
     updateMascotDisplays();
-    document.getElementById('introTitle').textContent = `Ben ${mascot().name}!`;
+    document.getElementById('introTitle').textContent = `Ben ${profileName(state.avatar)}!`;
     document.getElementById('introText').textContent = introMessage();
     document.getElementById('readyButton').disabled = false;
     document.getElementById('readyButton').textContent = 'Hazırım';
@@ -825,7 +825,10 @@
     const group = full.slice(0, period > 0 ? period : full.length).map(key => patternItems[key].name).join(', ');
     const explanation = period === 2 ? 'Bu iki nesne sırayla tekrar ediyor.' : `Tekrar eden grup: ${group}. Bu grup aynı sırayla tekrar ediyor.`;
     const message = `${correction ? 'Hayır, o değil. ' : ''}Bak, ${sequence}. ${explanation} Sırayı devam ettirince buraya ${patternItems[trial.answer].name} gelmeli. Şimdi gösterilen seçeneğe bas.`;
-    revealPatternHint({ text: message, speech: message });
+    const shortModel = `Bu ${patternItems[trial.answer].name}. Şimdi gösterilen seçeneğe bas.`;
+    const speech = window.CharacterVoice?.ready && !window.CharacterVoice.ready(message,state.avatar) ? window.CharacterVoice.ready(shortModel,state.avatar) ? shortModel : 'Şimdi gösterilen seçeneğe bas.' : message;
+    if(speech!==message)void window.CharacterVoice.preload([message],state.avatar);
+    revealPatternHint({ text: message, speech });
   }
   function patternAnswer(button) {
     if (button.disabled) return;
@@ -1039,7 +1042,7 @@
     card.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setAvatar(card.dataset.avatar); } });
   });
   document.querySelectorAll('[data-speak]').forEach(button => button.addEventListener('click', event => { event.stopPropagation(); speak(button.dataset.speak,selectionMessage(button.dataset.speak)); }));
-  document.getElementById('avatarContinue').addEventListener('click', () => { prepareIntro(); saveState(); showScreen('intro'); setTimeout(() => speak(state.avatar), 250); });
+  document.getElementById('avatarContinue').addEventListener('click', () => { prepareIntro(); saveState(); showScreen('intro'); setTimeout(() => speak(state.avatar,introMessage(false)), 250); });
   document.getElementById('readyButton').addEventListener('click', () => {
     const button = document.getElementById('readyButton'); button.disabled = true; button.textContent = 'Süpersin!';
     document.getElementById('introText').textContent = 'Süpersin! Haydi o zaman başlayalım.'; speak(state.avatar, 'Süpersin!');

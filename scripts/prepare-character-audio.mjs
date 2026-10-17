@@ -27,6 +27,7 @@ try{
  const requested=process.argv.find(arg=>arg.startsWith('--items='))?.slice(8).split(',');
  const selected=requested?new Set(plan.items.filter(item=>requested.includes(item.id)).flatMap(item=>[`${item.accusative} eşle.`,`${item.accusative} göster.`])):null;
  const jobs=plan.production(bank,selected);
+ if(process.argv.includes('--narrator-first'))jobs.sort((a,b)=>Number(b.character==='narrator')-Number(a.character==='narrator'));
  const priorityConcepts=process.argv.find(arg=>arg.startsWith('--priority-concepts='))?.slice(20).split(',');
  if(priorityConcepts){const priorityUnits=new Set();for(const id of priorityConcepts){const c={window:{NamingRules:{safeText:value=>value||''}},URLSearchParams,location:{search:'?concept='+id},Math};vm.runInNewContext(await fs.readFile(new URL('dist/lesson-audio-plan.js',root),'utf8'),c);vm.runInNewContext(await fs.readFile(new URL('dist/opposite-teaching-data.js',root),'utf8'),c);const D=c.window.OppositeTeachingData,P=c.window.LessonAudioPlan;for(const mode of ['match','show','name'])for(let level=1;level<=D.stages[mode].length;level++)for(const block of D.course(mode,level))for(const text of P.concept('opposite',D,mode,block.trials,D.stages[mode][level-1]).filter(t=>!P.rewards.includes(t)))for(const unit of plan.units(text))priorityUnits.add(unit);}jobs.sort((a,b)=>Number(priorityUnits.has(b.text))-Number(priorityUnits.has(a.text)));}
  const priorityItems=process.argv.find(arg=>arg.startsWith('--priority-items='))?.slice(17).split(',');

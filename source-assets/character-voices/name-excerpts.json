@@ -1,0 +1,34 @@
+{
+  "pofidik": {
+    "text": "Ben Pofidik Ayı.",
+    "source": "source-assets/character-voices/pofidik-reference.wav",
+    "start": 1.8,
+    "end": 3.1,
+    "sourceSha256": "ab73638d5a9bdcc1bf130ef4dcc698bc864a3d838314fbf82fd2c4bc8196b0cf",
+    "clipSha256": "4d17d7f38b86bb0c774fadf48724f8c1d159c88a67f142e8d191d0f409748349"
+  },
+  "dila": {
+    "text": "Ben Dila Panda.",
+    "source": "source-assets/character-voices/dila-reference.wav",
+    "start": 1.0799999999999998,
+    "end": 1.96,
+    "sourceSha256": "e5d2ac54cd9a6ff6de3480798df08fdc5e101f985ddf6017347c064e99f48d9a",
+    "clipSha256": "8aa3fdd153def147bdc2d5b3eab1d7508c38cb569bff7bd6f7b823ae50ae0696"
+  },
+  "kipir": {
+    "text": "Ben Kıpır Kunduz.",
+    "source": "source-assets/character-voices/kipir-reference.wav",
+    "start": 1.8599999999999999,
+    "end": 2.96,
+    "sourceSha256": "de34c5d6de121ee2dc15cf31e378577a59c31e462029a35afc304c85f026335d",
+    "clipSha256": "d4a27724f29c0e58980f42903877eb058ed6a81471643118faea4e2a6d2a7599"
+  },
+  "mina": {
+    "text": "Ben Mina Tilki.",
+    "source": "source-assets/character-voices/mina-reference.wav",
+    "start": 1.94,
+    "end": 3.12,
+    "sourceSha256": "69f1a9637bcce5d2c89628a012669a96e9d96acf000196465de6d3051e128333",
+    "clipSha256": "1e7058d49edaa146da0672378fa1b414563e3786a8f52014f5ee79bb778a355b"
+  }
+}

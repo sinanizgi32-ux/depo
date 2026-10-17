@@ -5,6 +5,7 @@ const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Micr
 try{
  const p=await browser.newPage(),requests=[];
  await p.addInitScript(()=>{const play=HTMLMediaElement.prototype.play;window.rewardAudio=[];HTMLMediaElement.prototype.play=function(){window.rewardAudio.push(this.src);return play.call(this);};});
+ await p.route('**/assets/character-voices/ready/quality.json',r=>r.fulfill({json:{}}));
  await p.route('**/assets/character-voices/ready/manifest.json',r=>r.fulfill({json:{pofidik:{'Aferin!':'./assets/character-voices/ready/named-test-fixture.wav'}}}));
  await p.route('**/named-test-fixture.wav',r=>r.fulfill({body:wav,contentType:'audio/wav'}));
  await p.route('**/api/voice-status',r=>r.fulfill({json:{ready:true}}));

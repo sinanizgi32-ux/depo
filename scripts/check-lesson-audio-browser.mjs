@@ -8,6 +8,7 @@ const wav=fs.readFileSync(new URL(file.replace(/^\.\//,''),root));
 const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
 try{
  const p=await browser.newPage();let generated=[];
+ await p.route('**/assets/character-voices/ready/quality.json',r=>r.fulfill({json:{}}));
  await p.route('**/assets/character-voices/ready/manifest.json',route=>route.fulfill({json:fixture}));
  await p.route('**/api/voice-status',route=>route.fulfill({json:{ready:true}}));
  await p.route('**/api/voice',route=>{generated.push(JSON.parse(route.request().postData()));return new Promise(resolve=>setTimeout(()=>route.fulfill({body:wav,contentType:'audio/wav'}).catch(()=>{}).finally(resolve),5000));});

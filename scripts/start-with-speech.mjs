@@ -5,9 +5,9 @@ import { fileURLToPath } from 'node:url';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const bundled=path.join(process.env.USERPROFILE||'', '.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe');
-const python=process.env.NAMING_PYTHON||(existsSync(bundled)?bundled:'python');
-let speech,characterVoice,voicePreparation;
 const voicePython=path.join(root,".voice-runtime","Scripts","python.exe");
+const python=process.env.NAMING_PYTHON||(existsSync(voicePython)?voicePython:existsSync(bundled)?bundled:'python');
+let speech,characterVoice,voicePreparation;
 if(existsSync(voicePython)){try{await fetch("http://127.0.0.1:4182/api/voice-status",{signal:AbortSignal.timeout(1000)});}catch{characterVoice=spawn(voicePython,["scripts/serve-character-voices.py"],{cwd:root,stdio:"inherit",windowsHide:true});characterVoice.on("error",()=>console.error("Karakter ses hizmeti başlatılamadı."));}}
 if(existsSync(voicePython)){voicePreparation=spawn(process.execPath,['scripts/prepare-character-audio.mjs'],{cwd:root,stdio:'inherit',windowsHide:true});voicePreparation.on('error',()=>console.error('Sabit karakter kayıtları hazırlanamadı.'));}
 try {
