@@ -2,11 +2,13 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {chromium} from 'file:///C:/Users/sinan/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs';
 const selected=process.argv.find(a=>a.startsWith('--character='))?.slice(12);
+const siteFlac=process.argv.includes('--site-flac'),siteRoot=new URL('../outputs/site-current-source/dist/',import.meta.url);
 const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
 const reports=[];
 try{await Promise.all((selected?[selected]:['pofidik','dila','kipir','mina']).map(async character=>{
  for(const wrong of [false,true]){
   const p=await browser.newPage();let live=0;
+  if(siteFlac){await p.route('**/assets/character-voices/ready/manifest.json',async r=>r.fulfill({json:JSON.parse(await fs.readFile(new URL('assets/character-voices/ready/manifest.json',siteRoot),'utf8'))}));await p.route('**/*.flac',async r=>r.fulfill({body:await fs.readFile(new URL(new URL(r.request().url()).pathname.slice(1),siteRoot)),contentType:'audio/flac'}));}
   await p.addInitScript(character=>localStorage.setItem('dijitalOzelEgitimStateV2',JSON.stringify({avatar:character,profile:{name:''}})),character);
   await p.route('**/api/voice',r=>{if(!JSON.parse(r.request().postData()).background)live++;return r.abort();});
   await p.goto('http://127.0.0.1:4180/opposite-teaching.html?concept=empty&mode=match&method=wait');
@@ -21,5 +23,5 @@ try{await Promise.all((selected?[selected]:['pofidik','dila','kipir','mina']).ma
   assert(event.delay<1000,JSON.stringify(event));assert(!event.error);assert.equal(live,0,'Hint must not generate on demand');
   reports.push({character,wrong,startMs:Math.round(event.delay),complete:true});await p.close();
  }
-}));}finally{await browser.close();await fs.writeFile('outputs/empty-hints-real.json',JSON.stringify(reports,null,2));}
+}));}finally{await browser.close();await fs.writeFile(siteFlac?'outputs/empty-hints-site-flac.json':'outputs/empty-hints-real.json',JSON.stringify(reports,null,2));}
 console.log(JSON.stringify(reports));

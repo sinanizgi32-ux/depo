@@ -1,3 +1,4 @@
+import {loadPofidik} from './pofidik-model-source.js';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { clone } from 'three/addons/utils/SkeletonUtils.js';
@@ -15,16 +16,7 @@ let sourcePromise;
 function source() {
   // The URL is relative to the page, so copies and GitHub clones need no machine-specific paths.
   return sourcePromise ||= (async () => {
-    const base = new URL('./assets/avatars/pofidik/', window.location.href);
-    const loader = new GLTFLoader();
-    if ('DecompressionStream' in window) {
-      const response = await fetch(new URL('model.glb.gz', base));
-      if (response.ok && response.body) {
-        const bytes = await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
-        return loader.parseAsync(bytes, base.href);
-      }
-    }
-    return loader.loadAsync(new URL('model.glb', base).href);
+    return loadPofidik(new GLTFLoader());
   })().catch(error => { sourcePromise = undefined; throw error; });
 }
 function resolveViewer(target) {
