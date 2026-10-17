@@ -4,7 +4,7 @@ const bank=JSON.parse(fs.readFileSync('dist/assets/character-voices/ready/manife
 const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
 try{
  const p=await browser.newPage(),requests=[];
- await p.addInitScript(()=>{const Native=window.Audio;window.rewardAudio=[];window.Audio=class extends Native{constructor(src){super(src);window.rewardAudio.push(src);}};});
+ await p.addInitScript(()=>{const play=HTMLMediaElement.prototype.play;window.rewardAudio=[];HTMLMediaElement.prototype.play=function(){window.rewardAudio.push(this.src);return play.call(this);};});
  await p.route('**/assets/character-voices/ready/manifest.json',r=>r.fulfill({json:{pofidik:{'Aferin!':'./assets/character-voices/ready/named-test-fixture.wav'}}}));
  await p.route('**/named-test-fixture.wav',r=>r.fulfill({body:wav,contentType:'audio/wav'}));
  await p.route('**/api/voice-status',r=>r.fulfill({json:{ready:true}}));

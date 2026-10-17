@@ -29,3 +29,5 @@ outputs/voice-cache/
 outputs/voice-cache/
 /outputs/character-voice-service.log
 /outputs/character-voice-service*.log
+
+_site/
